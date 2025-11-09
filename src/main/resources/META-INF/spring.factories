@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.coalbot.camera.sdk.autoconfigure.HikvisionAutoConfiguration,\
+com.coalbot.camera.sdk.autoconfigure.DahuaAutoConfiguration,\
+com.coalbot.camera.sdk.autoconfigure.UniviewAutoConfiguration,\
+com.coalbot.camera.sdk.autoconfigure.GewuxinAutoConfiguration

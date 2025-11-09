@@ -1,0 +1,12 @@
+camera:
+  hikvision:
+    ip: 192.168.1.64
+    username: admin
+    password: 12345
+    sdkPath: D:/sdk/hikvision/lib
+  dahua:
+    ip: 192.168.1.65
+    port: 37777
+    username: admin
+    password: 12345
+  # 其他厂商配置...

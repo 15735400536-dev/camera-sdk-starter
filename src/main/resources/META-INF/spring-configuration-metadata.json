@@ -1,0 +1,40 @@
+{
+  "groups": [
+    {
+      "name": "camera.sdk",
+      "type": "com.coalbot.camera.sdk.autoconfigure.properties.CameraSdkProperties",
+      "description": "摄像头各厂商SDK启用配置开关"
+    }
+  ],
+  "properties": [
+    {
+      "name": "camera.sdk.hikvision",
+      "type": "java.lang.Boolean",
+      "description": "海康威视SDK启用开关：true.启用 false.禁用 默认false.禁用",
+      "defaultValue": false,
+      "sourceType": "com.coalbot.camera.sdk.autoconfigure.properties.CameraSdkProperties"
+    },
+    {
+      "name": "camera.sdk.dahua",
+      "type": "java.lang.Boolean",
+      "description": "大华SDK启用开关：true.启用 false.禁用 默认false.禁用",
+      "defaultValue": false,
+      "sourceType": "com.coalbot.camera.sdk.autoconfigure.properties.CameraSdkProperties"
+    },
+    {
+      "name": "camera.sdk.uniview",
+      "type": "java.lang.Boolean",
+      "description": "宇视SDK启用开关：true.启用 false.禁用 默认false.禁用",
+      "defaultValue": false,
+      "sourceType": "com.coalbot.camera.sdk.autoconfigure.properties.CameraSdkProperties"
+    },
+    {
+      "name": "camera.sdk.gewuxin",
+      "type": "java.lang.Boolean",
+      "description": "格物优信SDK启用开关：true.启用 false.禁用 默认false.禁用",
+      "defaultValue": false,
+      "sourceType": "com.coalbot.camera.sdk.autoconfigure.properties.CameraSdkProperties"
+    }
+  ],
+  "hints": []
+}
