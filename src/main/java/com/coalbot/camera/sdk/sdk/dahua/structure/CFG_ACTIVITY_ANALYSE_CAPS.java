@@ -1,0 +1,25 @@
+package com.coalbot.camera.sdk.sdk.dahua.structure;
+
+
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
+/**
+ * @author 251823
+ * @description 活跃度统计规则
+ * @date 2021/01/11
+ */
+public class CFG_ACTIVITY_ANALYSE_CAPS extends NetSDKLibStructure.SdkStructure {
+	/**
+	 * 是否支持本地数据存储
+	 */
+    public int              bSupportLocalDataStore;
+	/**
+	 * 该规则支持的最大规则数
+	 */
+    public int              nMaxRules;
+	/**
+	 * 预留字段
+	 */
+    public byte[]           byReserved = new byte[256];
+}
+

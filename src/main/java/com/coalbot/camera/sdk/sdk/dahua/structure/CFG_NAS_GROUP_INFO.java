@@ -1,0 +1,26 @@
+package com.coalbot.camera.sdk.sdk.dahua.structure;
+
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
+/**
+ * @author 251823
+ * @description 网络存储服务器配置, 包含多个服务器
+ * @date 2022/09/08 19:33:11
+ */
+public class CFG_NAS_GROUP_INFO extends NetSDKLibStructure.SdkStructure {
+	/**
+	 * 存储服务器数量
+	 */
+    public int              nNasNum;
+	/**
+	 * 存储服务器数组
+	 */
+    public CFG_NAS_INFO_NEW[] stuNasInfo = new CFG_NAS_INFO_NEW[16];
+
+	public CFG_NAS_GROUP_INFO() {
+		for (int i = 0; i < stuNasInfo.length; i++) {
+			stuNasInfo[i] = new CFG_NAS_INFO_NEW();
+		}
+	}
+}
+

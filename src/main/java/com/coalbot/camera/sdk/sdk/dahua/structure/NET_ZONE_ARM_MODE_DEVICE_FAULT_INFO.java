@@ -1,0 +1,28 @@
+package com.coalbot.camera.sdk.sdk.dahua.structure;
+
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
+/**
+ * @author 260611
+ * @description 设备异常信息
+ * @origin autoTool
+ * @date 2023/08/10 09:52:29
+ */
+public class NET_ZONE_ARM_MODE_DEVICE_FAULT_INFO extends NetSDKLibStructure.SdkStructure {
+	/**
+	 * 设备名称
+	 */
+    public byte[]           szName = new byte[32];
+	/**
+	 * 异常原因
+	 */
+    public byte[]           szReason = new byte[32];
+	/**
+	 * 保留字节
+	 */
+    public byte[]           szResvered = new byte[1024];
+
+	public NET_ZONE_ARM_MODE_DEVICE_FAULT_INFO() {
+	}
+}
+

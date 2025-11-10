@@ -1,0 +1,22 @@
+package com.coalbot.camera.sdk.sdk.dahua.structure;
+
+
+
+/**
+ * 某月的各天是否存在录像的状态信息
+ * {@link NetSDKLib#CLIENT_QueryRecordStatus}
+ *
+ * @author ： 47040
+ * @since ： Created in 2021/2/27 19:57
+ */
+public class NET_RECORD_STATUS extends NetSDKLibStructure.SdkStructure {
+    /**
+     * 某月内的各天是否存在录像的状态掩码,0表示没有,1表示有。
+     */
+    public byte[]           flag = new byte[32];
+    /**
+     * 保留
+     */
+    public byte[]           Reserved = new byte[64];
+}
+

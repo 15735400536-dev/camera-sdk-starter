@@ -1,0 +1,24 @@
+package com.coalbot.camera.sdk.sdk.dahua.structure;
+
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+import com.sun.jna.Pointer;
+/**
+ * CLIENT_ControlDevice接口的 DH_CTRL_NOTIFY_EVNENT 命令参数(向设备发送事件)
+*/
+public class NET_NOTIFY_EVENT_DATA extends NetSDKLibStructure.SdkStructure
+{
+    public int              dwSize;
+    /**
+     * 事件类型
+    */
+    public int              lCommand;
+    /**
+     * 事件内容,与lCommand对应的结构体指针
+    */
+    public Pointer          pEventData;
+
+    public NET_NOTIFY_EVENT_DATA() {
+        this.dwSize = this.size();
+    }
+}
+

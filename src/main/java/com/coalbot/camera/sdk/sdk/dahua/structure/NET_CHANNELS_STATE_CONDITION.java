@@ -1,0 +1,24 @@
+package com.coalbot.camera.sdk.sdk.dahua.structure;
+
+
+
+
+/** 
+* @author 291189
+* @description  获取通道状态查询条件 
+* @date 2022/10/09 11:22:21
+*/
+public class NET_CHANNELS_STATE_CONDITION extends NetSDKLibStructure.SdkStructure {
+/** 
+通道类型 {@link com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_CHANNELS_STATE_TYPE}
+*/
+    public			int            emType;
+/** 
+保留字节
+*/
+    public			byte[]         byReserved = new byte[1020];
+
+public NET_CHANNELS_STATE_CONDITION(){
+}
+}
+

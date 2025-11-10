@@ -1,0 +1,42 @@
+package com.coalbot.camera.sdk.sdk.dahua.structure;
+
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
+/**
+ * 事件类型DH_ALARM_POWER_GROUND_DETECTION_ABNORMAL (X光机接地异常检测事件) 对应的数据块描述信息
+*/
+public class ALARM_POWER_GROUND_DETECTION_ABNORMAL_INFO extends NetSDKLibStructure.SdkStructure
+{
+    /**
+     * 通道号
+    */
+    public int              nChannelID;
+    /**
+     * 事件动作,0表示脉冲事件,1表示事件开始,2表示事件结束;
+    */
+    public int              nAction;
+    /**
+     * 事件发生的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME_EX}
+    */
+    public NetSDKLibStructure.NET_TIME_EX stuTime = new NetSDKLibStructure.NET_TIME_EX();
+    /**
+     * 事件ID
+    */
+    public int              nEventID;
+    /**
+     * 时间戳(单位是毫秒)
+    */
+    public double           dbPTS;
+    /**
+     * 事件名称
+    */
+    public byte[]           szName = new byte[128];
+    /**
+     * 预留字段
+    */
+    public byte[]           szReserved = new byte[1024];
+
+    public ALARM_POWER_GROUND_DETECTION_ABNORMAL_INFO() {
+    }
+}
+

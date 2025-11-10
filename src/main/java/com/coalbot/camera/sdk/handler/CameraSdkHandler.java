@@ -12,13 +12,6 @@ import java.util.Map;
 public interface CameraSdkHandler {
 
     /**
-     * 初始化摄像头SDK
-     */
-//    void initSDK();
-
-//    void releaseSDK();
-
-    /**
      * 设备登录
      *
      * @param param 登录参数
@@ -114,7 +107,7 @@ public interface CameraSdkHandler {
      * 设置预置点
      *
      * @param param 参数
-     * @return
+     * @return 预置点ID
      */
     int setPreset(SetPresetBO param);
 
@@ -164,7 +157,7 @@ public interface CameraSdkHandler {
      * 抓图
      *
      * @param param 参数
-     * @return
+     * @return 图片地址
      */
     String captureImage(CaptureImageBO param);
 
