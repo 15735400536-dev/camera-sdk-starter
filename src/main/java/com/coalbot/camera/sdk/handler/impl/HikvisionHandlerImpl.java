@@ -12,8 +12,14 @@ import com.coalbot.camera.sdk.exception.SdkUnsupportedException;
 import com.coalbot.camera.sdk.handler.CameraSdkHandler;
 import com.coalbot.camera.sdk.sdk.hikvision.HCNetSDK;
 import com.coalbot.camera.sdk.util.CameraSdkUtils;
+import com.sun.jna.Memory;
 import com.sun.jna.Native;
+import com.sun.jna.Pointer;
+import com.sun.jna.ptr.IntByReference;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -335,6 +341,55 @@ public class HikvisionHandlerImpl implements CameraSdkHandler {
 
     @Override
     public List<Map<String, Object>> queryPresets(QueryPresetBO param) {
+
+        HCNetSDK.NET_DVR_PRESET_NAME[] presetNames = new HCNetSDK.NET_DVR_PRESET_NAME[HCNetSDK.MAX_PRESET_V30];
+        for (int i = 0; i < presetNames.length; i++) {
+            presetNames[i] = new HCNetSDK.NET_DVR_PRESET_NAME();
+            presetNames[i].dwSize = presetNames[i].size();
+            presetNames[i].write();
+        }
+        Pointer lpOutBuffer = new Memory(presetNames.length * presetNames[0].size());
+        int dwOutBufferSize = presetNames.length * presetNames[0].size();
+        IntByReference lpBytesReturned = new IntByReference(0);
+
+        //boolean NET_DVR_GetDVRConfig(int lUserID, int dwCommand, int lChannel, Pointer lpOutBuffer, int dwOutBufferSize, IntByReference lpBytesReturned);
+        boolean result = hCNetSDK.NET_DVR_GetDVRConfig(loginHandle, HCNetSDK.NET_DVR_GET_PRESET_NAME, 1, lpOutBuffer, dwOutBufferSize, lpBytesReturned);
+        if (!result) {
+            System.out.println("获取预置位数据失败，错误码：" + hCNetSDK.NET_DVR_GetLastError());
+        } else {
+            ByteBuffer byteBuffer = lpOutBuffer.getByteBuffer(0, lpBytesReturned.getValue());
+            // 设置字节顺序
+            byteBuffer.order(ByteOrder.LITTLE_ENDIAN);
+            String presetName = "";
+            for (int i = 0; i < HCNetSDK.MAX_PRESET_V30; i++) {
+                HCNetSDK.NET_DVR_PRESET_NAME presetNameStruct = new HCNetSDK.NET_DVR_PRESET_NAME();
+
+                presetNameStruct.dwSize = byteBuffer.getInt();
+                presetNameStruct.wPresetNum = byteBuffer.getShort();
+                byteBuffer.get(presetNameStruct.byRes1); // 读取保留字节
+                byteBuffer.get(presetNameStruct.byName); // 读取名称
+                presetNameStruct.wPanPos = byteBuffer.getShort();//水平参数
+                presetNameStruct.wTiltPos = byteBuffer.getShort();//垂直参数
+                presetNameStruct.wZoomPos = byteBuffer.getShort();//变倍参数
+                byteBuffer.get(presetNameStruct.byRes); // 读取保留字节
+                // 输出预置位数据
+                if (presetNameStruct.wPresetNum != 0) {
+                    try {
+                        if (Integer.valueOf(presetNameStruct.wPanPos) != 0 && Integer.valueOf(presetNameStruct.wTiltPos) != 0) {
+                            presetName = presetName + new String(presetNameStruct.byName, "GBK").trim() + ":" + presetNameStruct.wPresetNum + ",";
+                        }
+                        System.out.println("预置位 " + presetNameStruct.wPresetNum +
+                                " 名称：" + new String(presetNameStruct.byName, "GBK").trim() +
+                                " 水平参数（实）：" + presetNameStruct.wPanPos +
+                                " 垂直参数（实）：" + presetNameStruct.wTiltPos +
+                                " 变倍参数（实）：" + presetNameStruct.wZoomPos);
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+
         return null;
     }
 
@@ -424,21 +479,53 @@ public class HikvisionHandlerImpl implements CameraSdkHandler {
 
     @Override
     public void absolute(AbsoluteBO param) {
-
+        //1.跳转到PTZ位置
+        HCNetSDK.NET_DVR_PTZPOS netDvrPtzpos = new HCNetSDK.NET_DVR_PTZPOS();
+        netDvrPtzpos.wAction = 1;
+        netDvrPtzpos.wPanPos = (short) param.getPan();
+        netDvrPtzpos.wTiltPos = (short) param.getTilt();
+        netDvrPtzpos.wZoomPos = (short) param.getZoom();
+        netDvrPtzpos.write();
+        //设置水平、垂直参数点位跳转
+        boolean result = hCNetSDK.NET_DVR_SetDVRConfig(loginHandle, HCNetSDK.NET_DVR_SET_PTZPOS, 1, netDvrPtzpos.getPointer(), netDvrPtzpos.size());
+        if (!result) {
+            System.out.println("精准控制失败，错误码：" + hCNetSDK.NET_DVR_GetLastError());
+        }
     }
 
     @Override
     public void getDeviceCapability() {
-
+        throw new SdkUnsupportedException(CameraBrand.Hikvision, "功能【获取设备能力】暂不支持！");
     }
 
     @Override
     public void getChannelCapability() {
-
+        throw new SdkUnsupportedException(CameraBrand.Hikvision, "功能【获取通道能力】暂不支持！");
     }
 
     @Override
     public void getPtzCapability() {
+        throw new SdkUnsupportedException(CameraBrand.Hikvision, "功能【获取云台能力】暂不支持！");
+    }
 
+    /**
+     * 获取相机当前水平、垂直和变焦倍数值
+     *
+     * @return 水平、垂直、变焦
+     */
+    public PtzPostBO getPtzPos() {
+        HCNetSDK.NET_DVR_PTZPOS ptzPos = new HCNetSDK.NET_DVR_PTZPOS();
+        ptzPos.write();
+        Pointer lpOutBuffer = ptzPos.getPointer();
+        IntByReference lpBytesReturned = new IntByReference(0);
+
+        boolean pointInfo = hCNetSDK.NET_DVR_GetDVRConfig(loginHandle, HCNetSDK.NET_DVR_GET_PTZPOS, 1, lpOutBuffer, ptzPos.size(), lpBytesReturned);
+        if (!pointInfo) {
+            System.out.println("失败，错误码：" + hCNetSDK.NET_DVR_GetLastError());
+            return new PtzPostBO(0, 0, 0);
+        } else {
+            ptzPos.read();
+            return new PtzPostBO(Integer.valueOf(Integer.toHexString(ptzPos.wTiltPos)), Integer.valueOf(Integer.toHexString(ptzPos.wPanPos)), Integer.valueOf(Integer.toHexString(ptzPos.wZoomPos)));
+        }
     }
 }

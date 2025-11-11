@@ -503,8 +503,12 @@ public class DahuaHandlerImpl implements CameraSdkHandler {
 
     @Override
     public void absolute(AbsoluteBO param) {
-        boolean result = netsdk.CLIENT_DHPTZControlEx2(loginHandle, 0, NetSDKLibStructure.NET_EXTPTZ_ControlType.NET_EXTPTZ_BASE_MOVE_ABSOLUTELY,
-                0, param.getSpeed(), 0, 0, null);
+//        boolean result = netsdk.CLIENT_DHPTZControlEx2(loginHandle, 0, NetSDKLibStructure.NET_EXTPTZ_ControlType.NET_EXTPTZ_BASE_MOVE_ABSOLUTELY,
+//                0, param.getSpeed(), 0, 0, null);
+
+        boolean result = netsdk.CLIENT_DHPTZControlEx2(loginHandle, 0, NetSDKLibStructure.NET_EXTPTZ_ControlType.NET_EXTPTZ_EXACTGOTO,
+                param.getPan(), param.getTilt(), param.getZoom(), 0, null);
+
         if (!result) {
             System.out.println("Failed!" + ToolKits.getErrorCodePrint());
         }
@@ -513,18 +517,18 @@ public class DahuaHandlerImpl implements CameraSdkHandler {
 
     @Override
     public void getDeviceCapability() {
-
+        throw new SdkUnsupportedException(CameraBrand.Dahua, "功能【获取设备能力】暂不支持！");
     }
 
     @Override
     public void getChannelCapability() {
-
+        throw new SdkUnsupportedException(CameraBrand.Dahua, "功能【获取通道能力】暂不支持！");
 
     }
 
     @Override
     public void getPtzCapability() {
-
+        throw new SdkUnsupportedException(CameraBrand.Dahua, "功能【获取云台能力】暂不支持！");
     }
 
     public void getCameraInfo() {
@@ -548,6 +552,28 @@ public class DahuaHandlerImpl implements CameraSdkHandler {
         boolean result = netsdk.CLIENT_GetChannelInfo(loginHandle, pInParam, pOutParam, 0);
         if (result) {
             System.out.println(pOutParam);
+        }
+    }
+
+    /**
+     * 获取相机当前水平、垂直和变焦倍数值
+     *
+     * @return 水平、垂直、变焦
+     */
+    public PtzPostBO getPtzPos() {
+        NetSDKLibStructure.NET_PTZ_LOCATION_INFO netPtzLocationInfo = new NetSDKLibStructure.NET_PTZ_LOCATION_INFO();
+        netPtzLocationInfo.nChannelID = 0;
+        netPtzLocationInfo.write();
+        Pointer pBuf = netPtzLocationInfo.getPointer();
+        IntByReference pRetLen = new IntByReference(0);
+        boolean pointInfo = netsdk.CLIENT_QueryDevState(loginHandle, NetSDKLibStructure.NET_DEVSTATE_PTZ_LOCATION, pBuf, netPtzLocationInfo.size(), pRetLen, 1000);
+        if (!pointInfo) {
+            System.out.println("失败，错误码：" + ToolKits.getErrorCodePrint());
+            return new PtzPostBO(0, 0, 0);
+        } else {
+            System.out.println("成功！");
+            netPtzLocationInfo.read();
+            return new PtzPostBO(netPtzLocationInfo.nPTZTilt, netPtzLocationInfo.nPTZPan, netPtzLocationInfo.nPTZZoom);
         }
     }
 }

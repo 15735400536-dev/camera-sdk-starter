@@ -11,8 +11,9 @@ import lombok.Data;
 @Data
 public class AbsoluteBO {
 
-    private double pan = 0;
-    private double tilt = 0 ;
+    private int pan = 0;
+    private int tilt = 0 ;
+    private int zoom = 0 ;
     private int speed = 1;
 
 }

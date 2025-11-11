@@ -365,7 +365,7 @@ public class UniviewHandlerImpl implements CameraSdkHandler {
 
     @Override
     public void absolute(AbsoluteBO param) {
-
+        throw new SdkUnsupportedException(CameraBrand.Uniview, "功能【精准控制】暂不支持！");
     }
 
     /**
@@ -428,17 +428,17 @@ public class UniviewHandlerImpl implements CameraSdkHandler {
 
     @Override
     public void getDeviceCapability() {
-
+        throw new SdkUnsupportedException(CameraBrand.Uniview, "功能【获取设备能力】暂不支持！");
     }
 
     @Override
     public void getChannelCapability() {
-
+        throw new SdkUnsupportedException(CameraBrand.Uniview, "功能【获取通道能力】暂不支持！");
     }
 
     @Override
     public void getPtzCapability() {
-
+        throw new SdkUnsupportedException(CameraBrand.Uniview, "功能【获取云台能力】暂不支持！");
     }
 
     /**

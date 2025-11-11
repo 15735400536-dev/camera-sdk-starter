@@ -23,7 +23,7 @@ public class GewuxinHandlerImpl implements CameraSdkHandler {
     }
 
     public static void releaseSDK() {
-
+        System.out.println("释放格物优信SDK");
     }
 
     @Override
