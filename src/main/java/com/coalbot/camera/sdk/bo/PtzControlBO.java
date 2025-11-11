@@ -23,6 +23,6 @@ public class PtzControlBO {
     /**
      * 速度，海康威视范围[1,10]，宇视范围[1,9]
      */
-    private int speed = 0;
+    private int speed = 1;
 
 }

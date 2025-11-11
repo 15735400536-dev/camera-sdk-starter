@@ -131,4 +131,9 @@ public class GewuxinHandlerImpl implements CameraSdkHandler {
     public String captureImage(CaptureImageBO param) {
         return null;
     }
+
+    @Override
+    public void absolute(AbsoluteBO param) {
+
+    }
 }

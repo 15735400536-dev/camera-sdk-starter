@@ -161,4 +161,10 @@ public interface CameraSdkHandler {
      */
     String captureImage(CaptureImageBO param);
 
+    /**
+     * 精准控制
+     * @param param 参数
+     */
+    void absolute(AbsoluteBO param);
+
 }

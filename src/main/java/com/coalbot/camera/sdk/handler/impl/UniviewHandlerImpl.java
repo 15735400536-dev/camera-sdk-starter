@@ -363,6 +363,11 @@ public class UniviewHandlerImpl implements CameraSdkHandler {
         return param.getImgPath();
     }
 
+    @Override
+    public void absolute(AbsoluteBO param) {
+
+    }
+
     /**
      * 获取聚焦模式
      */

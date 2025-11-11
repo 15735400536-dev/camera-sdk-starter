@@ -13,8 +13,11 @@ import com.coalbot.camera.sdk.handler.CameraSdkHandler;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
+import com.coalbot.camera.sdk.sdk.dahua.Utils;
 import com.coalbot.camera.sdk.sdk.dahua.demo.module.LoginModule;
+import com.coalbot.camera.sdk.util.CameraSdkUtils;
 import com.sun.jna.Memory;
+import com.sun.jna.Native;
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.IntByReference;
 
@@ -42,6 +45,10 @@ public class DahuaHandlerImpl implements CameraSdkHandler {
     private static boolean initResult = false;
     // 日志开启标记
     private static boolean logOpenResult = false;
+    /**
+     * 预览句柄
+     */
+    private static NetSDKLib.LLong lpreviewHandle = new NetSDKLib.LLong(0);
 
     // 设备断线回调: 通过 CLIENT_Init 设置该回调函数，当设备出现断线时，SDK会调用该函数
     private static class DisConnect implements NetSDKLib.fDisConnect {
@@ -73,11 +80,7 @@ public class DahuaHandlerImpl implements CameraSdkHandler {
 
         // 打开日志，可选
         NetSDKLibStructure.LOG_SET_PRINT_INFO setLog = new NetSDKLibStructure.LOG_SET_PRINT_INFO();
-        File path = new File("./sdklog/");
-        if (!path.exists()) {
-            path.mkdir();
-        }
-        String logPath = path.getAbsoluteFile().getParent() + "\\sdklog\\" + ToolKits.getDate() + ".log";
+        String logPath = CameraSdkUtils.getSdkLogPath(CameraBrand.Dahua);
         setLog.nPrintStrategy = 0;
         setLog.bSetFilePath = 1;
         System.arraycopy(logPath.getBytes(), 0, setLog.szLogFilePath, 0, logPath.getBytes().length);
@@ -105,7 +108,6 @@ public class DahuaHandlerImpl implements CameraSdkHandler {
         netParam.nGetConnInfoTime = 3000;   // 设置子连接的超时时间
         netParam.nGetDevInfoTime = 3000;    // 获取设备信息超时时间，为0默认1000ms
         netsdk.CLIENT_SetNetworkParam(netParam);
-        System.out.println("大华SDK初始化");
     }
 
     /**
@@ -157,12 +159,23 @@ public class DahuaHandlerImpl implements CameraSdkHandler {
 
     @Override
     public int startPlay() {
+        NetSDKLib.LLong m_hPlayHandle = LoginModule.netsdk.CLIENT_RealPlayEx(LoginModule.m_hLoginHandle, 0, null, NetSDKLibStructure.NET_RealPlayType.NET_RType_Realplay);
+        if (m_hPlayHandle.longValue() == 0) {
+            System.err.println("开始实时预览失败，错误码" + ToolKits.getErrorCodePrint());
+        }
         return 0;
     }
 
     @Override
     public void stopPlay(int previewHandle) {
+        if (lpreviewHandle.longValue() == 0) {
+            return;
+        }
 
+        boolean bRet = LoginModule.netsdk.CLIENT_StopRealPlayEx(lpreviewHandle);
+        if (bRet) {
+            lpreviewHandle.setValue(0);
+        }
     }
 
     /**
@@ -227,8 +240,11 @@ public class DahuaHandlerImpl implements CameraSdkHandler {
         }
 
         int ptzCommand = commandConvert(param.getCommand());
-        LoginModule.netsdk.CLIENT_DHPTZControlEx(loginHandle, 1, ptzCommand,
-                0, 0, 0, 0);
+        boolean result = LoginModule.netsdk.CLIENT_DHPTZControlEx(loginHandle, 0, ptzCommand,
+                0, param.getSpeed(), 0, 0);
+        if (!result) {
+            System.out.println("Failed!" + ToolKits.getErrorCodePrint());
+        }
     }
 
     @Override
@@ -238,8 +254,11 @@ public class DahuaHandlerImpl implements CameraSdkHandler {
         }
 
         int ptzCommand = commandConvert(param.getCommand());
-        LoginModule.netsdk.CLIENT_DHPTZControlEx(loginHandle, 1, ptzCommand,
-                0, 0, 0, 1);
+        boolean result = LoginModule.netsdk.CLIENT_DHPTZControlEx(loginHandle, 0, ptzCommand,
+                0, param.getSpeed(), 0, 1);
+        if (!result) {
+            System.out.println("Failed!" + ToolKits.getErrorCodePrint());
+        }
     }
 
     @Override
@@ -364,7 +383,7 @@ public class DahuaHandlerImpl implements CameraSdkHandler {
 
         //进行申请释放内存
         IntByReference pRetLen = new IntByReference(0);
-        boolean result = netsdk.CLIENT_QueryRemotDevState(loginHandle, NetSDKLibStructure.NET_DEVSTATE_PTZ_PRESET_LIST, 1,
+        boolean result = netsdk.CLIENT_QueryRemotDevState(loginHandle, NetSDKLibStructure.NET_DEVSTATE_PTZ_PRESET_LIST, 0,
                 ptzPresetList.getPointer(), ptzPresetList.size(), pRetLen, 1000);
         if (!result) {
             System.out.println("Failed!" + ToolKits.getErrorCodePrint());
@@ -388,28 +407,41 @@ public class DahuaHandlerImpl implements CameraSdkHandler {
 
     @Override
     public int setPreset(SetPresetBO param) {
-        throw new SdkUnsupportedException(CameraBrand.Dahua, "功能【设置预置点】暂不支持！");
+        boolean result = netsdk.CLIENT_DHPTZControlEx(loginHandle, 0, NetSDKLibStructure.NET_PTZ_ControlType.NET_PTZ_POINT_SET_CONTROL,
+                0, param.getPresetId(), 0, 0);
+        if (!result) {
+            System.out.println("Failed!" + ToolKits.getErrorCodePrint());
+        }
+        return param.getPresetId();
     }
 
     @Override
     public void deletePreset(DeletePresetBO param) {
-        throw new SdkUnsupportedException(CameraBrand.Dahua, "功能【删除预置点】暂不支持！");
+        boolean result = netsdk.CLIENT_DHPTZControlEx(loginHandle, 0, NetSDKLibStructure.NET_PTZ_ControlType.NET_PTZ_POINT_DEL_CONTROL,
+                0, param.getPresetId(), 0, 0);
+        if (!result) {
+            System.out.println("Failed!" + ToolKits.getErrorCodePrint());
+        }
     }
 
     @Override
     public void gotoPreset(GotoPresetBO param) {
-        throw new SdkUnsupportedException(CameraBrand.Dahua, "功能【调用预置点】暂不支持！");
+        boolean result = netsdk.CLIENT_DHPTZControlEx(loginHandle, 0, NetSDKLibStructure.NET_PTZ_ControlType.NET_PTZ_POINT_MOVE_CONTROL,
+                0, param.getPresetId(), 0, 0);
+        if (!result) {
+            System.out.println("Failed!" + ToolKits.getErrorCodePrint());
+        }
     }
 
     @Override
     public void controlLight(ControlLightBO param) {
         switch (param.getCommand()) {
             case "on":
-                LoginModule.netsdk.CLIENT_DHPTZControlEx(loginHandle, 1, NetSDKLibStructure.NET_PTZ_ControlType.NET_PTZ_LAMP_CONTROL,
+                netsdk.CLIENT_DHPTZControlEx(loginHandle, 0, NetSDKLibStructure.NET_PTZ_ControlType.NET_PTZ_LAMP_CONTROL,
                         0, 0, 0, 0);
                 break;
             case "off":
-                LoginModule.netsdk.CLIENT_DHPTZControlEx(loginHandle, 1, NetSDKLibStructure.NET_PTZ_ControlType.NET_PTZ_LAMP_CONTROL,
+                netsdk.CLIENT_DHPTZControlEx(loginHandle, 0, NetSDKLibStructure.NET_PTZ_ControlType.NET_PTZ_LAMP_CONTROL,
                         0, 0, 0, 1);
                 break;
             default:
@@ -421,11 +453,11 @@ public class DahuaHandlerImpl implements CameraSdkHandler {
     public void controlWiper(ControlWiperBO param) {
         switch (param.getCommand()) {
             case "on":
-                LoginModule.netsdk.CLIENT_DHPTZControlEx(loginHandle, 1, NetSDKLibStructure.NET_PTZ_ControlType.NET_PTZ_LAMP_CONTROL,
+                netsdk.CLIENT_DHPTZControlEx(loginHandle, 0, NetSDKLibStructure.NET_PTZ_ControlType.NET_PTZ_LAMP_CONTROL,
                         0, 0, 0, 0);
                 break;
             case "off":
-                LoginModule.netsdk.CLIENT_DHPTZControlEx(loginHandle, 1, NetSDKLibStructure.NET_PTZ_ControlType.NET_PTZ_LAMP_CONTROL,
+                LoginModule.netsdk.CLIENT_DHPTZControlEx(loginHandle, 0, NetSDKLibStructure.NET_PTZ_ControlType.NET_PTZ_LAMP_CONTROL,
                         0, 0, 0, 1);
                 break;
             default:
@@ -468,5 +500,15 @@ public class DahuaHandlerImpl implements CameraSdkHandler {
             throw new CameraSdkException("抓图失败！");
         }
         return param.getImgPath();
+    }
+
+    @Override
+    public void absolute(AbsoluteBO param) {
+        boolean result = netsdk.CLIENT_DHPTZControlEx2(loginHandle, 0, NetSDKLibStructure.NET_EXTPTZ_ControlType.NET_EXTPTZ_BASE_MOVE_ABSOLUTELY,
+                0, param.getSpeed(), 0, 0, null);
+        if (!result) {
+            System.out.println("Failed!" + ToolKits.getErrorCodePrint());
+        }
+        //throw new SdkUnsupportedException(CameraBrand.Dahua, "功能【精准控制】暂不支持！");
     }
 }

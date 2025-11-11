@@ -1501,8 +1501,8 @@ public class NetSDKLibStructure {
         public byte[]           bReserved = new byte[2];              // 保留字节,字节对齐
         public int              byLockLeftTime;                       // 当登陆失败,用户解锁剩余时间（秒数）, -1表示设备未设置该参数
         public byte[]           Reserved = new byte[4];               // 保留
-        public int              nNTlsPort;                            //国密TLS登录端口,仅登录错误码为24时有效
-        public byte[]           Reserved2 = new byte[16];             //保留
+        public int              nNTlsPort;                            // 国密TLS登录端口,仅登录错误码为24时有效
+        public byte[]           Reserved2 = new byte[16];             // 保留
     }
 
     // 对应接口 CLIENT_LoginEx2/////////////////////////////////////////////////////////

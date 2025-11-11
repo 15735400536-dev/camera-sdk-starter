@@ -421,4 +421,9 @@ public class HikvisionHandlerImpl implements CameraSdkHandler {
         }
         return param.getImgPath();
     }
+
+    @Override
+    public void absolute(AbsoluteBO param) {
+
+    }
 }
