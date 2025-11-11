@@ -48,9 +48,9 @@ public class NET_CFG_WATER_RADAR_INFO extends NetSDKLibStructure.SdkStructure
     */
     public int              nUploadInterval;
     /**
-     * 水位报警联动,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_ALARM_MSG_HANDLE}
+     * 水位报警联动,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_ALARM_MSG_HANDLE}
     */
-    public NetSDKLib.NET_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLib.NET_ALARM_MSG_HANDLE();
+    public NetSDKLibStructure.NET_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLibStructure.NET_ALARM_MSG_HANDLE();
 
     public NET_CFG_WATER_RADAR_INFO() {
         this.dwSize = this.size();

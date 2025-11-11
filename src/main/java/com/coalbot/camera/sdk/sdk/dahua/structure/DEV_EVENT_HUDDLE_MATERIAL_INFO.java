@@ -1,9 +1,5 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.EVENT_INTELLI_COMM_INFO;
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_MSG_OBJECT;
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_POINT;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
@@ -24,7 +20,7 @@ public class DEV_EVENT_HUDDLE_MATERIAL_INFO extends NetSDKLibStructure.SdkStruct
 	/**
 	 * 事件名称
 	 */
-    public byte[]           szName = new byte[NetSDKLib.NET_COMMON_STRING_128];
+    public byte[]           szName = new byte[NetSDKLibStructure.NET_COMMON_STRING_128];
 	/**
 	 * 时间戳(单位是毫秒)
 	 */
@@ -40,11 +36,11 @@ public class DEV_EVENT_HUDDLE_MATERIAL_INFO extends NetSDKLibStructure.SdkStruct
 	/**
 	 * 事件对应文件信息
 	 */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo;
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;
 	/**
 	 * 规则检测区域
 	 */
-    public NetSDKLibStructure.NET_POINT[]      DetectRegion = new NET_POINT[NetSDKLib.NET_MAX_DETECT_REGION_NUM];
+    public NetSDKLibStructure.NET_POINT[]      DetectRegion = new NetSDKLibStructure.NET_POINT[NetSDKLibStructure.NET_MAX_DETECT_REGION_NUM];
 	/**
 	 * 规则检测区域顶点数
 	 */
@@ -52,7 +48,7 @@ public class DEV_EVENT_HUDDLE_MATERIAL_INFO extends NetSDKLibStructure.SdkStruct
 	/**
 	 * 检测到的物体
 	 */
-    public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NET_MSG_OBJECT[NetSDKLib.HDBJ_MAX_OBJECTS_NUM];
+    public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[NetSDKLibStructure.HDBJ_MAX_OBJECTS_NUM];
 	/**
 	 * 检测到的物体个数
 	 */
@@ -64,7 +60,7 @@ public class DEV_EVENT_HUDDLE_MATERIAL_INFO extends NetSDKLibStructure.SdkStruct
 	/**
 	 * 事件触发的预置名称
 	 */
-    public byte[]           szPresetName = new byte[NetSDKLib.NET_COMMON_STRING_64];
+    public byte[]           szPresetName = new byte[NetSDKLibStructure.NET_COMMON_STRING_64];
 	/**
 	 * 违法持续时长，单位：秒，缺省值0表示无意义
 	 */
@@ -72,7 +68,7 @@ public class DEV_EVENT_HUDDLE_MATERIAL_INFO extends NetSDKLibStructure.SdkStruct
 	/**
 	 * 事件关联ID,同一个物体或图片生成多个事件时SourceID相同
 	 */
-    public byte[]           szSourceID = new byte[NetSDKLib.NET_COMMON_STRING_32];
+    public byte[]           szSourceID = new byte[NetSDKLibStructure.NET_COMMON_STRING_32];
 	/**
 	 * 抓图标志(按位),具体见NET_RESERVED_COMMON
 	 */
@@ -80,7 +76,7 @@ public class DEV_EVENT_HUDDLE_MATERIAL_INFO extends NetSDKLibStructure.SdkStruct
 	/**
 	 * 全景图图片信息,事件前2~5s抓图
 	 */
-    public NetSDKLib.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO_EX();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO_EX();
 	/**
 	 * 图片信息数组,指针对应NET_IMAGE_INFO_EX2数组
 	 */
@@ -124,15 +120,15 @@ public class DEV_EVENT_HUDDLE_MATERIAL_INFO extends NetSDKLibStructure.SdkStruct
 	/**
 	 * 保留字节,留待扩展
 	 */
-    public byte[]           byReserved = new byte[3232-NetSDKLib.POINTERSIZE*3];
+    public byte[]           byReserved = new byte[3232-NetSDKLibStructure.POINTERSIZE*3];
 
 	public DEV_EVENT_HUDDLE_MATERIAL_INFO() {
 		for (int i = 0; i < stuObjects.length; ++i) {
-			stuObjects[i] = new NET_MSG_OBJECT();
+			stuObjects[i] = new NetSDKLibStructure.NET_MSG_OBJECT();
 		}
 
 		for (int i = 0; i < DetectRegion.length; ++i) {
-			DetectRegion[i] = new NET_POINT();
+			DetectRegion[i] = new NetSDKLibStructure.NET_POINT();
 		}
 	}
 }

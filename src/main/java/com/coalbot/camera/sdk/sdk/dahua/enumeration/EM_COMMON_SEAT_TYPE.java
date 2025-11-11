@@ -1,7 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.enumeration;
 
-
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 默认检测最大座驾个数

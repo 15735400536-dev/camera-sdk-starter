@@ -1,9 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_MAX_DETECT_REGION_NUM;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author ： 260611
@@ -47,7 +44,7 @@ public class DEV_EVENT_DREGS_UNCOVERED_INFO extends NetSDKLibStructure.SdkStruct
     /**
      * 检测区域,[0,8191]
      */
-    public NetSDKLib.NET_POINT[] stuDetectRegion = (NetSDKLib.NET_POINT[]) new NetSDKLib.NET_POINT().toArray(NET_MAX_DETECT_REGION_NUM);
+    public NetSDKLibStructure.NET_POINT[] stuDetectRegion = (NetSDKLibStructure.NET_POINT[]) new NetSDKLibStructure.NET_POINT().toArray(NetSDKLibStructure.NET_MAX_DETECT_REGION_NUM);
     /**
      * 车辆信息
      */

@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 分割窗口信息
 */
@@ -19,9 +21,9 @@ public class NET_SPLIT_WINDOW extends NetSDKLibStructure.SdkStructure
     */
     public byte[]           szControlID = new byte[128];
     /**
-     * 窗口区域, 自由分割模式下有效,参见结构体定义 {@link NetSDKLib.NET_RECT}
+     * 窗口区域, 自由分割模式下有效,参见结构体定义 {@link NetSDKLibStructure.NET_RECT}
     */
-    public NetSDKLib.NET_RECT stuRect = new NetSDKLib.NET_RECT();
+    public NetSDKLibStructure.NET_RECT stuRect = new NetSDKLibStructure.NET_RECT();
     /**
      * 坐标是否满足直通条件
     */
@@ -39,9 +41,9 @@ public class NET_SPLIT_WINDOW extends NetSDKLibStructure.SdkStructure
     */
     public int              nOSDNum;
     /**
-     * OSD信息,参见结构体定义 {@link NetSDKLib.NET_SPLIT_OSD}
+     * OSD信息,参见结构体定义 {@link NetSDKLibStructure.NET_SPLIT_OSD}
     */
-    public NetSDKLib.NET_SPLIT_OSD[] stuOSD = new NetSDKLib.NET_SPLIT_OSD[256];
+    public NetSDKLibStructure.NET_SPLIT_OSD[] stuOSD = new NetSDKLibStructure.NET_SPLIT_OSD[256];
     /**
      * 窗口是否被锁定位置
     */
@@ -66,7 +68,7 @@ public class NET_SPLIT_WINDOW extends NetSDKLibStructure.SdkStructure
     public NET_SPLIT_WINDOW() {
         this.dwSize = this.size();
         for(int i = 0; i < stuOSD.length; i++){
-            stuOSD[i] = new NetSDKLib.NET_SPLIT_OSD();
+            stuOSD[i] = new NetSDKLibStructure.NET_SPLIT_OSD();
         }
     }
 }

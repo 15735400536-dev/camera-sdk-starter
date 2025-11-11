@@ -1,8 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.MAX_COURSE_LOGIC_CHANNEL;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 获取指定教室的录像信息出参 {@link NetSDKLib#CLIENT_OperateCourseRecordManager}
@@ -22,7 +21,7 @@ public class NET_OUT_COURSERECORD_GETINFO extends NetSDKLibStructure.SdkStructur
     /**
      * 0:无效,1:录像,2不录像,下标对应为逻辑通道号
      */
-    public int[]            nCanRecord = new int[MAX_COURSE_LOGIC_CHANNEL];
+    public int[]            nCanRecord = new int[NetSDKLibStructure.MAX_COURSE_LOGIC_CHANNEL];
 
     public NET_OUT_COURSERECORD_GETINFO() {
         dwSize = this.size();

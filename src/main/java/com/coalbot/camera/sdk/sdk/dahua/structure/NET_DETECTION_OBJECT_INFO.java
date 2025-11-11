@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 隔栏传物事件检测到的目标信息结构体
 */

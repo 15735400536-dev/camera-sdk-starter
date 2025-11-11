@@ -1,9 +1,9 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-/** 
+/**
 CLIENT_SetTransmitTunnelParam 接口输入参数
 */
 public class NET_IN_SET_TRANSMITTUNNEL_PARAM extends NetSDKLibStructure.SdkStructure {

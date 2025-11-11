@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 删除课程记录 出参指针 {@link NetSDKLib#CLIENT_DeleteCourse}

@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -23,7 +24,7 @@ public class NET_GETSUMMARY_REGION_LIST_INFO extends NetSDKLibStructure.SdkStruc
     /**
      *  区域坐标
      */
-    public NetSDKLib.NET_POINT[] stuRegionPoint = (NetSDKLib.NET_POINT[]) new NetSDKLib.NET_POINT().toArray(20);
+    public NetSDKLibStructure.NET_POINT[] stuRegionPoint = (NetSDKLibStructure.NET_POINT[]) new NetSDKLibStructure.NET_POINT().toArray(20);
     /**
      *  保留字节
      */

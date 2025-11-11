@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 260611
@@ -32,7 +32,7 @@ public class DEV_ALRAM_SCENECHANGE_INFO extends NetSDKLibStructure.SdkStructure 
 	/**
 	 * / 事件对应文件信息
 	 */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLib.NET_EVENT_FILE_INFO();
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLibStructure.NET_EVENT_FILE_INFO();
 	/**
 	 * / 图片的序号, 同一时间内(精确到秒)可能有多张图片, 从0开始
 	 */

@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 录像/图片存储点配置, 对应 NET_EM_CFG_RECORD_STORAGE_POINT
 */

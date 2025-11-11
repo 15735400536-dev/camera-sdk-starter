@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.NET_EM_RECORD_MODE;
 
 /**

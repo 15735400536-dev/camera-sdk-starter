@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 目标识别联动报警通道配置, 对应枚举 NET_EM_CFG_FACE_RECOGNITION_ALARM
 */

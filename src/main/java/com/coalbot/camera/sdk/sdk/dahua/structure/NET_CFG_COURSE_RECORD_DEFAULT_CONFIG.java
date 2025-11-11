@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_CAN_START_STREAM;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_COMPOSIT_CHANNEL_BIND_MODE;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_IS_RECORD;

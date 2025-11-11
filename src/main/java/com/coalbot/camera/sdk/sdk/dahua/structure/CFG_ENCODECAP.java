@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.CFG_EM_PREVIEW_MODE;
 
 import static com.coalbot.camera.sdk.sdk.dahua.constant.SDKStructureFieldLenth.CFG_MAX_PREVIEW_MODE_SPLIT_TYPE_NUM;

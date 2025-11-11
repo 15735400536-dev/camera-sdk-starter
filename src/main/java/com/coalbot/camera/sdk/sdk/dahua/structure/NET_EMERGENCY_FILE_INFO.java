@@ -34,11 +34,11 @@ public class NET_EMERGENCY_FILE_INFO extends NetSDKLibStructure.SdkStructure
     /**
      * 文件开始时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stStartTime = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stStartTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 文件结束时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stEndTime = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stEndTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 文件长度
     */
@@ -46,11 +46,11 @@ public class NET_EMERGENCY_FILE_INFO extends NetSDKLibStructure.SdkStructure
     /**
      * UTC开始时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuStartTimeRealUTC = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuStartTimeRealUTC = new NetSDKLibStructure.NET_TIME();
     /**
      * UTC结束时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuEndTimeRealUTC = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuEndTimeRealUTC = new NetSDKLibStructure.NET_TIME();
     /**
      * 录像标志数组,参见枚举定义 {@link com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_MOBILE_ENFORCE_FLAGS}
     */

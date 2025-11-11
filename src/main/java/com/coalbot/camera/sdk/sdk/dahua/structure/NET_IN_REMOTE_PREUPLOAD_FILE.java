@@ -1,5 +1,5 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 /**
  * CLIENT_RemotePreUploadFile 接口输入参数(前端设备预上传文件)
 */

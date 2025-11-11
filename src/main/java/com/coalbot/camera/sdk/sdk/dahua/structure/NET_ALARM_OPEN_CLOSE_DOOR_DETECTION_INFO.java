@@ -1,5 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 /**
  * 事件类型 DH_ALARM_OPEN_CLOSE_DOOR_DETECTION (反复开关门事件)对应的数据块描述信息
 */
@@ -18,9 +19,9 @@ public class NET_ALARM_OPEN_CLOSE_DOOR_DETECTION_INFO extends NetSDKLibStructure
     */
     public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND();
     /**
-     * 事件发生的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX stuUTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX stuUTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 事件编号，用来唯一标志一个事件
     */
@@ -62,13 +63,13 @@ public class NET_ALARM_OPEN_CLOSE_DOOR_DETECTION_INFO extends NetSDKLibStructure
     */
     public int              nObjectsNum;
     /**
-     * 全景广角图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.SCENE_IMAGE_INFO_EX}
+     * 全景广角图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SCENE_IMAGE_INFO_EX}
     */
-    public NetSDKLib.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO_EX();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO_EX();
     /**
-     * 物体信息列表,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_MSG_OBJECT}
+     * 物体信息列表,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_MSG_OBJECT}
     */
-    public NetSDKLib.NET_MSG_OBJECT[] stuObjects = new NetSDKLib.NET_MSG_OBJECT[64];
+    public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[64];
     /**
      * 规则区域,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_POINT_EX}
     */
@@ -88,7 +89,7 @@ public class NET_ALARM_OPEN_CLOSE_DOOR_DETECTION_INFO extends NetSDKLibStructure
 
     public NET_ALARM_OPEN_CLOSE_DOOR_DETECTION_INFO() {
         for(int i = 0; i < stuObjects.length; i++){
-            stuObjects[i] = new NetSDKLib.NET_MSG_OBJECT();
+            stuObjects[i] = new NetSDKLibStructure.NET_MSG_OBJECT();
         }
         for(int i = 0; i < stuDetectRegion.length; i++){
             stuDetectRegion[i] = new NET_POINT_EX();

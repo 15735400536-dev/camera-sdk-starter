@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * CLIENT_QueryDevInfo NET_QUERY_GET_ALL_PARKING_SPACE_STATUS 类型接口输出参数
 */

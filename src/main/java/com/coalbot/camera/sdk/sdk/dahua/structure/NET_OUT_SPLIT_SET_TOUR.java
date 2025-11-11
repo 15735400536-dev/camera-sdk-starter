@@ -1,5 +1,5 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 /**
  * 窗口轮巡控制输出参数, 对应NET_SPLIT_OPERATE_SET_TOUR
 */

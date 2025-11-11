@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 事件类型 DH_ALARM_DRASTIC_MOTION (剧烈运动报警)对应的数据块描述信息
 */
@@ -18,9 +20,9 @@ public class NET_ALARM_DRASTIC_MOTION_INFO extends NetSDKLibStructure.SdkStructu
     */
     public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND();
     /**
-     * 事件发生的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX stuUTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX stuUTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 用户ID
     */
@@ -30,9 +32,9 @@ public class NET_ALARM_DRASTIC_MOTION_INFO extends NetSDKLibStructure.SdkStructu
     */
     public byte[]           szUserName = new byte[128];
     /**
-     * GPS信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_GPS_STATUS_INFO}
+     * GPS信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_GPS_STATUS_INFO}
     */
-    public NetSDKLib.NET_GPS_STATUS_INFO stuGPSStatusInfo = new NetSDKLib.NET_GPS_STATUS_INFO();
+    public NetSDKLibStructure.NET_GPS_STATUS_INFO stuGPSStatusInfo = new NetSDKLibStructure.NET_GPS_STATUS_INFO();
     /**
      * 预留字节
     */

@@ -1,11 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
-/**
- * @author 47081
- * @desc
- * @version 1.0.0
- * @date 2021/4/9
- */
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 47081

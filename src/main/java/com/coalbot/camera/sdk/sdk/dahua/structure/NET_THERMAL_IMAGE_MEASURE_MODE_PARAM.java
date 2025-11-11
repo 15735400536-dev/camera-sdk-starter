@@ -1,7 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 热成像模式下参数

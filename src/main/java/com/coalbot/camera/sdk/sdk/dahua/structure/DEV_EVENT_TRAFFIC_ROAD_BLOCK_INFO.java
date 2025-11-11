@@ -6,10 +6,7 @@ package com.coalbot.camera.sdk.sdk.dahua.structure;
  * @date 2020/12/21
  */
 
-
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.EVENT_COMM_INFO;
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_EVENT_FILE_INFO;
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_RECT;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SdkStructure;
 import com.sun.jna.Pointer;
 
@@ -53,7 +50,7 @@ public class DEV_EVENT_TRAFFIC_ROAD_BLOCK_INFO extends SdkStructure {
 	/**
 	 * 公共信息
 	 */
-    public EVENT_COMM_INFO  stCommInfo;
+    public NetSDKLibStructure.EVENT_COMM_INFO  stCommInfo;
 	/**
 	 * 抓图标志(按位),具体见NET_RESERVED_COMMON
 	 */
@@ -69,6 +66,6 @@ public class DEV_EVENT_TRAFFIC_ROAD_BLOCK_INFO extends SdkStructure {
 	/**
 	 * 预留字节
 	 */
-    public byte[]           bReserved = new byte[4088 - NetSDKLib.POINTERSIZE];
+    public byte[]           bReserved = new byte[4088 - NetSDKLibStructure.POINTERSIZE];
 }
 

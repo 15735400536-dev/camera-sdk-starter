@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description  RFID 电子车牌标签信息 
 * @date 2022/10/13 14:39:18

@@ -1,6 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * @author 251823
  * @description 人数统计大类场景

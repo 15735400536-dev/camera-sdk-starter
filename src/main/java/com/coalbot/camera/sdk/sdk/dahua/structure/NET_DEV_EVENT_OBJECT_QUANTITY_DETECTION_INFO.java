@@ -18,9 +18,9 @@ public class NET_DEV_EVENT_OBJECT_QUANTITY_DETECTION_INFO extends NetSDKLibStruc
     */
     public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND();
     /**
-     * 事件发生的时间,参见结构体定义 {@link NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX stuUTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX stuUTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 事件ID
     */
@@ -38,9 +38,9 @@ public class NET_DEV_EVENT_OBJECT_QUANTITY_DETECTION_INFO extends NetSDKLibStruc
     */
     public double           dbPTS;
     /**
-     * 检测目标的物体信息,参见结构体定义 {@link NetSDKLib.NET_MSG_OBJECT}
+     * 检测目标的物体信息,参见结构体定义 {@link NetSDKLibStructure.NET_MSG_OBJECT}
     */
-    public NetSDKLib.NET_MSG_OBJECT[] stuObjects = new NetSDKLib.NET_MSG_OBJECT[128];
+    public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[128];
     /**
      * 实际有效目标检测信息个数
     */
@@ -60,7 +60,7 @@ public class NET_DEV_EVENT_OBJECT_QUANTITY_DETECTION_INFO extends NetSDKLibStruc
 
     public NET_DEV_EVENT_OBJECT_QUANTITY_DETECTION_INFO() {
         for(int i = 0; i < stuObjects.length; i++){
-            stuObjects[i] = new NetSDKLib.NET_MSG_OBJECT();
+            stuObjects[i] = new NetSDKLibStructure.NET_MSG_OBJECT();
         }
     }
 }

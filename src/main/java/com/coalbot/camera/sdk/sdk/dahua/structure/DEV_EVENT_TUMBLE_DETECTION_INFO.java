@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 import java.util.Arrays;
@@ -57,7 +58,7 @@ public class DEV_EVENT_TUMBLE_DETECTION_INFO extends NetSDKLibStructure.SdkStruc
 	/**
 	 * 物体包围盒
 	 */
-    public NetSDKLib.NET_RECT stuBoundingBox;
+    public NetSDKLibStructure.NET_RECT stuBoundingBox;
 	/**
 	 * 智能物体全局唯一物体标识 有效数据位21位，包含’\0’ 前2位%d%d:01-视频片段, 02-图片, 03-文件, 99-其他
 	 * 中间14位YYYYMMDDhhmmss:年月日时分秒 后5位%u%u%u%u%u：物体ID，如00001
@@ -66,7 +67,7 @@ public class DEV_EVENT_TUMBLE_DETECTION_INFO extends NetSDKLibStructure.SdkStruc
 	/**
 	 * 全景广角图
 	 */
-    public NetSDKLib.SCENE_IMAGE_INFO stuSceneImage;
+    public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImage;
 	/**
 	 * 图片信息数组,结构体NET_IMAGE_INFO_EX2数组指针
 	 */
@@ -100,7 +101,7 @@ public class DEV_EVENT_TUMBLE_DETECTION_INFO extends NetSDKLibStructure.SdkStruc
     */
     public int              nIndexInDataInFaceSceneImage;
     /**
-     * 人体属性信息,参见结构体定义 {@link NetSDKLib.HUMAN_ATTRIBUTES_INFO}
+     * 人体属性信息,参见结构体定义 {@link NetSDKLibStructure.HUMAN_ATTRIBUTES_INFO}
     */
     public Pointer          pstuHumanAttributes;
     /**
@@ -108,13 +109,13 @@ public class DEV_EVENT_TUMBLE_DETECTION_INFO extends NetSDKLibStructure.SdkStruc
     */
     public Pointer          pstuHumanAttributesEx;
     /**
-     * 人脸属性,参见结构体定义 {@link NetSDKLib.NET_FACE_ATTRIBUTE}
+     * 人脸属性,参见结构体定义 {@link NetSDKLibStructure.NET_FACE_ATTRIBUTE}
     */
     public Pointer          pstuFaceAttributes;
 	/**
 	 * 保留字节
 	 */
-    public byte[]           bReserved = new byte[822-3*NetSDKLib.POINTERSIZE];
+    public byte[]           bReserved = new byte[822-3*NetSDKLibStructure.POINTERSIZE];
 
 	public DEV_EVENT_TUMBLE_DETECTION_INFO() {
 		for (int i = 0; i < stuDetectRegion.length; i++) {

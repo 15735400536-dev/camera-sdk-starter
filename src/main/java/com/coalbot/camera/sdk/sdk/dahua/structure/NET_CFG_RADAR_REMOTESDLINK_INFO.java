@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 雷达远程球机联动使能配置(对应 NET_EM_CFG_RADAR_REMOTESDLINK)
 */

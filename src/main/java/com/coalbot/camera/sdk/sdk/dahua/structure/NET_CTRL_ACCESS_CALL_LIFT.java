@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description  门禁控制-呼梯(对应CLIENT_ControlDevice接口的 DH_CTRL_ACCESS_CALL_LIFT 命令) 
 * @date 2022/10/19 14:01:08

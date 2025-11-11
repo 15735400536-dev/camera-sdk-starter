@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description  对应检测类型(NET_DIAGNOSIS_PTZ_MOVING)云台移动检测结果 
 * @date 2022/08/03 14:26:52

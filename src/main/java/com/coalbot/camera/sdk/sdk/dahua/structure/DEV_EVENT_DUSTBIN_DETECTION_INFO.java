@@ -1,6 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
+
 /**
  * 事件类型 EVENT_IVS_DUSTBIN_DETECTION (垃圾桶检测事件)对应的数据块描述信息
 */
@@ -43,9 +45,9 @@ public class DEV_EVENT_DUSTBIN_DETECTION_INFO extends NetSDKLibStructure.SdkStru
     */
     public double           dbPTS;
     /**
-     * 事件发生的时间,参见结构体定义 {@link NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX stuUTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX stuUTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 事件ID
     */
@@ -55,13 +57,13 @@ public class DEV_EVENT_DUSTBIN_DETECTION_INFO extends NetSDKLibStructure.SdkStru
     */
     public int              nObjectNum;
     /**
-     * 表示检测到的物体信息,参见结构体定义 {@link NetSDKLib.NET_MSG_OBJECT_EX2}
+     * 表示检测到的物体信息,参见结构体定义 {@link NetSDKLibStructure.NET_MSG_OBJECT_EX2}
     */
-    public NetSDKLib.NET_MSG_OBJECT_EX2[] stuObjects = new NetSDKLib.NET_MSG_OBJECT_EX2[64];
+    public NetSDKLibStructure.NET_MSG_OBJECT_EX2[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT_EX2[64];
     /**
-     * 检测区,参见结构体定义 {@link NetSDKLib.NET_POINT}
+     * 检测区,参见结构体定义 {@link NetSDKLibStructure.NET_POINT}
     */
-    public NetSDKLib.NET_POINT[] stuDetectRegion = new NetSDKLib.NET_POINT[20];
+    public NetSDKLibStructure.NET_POINT[] stuDetectRegion = new NetSDKLibStructure.NET_POINT[20];
     /**
      * 检测区个数
     */
@@ -93,14 +95,14 @@ public class DEV_EVENT_DUSTBIN_DETECTION_INFO extends NetSDKLibStructure.SdkStru
     /**
      * 预留字节
     */
-    public byte[]           szReserved = new byte[1024-NetSDKLib.POINTERSIZE];
+    public byte[]           szReserved = new byte[1024-NetSDKLibStructure.POINTERSIZE];
 
     public DEV_EVENT_DUSTBIN_DETECTION_INFO() {
         for(int i = 0; i < stuObjects.length; i++){
-            stuObjects[i] = new NetSDKLib.NET_MSG_OBJECT_EX2();
+            stuObjects[i] = new NetSDKLibStructure.NET_MSG_OBJECT_EX2();
         }
         for(int i = 0; i < stuDetectRegion.length; i++){
-            stuDetectRegion[i] = new NetSDKLib.NET_POINT();
+            stuDetectRegion[i] = new NetSDKLibStructure.NET_POINT();
         }
     }
 }

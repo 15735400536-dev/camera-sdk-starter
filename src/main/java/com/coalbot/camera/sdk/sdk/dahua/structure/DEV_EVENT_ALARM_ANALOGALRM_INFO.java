@@ -1,7 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 260611
@@ -36,7 +36,7 @@ public class DEV_EVENT_ALARM_ANALOGALRM_INFO extends NetSDKLibStructure.SdkStruc
     /**
      * 事件对应文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLib.NET_EVENT_FILE_INFO();
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLibStructure.NET_EVENT_FILE_INFO();
     /**
      * 模拟量报警通道号
      */

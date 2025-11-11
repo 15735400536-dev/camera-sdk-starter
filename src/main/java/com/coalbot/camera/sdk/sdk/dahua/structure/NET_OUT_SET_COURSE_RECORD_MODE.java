@@ -1,6 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 设置录像模式出参，对应接口{@link NetSDKLib#CLIENT_SetCourseRecordMode }

@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 查询到的结果集合
 */
@@ -20,7 +22,7 @@ public class NET_LARGE_MODE_FIND_RESULT_DETAIL_INFO extends NetSDKLibStructure.S
     /**
      * 抓图时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 抓图事件ID
     */
@@ -56,7 +58,7 @@ public class NET_LARGE_MODE_FIND_RESULT_DETAIL_INFO extends NetSDKLibStructure.S
     /**
      * 事件触发的前端时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuEventTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuEventTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 目标小图文件路径
     */

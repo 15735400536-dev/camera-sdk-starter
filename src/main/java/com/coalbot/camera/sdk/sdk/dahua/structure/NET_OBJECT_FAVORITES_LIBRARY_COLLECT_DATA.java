@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 收藏的目标事件数据
 */
@@ -16,11 +18,11 @@ public class NET_OBJECT_FAVORITES_LIBRARY_COLLECT_DATA extends NetSDKLibStructur
     /**
      * 目标事件时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuTime = new NetSDKLibStructure.NET_TIME();
     /**
-     * 全景广角图,参见结构体定义 {@link NetSDKLib.SCENE_IMAGE_INFO_EX}
+     * 全景广角图,参见结构体定义 {@link NetSDKLibStructure.SCENE_IMAGE_INFO_EX}
     */
-    public NetSDKLib.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO_EX();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO_EX();
     /**
      * 目标信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_OBJECT_FAVORITES_LIBRARY_COLLECT_DATA_OBJECT}
     */

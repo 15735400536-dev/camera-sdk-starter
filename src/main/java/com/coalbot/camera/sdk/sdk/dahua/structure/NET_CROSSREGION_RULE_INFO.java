@@ -1,6 +1,5 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.EM_CATEGORY_TYPE;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.POINTCOORDINATE;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SdkStructure;
 /**

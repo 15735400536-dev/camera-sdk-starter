@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 /**
  * @author 251823
@@ -11,7 +12,7 @@ public class CFG_CAP_SCENE extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 场景名称
 	 */
-    public byte[]           szSceneName = new byte[NetSDKLib.MAX_PATH];
+    public byte[]           szSceneName = new byte[NetSDKLibStructure.MAX_PATH];
 	/**
 	 * 当前规则类型支持的检测物体类型个数
 	 */
@@ -19,7 +20,7 @@ public class CFG_CAP_SCENE extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 当前规则类型支持的检测物体类型列表
 	 */
-    public MaxNameByteArrInfo[] szObjectTypeName = (MaxNameByteArrInfo[])new MaxNameByteArrInfo().toArray(NetSDKLib.MAX_OBJECT_LIST_SIZE);
+    public MaxNameByteArrInfo[] szObjectTypeName = (MaxNameByteArrInfo[])new MaxNameByteArrInfo().toArray(NetSDKLibStructure.MAX_OBJECT_LIST_SIZE);
 	/**
 	 * 支持的规则个数
 	 */
@@ -27,7 +28,7 @@ public class CFG_CAP_SCENE extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 支持的规则列表
 	 */
-    public SCENE_SUPPORT_RULE[] stSpportRules = (SCENE_SUPPORT_RULE[])new SCENE_SUPPORT_RULE().toArray(NetSDKLib.MAX_RULE_LIST_SIZE);
+    public SCENE_SUPPORT_RULE[] stSpportRules = (SCENE_SUPPORT_RULE[])new SCENE_SUPPORT_RULE().toArray(NetSDKLibStructure.MAX_RULE_LIST_SIZE);
 	/**
 	 * 是否支持扰动强度设置  
 	 */
@@ -119,7 +120,7 @@ public class CFG_CAP_SCENE extends NetSDKLibStructure.SdkStructure {
     /**
      *  标定区域能力信息
      */
-    public CFG_CAP_CELIBRATE_AREA[] stCalibrateAreaCap = (CFG_CAP_CELIBRATE_AREA[])new CFG_CAP_CELIBRATE_AREA().toArray(NetSDKLib.MAX_CALIBRATEAREA_TYPE_NUM);
+    public CFG_CAP_CELIBRATE_AREA[] stCalibrateAreaCap = (CFG_CAP_CELIBRATE_AREA[])new CFG_CAP_CELIBRATE_AREA().toArray(NetSDKLibStructure.MAX_CALIBRATEAREA_TYPE_NUM);
     /**
      *  是否支持像素计量方式
      */
@@ -135,7 +136,7 @@ public class CFG_CAP_SCENE extends NetSDKLibStructure.SdkStructure {
     /**
      *  当前场景下支持的子场景类型
      */
-    public MaxSceneSupTypeByteArrInfo[] szSubType = (MaxSceneSupTypeByteArrInfo[])new MaxSceneSupTypeByteArrInfo().toArray(NetSDKLib.MAX_SCENE_SUBTYPE_NUM);
+    public MaxSceneSupTypeByteArrInfo[] szSubType = (MaxSceneSupTypeByteArrInfo[])new MaxSceneSupTypeByteArrInfo().toArray(NetSDKLibStructure.MAX_SCENE_SUBTYPE_NUM);
     /**
      *  子场景类型个数
      */
@@ -207,7 +208,7 @@ public class CFG_CAP_SCENE extends NetSDKLibStructure.SdkStructure {
     /**
      *  保留字节
      */
-    public byte[]           byReserved = new byte[1024-2*NetSDKLib.POINTERSIZE];
+    public byte[]           byReserved = new byte[1024-2*NetSDKLibStructure.POINTERSIZE];
 
 	public CFG_CAP_SCENE() {
 		for (int i = 0; i < szObjectTypeName.length; i++) {

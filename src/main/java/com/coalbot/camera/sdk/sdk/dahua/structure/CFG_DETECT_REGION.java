@@ -7,8 +7,8 @@ package com.coalbot.camera.sdk.sdk.dahua.structure;
  */
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.CFG_COMMON_STRING_64;
 import static com.coalbot.camera.sdk.sdk.dahua.constant.SDKStructureFieldLenth.MAX_MOTION_ROW;
 
 /**
@@ -21,7 +21,7 @@ public class CFG_DETECT_REGION extends NetSDKLibStructure.SdkStructure {
   /** 区域ID */
     public int              nRegionID;
   /** 动态窗口名称 */
-    public byte[]           szRegionName = new byte[CFG_COMMON_STRING_64];
+    public byte[]           szRegionName = new byte[NetSDKLibStructure.CFG_COMMON_STRING_64];
   /** 面积阀值，取值[0, 100] */
     public int              nThreshold;
   /** 灵敏度1～6 */

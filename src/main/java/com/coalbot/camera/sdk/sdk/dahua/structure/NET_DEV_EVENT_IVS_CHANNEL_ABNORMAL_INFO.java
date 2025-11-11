@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 事件类型 EVENT_IVS_CHANNEL_ABNORMAL（IVS设备前端通道状态异常事件）对应的数据块描述信息
 */
@@ -20,7 +22,7 @@ public class NET_DEV_EVENT_IVS_CHANNEL_ABNORMAL_INFO extends NetSDKLibStructure.
     /**
      * 事件发生的时间,参见结构体定义 {@link NetSDKLib.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX stuUTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX stuUTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 事件编号
     */

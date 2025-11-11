@@ -1,5 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 /**
  * 事件类型 EVENT_IVS_POWERLINE_FOREIGN_DETECITON 对应数据
@@ -23,9 +24,9 @@ public class DEV_EVENT_POWERLINE_FOREIGN_DETEC_INFO extends NetSDKLibStructure.S
     */
     public int              PTS;
     /**
-     * 事件发生的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX UTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX UTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 事件ID
     */
@@ -51,9 +52,9 @@ public class DEV_EVENT_POWERLINE_FOREIGN_DETEC_INFO extends NetSDKLibStructure.S
     */
     public int              nDetectRegionNum;
     /**
-     * 规则检测区域,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_POINT}
+     * 规则检测区域,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_POINT}
     */
-    public NetSDKLib.NET_POINT[] stuDetectRegion = new NetSDKLib.NET_POINT[20];
+    public NetSDKLibStructure.NET_POINT[] stuDetectRegion = new NetSDKLibStructure.NET_POINT[20];
     /**
      * 异物物体实际个数
     */
@@ -73,7 +74,7 @@ public class DEV_EVENT_POWERLINE_FOREIGN_DETEC_INFO extends NetSDKLibStructure.S
 
     public DEV_EVENT_POWERLINE_FOREIGN_DETEC_INFO() {
         for(int i = 0; i < stuDetectRegion.length; i++){
-            stuDetectRegion[i] = new NetSDKLib.NET_POINT();
+            stuDetectRegion[i] = new NetSDKLibStructure.NET_POINT();
         }
     }
 }

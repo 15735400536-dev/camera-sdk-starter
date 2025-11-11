@@ -80,17 +80,17 @@ public class CFG_ABNORMALRUNDETECTION_INFO extends NetSDKLibStructure.SdkStructu
     */
     public int              nMinDuration;
     /**
-     * 最短持续时间	单位：秒，0~65535,参见结构体定义 {@link NetSDKLib.CFG_ALARM_MSG_HANDLE}
+     * 最短持续时间	单位：秒，0~65535,参见结构体定义 {@link NetSDKLibStructure.CFG_ALARM_MSG_HANDLE}
     */
-    public NetSDKLib.CFG_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLib.CFG_ALARM_MSG_HANDLE();
+    public NetSDKLibStructure.CFG_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLibStructure.CFG_ALARM_MSG_HANDLE();
     /**
-     * 报警联动,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.CFG_TIME_SECTION}
+     * 报警联动,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.CFG_TIME_SECTION}
     */
     public CFG_TIME_SECTION_ARRAY_10[] stuTimeSection = new CFG_TIME_SECTION_ARRAY_10[7];
 
     public CFG_ABNORMALRUNDETECTION_INFO() {
         for(int i = 0; i < stuDetectRegion.length; i++){
-            stuDetectRegion[i] = new NetSDKLib.CFG_POLYGON();
+            stuDetectRegion[i] = new NetSDKLibStructure.CFG_POLYGON();
         }
         for(int i = 0; i < stuTimeSection.length; i++){
             stuTimeSection[i] = new CFG_TIME_SECTION_ARRAY_10();

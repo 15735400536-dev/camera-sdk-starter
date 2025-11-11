@@ -1,7 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.demo.module;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.*;
 
 /**
  * 设备初始化接口实现
@@ -14,7 +14,7 @@ public class DeviceInitModule {
 		/**
 		 *  入参
 		 */
-		NET_IN_INIT_DEVICE_ACCOUNT inInit = new NET_IN_INIT_DEVICE_ACCOUNT();
+		NetSDKLibStructure.NET_IN_INIT_DEVICE_ACCOUNT inInit = new NetSDKLibStructure.NET_IN_INIT_DEVICE_ACCOUNT();
         // mac地址
         System.arraycopy(szMac.getBytes(), 0, inInit.szMac, 0, szMac.getBytes().length);
 		
@@ -42,7 +42,7 @@ public class DeviceInitModule {
 		/**
 		 *  出参
 		 */
-		NET_OUT_INIT_DEVICE_ACCOUNT outInit = new NET_OUT_INIT_DEVICE_ACCOUNT();
+		NetSDKLibStructure.NET_OUT_INIT_DEVICE_ACCOUNT outInit = new NetSDKLibStructure.NET_OUT_INIT_DEVICE_ACCOUNT();
 		
 		if(!LoginModule.netsdk.CLIENT_InitDevAccount(inInit, outInit, 5000, localIp)) {
 			System.err.println("初始化失败，" + ToolKits.getErrorCodePrint());

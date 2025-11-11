@@ -1,8 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.MAX_PREVIEW_CHANNEL_NUM;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 获取默认真实通道号出参，对应接口 {@link NetSDKLib#CLIENT_GetDefaultRealChannel}
@@ -22,7 +21,7 @@ public class NET_OUT_GET_DEFAULT_REAL_CHANNEL extends NetSDKLibStructure.SdkStru
     /**
      * 通道号
      */
-    public int[]            nChannel = new int[MAX_PREVIEW_CHANNEL_NUM];
+    public int[]            nChannel = new int[NetSDKLibStructure.MAX_PREVIEW_CHANNEL_NUM];
 
     public NET_OUT_GET_DEFAULT_REAL_CHANNEL(){
         dwSize = this.size();

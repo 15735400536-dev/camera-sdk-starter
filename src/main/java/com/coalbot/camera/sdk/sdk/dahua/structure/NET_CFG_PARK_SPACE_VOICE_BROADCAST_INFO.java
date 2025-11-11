@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * NET_CFG_PARK_SPACE_VOICE_BROADCAST_INFO 停车场语音播报配置
 */

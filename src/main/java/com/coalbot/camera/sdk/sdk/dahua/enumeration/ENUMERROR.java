@@ -1,7 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.enumeration;
 
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
 
 /**
  * @author 47081

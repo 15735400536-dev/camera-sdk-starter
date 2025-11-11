@@ -2230,7 +2230,7 @@ public interface NetSDKLib extends Library {
         public int              UTCMS;                                // UTC对应的毫秒数
         public NetSDKLibStructure.NET_MSG_OBJECT   stuObject;                            // 检测到的物体
         public int              nDetectRegionNum;                     // 规则检测区域顶点数
-        public NetSDKLibStructure.NET_POINT[]      stuDetectRegion = (NetSDKLibStructure.NET_POINT[])new NetSDKLibStructure.NET_POINT().toArray(NET_MAX_DETECT_REGION_NUM); // 规则检测区域
+        public NetSDKLibStructure.NET_POINT[]      stuDetectRegion = (NetSDKLibStructure.NET_POINT[])new NetSDKLibStructure.NET_POINT().toArray(NetSDKLibStructure.NET_MAX_DETECT_REGION_NUM); // 规则检测区域
         public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;            // 智能事件公共信息
         public int              nRuleID;                              // 智能事件规则编号
         public int              nObjectNum;                           // 检测到的物体数量
@@ -2265,10 +2265,10 @@ public interface NetSDKLib extends Library {
         public int              UTCMS;                                // UTC对应的毫秒数
         public NetSDKLibStructure.NET_MSG_OBJECT   stuObject;                            // 检测到的物体
         public int              nDetectRegionNum;                     // 规则检测区域顶点数
-        public NetSDKLibStructure.NET_POINT[]      stuDetectRegion = (NetSDKLibStructure.NET_POINT[])new NetSDKLibStructure.NET_POINT().toArray(NET_MAX_DETECT_REGION_NUM); // 规则检测区域
+        public NetSDKLibStructure.NET_POINT[]      stuDetectRegion = (NetSDKLibStructure.NET_POINT[])new NetSDKLibStructure.NET_POINT().toArray(NetSDKLibStructure.NET_MAX_DETECT_REGION_NUM); // 规则检测区域
         public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;            // 智能事件公共信息
         public byte             szSerialUUID[] = new byte[22];        //智能物体全局唯一物体标识
-        public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImageInfo = new SCENE_IMAGE_INFO(); //全景广角图
+        public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImageInfo = new NetSDKLibStructure.SCENE_IMAGE_INFO(); //全景广角图
         public byte             szUserName[] = new byte[32];          //用户名称
         public NET_IMAGE_INFO_EX2 stuImageInfo[] = (NET_IMAGE_INFO_EX2[])new NET_IMAGE_INFO_EX2().toArray(32); //图片信息数组
         public int              nImageInfoNum;                        //图片信息个数
@@ -2290,7 +2290,7 @@ public interface NetSDKLib extends Library {
         public int              nImageInfoNum;                        // 图片信息个数
         public int              nWarningInfoCount;                    //火灾信息数量
         public Pointer          pFireWarningInfo;                     //火灾信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_FIREWARNING_INFO}
-        public byte[]           byReserved = new byte[1004-2*POINTERSIZE]; // 保留字节
+        public byte[]           byReserved = new byte[1004-2*NetSDKLibStructure.POINTERSIZE]; // 保留字节
     }
 
     // 图片类型
@@ -2325,9 +2325,9 @@ public interface NetSDKLib extends Library {
         public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;            // 智能事件公共信息
         public short            nPreserID;                            // 事件触发的预置点号，从1开始（没有表示未知）
         public byte[]           szPresetName = new byte[64];          // 事件触发的预置名称
-        public NET_EXTENSION_INFO stuExtensionInfo;                   // 扩展信息
+        public NetSDKLibStructure.NET_EXTENSION_INFO stuExtensionInfo;                   // 扩展信息
         public byte[]           byReserved2 = new byte[2];            // 字节对齐
-        public NET_GPS_INFO     stuGPSInfo;                           // GPS信息
+        public NetSDKLibStructure.NET_GPS_INFO     stuGPSInfo;                           // GPS信息
         public byte[]           szVideoPath = new byte[256];          // 违章关联视频FTP上传路径
         public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage;                     // 全景广角图
         public NET_IMAGE_INFO_EX2[] stuImageInfo = (NET_IMAGE_INFO_EX2[])new NET_IMAGE_INFO_EX2().toArray(32); //图片信息数组
@@ -2376,7 +2376,7 @@ public interface NetSDKLib extends Library {
         public DEV_EVENT_RIOTERL_INFO()
         {
             for (int i = 0; i < stuObjectIDs.length; ++i) {
-                stuObjectIDs[i] = new NET_MSG_OBJECT();
+                stuObjectIDs[i] = new NetSDKLibStructure.NET_MSG_OBJECT();
             }
 
             for (int i = 0; i < DetectRegion.length; ++i) {
@@ -2500,8 +2500,8 @@ public interface NetSDKLib extends Library {
         public int              nImageInfoNum;                        // 图片信息个数
         public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND(); //事件公共扩展字段结构体
         public byte[]           szReserved3 = new byte[4];            //字节对齐
-        public Pointer          pstuSceneImage;                       //全景图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.SCENE_IMAGE_INFO_EX}
-        public byte[]           bReserved = new byte[600-POINTERSIZE]; // 保留字节,留待扩展.
+        public Pointer          pstuSceneImage;                       //全景图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SCENE_IMAGE_INFO_EX}
+        public byte[]           bReserved = new byte[600-NetSDKLibStructure.POINTERSIZE]; // 保留字节,留待扩展.
 
         public DEV_EVENT_ABNORMALRUNDETECTION_INFO()
         {
@@ -2890,7 +2890,7 @@ public interface NetSDKLib extends Library {
 
     public static class SCADA_ID extends NetSDKLibStructure.SdkStructure
     {
-        public byte[]           szID = new byte[NET_COMMON_STRING_32]; // 监测点位ID
+        public byte[]           szID = new byte[NetSDKLibStructure.NET_COMMON_STRING_32]; // 监测点位ID
     }
 
     // CLIENT_SCADAGetThreshold输出参数
@@ -2954,7 +2954,7 @@ public interface NetSDKLib extends Library {
         public int              bEndTime;                             // 是否限制结束时间, TRUE: 必填stuEndTime, FLASE: 不限制结束时间
         public NET_TIME         stuEndTime;                           // 结束时间
         public byte[]           szDeviceID = new byte[NetSDKLibStructure.NET_COMMON_STRING_64]; // DeviceID, 必填
-        public byte[]           szID = new byte[NET_COMMON_STRING_32]; // 监测点位ID, 必填
+        public byte[]           szID = new byte[NetSDKLibStructure.NET_COMMON_STRING_32]; // 监测点位ID, 必填
         public int              nIDsNum;                              // 监测点ID数组长度
         public SCADA_ID[]       stuIDs = new SCADA_ID[32];            // 监控点ID号数组，SDT离网供电扩展字段
 
@@ -3279,7 +3279,7 @@ public interface NetSDKLib extends Library {
         public NET_COLOR_RGBA   stuFrontColor;                        // 前景色
         public NET_COLOR_RGBA   stuBackColor;                         // 背景色
         public NET_RECT         stuRect;                              // 区域, 坐标取值[0~8191], 仅使用left和top值, 点(left,top)应和(right,bottom)设置成同样的点
-        public byte[]           szText = new byte[CUSTOM_TITLE_LEN];  // 标题内容
+        public byte[]           szText = new byte[NetSDKLibStructure.CUSTOM_TITLE_LEN];  // 标题内容
         public int              emTitleType;                          //叠加标题用途,参见枚举定义 {@link com.coalbot.camera.sdk.sdk.dahua.enumeration.NET_EM_TITLE_TYPE}
         public int              emTextAlign;                          //文本对齐方式,参见枚举定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.EM_TITLE_TEXT_ALIGNTYPE}
         public byte[]           byReserved = new byte[504];           // 保留字节
@@ -3291,7 +3291,7 @@ public interface NetSDKLib extends Library {
         public int              dwSize;
         public int              emOsdBlendType;                       // 叠加类型，不管是获取还是设置都要设置该字段，详见NET_EM_OSD_BLEND_TYPE
         public int              nCustomTitleNum;                      // 自定义标题数量
-        public NET_CUSTOM_TITLE_INFO[] stuCustomTitle = new NET_CUSTOM_TITLE_INFO[MAX_CUSTOM_TITLE_NUM]; // 自定义标题
+        public NET_CUSTOM_TITLE_INFO[] stuCustomTitle = new NET_CUSTOM_TITLE_INFO[NetSDKLibStructure.MAX_CUSTOM_TITLE_NUM]; // 自定义标题
 
         public NET_OSD_CUSTOM_TITLE()
         {
@@ -3499,11 +3499,11 @@ public interface NetSDKLib extends Library {
     {
         public int              nPresetId;                            // 该字段废弃，请由NET_ALARM_FIREWARNING_INFO事件获取此信息
         public int              nState;                               // 0 - 开始,1 - 结束,-1:无意义
-        public DH_RECT          stBoundingBox;                        // 该字段废弃,请由NET_ALARM_FIREWARNING_INFO事件获取此信息
+        public NetSDKLibStructure.DH_RECT stBoundingBox;              // 该字段废弃,请由NET_ALARM_FIREWARNING_INFO事件获取此信息
         public int              nTemperatureUnit;                     // 该字段废弃,请由NET_ALARM_FIREWARNING_INFO事件获取此信息
         public float            fTemperature;                         // 该字段废弃,请由NET_ALARM_FIREWARNING_INFO事件获取此信息
         public int              nDistance;                            // 该字段废弃,请由DH_ALARM_FIREWARNING_INFO事件获取此信息
-        public GPS_POINT        stGpsPoint;                           // 该字段废弃,请由NET_ALARM_FIREWARNING_INFO事件获取此信息
+        public NetSDKLibStructure.GPS_POINT stGpsPoint;               // 该字段废弃,请由NET_ALARM_FIREWARNING_INFO事件获取此信息
         public int              nChannel;                             // 对应视频通道号
         public byte[]           reserved = new byte[252];
     }
@@ -3960,7 +3960,7 @@ public interface NetSDKLib extends Library {
     public static class NET_CUSTOM_INFO extends NetSDKLibStructure.SdkStructure
     {
         public int              nCargoChannelNum;                     // 货物通道个数
-        public float[]          fCoverageRate = new float[MAX_CARGO_CHANNEL_NUM]; // 货物覆盖率
+        public float[]          fCoverageRate = new float[NetSDKLibStructure.MAX_CARGO_CHANNEL_NUM]; // 货物覆盖率
         public byte[]           byReserved = new byte[40];            // 保留字节
     }
 
@@ -4052,7 +4052,7 @@ public interface NetSDKLib extends Library {
         public NET_TIME_EX      UTC;                                  // 事件发生的时间
         public int              nEventID;                             // 事件ID
         public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;                       // 事件对应文件信息
-        public EVENT_COMM_INFO  stCommInfo;                           // 公共信息
+        public NetSDKLibStructure.EVENT_COMM_INFO stCommInfo;                           // 公共信息
         public byte             byEventAction;                        // 事件动作,0表示脉冲事件,1表示持续性事件开始,2表示持续性事件结束;
         public byte[]           byReserved = new byte[3];             // 保留字节
         public int              emSenseType;                          // 传感器类型,参考NET_SENSE_METHOD
@@ -4318,17 +4318,17 @@ public interface NetSDKLib extends Library {
         public DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stuTrafficCar;       // 交通车辆信息
         public int              nSpeed;                               // 车辆实际速度,Km/h
         public int              dwSnapFlagMask;                       // 抓图标志(按位),具体见NET_RESERVED_COMMON
-        public NET_RESOLUTION_INFO stuResolution;                     // 对应图片的分辨率
-        public EVENT_COMM_INFO  stCommInfo;                           // 公共信息
-        public NET_GPS_INFO     stuGPSInfo;                           // GPS信息
+        public NetSDKLibStructure.NET_RESOLUTION_INFO stuResolution;                     // 对应图片的分辨率
+        public NetSDKLibStructure.EVENT_COMM_INFO stCommInfo;                           // 公共信息
+        public NetSDKLibStructure.NET_GPS_INFO stuGPSInfo;                           // GPS信息
         public byte[]           szDriverID = new byte[32];            // 司机ID
         public int              nRelatingVideoInfoNum;                // 违章关联的多个视频信息个数
         public NET_RELATING_VIDEO_INFO[] stuRelatingVideoInfo = new NET_RELATING_VIDEO_INFO[16]; // 违章关联的多个视频信息数组，最多支持16个视频
         public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND(); //事件公共扩展字段结构体
         public Pointer          pstuImageInfo;                        //图片信息数组,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_IMAGE_INFO_EX3}
         public int              nImageInfoNum;                        //图片信息个数
-        public Pointer          pstuSceneImage;                       //全景图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.SCENE_IMAGE_INFO_EX}
-        public byte[]           byReserved = new byte[948-2*POINTERSIZE]; // 保留字节
+        public Pointer          pstuSceneImage;                       //全景图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SCENE_IMAGE_INFO_EX}
+        public byte[]           byReserved = new byte[948-2*NetSDKLibStructure.POINTERSIZE]; // 保留字节
     }
 
     // 事件类型EVENT_IVS_TRAFFIC_DRIVER_CALLING(驾驶员打电话事件)对应的数据块描述信息
@@ -4363,7 +4363,7 @@ public interface NetSDKLib extends Library {
         public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND(); //事件公共扩展字段结构体
         public Pointer          pstuImageInfo;                        //图片信息数组,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_IMAGE_INFO_EX3}
         public int              nImageInfoNum;                        //图片信息个数
-        public Pointer          pstuSceneImage;                       //全景图图片信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.SCENE_IMAGE_INFO_EX}
+        public Pointer          pstuSceneImage;                       //全景图图片信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SCENE_IMAGE_INFO_EX}
         public byte[]           byReserved = new byte[948-NetSDKLibStructure.POINTERSIZE*2]; // 保留字节
 
 		public DEV_EVENT_TRAFFIC_DRIVER_CALLING() {		
@@ -4420,7 +4420,7 @@ public interface NetSDKLib extends Library {
         public NET_TIME_EX      stuTime;                              // 当前时间
         public NET_GPS_STATUS_INFO stuGPSStatusInfo;                  // GPS信息
         public int              bRealUTC;                             //stuRealUTC 是否有效，bRealUTC 为 TRUE 时，用 stuRealUTC，否则用 stuTime 字段
-        public NET_TIME_EX      stuRealUTC = new NET_TIME_EX();       //事件发生的时间(标准UTC时间),参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_TIME_EX}
+        public NET_TIME_EX      stuRealUTC = new NET_TIME_EX();       //事件发生的时间(标准UTC时间),参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME_EX}
 
         public ALARM_ENCLOSURE_ALARM_INFO()
         {
@@ -5642,7 +5642,7 @@ public interface NetSDKLib extends Library {
         public int              dwSize;
         public int              nChannelID;                           // 门通道号(从0开始)
         public NET_TIME         stuTime;                              // 事件时间
-        public byte[]           szReaderID = new byte[NET_COMMON_STRING_32]; // 门读卡器ID
+        public byte[]           szReaderID = new byte[NetSDKLibStructure.NET_COMMON_STRING_32]; // 门读卡器ID
         public int              nPacketLen;                           // 单个信息数据包长度
         public int              nPacketNum;                           // 信息数据包个数
         public Pointer          szFingerPrintInfo;                    // 信息数据(数据总长度即nPacketLen*nPacketNum)，指向byte
@@ -5769,7 +5769,7 @@ public interface NetSDKLib extends Library {
         public int              bIsObjectInfo;                        // 是否检测到物体信息
         public NetSDKLibStructure.NET_MSG_OBJECT   stuObject;                            // 检测到的物体信息
         public int              nRetObjectNum;                        // 实际返回多个检测到的物体信息
-        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NET_MSG_OBJECT[MAX_TARGET_OBJECT_NUM]; // 多个检测到的物体信息
+        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[NetSDKLibStructure.MAX_TARGET_OBJECT_NUM]; // 多个检测到的物体信息
         public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND(); //事件公共扩展字段结构体
         public byte[]           szPresetName = new byte[64];          //事件触发的预置点名称
         public int              nPresetID;                            //事件触发的预置点号
@@ -5779,7 +5779,7 @@ public interface NetSDKLib extends Library {
             this.dwSize = this.size();
 
             for (int i = 0; i < stuObjects.length; ++i) {
-                stuObjects[i] = new NET_MSG_OBJECT();
+                stuObjects[i] = new NetSDKLibStructure.NET_MSG_OBJECT();
             }
         }
     }
@@ -5797,11 +5797,11 @@ public interface NetSDKLib extends Library {
         public int              emActionType;                         // 警戒区检测动作类型，详见NET_CROSSREGION_ACTION_INFO
         public int              nOccurrenceCount;                     // 规则被触发生次数
         public int              nLevel;                               // 事件级别,GB30147需求项
-        public byte[]           szName = new byte[NET_COMMON_STRING_128]; // 名称
+        public byte[]           szName = new byte[NetSDKLibStructure.NET_COMMON_STRING_128]; // 名称
         public int              bIsObjectInfo;                        // 是否检测到物体信息
         public NetSDKLibStructure.NET_MSG_OBJECT   stuObject;                            // 检测到的物体信息
         public int              nRetObjectNum;                        // 实际返回多个检测到的物体信息
-        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NET_MSG_OBJECT[MAX_TARGET_OBJECT_NUM]; // 多个检测到的物体信息
+        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[NetSDKLibStructure.MAX_TARGET_OBJECT_NUM]; // 多个检测到的物体信息
         public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND(); //事件公共扩展字段结构体
         public byte[]           szMac = new byte[32];                 // 事件触发源的Mac地址
         public byte[]           szReserved = new byte[1024];          // 预留字节
@@ -5811,7 +5811,7 @@ public interface NetSDKLib extends Library {
             this.dwSize = this.size();
 
             for (int i = 0; i < stuObjects.length; ++i) {
-                stuObjects[i] = new NET_MSG_OBJECT();
+                stuObjects[i] = new NetSDKLibStructure.NET_MSG_OBJECT();
             }
         }
     }
@@ -5926,13 +5926,13 @@ public interface NetSDKLib extends Library {
     // 立体视觉站立事件区域内人员列表
     public static class MAN_STAND_LIST_INFO extends NetSDKLibStructure.SdkStructure
     {
-        public NET_POINT        stuCenter;                            // 站立人员所在位置,8192坐标系
+        public NetSDKLibStructure.NET_POINT        stuCenter;                            // 站立人员所在位置,8192坐标系
         public byte[]           szSerialUUID = new byte[22];          // 智能物体全局唯一物体标识
         // 有效数据位21位，包含’\0’
         // 前2位%d%d:01-视频片段, 02-图片, 03-文件, 99-其他
         // 中间14位YYYYMMDDhhmmss:年月日时分秒
         // 后5位%u%u%u%u%u：物体ID，如00001
-        public DH_RECT          stuBoundingBox;                       // 包围盒
+        public NetSDKLibStructure.DH_RECT          stuBoundingBox;                       // 包围盒
         public byte[]           szReversed = new byte[90];            // 保留字节
     }
 
@@ -5948,7 +5948,7 @@ public interface NetSDKLib extends Library {
         ///////////////////////////////以上为公共字段，除nChannelID外的其他字段是为了预留公共字段空间//////////////////////////////
         public int              nAction;                              // 0:脉冲 1:开始 2:停止
         public int              nManListCount;                        // 区域人员列表数量
-        public MAN_STAND_LIST_INFO[] stuManList = new MAN_STAND_LIST_INFO[MAX_MAN_LIST_COUNT]; // 区域内人员列表
+        public MAN_STAND_LIST_INFO[] stuManList = new MAN_STAND_LIST_INFO[NetSDKLibStructure.MAX_MAN_LIST_COUNT]; // 区域内人员列表
         public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;            // 智能事件公共信息
         public byte[]           szReversed = new byte[2048];          // 保留字节
 
@@ -5995,9 +5995,9 @@ public interface NetSDKLib extends Library {
         //中间14位YYYYMMDDhhmmss:年月日时分秒;后5位%u%u%u%u%u：物体ID，如00001
         public byte[]           byReserved1 = new byte[2];            // 用于字节对齐
         public NET_RECT         stuBoundingBox;                       // 包围盒
-        public NET_INTELLIGENCE_IMAGE_INFO stuSceneImage;             // 人脸底图信息
-        public NET_INTELLIGENCE_IMAGE_INFO stuFaceImage;              // 人脸小图信息
-        public NET_FACE_ATTRIBUTE_EX stuFaceAttributes;               // 人脸属性
+        public NetSDKLibStructure.NET_INTELLIGENCE_IMAGE_INFO stuSceneImage;             // 人脸底图信息
+        public NetSDKLibStructure.NET_INTELLIGENCE_IMAGE_INFO stuFaceImage;              // 人脸小图信息
+        public NetSDKLibStructure.NET_FACE_ATTRIBUTE_EX stuFaceAttributes;               // 人脸属性
         public NET_IMAGE_INFO_EX2 stuImageInfo[] = (NET_IMAGE_INFO_EX2[])new NET_IMAGE_INFO_EX2().toArray(32); //图片信息数组
         public int              nImageInfoNum;                        //图片信息个数
         public byte             byReserved[] = new byte[1024];        //预留字节
@@ -6035,8 +6035,8 @@ public interface NetSDKLib extends Library {
         public int              nRuleId;
         public int              dwRuleType;                           // 规则类型，详见dhnetsdk.h中"智能分析事件类型"
         public int              nSnapShotNum;                         // 抓拍图片张数
-        public int[]            emSnapShotType = new int[MAX_SNAP_SHOT_NUM]; // 抓拍图片类型数组，详见NET_EM_SNAP_SHOT_TYPE
-        public int[]            nSingleInterval = new int[MAX_SNAP_SHOT_NUM]; // 抓图时间间隔数组,单位秒，数组第一个时间:5~180 默认10， 其余时间(N张抓拍有N-1个间隔时):1~3600 默认20
+        public int[]            emSnapShotType = new int[NetSDKLibStructure.MAX_SNAP_SHOT_NUM]; // 抓拍图片类型数组，详见NET_EM_SNAP_SHOT_TYPE
+        public int[]            nSingleInterval = new int[NetSDKLibStructure.MAX_SNAP_SHOT_NUM]; // 抓图时间间隔数组,单位秒，数组第一个时间:5~180 默认10， 其余时间(N张抓拍有N-1个间隔时):1~3600 默认20
         public int              emIntervalMode;                       // 抓拍间隔模式，详见NET_EM_SNAP_SHOT_INTERVAL_MODE
         public byte[]           byReserved = new byte[1024];          // 预留
     }
@@ -6082,7 +6082,7 @@ public interface NetSDKLib extends Library {
     public static class NET_DETECT_VEHICLE_INFO extends NetSDKLibStructure.SdkStructure {
         public int              emAction;                             // 检测车辆动作
         public int /*UINT*/     nObjectID;                            // 物体ID
-        public EVENT_PIC_INFO   stuVehicleImage;                      // 车辆抓图信息
+        public NetSDKLibStructure.EVENT_PIC_INFO   stuVehicleImage;                      // 车辆抓图信息
         public NET_COLOR_RGBA   stuColor;                             // 车身主要颜色
         public int              emCategoryType;                       // 车辆类型,参考枚举EM_CATEGORY_TYPE
         public int /*UINT*/     nFrameSequence;                       // 帧序号
@@ -6101,7 +6101,7 @@ public interface NetSDKLib extends Library {
     public static class NET_DETECT_PLATE_INFO extends NetSDKLibStructure.SdkStructure {
         public int /*UINT*/     nObjectID;                            // 车牌ID
         public int /*UINT*/     nRelativeID;                          // 关联的车辆ID
-        public EVENT_PIC_INFO   stuPlateImage;                        // 车牌图片信息
+        public NetSDKLibStructure.EVENT_PIC_INFO   stuPlateImage;                        // 车牌图片信息
         public int              emPlateType;                          // 车牌类型，参考枚举EM_NET_PLATE_TYPE
         public int              emPlateColor;                         // 车牌颜色，参考枚举EM_NET_PLATE_COLOR_TYPE
         public int /*UINT*/     nConfidence;                          // 置信度,值越大表示置信度越高, 范围 0~255
@@ -6125,9 +6125,9 @@ public interface NetSDKLib extends Library {
         public NET_DETECT_VEHICLE_INFO stuDetectVehicleInfo;          // 检测到的车辆信息
         public NET_DETECT_PLATE_INFO stuDetectPlateInfo;              // 检测到的车牌信息
         public int              bIsGlobalScene;                       // 是否有场景图
-        public EVENT_PIC_INFO   stuSceneImage;                        // 场景图信息, bIsGlobalScene 为 TRUE 时有效
+        public NetSDKLibStructure.EVENT_PIC_INFO   stuSceneImage;                        // 场景图信息, bIsGlobalScene 为 TRUE 时有效
         public int              nCarCandidateNum;                     // 候选车辆数量
-        public NET_CAR_CANDIDATE_INFO[] stuCarCandidate = (NET_CAR_CANDIDATE_INFO[])new NET_CAR_CANDIDATE_INFO().toArray(MAX_CAR_CANDIDATE_NUM); // 候选车辆数据
+        public NetSDKLibStructure.NET_CAR_CANDIDATE_INFO[] stuCarCandidate = (NetSDKLibStructure.NET_CAR_CANDIDATE_INFO[])new NetSDKLibStructure.NET_CAR_CANDIDATE_INFO().toArray(NetSDKLibStructure.MAX_CAR_CANDIDATE_NUM); // 候选车辆数据
         /*public boolean                  bIsEmptyPlace;                              // 是否是空车位报警*/
         public NET_FUEL_DISPENSER_INFO stuFuelDispenser;              // 从加油机获取的信息，IVSS对接加油机及N8000
         public DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stuTrafficCar;       // 交通车辆信息
@@ -6153,7 +6153,7 @@ public interface NetSDKLib extends Library {
         public int              nEventID;                             // 事件ID
         public NetSDKLibStructure.NET_MSG_OBJECT   stuObject;                            // 检测到的物体，推荐使用字段stuObjects获取物体信息
         public int              nDetectRegionNum;                     // 规则检测区域顶点数
-        public NetSDKLibStructure.NET_POINT[]      DetectRegion = (NetSDKLibStructure.NET_POINT[])new NetSDKLibStructure.NET_POINT().toArray(NET_MAX_DETECT_REGION_NUM); // 规则检测区域
+        public NetSDKLibStructure.NET_POINT[]      DetectRegion = (NetSDKLibStructure.NET_POINT[])new NetSDKLibStructure.NET_POINT().toArray(NetSDKLibStructure.NET_MAX_DETECT_REGION_NUM); // 规则检测区域
         public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;                       // 事件对应文件信息
         public byte             bEventAction;                         // 事件动作,0表示脉冲事件,1表示持续性事件开始,2表示持续性事件结束;
         public byte[]           byReserved = new byte[2];
@@ -6168,11 +6168,11 @@ public interface NetSDKLib extends Library {
         public byte[]           szShopAddress = new byte[256];        // 商铺地址
         public int              nViolationDuration;                   // 违法持续时长，单位：秒，缺省值0表示无意义
         public int              nObjectNum;                           // 检测到的物体个数
-        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = (NET_MSG_OBJECT[]) new NET_MSG_OBJECT().toArray(HDBJ_MAX_OBJECTS_NUM); // 检测到的物体
+        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = (NetSDKLibStructure.NET_MSG_OBJECT[]) new NetSDKLibStructure.NET_MSG_OBJECT().toArray(NetSDKLibStructure.HDBJ_MAX_OBJECTS_NUM); // 检测到的物体
         public byte[]           szSourceID = new byte[32];            // 事件关联ID,同一个物体或图片生成多个事件时SourceID相同
         public Pointer          pstuImageInfo;                        // 图片信息数组,指针对应NET_IMAGE_INFO_EX2数组
         public int              nImageInfoNum;                        // 图片信息个数
-        public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage = new SCENE_IMAGE_INFO_EX(); // 全景图图片信息,事件前2~5s抓图
+        public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO_EX(); // 全景图图片信息,事件前2~5s抓图
         public Pointer          pstuMosaicImage;                      // 合成图,指针对应SCENE_IMAGE_INFO_EX数组
         public int              nMosaicImageNum;                      // 合成图个数
         public Pointer          pstuAdvanceImage;                     // 事件发生前抓图，指针对应SCENE_IMAGE_INFO_EX数组
@@ -6181,7 +6181,7 @@ public interface NetSDKLib extends Library {
         public double           dbHeadingAngle;                       //航向角, 以正北方向为基准输出车辆运动方向同正北方向的角度:范围 0~360,顺时针正,单位为度
         public double[]         dbLongitude = new double[3];          //经度,格式:度,分,秒(秒为浮点数)
         public double[]         dbLatitude = new double[3];           //纬度,格式:度,分,秒(秒为浮点数)
-        public byte[]           byReserved2 = new byte[1188-POINTERSIZE*3]; // 保留字节
+        public byte[]           byReserved2 = new byte[1188-NetSDKLibStructure.POINTERSIZE*3]; // 保留字节
     }
 
     // 事件类型 EVENT_IVS_FLOWBUSINESS (流动摊贩事件) 对应的数据块描述信息
@@ -6195,12 +6195,12 @@ public interface NetSDKLib extends Library {
         public int              nEventID;                             // 事件ID
         public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;                       // 事件对应文件信息
         public int              nDetectRegionNum;                     // 检测区域顶点数
-        public NetSDKLibStructure.NET_POINT[]      DetectRegion = (NetSDKLibStructure.NET_POINT[])new NetSDKLibStructure.NET_POINT().toArray(NET_MAX_DETECT_REGION_NUM); // 检测区域
+        public NetSDKLibStructure.NET_POINT[]      DetectRegion = (NetSDKLibStructure.NET_POINT[])new NetSDKLibStructure.NET_POINT().toArray(NetSDKLibStructure.NET_MAX_DETECT_REGION_NUM); // 检测区域
         public byte[]           szPresetName = new byte[64];          // 事件触发的预置名称
         public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;            // 智能事件公共信息
         public int              nViolationDuration;                   // 违法持续时长，单位：秒 缺省值0表示无意义
         public int              nObjectNum;                           // 检测到的物体个数
-        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = (NET_MSG_OBJECT[]) new NET_MSG_OBJECT().toArray(HDBJ_MAX_OBJECTS_NUM); // 检测到的物体
+        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = (NetSDKLibStructure.NET_MSG_OBJECT[]) new NetSDKLibStructure.NET_MSG_OBJECT().toArray(NetSDKLibStructure.HDBJ_MAX_OBJECTS_NUM); // 检测到的物体
         public byte[]           szSourceID = new byte[32];            // 事件关联ID,同一个物体或图片生成多个事件时SourceID相同
         public int              dwSnapFlagMask;                       // 抓图标志(按位),具体见NET_RESERVED_COMMON
         public byte[]           byReserved = new byte[2044];          // 保留字节
@@ -6209,7 +6209,7 @@ public interface NetSDKLib extends Library {
     // 立体视觉区域内人数统计事件区域人员列表
     public static class MAN_NUM_LIST_INFO extends NetSDKLibStructure.SdkStructure
     {
-        public DH_RECT          stuBoudingBox;                        // 人员包围盒,8192坐标系
+        public NetSDKLibStructure.DH_RECT          stuBoudingBox;                        // 人员包围盒,8192坐标系
         public int              nStature;                             // 人员身高，单位cm
         public byte[]           szReversed = new byte[128];           // 保留字节
     }
@@ -6259,7 +6259,7 @@ public interface NetSDKLib extends Library {
         /**
          * 智能事件公共信息
          */
-        public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo = new EVENT_INTELLI_COMM_INFO();
+        public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo = new NetSDKLibStructure.EVENT_INTELLI_COMM_INFO();
         /**
          * 区域ID(一个预置点可以对应多个区域ID)
          */
@@ -6313,7 +6313,7 @@ public interface NetSDKLib extends Library {
     	/**
     	 * 检测区
     	 */
-        public NET_POINT_EX[]   stuDetectRegion = new NetSDKLibStructure.NET_POINT_EX[20];
+        public NET_POINT_EX[]   stuDetectRegion = new NET_POINT_EX[20];
         /**
          * 保留字节
          */
@@ -6324,7 +6324,7 @@ public interface NetSDKLib extends Library {
                 stuManList[i] = new MAN_NUM_LIST_INFO();
             }
             for (int i = 0; i < stuDetectRegion.length; i++) {
-            	stuDetectRegion[i] = new NetSDKLibStructure.NET_POINT_EX();
+            	stuDetectRegion[i] = new NET_POINT_EX();
     		}
         }
     }
@@ -6340,7 +6340,7 @@ public interface NetSDKLib extends Library {
     // 全局拥挤人群密度列表(圆形)信息
     public static class NET_CROWD_LIST_INFO extends NetSDKLibStructure.SdkStructure
     {
-        public NET_POINT        stuCenterPoint = new NetSDKLibStructure.NET_POINT();     // 中心点坐标,8192坐标系
+        public NetSDKLibStructure.NET_POINT stuCenterPoint = new NetSDKLibStructure.NET_POINT();     // 中心点坐标,8192坐标系
         public int              nRadiusNum;                           // 半径像素点个数
         public byte[]           byReserved = new byte[1024];          // 保留字节
     }
@@ -6359,7 +6359,7 @@ public interface NetSDKLib extends Library {
     // 全局拥挤人群密度列表(矩形)信息
     public static class NET_CROWD_RECT_LIST_INFO extends NetSDKLibStructure.SdkStructure
     {
-        public NetSDKLibStructure.NET_POINT[]      stuRectPoint = (NetSDKLibStructure.NET_POINT[])new NetSDKLibStructure.NET_POINT().toArray(RECT_POINT); // 矩形的左上角点与右下角点,8192坐标系，表示矩形的人群密度矩形框
+        public NetSDKLibStructure.NET_POINT[]      stuRectPoint = (NetSDKLibStructure.NET_POINT[])new NetSDKLibStructure.NET_POINT().toArray(NetSDKLibStructure.RECT_POINT); // 矩形的左上角点与右下角点,8192坐标系，表示矩形的人群密度矩形框
         public byte[]           byReserved = new byte[32];            // 保留字节
     }
 
@@ -6372,14 +6372,14 @@ public interface NetSDKLib extends Library {
         public NET_TIME_EX      UTC;                                  // 事件发生的时间
         public int              nEventAction;                         // 事件动作,1表示持续性事件开始,2表示持续性事件结束;
         public int              emAlarmType;                          // 报警业务类型
-        public byte[]           szName = new byte[MAX_CROWD_DETECTION_NAME_LEN]; // 事件名称
+        public byte[]           szName = new byte[NetSDKLibStructure.MAX_CROWD_DETECTION_NAME_LEN]; // 事件名称
         public int              nCrowdListNum;                        // 返回的全局拥挤人群密度列表个数 （圆形描述）
         public int              nRegionListNum;                       // 返回的人数超限的报警区域ID列表个数
-        public NET_CROWD_LIST_INFO[] stuCrowdList = new NET_CROWD_LIST_INFO[MAX_CROWD_LIST_NUM]; // 全局拥挤人群密度列表信息（圆形描述）
-        public NET_REGION_LIST_INFO[] stuRegionList = new NET_REGION_LIST_INFO[MAX_REGION_LIST_NUM]; // 人数超限的报警区域ID列表信息
-        public NET_EXTENSION_INFO stuExtensionInfo;                   // 扩展信息
+        public NET_CROWD_LIST_INFO[] stuCrowdList = new NET_CROWD_LIST_INFO[NetSDKLibStructure.MAX_CROWD_LIST_NUM]; // 全局拥挤人群密度列表信息（圆形描述）
+        public NET_REGION_LIST_INFO[] stuRegionList = new NET_REGION_LIST_INFO[NetSDKLibStructure.MAX_REGION_LIST_NUM]; // 人数超限的报警区域ID列表信息
+        public NetSDKLibStructure.NET_EXTENSION_INFO stuExtensionInfo;                   // 扩展信息
         public int              nCrowdRectListNum;                    // 返回的全局拥挤人群密度列表个数 (矩形描述)
-        public NET_CROWD_RECT_LIST_INFO[] stuCrowdRectList = new NET_CROWD_RECT_LIST_INFO[MAX_CROWD_RECT_LIST]; // 全局拥挤人群密度列表信息(矩形描述)
+        public NET_CROWD_RECT_LIST_INFO[] stuCrowdRectList = new NET_CROWD_RECT_LIST_INFO[NetSDKLibStructure.MAX_CROWD_RECT_LIST]; // 全局拥挤人群密度列表信息(矩形描述)
         public int              nGlobalPeopleNum;                     // 检测区全局总人数
         public Pointer          pstuImageInfo;                        // 图片信息数组 ,结构体NET_IMAGE_INFO_EX2数组指针
         public int              nImageInfoNum;                        // 图片信息个数
@@ -6396,12 +6396,12 @@ public interface NetSDKLib extends Library {
         public NET_TIME_EX      UTC;                                  // 事件发生的时间
         public int              nEventAction;                         // 事件动作,1表示持续性事件开始,2表示持续性事件结束;
         public int              emAlarmType;                          // 报警业务类型
-        public byte[]           szName = new byte[MAX_CROWD_DETECTION_NAME_LEN]; // 事件名称
+        public byte[]           szName = new byte[NetSDKLibStructure.MAX_CROWD_DETECTION_NAME_LEN]; // 事件名称
         public int              nCrowdListNum;                        // 返回的全局拥挤人群密度列表个数
         public int              nRegionListNum;                       // 返回的人数超限的报警区域ID列表个数
-        public NET_CROWD_LIST_INFO[] stuCrowdList = new NET_CROWD_LIST_INFO[MAX_CROWD_LIST_NUM]; // 全局拥挤人群密度列表信息
-        public NET_REGION_LIST_INFO[] stuRegionList = new NET_REGION_LIST_INFO[MAX_REGION_LIST_NUM]; // 人数超限的报警区域ID列表信息
-        public NET_EXTENSION_INFO stuExtensionInfo;                   // 扩展信息
+        public NET_CROWD_LIST_INFO[] stuCrowdList = new NET_CROWD_LIST_INFO[NetSDKLibStructure.MAX_CROWD_LIST_NUM]; // 全局拥挤人群密度列表信息
+        public NET_REGION_LIST_INFO[] stuRegionList = new NET_REGION_LIST_INFO[NetSDKLibStructure.MAX_REGION_LIST_NUM]; // 人数超限的报警区域ID列表信息
+        public NetSDKLibStructure.NET_EXTENSION_INFO stuExtensionInfo;                   // 扩展信息
         public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND(); //事件公共扩展字段结构体
         public byte[]           byReserved = new byte[896];           // 保留扩展字节
     }
@@ -6479,15 +6479,15 @@ public interface NetSDKLib extends Library {
         public NetSDKLibStructure.NET_MSG_OBJECT   stuObject;                            // 人脸信息
         public int              nLane;                                // 人行道号
         public int              nSequence;                            // 表示抓拍序号,如3/2/1,1表示抓拍结束,0表示异常结束
-        public VA_OBJECT_NONMOTOR stuNonMotor;                        // 非机动车信息
+        public NetSDKLibStructure.VA_OBJECT_NONMOTOR stuNonMotor;                        // 非机动车信息
         public int              bHasNonMotor;                         // stuNonMotor 字段是否有效
         public NetSDKLibStructure.NET_MSG_OBJECT   stuVehicle;                           // 行人信息
-        public Pointer          pstuSceneImage;                       //全景图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.SCENE_IMAGE_INFO_EX}
+        public Pointer          pstuSceneImage;                       //全景图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SCENE_IMAGE_INFO_EX}
         public int              nImageInfoNum;                        //图片信息个数
         public byte[]           szReserved1 = new byte[4];            //字节对齐
         public Pointer          pstuImageInfo;                        //图片信息数组,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_IMAGE_INFO_EX3}
         public Pointer          pstuTrafficCar;                       //车辆信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO}
-        public byte[]           byReserved = new byte[336-4*POINTERSIZE]; // 保留字节
+        public byte[]           byReserved = new byte[336-4*NetSDKLibStructure.POINTERSIZE]; // 保留字节
         public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND(); //扩展协议字段,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_EVENT_INFO_EXTEND}
     }
 
@@ -6495,7 +6495,7 @@ public interface NetSDKLib extends Library {
     // 第一个通道的组合的开门优先级最高，后面依次递减
     public static class CFG_OPEN_DOOR_GROUP_INFO extends NetSDKLibStructure.SdkStructure {
         public int              nGroup;                               // 有效组合数
-        public CFG_OPEN_DOOR_GROUP[] stuGroupInfo = new CFG_OPEN_DOOR_GROUP[CFG_MAX_OPEN_DOOR_GROUP_NUM]; // 多人开门组合信息
+        public CFG_OPEN_DOOR_GROUP[] stuGroupInfo = new CFG_OPEN_DOOR_GROUP[NetSDKLibStructure.CFG_MAX_OPEN_DOOR_GROUP_NUM]; // 多人开门组合信息
         public int              nGroupMaxNum;                         // 组合总数，指明pGroupInfoEx实际内存空间大小，获取和下发均需要用户赋值,非0时nGroup、stuGroupInfo字段不生效
         public int              nGroupRetNum;                         // 实际有效的组合数，获取时由动态库赋值，下发时由用户赋值
         public Pointer          pGroupInfoEx;                         //多人开门组合信息扩展，内存有用户申请,指针对应CFG_OPEN_DOOR_GROUP数组
@@ -6506,7 +6506,7 @@ public interface NetSDKLib extends Library {
     public static class CFG_OPEN_DOOR_GROUP extends NetSDKLibStructure.SdkStructure {
         public int              nUserCount;                           // 用户数目，表示需要组合才能开门的人数
         public int              nGroupNum;                            // 有效组数目
-        public CFG_OPEN_DOOR_GROUP_DETAIL[] stuGroupDetail = new CFG_OPEN_DOOR_GROUP_DETAIL[CFG_MAX_OPEN_DOOR_GROUP_DETAIL_NUM]; // 多人组合开门组的详细信息
+        public CFG_OPEN_DOOR_GROUP_DETAIL[] stuGroupDetail = new CFG_OPEN_DOOR_GROUP_DETAIL[NetSDKLibStructure.CFG_MAX_OPEN_DOOR_GROUP_DETAIL_NUM]; // 多人组合开门组的详细信息
         public Boolean          bGroupDetailEx;                       // TRUE: stuGroupDetail
         // 字段无效、pstuGroupDetailEx字段有效, FALSE:
         // stuGroupDetail
@@ -6523,10 +6523,10 @@ public interface NetSDKLib extends Library {
 
     // 多人组合开门组详细信息
     public static class CFG_OPEN_DOOR_GROUP_DETAIL extends NetSDKLibStructure.SdkStructure {
-        public byte[]           szUserID = new byte[CFG_MAX_USER_ID_LEN]; // 用户ID
+        public byte[]           szUserID = new byte[NetSDKLibStructure.CFG_MAX_USER_ID_LEN]; // 用户ID
         public int              emMethod;                             // 开门方式
         public int              nMethodExNum;                         // 开门方式扩展个数
-        public int[]            emMethodEx = new int[CFG_MAX_METHODEX_NUM]; // 开门方式扩展
+        public int[]            emMethodEx = new int[NetSDKLibStructure.CFG_MAX_METHODEX_NUM]; // 开门方式扩展
         public int              emCombineMethod;                      //多人开门支持任意组合开门方式,参见枚举定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.CFG_DOOR_OPEN_METHOD}
         public byte[]           szReserved = new byte[1020];          //预留字段
     }
@@ -6771,15 +6771,15 @@ public interface NetSDKLib extends Library {
         public byte             bRuleEnable;                          // 规则使能
         public byte[]           bReserved = new byte[3];              // 保留字段
         public int              nObjectTypeNum;                       // 相应物体类型个数
-        public byte[]           szObjectTypes = new byte[MAX_OBJECT_LIST_SIZE*MAX_NAME_LEN]; // 相应物体类型列表
+        public byte[]           szObjectTypes = new byte[NetSDKLibStructure.MAX_OBJECT_LIST_SIZE*NetSDKLibStructure.MAX_NAME_LEN]; // 相应物体类型列表
         public int              nPtzPresetId;                         // 云台预置点编号	0~65535
-        public CFG_ALARM_MSG_HANDLE stuEventHandler;                  // 报警联动
+        public NetSDKLibStructure.CFG_ALARM_MSG_HANDLE stuEventHandler;                  // 报警联动
         // public CFG_TIME_SECTION[]	stuTimeSection=new CFG_TIME_SECTION[WEEK_DAY_NUM*MAX_REC_TSECT_EX];			// 事件响应时间段
-        public CFG_TIME_SECTION[] stuTimeSection = (CFG_TIME_SECTION[])new CFG_TIME_SECTION().toArray(WEEK_DAY_NUM*MAX_REC_TSECT_EX); // 事件响应时间段
+        public NetSDKLibStructure.CFG_TIME_SECTION[] stuTimeSection = (NetSDKLibStructure.CFG_TIME_SECTION[])new NetSDKLibStructure.CFG_TIME_SECTION().toArray(NetSDKLibStructure.WEEK_DAY_NUM*NetSDKLibStructure.MAX_REC_TSECT_EX); // 事件响应时间段
         public int              nLane;                                // 车位号
         public int              nDelayTime;                           // 检测到报警发生到开始上报的时间, 单位：秒，范围1~65535
         public int              nDetectRegionPoint;                   // 检测区域顶点数
-        public CFG_POLYGON[]    stuDetectRegion = (CFG_POLYGON[]) new CFG_POLYGON().toArray(MAX_POLYGON_NUM); // 检测区域
+        public NetSDKLibStructure.CFG_POLYGON[]    stuDetectRegion = (NetSDKLibStructure.CFG_POLYGON[]) new NetSDKLibStructure.CFG_POLYGON().toArray(NetSDKLibStructure.MAX_POLYGON_NUM); // 检测区域
         public int              nPlateSensitivity;                    // 有牌检测灵敏度(控制抓拍)
         public int              nNoPlateSensitivity;                  // 无牌检测灵敏度（控制抓拍）
         public int              nLightPlateSensitivity;               // 有牌检测灵敏度（控制车位状态灯）
@@ -6794,14 +6794,14 @@ public interface NetSDKLib extends Library {
         public byte             bRuleEnable;                          // 规则使能
         public byte[]           bReserved = new byte[3];              // 保留字段
         public int              nObjectTypeNum;                       // 相应物体类型个数
-        public byte[]           szObjectTypes = new byte[MAX_OBJECT_LIST_SIZE*MAX_NAME_LEN]; // 相应物体类型列表
+        public byte[]           szObjectTypes = new byte[NetSDKLibStructure.MAX_OBJECT_LIST_SIZE*NetSDKLibStructure.MAX_NAME_LEN]; // 相应物体类型列表
         public int              nPtzPresetId;                         // 云台预置点编号	0~65535
-        public CFG_ALARM_MSG_HANDLE stuEventHandler;                  // 报警联动
-        public CFG_TIME_SECTION[] stuTimeSection = (CFG_TIME_SECTION[])new CFG_TIME_SECTION().toArray(WEEK_DAY_NUM*MAX_REC_TSECT_EX); // 事件响应时间段
+        public NetSDKLibStructure.CFG_ALARM_MSG_HANDLE stuEventHandler;                  // 报警联动
+        public NetSDKLibStructure.CFG_TIME_SECTION[] stuTimeSection = (NetSDKLibStructure.CFG_TIME_SECTION[])new NetSDKLibStructure.CFG_TIME_SECTION().toArray(NetSDKLibStructure.WEEK_DAY_NUM*NetSDKLibStructure.MAX_REC_TSECT_EX); // 事件响应时间段
         public int              nLane;                                // 车位号
         public int              nDelayTime;                           // 检测到报警发生到开始上报的时间, 单位：秒，范围1~65535
         public int              nDetectRegionPoint;                   // 检测区域顶点数
-        public CFG_POLYGON[]    stuDetectRegion = (CFG_POLYGON[]) new CFG_POLYGON().toArray(MAX_POLYGON_NUM); // 检测区域
+        public NetSDKLibStructure.CFG_POLYGON[]    stuDetectRegion = (NetSDKLibStructure.CFG_POLYGON[]) new NetSDKLibStructure.CFG_POLYGON().toArray(NetSDKLibStructure.MAX_POLYGON_NUM); // 检测区域
         public int              nPlateSensitivity;                    // 有牌检测灵敏度(控制抓拍)
         public int              nNoPlateSensitivity;                  // 无牌检测灵敏度（控制抓拍）
         public int              nLightPlateSensitivity;               // 有牌检测灵敏度（控制车位状态灯）
@@ -6817,20 +6817,20 @@ public interface NetSDKLib extends Library {
         public double           PTS;                                  // 时间戳(单位是毫秒)
         public NET_TIME_EX      UTC = new NET_TIME_EX();              // 事件发生的时间
         public int              nEventID;                             // 事件ID
-        public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NET_EVENT_FILE_INFO(); // 事件对应文件信息
+        public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLibStructure.NET_EVENT_FILE_INFO(); // 事件对应文件信息
         public int              nObjectNum;                           // 检测到的物体个数
-        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NET_MSG_OBJECT[NET_MAX_OBJECT_NUM]; // 检测到的物体
+        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[NetSDKLibStructure.NET_MAX_OBJECT_NUM]; // 检测到的物体
         public int              nDetectRegionNum;                     // 检测区域顶点数
         public NetSDKLibStructure.NET_POINT[]      DetectRegion = new NetSDKLibStructure.NET_POINT[NetSDKLibStructure.NET_MAX_DETECT_REGION_NUM]; // 检测区域
         public byte[]           szPresetName = new byte[64];          // 事件触发的预置名称
-        public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo = new EVENT_INTELLI_COMM_INFO(); // 智能事件公共信息
+        public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo = new NetSDKLibStructure.EVENT_INTELLI_COMM_INFO(); // 智能事件公共信息
         public int              nParkingDuration;                     // 违停持续时长，单位：秒 缺省值0表示无意义
         public byte[]           szSourceID = new byte[32];            // 事件关联ID,同一个物体或图片生成多个事件时SourceID相同
         public int              dwSnapFlagMask;                       // 抓图标志(按位),具体见NET_RESERVED_COMMON
         public int              bPtzPosition;                         // stuPtzPosition 是否有效
         public PTZ_NORMALIZED_POSITION_UNIT stuPtzPosition = new PTZ_NORMALIZED_POSITION_UNIT(); // 云台信息
         public int              emMotorStatus;                        // 车辆状态，{@link EM_CITYMOTOR_STATUS}
-        public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImage = new SCENE_IMAGE_INFO(); // 全景广角图信息
+        public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO(); // 全景广角图信息
         public int              emPreAlarm;                           // 是否为违规预警图片(预警触发后一定时间，违规物体还没有离开，才判定为违规)，参考EM_PREALARM
         public Pointer          pstuImageInfo;                        //图片信息数组,NET_IMAGE_INFO_EX2的数组
         public int              nImageInfoNum;                        //图片信息个数
@@ -6843,7 +6843,7 @@ public interface NetSDKLib extends Library {
 
         public DEV_EVENT_CITY_MOTORPARKING_INFO() {
             for (int i = 0; i < stuObjects.length; i++) {
-                stuObjects[i] = new NET_MSG_OBJECT();
+                stuObjects[i] = new NetSDKLibStructure.NET_MSG_OBJECT();
             }
             for (int i = 0; i < DetectRegion.length; i++) {
                 DetectRegion[i] = new NetSDKLibStructure.NET_POINT();
@@ -6869,7 +6869,7 @@ public interface NetSDKLib extends Library {
         public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;            // 智能事件公共信息
         public int              nViolationDuration;                   // 违法持续时长，单位：秒 缺省值0表示无意义
         public int              nObjectNum;                           // 检测到的物体个数
-        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NET_MSG_OBJECT[HDBJ_MAX_OBJECTS_NUM]; // 检测到的物体
+        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[NetSDKLibStructure.HDBJ_MAX_OBJECTS_NUM]; // 检测到的物体
         public byte[]           szSourceID = new byte[32];            // 事件关联ID,同一个物体或图片生成多个事件时SourceID相同
         public int              dwSnapFlagMask;                       // 抓图标志(按位),具体见NET_RESERVED_COMMON
         public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImage;                        // 全景广角图
@@ -6891,7 +6891,7 @@ public interface NetSDKLib extends Library {
         public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;                       // 事件对应文件信息
         public NetSDKLibStructure.NET_POINT[]      DetectRegion = new NetSDKLibStructure.NET_POINT[NetSDKLibStructure.NET_MAX_DETECT_REGION_NUM]; // 规则检测区域
         public int              nDetectRegionNum;                     // 规则检测区域顶点数
-        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NET_MSG_OBJECT[HDBJ_MAX_OBJECTS_NUM]; // 检测到的物体
+        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[NetSDKLibStructure.HDBJ_MAX_OBJECTS_NUM]; // 检测到的物体
         public int              nObjectNum;                           // 检测到的物体个数
         public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;            // 智能事件公共信息
         public byte[]           szPresetName = new byte[64];          // 事件触发的预置名称
@@ -6913,7 +6913,7 @@ public interface NetSDKLib extends Library {
         public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;                       // 事件对应文件信息
         public NetSDKLibStructure.NET_POINT[]      DetectRegion = new NetSDKLibStructure.NET_POINT[NetSDKLibStructure.NET_MAX_DETECT_REGION_NUM]; // 规则检测区域
         public int              nDetectRegionNum;                     // 规则检测区域顶点数
-        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NET_MSG_OBJECT[HDBJ_MAX_OBJECTS_NUM]; // 检测到的物体
+        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[NetSDKLibStructure.HDBJ_MAX_OBJECTS_NUM]; // 检测到的物体
         public int              nObjectNum;                           // 检测到的物体个数
         public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;            // 智能事件公共信息
         public byte[]           szPresetName = new byte[64];          // 事件触发的预置名称
@@ -6923,16 +6923,16 @@ public interface NetSDKLib extends Library {
         public Pointer          pstuImageInfo;                        // 图片信息数组,指针对应NET_IMAGE_INFO_EX2的数组
         public int              nImageInfoNum;                        // 图片信息个数
         public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND(); // 事件公共扩展字段结构体
-        public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage = new SCENE_IMAGE_INFO_EX(); //全景图图片信息,事件前2~5s抓图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.SCENE_IMAGE_INFO_EX}
-        public Pointer          pstuMosaicImage;                      //合成图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.SCENE_IMAGE_INFO_EX}
+        public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO_EX(); //全景图图片信息,事件前2~5s抓图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SCENE_IMAGE_INFO_EX}
+        public Pointer          pstuMosaicImage;                      //合成图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SCENE_IMAGE_INFO_EX}
         public int              nMosaicImageNum;                      //合成图个数
-        public Pointer          pstuAdvanceImage;                     //事件发生前抓图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.SCENE_IMAGE_INFO_EX}
+        public Pointer          pstuAdvanceImage;                     //事件发生前抓图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SCENE_IMAGE_INFO_EX}
         public int              nAdvanceImageNum;                     //事件发生前抓图个数
         public int              nVehicleSpeed;                        //车速, 单位km/h
         public double           dbHeadingAngle;                       //航向角,以正北方向为基准输出车辆运动方向同正北方向的角度,范围 0~360,顺时针正,单位为度
         public double[]         dbLongitude = new double[3];          //经度,格式:度,分,秒(秒为浮点数)
         public double[]         dbLatitude = new double[3];           //纬度,格式:度,分,秒(秒为浮点数)
-        public byte[]           bReserved = new byte[2160-POINTERSIZE*2]; // 保留字节,留待扩展.
+        public byte[]           bReserved = new byte[2160-NetSDKLibStructure.POINTERSIZE*2]; // 保留字节,留待扩展.
     }
 
     // 事件类型 EVENT_IVS_DUSTBIN_OVER_FLOW (垃圾桶满溢检测事件) 对应的数据块描述信息
@@ -6947,7 +6947,7 @@ public interface NetSDKLib extends Library {
         public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;                       // 事件对应文件信息
         public NetSDKLibStructure.NET_POINT[]      DetectRegion = new NetSDKLibStructure.NET_POINT[NetSDKLibStructure.NET_MAX_DETECT_REGION_NUM]; // 规则检测区域
         public int              nDetectRegionNum;                     // 规则检测区域顶点数
-        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NET_MSG_OBJECT[HDBJ_MAX_OBJECTS_NUM]; // 检测到的物体
+        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[NetSDKLibStructure.HDBJ_MAX_OBJECTS_NUM]; // 检测到的物体
         public int              nObjectNum;                           // 检测到的物体个数
         public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;            // 智能事件公共信息
         public byte[]           szPresetName = new byte[64];          // 事件触发的预置名称
@@ -6959,12 +6959,12 @@ public interface NetSDKLib extends Library {
         public int              nRuleId;                              // 规则编号
         public byte[]           szRuleName = new byte[128];           // 规则名称
         public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND(); // 事件公共扩展字段结构体
-        public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage = new SCENE_IMAGE_INFO_EX(); // 全景图图片信息,事件前2~5s抓图
+        public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO_EX(); // 全景图图片信息,事件前2~5s抓图
         public Pointer          pstuMosaicImage;                      // 合成图,指针对应SCENE_IMAGE_INFO_EX数组
         public int              nMosaicImageNum;                      // 合成图个数
         public Pointer          pstuAdvanceImage;                     // 事件发生前抓图，指针对应SCENE_IMAGE_INFO_EX数组
         public int              nAdvanceImageNum;                     // 事件发生前抓图个数
-        public byte[]           bReserved = new byte[2088-POINTERSIZE*2]; // 保留字节,留待扩展.
+        public byte[]           bReserved = new byte[2088-NetSDKLibStructure.POINTERSIZE*2]; // 保留字节,留待扩展.
     }
 
     // 事件类型 EVENT_IVS_DOOR_FRONT_DIRTY (门前脏乱检测事件) 对应的数据块描述信息
@@ -6979,7 +6979,7 @@ public interface NetSDKLib extends Library {
         public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;                       // 事件对应文件信息
         public NetSDKLibStructure.NET_POINT[]      DetectRegion = new NetSDKLibStructure.NET_POINT[NetSDKLibStructure.NET_MAX_DETECT_REGION_NUM]; // 规则检测区域
         public int              nDetectRegionNum;                     // 规则检测区域顶点数
-        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NET_MSG_OBJECT[HDBJ_MAX_OBJECTS_NUM]; // 检测到的物体
+        public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[NetSDKLibStructure.HDBJ_MAX_OBJECTS_NUM]; // 检测到的物体
         public int              nObjectNum;                           // 检测到的物体个数
         public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;            // 智能事件公共信息
         public byte[]           szPresetName = new byte[64];          // 事件触发的预置名称
@@ -7165,9 +7165,9 @@ public interface NetSDKLib extends Library {
         public int              nRuleID;                              // 用于
         public int              emClassType;                          // 智能事件所属大类
         public byte[]           szClassAlias = new byte[16];          // 智能事件所属大类别名
-        public HUMAN_IMAGE_INFO stuHumanImage;                        // 人体图片信息
+        public NetSDKLibStructure.HUMAN_IMAGE_INFO stuHumanImage;                        // 人体图片信息
         public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImage;                        // 全景广角图片信息
-        public FACE_IMAGE_INFO  stuFaceImage;                         // 人脸图片信息
+        public NetSDKLibStructure.FACE_IMAGE_INFO  stuFaceImage;                         // 人脸图片信息
         public int              nObjectID;                            // 目标ID
         public int              emHasMask;                            // 检测是否有戴口罩（对应枚举值EM_NONMOTOR_OBJECT_STATUS）
         public int              emHasChefHat;                         // 检测是否有戴厨师帽（对应枚举值EM_NONMOTOR_OBJECT_STATUS）
@@ -7190,21 +7190,21 @@ public interface NetSDKLib extends Library {
         public int              emClassType;                          // 智能事件所属大类(对应EM_CLASS_TYPE枚举)
         public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;                       // 事件对应文件信息
         public int              nObjectNum;                           // 检测到的物体个数
-        public NetSDKLibStructure.NET_MSG_OBJECT [] stuObjects = new NET_MSG_OBJECT[32]; // 检测到的物体
+        public NetSDKLibStructure.NET_MSG_OBJECT [] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[32]; // 检测到的物体
         public int              nDetectRegionNum;                     // 检测区域顶点数
-        public NET_POINT []     DetectRegion = new NetSDKLibStructure.NET_POINT[NetSDKLibStructure.NET_MAX_DETECT_REGION_NUM]; // 检测区域
+        public NetSDKLibStructure.NET_POINT []     DetectRegion = new NetSDKLibStructure.NET_POINT[NetSDKLibStructure.NET_MAX_DETECT_REGION_NUM]; // 检测区域
         public int              nCount;                               // 事件触发次数
         public int              nPresetID;                            // 预置点
-        public NET_EXTENSION_INFO stuExtensionInfo;                   // 扩展信息
+        public NetSDKLibStructure.NET_EXTENSION_INFO stuExtensionInfo;                   // 扩展信息
         public Pointer          pstuImageInfo;                        //图片信息数组, refer to {@link NET_IMAGE_INFO_EX3}
         public int              nImageInfoNum;                        //图片信息个数
         public int              bSceneImage;                          //pstuSceneImage是否有效
         public Pointer          pstuSceneImage;                       //全景广角图, refer to {@link SCENE_IMAGE_INFO_EX}
-        public byte[]           byReserved = new byte[1020-2*POINTERSIZE]; //保留字节,留待扩展.
+        public byte[]           byReserved = new byte[1020-2*NetSDKLibStructure.POINTERSIZE]; //保留字节,留待扩展.
 
         public DEV_EVENT_BANNER_DETECTION_INFO(){
     		for(int i=0;i<stuObjects.length;i++){
-    			stuObjects[i]=new NET_MSG_OBJECT();
+    			stuObjects[i]=new NetSDKLibStructure.NET_MSG_OBJECT();
     		}
     		for(int i=0;i<DetectRegion.length;i++){
     			DetectRegion[i]=new NetSDKLibStructure.NET_POINT();
@@ -7443,7 +7443,7 @@ public interface NetSDKLib extends Library {
         public NET_ANALYSE_RULE stuRuleInfo = new NET_ANALYSE_RULE(); // 分析规则信息
         public int              emStreamProtocolType;                 // 视频流协议类型(参考EM_STREAM_PROTOCOL_TYPE)
         public byte[]           szPath = new byte[NetSDKLibStructure.NET_COMMON_STRING_256]; // 视频流地址
-        public byte[]           szIp = new byte[NET_MAX_IPADDR_OR_DOMAIN_LEN]; // IP 地址
+        public byte[]           szIp = new byte[NetSDKLibStructure.NET_MAX_IPADDR_OR_DOMAIN_LEN]; // IP 地址
         public short            wPort;                                // 端口号
         public byte[]           byReserved = new byte[2];             // 用于字节对齐
         public byte[]           szUser = new byte[NetSDKLibStructure.NET_COMMON_STRING_64]; // 用户名
@@ -7605,7 +7605,7 @@ public interface NetSDKLib extends Library {
     {
         public int              dwSize;                               // 结构体大小
         public int              nTaskID;                              // 任务ID
-        public NET_PUSH_PICTURE_INFO [] stuPushPicInfos = (NET_PUSH_PICTURE_INFO[]) new NET_PUSH_PICTURE_INFO().toArray(MAX_ANALYSE_PICTURE_FILE_NUM); // 推送图片信息
+        public NET_PUSH_PICTURE_INFO [] stuPushPicInfos = (NET_PUSH_PICTURE_INFO[]) new NET_PUSH_PICTURE_INFO().toArray(NetSDKLibStructure.MAX_ANALYSE_PICTURE_FILE_NUM); // 推送图片信息
         public int              nPicNum;                              // 推送图片数量
         public int              nBinBufLen;                           // 数据缓冲区长度, 单位:字节
         public Pointer          pBinBuf;                              // 数据缓冲区, 由用户申请和释放
@@ -7644,7 +7644,7 @@ public interface NetSDKLib extends Library {
     // 智能分析图片信息
     public static class NET_PUSH_PICTURE_INFO extends NetSDKLibStructure.SdkStructure
     {
-        public byte[]           szFileID = new byte[NET_COMMON_STRING_128]; // 文件ID
+        public byte[]           szFileID = new byte[NetSDKLibStructure.NET_COMMON_STRING_128]; // 文件ID
         public int              nOffset;                              // 文件数据在二进制数据中的偏移, 单位:字节
         public int              nLength;                              // 文件数据长度, 单位:字节
         public NET_XRAY_CUSTOM_INFO stuXRayCustomInfo;                // 客户自定义信息, X光机专用
@@ -7670,7 +7670,7 @@ public interface NetSDKLib extends Library {
     // 智能分析任务状态回调信息
     public static class NET_CB_ANALYSE_TASK_STATE_INFO extends NetSDKLibStructure.SdkStructure
     {
-        public NET_ANALYSE_TASKS_INFO[] stuTaskInfos = (NET_ANALYSE_TASKS_INFO[])new NET_ANALYSE_TASKS_INFO().toArray(MAX_ANALYSE_TASK_NUM); // 智能分析任务信息
+        public NET_ANALYSE_TASKS_INFO[] stuTaskInfos = (NET_ANALYSE_TASKS_INFO[])new NET_ANALYSE_TASKS_INFO().toArray(NetSDKLibStructure.MAX_ANALYSE_TASK_NUM); // 智能分析任务信息
         public int              nTaskNum;                             // 任务个数
         public byte[]           byReserved = new byte[1024];          // 保留字节
     }
@@ -7684,7 +7684,7 @@ public interface NetSDKLib extends Library {
     public static class NET_IN_ATTACH_ANALYSE_TASK_STATE extends NetSDKLibStructure.SdkStructure
     {
         public int              dwSize;                               // 结构体大小
-        public int[]            nTaskIDs = new int[MAX_ANALYSE_TASK_NUM]; // 智能分析任务ID
+        public int[]            nTaskIDs = new int[NetSDKLibStructure.MAX_ANALYSE_TASK_NUM]; // 智能分析任务ID
         public int              nTaskIdNum;                           // 智能分析任务个数, 0表示订阅全部任务
         public fAnalyseTaskStateCallBack cbAnalyseTaskState;          // 智能分析任务状态订阅函数
         public Pointer          dwUser;                               // 用户数据
@@ -7822,7 +7822,7 @@ public interface NetSDKLib extends Library {
     // 智能分析结果订阅的过滤条件
     public static class NET_ANALYSE_RESULT_FILTER extends NetSDKLibStructure.SdkStructure
     {
-        public int[]            dwAlarmTypes = new int[MAX_ANALYSE_FILTER_EVENT_NUM]; // 过滤事件, 详见dhnetsdk.h中"智能分析事件类型"
+        public int[]            dwAlarmTypes = new int[NetSDKLibStructure.MAX_ANALYSE_FILTER_EVENT_NUM]; // 过滤事件, 详见dhnetsdk.h中"智能分析事件类型"
         public int              nEventNum;                            // 过滤事件数量
         public int              nImageDataFlag;                       // 是否包含图片, 0-包含,  1-不包含
         public byte[]           byReserved1 = new byte[4];            // 对齐
@@ -7838,7 +7838,7 @@ public interface NetSDKLib extends Library {
     public static class NET_IN_ATTACH_ANALYSE_RESULT extends NetSDKLibStructure.SdkStructure
     {
         public int              dwSize;                               // 结构体大小
-        public int[]            nTaskIDs = new int[MAX_ANALYSE_TASK_NUM]; // 智能分析任务ID
+        public int[]            nTaskIDs = new int[NetSDKLibStructure.MAX_ANALYSE_TASK_NUM]; // 智能分析任务ID
         public int              nTaskIdNum;                           // 智能分析任务个数, 0表示订阅全部任务
         public NET_ANALYSE_RESULT_FILTER stuFilter;                   // 过滤条件
         public byte[]           byReserved = new byte[4];             // 字节对齐
@@ -7855,10 +7855,10 @@ public interface NetSDKLib extends Library {
     public static class NET_ANALYSE_TASK_RESULT extends NetSDKLibStructure.SdkStructure
     {
         public int              nTaskID;                              // 任务ID
-        public byte[]           szFileID = new byte [NET_COMMON_STRING_128]; // 文件ID, 分析文件时有效
+        public byte[]           szFileID = new byte [NetSDKLibStructure.NET_COMMON_STRING_128]; // 文件ID, 分析文件时有效
         public int              emFileAnalyseState;                   // 文件分析状态(对应的枚举值EM_FILE_ANALYSE_STATE)
         public byte[]           szFileAnalyseMsg = new byte[NetSDKLibStructure.NET_COMMON_STRING_256]; // 文件分析额外信息, 一般都是分析失败的原因
-        public NET_SECONDARY_ANALYSE_EVENT_INFO[] stuEventInfos = new NET_SECONDARY_ANALYSE_EVENT_INFO[MAX_SECONDARY_ANALYSE_EVENT_NUM]; // 事件信息
+        public NET_SECONDARY_ANALYSE_EVENT_INFO[] stuEventInfos = new NET_SECONDARY_ANALYSE_EVENT_INFO[NetSDKLibStructure.MAX_SECONDARY_ANALYSE_EVENT_NUM]; // 事件信息
         public int              nEventCount;                          // 实际的事件个数
         public NET_TASK_CUSTOM_DATA stuCustomData = new NET_TASK_CUSTOM_DATA(); // 自定义数据
         public byte[]           szUserData = new byte[64];            // 频源数据，标示视频源信息，对应addPollingTask中UserData字段。
@@ -7878,12 +7878,12 @@ public interface NetSDKLib extends Library {
     // 智能分析任务结果回调信息
     public static class NET_CB_ANALYSE_TASK_RESULT_INFO extends NetSDKLibStructure.SdkStructure
     {
-        public NET_ANALYSE_TASK_RESULT[] stuTaskResultInfos = new NET_ANALYSE_TASK_RESULT[MAX_ANALYSE_TASK_NUM]; // 智能分析任务结果信息
+        public NET_ANALYSE_TASK_RESULT[] stuTaskResultInfos = new NET_ANALYSE_TASK_RESULT[NetSDKLibStructure.MAX_ANALYSE_TASK_NUM]; // 智能分析任务结果信息
         public int              nTaskResultNum;                       // 任务个数
         public byte[]           byReserved = new byte[1028];          // 保留字节
 
         public NET_CB_ANALYSE_TASK_RESULT_INFO() {
-            for(int i = 0; i < MAX_ANALYSE_TASK_NUM; i ++){
+            for(int i = 0; i < NetSDKLibStructure.MAX_ANALYSE_TASK_NUM; i ++){
                 this.stuTaskResultInfos[i] = new NET_ANALYSE_TASK_RESULT();
             }
         }
@@ -8014,14 +8014,14 @@ public interface NetSDKLib extends Library {
         public byte[]           byReserved = new byte[2];             // 保留字节
         public byte             byImageIndex;                         // 图片的序号, 同一时间内(精确到秒)可能有多张图片, 从 0 开始
         public int              nDetectRegionNum;                     //较精确的轮廓多边形                								// 规则检测区域顶点数
-        public DH_POINT[]       DetectRegion = (DH_POINT[])new DH_POINT().toArray(NET_MAX_DETECT_REGION_NUM); // 规则检测区域
+        public DH_POINT[]       DetectRegion = (DH_POINT[])new DH_POINT().toArray(NetSDKLibStructure.NET_MAX_DETECT_REGION_NUM); // 规则检测区域
         public int              dwSnapFlagMask;                       // 抓图标志(按位),具体见NET_RESERVED_COMMON
         public int              nSourceIndex;                         // 事件源设备上的index,-1表示数据无效
         public byte[]           szSourceDevice = new byte[NetSDKLibStructure.MAX_PATH];  // 事件源设备唯一标识,字段不存在或者为空表示本地设备
         public int              nOccurrenceCount;                     // 事件触发累计次数
         public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;            // 智能事件公共信息
         public int              nObjectNum;                           // 检测到的物体个数
-        public DH_MSG_OBJECT[]  stuObjectIDs = (DH_MSG_OBJECT[])new DH_MSG_OBJECT().toArray(DH_MAX_OBJECT_NUM); // 检测到的物体
+        public DH_MSG_OBJECT[]  stuObjectIDs = (DH_MSG_OBJECT[])new DH_MSG_OBJECT().toArray(NetSDKLibStructure.DH_MAX_OBJECT_NUM); // 检测到的物体
         public int              nAreaID;                              // 区域ID(一个预置点可以对应多个区域ID)
         public int              bIsCompliant;                         // 该场景下是否合规
         public PTZ_PRESET_UNIT  stPosition;                           // 预置点的坐标和放大倍数
@@ -8377,10 +8377,10 @@ public interface NetSDKLib extends Library {
         public NET_TIME         stuActivationTime;                    //(卡、头像)生效日期
         public NET_TIME         stuExpiryTime;                        //(卡、头像)截止日期
         public int              nScore;                               // 信用积分
-        public byte[]           szCompanyName = new byte[MAX_COMPANY_NAME_LEN]; //单位名称
+        public byte[]           szCompanyName = new byte[NetSDKLibStructure.MAX_COMPANY_NAME_LEN]; //单位名称
         public byte[]           szCompanionName = new byte[120];      //陪同人员姓名
-        public byte[]           szCompanionCompany = new byte[MAX_COMPANY_NAME_LEN]; //陪同人员单位名称
-        public byte[]           szPermissibleArea = new byte[MAX_COMMON_STRING_128]; //准许通行区域
+        public byte[]           szCompanionCompany = new byte[NetSDKLibStructure.MAX_COMPANY_NAME_LEN]; //陪同人员单位名称
+        public byte[]           szPermissibleArea = new byte[NetSDKLibStructure.MAX_COMMON_STRING_128]; //准许通行区域
         public byte[]           szSection = new byte[200];            //部门名称
         public Pointer          pstuCustomEducationInfo;              // 教育信息,参考NET_CUSTOM_EDUCATION_INFO
         public Pointer          pstuHealthCodeInfo;                   //健康码信息,NET_HEALTH_CODE_INFO
@@ -8462,7 +8462,7 @@ public interface NetSDKLib extends Library {
         public int              emClassType;                          // 智能事件所属大类
         public int              emSceneType;                          // 水位场景类型
         public double           dbMark;                               // 水尺读数
-        public NET_POINT        stuCrossPoint;                        // 水尺与水面交点
+        public NetSDKLibStructure.NET_POINT        stuCrossPoint;                        // 水尺与水面交点
         public NET_WATER_SURFACE_MASK_INFO stuWaterSurfaceMask;       // 水面分割掩膜信息, emSceneType 为EM_WATERMONITOR_SCENE_WATERSTAGE_NO_RULE 或者EM_WATERMONITOR_SCENE_WATERLOGG_NO_RULE有效
         public byte[]           byReserved = new byte[1020];          // 预留字段
     }
@@ -8470,8 +8470,8 @@ public interface NetSDKLib extends Library {
     // 标定线
     public static class NET_CALIBRATE_LINE_INFO extends NetSDKLibStructure.SdkStructure
     {
-        public NET_POINT        stuStartPoint;                        // 起点
-        public NET_POINT        stuEndPoint;                          // 终点
+        public NetSDKLibStructure.NET_POINT        stuStartPoint;                        // 起点
+        public NetSDKLibStructure.NET_POINT        stuEndPoint;                          // 终点
     }
 
     // 事件类型EVENT_IVS_WATER_STAGE_MONITOR(水位检测事件)对应的规则配置
@@ -8613,13 +8613,13 @@ public interface NetSDKLib extends Library {
         public byte[]           szRuleName = new byte[NetSDKLibStructure.MAX_NAME_LEN];  // 规则名称,不同规则不能重名
         public int              bRuleEnable;                          // 规则使能
         public int              nObjectTypeNum;                       // 相应物体类型个数
-        public byte[]           szObjectTypes = new byte[MAX_OBJECT_LIST_SIZE*MAX_NAME_LEN]; // 相应物体类型列表
+        public byte[]           szObjectTypes = new byte[NetSDKLibStructure.MAX_OBJECT_LIST_SIZE*NetSDKLibStructure.MAX_NAME_LEN]; // 相应物体类型列表
         public int              nPtzPresetId;                         // 云台预置点编号	0~65535
-        public CFG_ALARM_MSG_HANDLE stuEventHandler;                  // 报警联动
-        public CFG_TIME_SECTION[] stuTimeSection = (CFG_TIME_SECTION[])new CFG_TIME_SECTION().toArray(WEEK_DAY_NUM*MAX_REC_TSECT_EX); // 事件响应时间段
+        public NetSDKLibStructure.CFG_ALARM_MSG_HANDLE stuEventHandler;                  // 报警联动
+        public NetSDKLibStructure.CFG_TIME_SECTION[] stuTimeSection = (NetSDKLibStructure.CFG_TIME_SECTION[])new NetSDKLibStructure.CFG_TIME_SECTION().toArray(NetSDKLibStructure.WEEK_DAY_NUM*NetSDKLibStructure.MAX_REC_TSECT_EX); // 事件响应时间段
         public byte             bTrackEnable;                         // 触发跟踪使能,仅对警戒线事件,警戒区规则有效
         public int              nDetectRegionPoint;                   // 多边形顶点数
-        public CFG_POLYGON[]    stuDetectRegion = (CFG_POLYGON[])new CFG_POLYGON().toArray(MAX_POLYGON_NUM); // 检测区域，多边形
+        public NetSDKLibStructure.CFG_POLYGON[]    stuDetectRegion = (NetSDKLibStructure.CFG_POLYGON[])new NetSDKLibStructure.CFG_POLYGON().toArray(NetSDKLibStructure.MAX_POLYGON_NUM); // 检测区域，多边形
         public int              bHighEnable;                          // 温度异常报警是否开启
         public int              bLowEnable;                           // 温度异常报警是否开启
         public int              fHighThresholdTemp;                   // 温度异常阈值，精度0.1，扩大10倍
@@ -8629,7 +8629,7 @@ public interface NetSDKLib extends Library {
         public int              fLowAutoOffset;                       // 温度自动学习偏差值，精度0.1，扩大10倍
         public int              nSensitivity;                         // 灵敏度 范围[1, 10]
         public int              bSizeFileter;                         // 规则特定的尺寸过滤器是否有效
-        public CFG_SIZEFILTER_INFO stuSizeFileter;                    // 规则特定的尺寸过滤器
+        public NetSDKLibStructure.CFG_SIZEFILTER_INFO stuSizeFileter; // 规则特定的尺寸过滤器
         public int              bIsCaptureNormal;                     // 是否上报正常体温信息
         public byte[]           byReserved = new byte[1024];          // 保留字节
     }
@@ -8745,7 +8745,7 @@ public interface NetSDKLib extends Library {
     // 抓图标记信息
     public static class NET_SNAPSHOT_MARK_INFO extends NetSDKLibStructure.SdkStructure
     {
-        public NET_POINT        stuPosition;                          // 标记的坐标位置, 绝对坐标系
+        public NetSDKLibStructure.NET_POINT        stuPosition;                          // 标记的坐标位置, 绝对坐标系
         public byte[]           byReserved = new byte[1020];          // 预留字段
     }
 
@@ -9075,7 +9075,7 @@ public interface NetSDKLib extends Library {
     {
         public int              dwSize;
         public int              nTaskID;                              // 任务ID
-        public byte[]           szDeviceID = new byte[NET_DEV_ID_LEN_EX]; // 设备ID
+        public byte[]           szDeviceID = new byte[NetSDKLibStructure.NET_DEV_ID_LEN_EX]; // 设备ID
         public int              nChannelID;                           // 通道号
         public NET_TIME         stuStartTime = new NET_TIME();        // 录像开始时间
         public NET_TIME         stuEndTime = new NET_TIME();          // 录像结束时间
@@ -9265,7 +9265,7 @@ public interface NetSDKLib extends Library {
         public int              dwSize;                               // 结构体大小
         public int              nChannel;                             // 通道号
         public int              nInfoCount;                           // 同轴IO信息个数
-        public NET_COAXIAL_CONTROL_IO_INFO[] stInfo = (NET_COAXIAL_CONTROL_IO_INFO[])new NET_COAXIAL_CONTROL_IO_INFO().toArray(MAX_COAXIAL_CONTROL_IO_COUNT); // 同轴IO信息
+        public NET_COAXIAL_CONTROL_IO_INFO[] stInfo = (NET_COAXIAL_CONTROL_IO_INFO[])new NET_COAXIAL_CONTROL_IO_INFO().toArray(NetSDKLibStructure.MAX_COAXIAL_CONTROL_IO_COUNT); // 同轴IO信息
 
         public NET_IN_CONTROL_COAXIAL_CONTROL_IO(){
             this.dwSize = this.size();
@@ -9306,7 +9306,7 @@ public interface NetSDKLib extends Library {
     public static class NET_CFG_TIME_SCHEDULE extends NetSDKLibStructure.SdkStructure
     {
         public int              bEnableHoliday;                       // 是否支持节假日配置，默认为不支持，除非获取配置后返回为TRUE，不要使能假日配置
-        public NET_TSECT[]      stuTimeSection = (NET_TSECT[])new NET_TSECT().toArray(NET_N_SCHEDULE_TSECT*NET_N_REC_TSECT); // 第一维前7个元素对应每周7天，第8个元素对应节假日，每天最多6个时间段
+        public NetSDKLibStructure.NET_TSECT[]      stuTimeSection = (NetSDKLibStructure.NET_TSECT[])new NetSDKLibStructure.NET_TSECT().toArray(NetSDKLibStructure.NET_N_SCHEDULE_TSECT*NetSDKLibStructure.NET_N_REC_TSECT); // 第一维前7个元素对应每周7天，第8个元素对应节假日，每天最多6个时间段
     }
 
     // 火灾预警联动项
@@ -9322,7 +9322,7 @@ public interface NetSDKLib extends Library {
         public int[]            nAlarmOutChannels = new int[32];      // 报警输出通道号列表
         public int              nAlarmOutLatch;                       // 报警输入停止后，输出延时时间（单位：秒）范围[10, 300]
         public int              nPtzLinkNum;                          // 云台配置数
-        public SDK_PTZ_LINK[]   struPtzLink = (SDK_PTZ_LINK[])new SDK_PTZ_LINK().toArray(16); // 云台联动
+        public NetSDKLibStructure.SDK_PTZ_LINK[]   struPtzLink = (NetSDKLibStructure.SDK_PTZ_LINK[])new NetSDKLibStructure.SDK_PTZ_LINK().toArray(16); // 云台联动
         public int              bPtzLinkEnable;                       // 云台联动使能
         public int              bSnapshotEnable;                      // 快照使能
         public int              nSnapshotChannelNum;                  // 快照通道个数
@@ -9345,7 +9345,7 @@ public interface NetSDKLib extends Library {
     {
         public int              nRgnNum;                              // 检测区域的个数
         public byte[]           byReservedAlign = new byte[4];        // 保留字节
-        public long[]           nRegions = new long[MAX_FIREWARNING_DETECTRGN_NUM]; // 检测区域
+        public long[]           nRegions = new long[NetSDKLibStructure.MAX_FIREWARNING_DETECTRGN_NUM]; // 检测区域
         public NET_POSTIONF     stuPostion;                           // 空间排除信息
         public int              nTargetSize;                          // 目标的尺寸(火警配置为:Normal有效,单位：像素)
         public int              nSensitivity;                         // 检测灵敏度（火警配置为:Normal有效）
@@ -9368,7 +9368,7 @@ public interface NetSDKLib extends Library {
         // 设置超时时间，超过此时间，跳过此点
         public NET_FIREWARN_EVENTHANDLE_INFO stuEventHandler;         // 火警联动信息
         public int              nDetectWindowNum;                     // 窗口个数
-        public NET_FIREWARN_DETECTWND_INFO[] stuDetectWnd = (NET_FIREWARN_DETECTWND_INFO[])new NET_FIREWARN_DETECTWND_INFO().toArray(MAX_FIREWARNING_DETECTWND_NUM); // 火警检测窗口
+        public NET_FIREWARN_DETECTWND_INFO[] stuDetectWnd = (NET_FIREWARN_DETECTWND_INFO[])new NET_FIREWARN_DETECTWND_INFO().toArray(NetSDKLibStructure.MAX_FIREWARNING_DETECTWND_NUM); // 火警检测窗口
         public int              nGlobalSensitivity;                   //全局灵敏度，表示火情检测全局阈值，范围0-100，默认90
         public int              nShieldRegionNum;                     //屏蔽区域内存申请个数，最大1024
         public int              nShieldRegionRetNum;                  //屏蔽区域实际返回个数，获取配置时使用
@@ -9381,7 +9381,7 @@ public interface NetSDKLib extends Library {
     {
         public int              dwSize;                               // 结构体大小
         public int              nFireWarnRuleNum;                     // 火灾预警配置个数
-        public NET_FIREWARN_RULE_INFO[] stuFireWarnRule = (NET_FIREWARN_RULE_INFO[])new NET_FIREWARN_RULE_INFO().toArray(MAX_FIREWARNING_RULE_NUM); // 火灾预警配置规则
+        public NET_FIREWARN_RULE_INFO[] stuFireWarnRule = (NET_FIREWARN_RULE_INFO[])new NET_FIREWARN_RULE_INFO().toArray(NetSDKLibStructure.MAX_FIREWARNING_RULE_NUM); // 火灾预警配置规则
 
         public NET_FIRE_WARNING_INFO(){
             this.dwSize = this.size();
@@ -9409,7 +9409,7 @@ public interface NetSDKLib extends Library {
         public byte[]           szSourceDevice = new byte[NetSDKLibStructure.MAX_PATH];  // 事件源设备唯一标识,字段不存在或者为空表示本地设备
         public int              nOccurrenceCount;                     // 事件触发累计次数
         public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;            // 智能事件公共信息
-        public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage = new SCENE_IMAGE_INFO_EX(); // 全景广角图信息
+        public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO_EX(); // 全景广角图信息
         public NET_IMAGE_INFO_EX2 stuImageInfo[] = (NET_IMAGE_INFO_EX2[])new NET_IMAGE_INFO_EX2().toArray(32); //图片信息数组
         public int              nImageInfoNum;                        //图片信息个数
         public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND(); //事件公共扩展字段结构体
@@ -10378,7 +10378,7 @@ public interface NetSDKLib extends Library {
         public byte[]           szNormalCar = new byte[NetSDKLibStructure.MAX_PATH];     // 普通车辆过车播报内容,例如:播报语音文件"欢迎光临.wav"
         public byte[]           szTrustCar = new byte[NetSDKLibStructure.MAX_PATH];      // 信任车辆过车播报内容,例如:播报语音文件"欢迎光临.wav"
         public byte[]           szSuspiciousCar = new byte[NetSDKLibStructure.MAX_PATH]; // 嫌疑车辆过车播报内容,例如:播报语音文件"非注册车辆.wav"
-        public NET_TRAFFIC_VOICE_BROADCAST_ELEMENT[] stuElement = (NET_TRAFFIC_VOICE_BROADCAST_ELEMENT[])new  NET_TRAFFIC_VOICE_BROADCAST_ELEMENT().toArray(NET_MAX_BROADCAST_ELEMENT_NUM); // 播报元素
+        public NET_TRAFFIC_VOICE_BROADCAST_ELEMENT[] stuElement = (NET_TRAFFIC_VOICE_BROADCAST_ELEMENT[])new  NET_TRAFFIC_VOICE_BROADCAST_ELEMENT().toArray(NetSDKLibStructure.NET_MAX_BROADCAST_ELEMENT_NUM); // 播报元素
         public int              nElementNum;                          // stuElement中有效数据个数
 
         public NET_CFG_TRAFFIC_VOICE_BROADCAST_INFO()
@@ -10806,7 +10806,7 @@ public interface NetSDKLib extends Library {
         public int              nImageInfoNum;                        // 图片信息个数
         public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND(); // 事件公共扩展字段结构体
         public int              nDetectRegionNum;                     //检测区个数
-        public NET_POINT_EX[]   stuDetectRegion = new NetSDKLibStructure.NET_POINT_EX[20]; //检测区
+        public NET_POINT_EX[]   stuDetectRegion = new NET_POINT_EX[20]; //检测区
         public int              nIndexInDataInHumanImage;             //人体图片序号
         public int              nIndexInDataInFaceImage;              //人脸图片序号
         public int              nIndexInDataInFaceSceneImage;         //人脸全景图片序号
@@ -10817,7 +10817,7 @@ public interface NetSDKLib extends Library {
 
     	public DEV_EVENT_TUMBLE_DETECTION_INFO() {
     		for (int i = 0; i < stuDetectRegion.length; i++) {
-    			stuDetectRegion[i] = new NetSDKLibStructure.NET_POINT_EX();
+    			stuDetectRegion[i] = new NET_POINT_EX();
     		}		
     	}
     }

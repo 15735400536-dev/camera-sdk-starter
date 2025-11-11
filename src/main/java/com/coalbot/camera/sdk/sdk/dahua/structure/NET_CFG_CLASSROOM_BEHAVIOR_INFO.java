@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * EVENT_IVS_CLASSROOM_BEHAVIOR(课堂行为分析事件)对应的规则配置
 */
@@ -26,9 +28,9 @@ public class NET_CFG_CLASSROOM_BEHAVIOR_INFO extends NetSDKLibStructure.SdkStruc
     */
     public BYTE_ARRAY_128[] szObjectTypes = new BYTE_ARRAY_128[16];
     /**
-     * 报警联动,参见结构体定义 {@link NetSDKLib.NET_ALARM_MSG_HANDLE}
+     * 报警联动,参见结构体定义 {@link NetSDKLibStructure.NET_ALARM_MSG_HANDLE}
     */
-    public NetSDKLib.NET_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLib.NET_ALARM_MSG_HANDLE();
+    public NetSDKLibStructure.NET_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLibStructure.NET_ALARM_MSG_HANDLE();
     /**
      * 云台预置点编号  0~65535
     */

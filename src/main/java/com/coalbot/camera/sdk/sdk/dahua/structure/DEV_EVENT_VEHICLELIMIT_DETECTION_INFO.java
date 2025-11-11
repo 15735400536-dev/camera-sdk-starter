@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 事件类型EVENT_IVS_VEHICLELIMIT_DETECTION(停车场场景下停车车辆上限报警)对应的数据块描述信息
 */
@@ -22,13 +24,13 @@ public class DEV_EVENT_VEHICLELIMIT_DETECTION_INFO extends NetSDKLibStructure.Sd
     */
     public double           PTS;
     /**
-     * 事件发生的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX UTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX UTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
-     * 事件对应文件信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_EVENT_FILE_INFO}
+     * 事件对应文件信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_EVENT_FILE_INFO}
     */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLib.NET_EVENT_FILE_INFO();
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLibStructure.NET_EVENT_FILE_INFO();
     /**
      * 智能事件所属大类,参见枚举定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.EM_CLASS_TYPE}
     */
@@ -58,9 +60,9 @@ public class DEV_EVENT_VEHICLELIMIT_DETECTION_INFO extends NetSDKLibStructure.Sd
     */
     public int              nDetectRegionNum;
     /**
-     * 发生报警的区域坐标,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_POINT}
+     * 发生报警的区域坐标,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_POINT}
     */
-    public NetSDKLib.NET_POINT[] stuDetectRegion = new NetSDKLib.NET_POINT[32];
+    public NetSDKLibStructure.NET_POINT[] stuDetectRegion = new NetSDKLibStructure.NET_POINT[32];
     /**
      * 车位类型,参见枚举定义 {@link com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_SPACE_TYPE}
     */
@@ -80,7 +82,7 @@ public class DEV_EVENT_VEHICLELIMIT_DETECTION_INFO extends NetSDKLibStructure.Sd
 
     public DEV_EVENT_VEHICLELIMIT_DETECTION_INFO() {
         for(int i = 0; i < stuDetectRegion.length; i++){
-            stuDetectRegion[i] = new NetSDKLib.NET_POINT();
+            stuDetectRegion[i] = new NetSDKLibStructure.NET_POINT();
         }
         for(int i = 0; i < stuUpdateInfo.length; i++){
             stuUpdateInfo[i] = new NET_UPDATE_INFO();

@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 查询到的记录集合
 */
@@ -16,7 +18,7 @@ public class NET_OBJECT_FAVORITES_LIBRARY_RECORDS extends NetSDKLibStructure.Sdk
     /**
      * 收藏时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuCollectTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuCollectTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 目标类型
     */

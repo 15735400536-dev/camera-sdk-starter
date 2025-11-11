@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description  通道状态
 * @date 2022/10/09 11:24:36

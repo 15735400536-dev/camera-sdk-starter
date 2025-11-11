@@ -1,7 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.enumeration;
 
-
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 非机动车子类型

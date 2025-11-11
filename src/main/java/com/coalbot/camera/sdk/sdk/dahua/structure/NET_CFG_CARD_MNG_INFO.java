@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 单片机兼容cpu卡和ic卡功能切换  对应枚举 NET_EM_CFG_CARD_MNG
 */
 public class NET_CFG_CARD_MNG_INFO extends NetSDKLibStructure.SdkStructure {

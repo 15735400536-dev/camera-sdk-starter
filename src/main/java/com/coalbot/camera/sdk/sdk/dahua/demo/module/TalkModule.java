@@ -1,9 +1,10 @@
 package com.coalbot.camera.sdk.sdk.dahua.demo.module;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.LLong;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
-
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.IntByReference;
 
@@ -32,13 +33,13 @@ public class TalkModule {
 	public static boolean startTalk(int transferType, int chn) {
 	
 		// 设置语音对讲编码格式
-		NetSDKLib.NETDEV_TALKDECODE_INFO talkEncode = new NetSDKLib.NETDEV_TALKDECODE_INFO();
-		talkEncode.encodeType = NetSDKLib.NET_TALK_CODING_TYPE.NET_TALK_PCM;
+		NetSDKLibStructure.NETDEV_TALKDECODE_INFO talkEncode = new NetSDKLibStructure.NETDEV_TALKDECODE_INFO();
+		talkEncode.encodeType = NetSDKLibStructure.NET_TALK_CODING_TYPE.NET_TALK_PCM;
 		talkEncode.dwSampleRate = 8000;
 		talkEncode.nAudioBit = 16;
 		talkEncode.nPacketPeriod = 25;
 		talkEncode.write();
-		if(LoginModule.netsdk.CLIENT_SetDeviceMode(LoginModule.m_hLoginHandle, NetSDKLib.EM_USEDEV_MODE.NET_TALK_ENCODE_TYPE, talkEncode.getPointer())) {
+		if(LoginModule.netsdk.CLIENT_SetDeviceMode(LoginModule.m_hLoginHandle, NetSDKLibStructure.EM_USEDEV_MODE.NET_TALK_ENCODE_TYPE, talkEncode.getPointer())) {
 			System.out.println("Set Talk Encode Type Succeed!");
 		} else {
 			System.err.println("Set Talk Encode Type Failed!" + ToolKits.getErrorCodePrint());
@@ -46,13 +47,13 @@ public class TalkModule {
 		}
 		
 		// 设置语音对讲喊话参数
-		NetSDKLib.NET_SPEAK_PARAM speak = new NetSDKLib.NET_SPEAK_PARAM();
+		NetSDKLibStructure.NET_SPEAK_PARAM speak = new NetSDKLibStructure.NET_SPEAK_PARAM();
         speak.nMode = 0;
         speak.bEnableWait = 0;
         speak.nSpeakerChannel = 0;
         speak.write();
         
-        if (LoginModule.netsdk.CLIENT_SetDeviceMode(LoginModule.m_hLoginHandle, NetSDKLib.EM_USEDEV_MODE.NET_TALK_SPEAK_PARAM, speak.getPointer())) {
+        if (LoginModule.netsdk.CLIENT_SetDeviceMode(LoginModule.m_hLoginHandle, NetSDKLibStructure.EM_USEDEV_MODE.NET_TALK_SPEAK_PARAM, speak.getPointer())) {
         	System.out.println("Set Talk Speak Mode Succeed!");
         } else {
         	System.err.println("Set Talk Speak Mode Failed!" + ToolKits.getErrorCodePrint());
@@ -60,10 +61,10 @@ public class TalkModule {
         }
 		
 		// 设置语音对讲是否为转发模式
-		NetSDKLib.NET_TALK_TRANSFER_PARAM talkTransfer = new NetSDKLib.NET_TALK_TRANSFER_PARAM();
+		NetSDKLibStructure.NET_TALK_TRANSFER_PARAM talkTransfer = new NetSDKLibStructure.NET_TALK_TRANSFER_PARAM();
 		talkTransfer.bTransfer = transferType;
 		talkTransfer.write();
-		if(LoginModule.netsdk.CLIENT_SetDeviceMode(LoginModule.m_hLoginHandle, NetSDKLib.EM_USEDEV_MODE.NET_TALK_TRANSFER_MODE, talkTransfer.getPointer())) {
+		if(LoginModule.netsdk.CLIENT_SetDeviceMode(LoginModule.m_hLoginHandle, NetSDKLibStructure.EM_USEDEV_MODE.NET_TALK_TRANSFER_MODE, talkTransfer.getPointer())) {
 			System.out.println("Set Talk Transfer Mode Succeed!");
 		} else {
 			System.err.println("Set Talk Transfer Mode Failed!" + ToolKits.getErrorCodePrint());
@@ -73,7 +74,7 @@ public class TalkModule {
 		if (talkTransfer.bTransfer == 1) {  // 转发模式设置转发通道
 			
 			IntByReference nChn = new IntByReference(chn);
-			if(LoginModule.netsdk.CLIENT_SetDeviceMode(LoginModule.m_hLoginHandle, NetSDKLib.EM_USEDEV_MODE.NET_TALK_TALK_CHANNEL, nChn.getPointer())) {
+			if(LoginModule.netsdk.CLIENT_SetDeviceMode(LoginModule.m_hLoginHandle, NetSDKLibStructure.EM_USEDEV_MODE.NET_TALK_TALK_CHANNEL, nChn.getPointer())) {
 				System.out.println("Set Talk Channel Succeed!");
 			} else {
 				System.err.println("Set Talk Channel Failed!" + ToolKits.getErrorCodePrint());

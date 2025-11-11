@@ -1,7 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -26,11 +25,11 @@ public class NET_IN_STARTMULTIFIND_FACERECONGNITION_EX extends NetSDKLibStructur
     /**
      * 人脸匹配选项
      */
-    public NetSDKLib.NET_FACE_MATCH_OPTIONS stMatchOptions = new NetSDKLib.NET_FACE_MATCH_OPTIONS();
+    public NetSDKLibStructure.NET_FACE_MATCH_OPTIONS stMatchOptions = new NetSDKLibStructure.NET_FACE_MATCH_OPTIONS();
     /**
      * 查询过滤条件
      */
-    public NetSDKLib.NET_FACE_FILTER_CONDTION stFilterInfo = new NetSDKLib.NET_FACE_FILTER_CONDTION();
+    public NetSDKLibStructure.NET_FACE_FILTER_CONDTION stFilterInfo = new NetSDKLibStructure.NET_FACE_FILTER_CONDTION();
     /**
      * 缓冲地址
      */

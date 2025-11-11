@@ -1,8 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.MAX_PREVIEW_CHANNEL_NUM;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 设置逻辑通道号和真实通道号的绑定关系入参 ，对应接口 {@link NetSDKLib#CLIENT_SetBlindRealChannel}
@@ -22,11 +22,11 @@ public class NET_IN_SET_BLIND_REAL_CHANNEL extends NetSDKLibStructure.SdkStructu
     /**
      * 通道号
      */
-    public int[]            nChannel = new int[MAX_PREVIEW_CHANNEL_NUM];
+    public int[]            nChannel = new int[NetSDKLibStructure.MAX_PREVIEW_CHANNEL_NUM];
     /**
      * 逻辑通道信息，下标为将要设置的真实通道数
      */
-    public NET_LOGIC_CHANNEL_INFO[] stuChannelInfo = new NET_LOGIC_CHANNEL_INFO[MAX_PREVIEW_CHANNEL_NUM];
+    public NET_LOGIC_CHANNEL_INFO[] stuChannelInfo = new NET_LOGIC_CHANNEL_INFO[NetSDKLibStructure.MAX_PREVIEW_CHANNEL_NUM];
 
     public NET_IN_SET_BLIND_REAL_CHANNEL() {
         dwSize = this.size();

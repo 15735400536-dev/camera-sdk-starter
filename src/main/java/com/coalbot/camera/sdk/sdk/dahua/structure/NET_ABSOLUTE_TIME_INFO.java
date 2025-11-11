@@ -10,11 +10,11 @@ public class NET_ABSOLUTE_TIME_INFO extends NetSDKLibStructure.SdkStructure
     /**
      * 开始时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuStartTime = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuStartTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 结束时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuStopTime = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuStopTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 绝对时间使能
     */

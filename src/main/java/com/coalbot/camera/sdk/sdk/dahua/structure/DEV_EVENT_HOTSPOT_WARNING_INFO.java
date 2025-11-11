@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 260611
@@ -31,7 +31,7 @@ public class DEV_EVENT_HOTSPOT_WARNING_INFO extends NetSDKLibStructure.SdkStruct
 	/**
 	 * 事件对应文件信息
 	 */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLib.NET_EVENT_FILE_INFO();
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLibStructure.NET_EVENT_FILE_INFO();
 	/**
 	 * 事件ID
 	 */
@@ -39,13 +39,13 @@ public class DEV_EVENT_HOTSPOT_WARNING_INFO extends NetSDKLibStructure.SdkStruct
 	/**
 	 * 热点的坐标,坐标值 0~8191
 	 */
-    public NetSDKLib.DH_POINT stuPoint = new NetSDKLib.DH_POINT();
+    public NetSDKLibStructure.DH_POINT stuPoint = new NetSDKLibStructure.DH_POINT();
 	/**
 	 * 热点温度值
 	 */
     public float            fHotSpotValue;
 	/**
-	 * 温度单位(当前配置的温度单位),{@link NetSDKLib.NET_TEMPERATURE_UNIT}
+	 * 温度单位(当前配置的温度单位),{@link NetSDKLibStructure.NET_TEMPERATURE_UNIT}
 	 */
     public int              nTemperatureUnit;
     /**

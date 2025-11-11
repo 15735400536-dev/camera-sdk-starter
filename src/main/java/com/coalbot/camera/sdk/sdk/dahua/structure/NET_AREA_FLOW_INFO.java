@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 区域行人/非机动车流量随帧信息
 */
@@ -18,9 +20,9 @@ public class NET_AREA_FLOW_INFO extends NetSDKLibStructure.SdkStructure
     */
     public byte[]           szReserved1 = new byte[4];
     /**
-     * 对应的UTC时间,参见结构体定义 {@link NetSDKLib.NET_TIME_EX}
+     * 对应的UTC时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX stuUTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX stuUTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 保留字节
     */

@@ -1,5 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 /**
  * 获取屏幕窗口解码信息CLIENT_MonitorWallGetWindowInfo入参

@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 事件类型EVENT_IVS_FACERECOGNITION(目标识别)对应的数据块描述信息扩展
 */

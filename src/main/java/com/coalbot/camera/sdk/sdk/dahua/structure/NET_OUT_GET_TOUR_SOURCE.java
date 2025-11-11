@@ -1,5 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 /**
  * CLIENT_GetTourSource 接口输出参数

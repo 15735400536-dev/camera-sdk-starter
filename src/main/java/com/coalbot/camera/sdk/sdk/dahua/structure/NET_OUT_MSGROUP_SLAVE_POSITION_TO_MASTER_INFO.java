@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -15,7 +16,7 @@ public class NET_OUT_MSGROUP_SLAVE_POSITION_TO_MASTER_INFO extends NetSDKLibStru
 	/**
 	 * 从机画面上的物体坐标在主机画面上的位置，8192坐标系
 	 */
-    public NetSDKLib.NET_RECT stuRect = new NetSDKLib.NET_RECT();
+    public NetSDKLibStructure.NET_RECT stuRect = new NetSDKLibStructure.NET_RECT();
 
 	public NET_OUT_MSGROUP_SLAVE_POSITION_TO_MASTER_INFO() {
 		this.dwSize = this.size();

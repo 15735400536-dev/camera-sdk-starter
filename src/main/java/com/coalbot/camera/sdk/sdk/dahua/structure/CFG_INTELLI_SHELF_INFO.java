@@ -35,7 +35,7 @@ public class CFG_INTELLI_SHELF_INFO extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 事件响应时间段
 	 */
-    public NetSDKLibStructure.TIME_SECTION_WEEK_DAY_10[] stuTimeSection = (NetSDKLibStructure.TIME_SECTION_WEEK_DAY_10[])new NetSDKLib.TIME_SECTION_WEEK_DAY_10().toArray(NetSDKLib.WEEK_DAY_NUM);
+    public NetSDKLibStructure.TIME_SECTION_WEEK_DAY_10[] stuTimeSection = (NetSDKLibStructure.TIME_SECTION_WEEK_DAY_10[])new NetSDKLibStructure.TIME_SECTION_WEEK_DAY_10().toArray(NetSDKLibStructure.WEEK_DAY_NUM);
 	/**
 	 * 检测区顶点数
 	 */

@@ -1,6 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
+
 /**
  * 事件类型 EVENT_IVS_PERSON_CARRY_TRASHBAG(人员拎袋报警事件)对应的数据块描述信息
 */
@@ -43,9 +45,9 @@ public class NET_DEV_EVENT_PERSON_CARRY_TRASHBAG_INFO extends NetSDKLibStructure
     */
     public double           dbPTS;
     /**
-     * 事件发生的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX stuUTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX stuUTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 事件时间毫秒数
     */
@@ -71,13 +73,13 @@ public class NET_DEV_EVENT_PERSON_CARRY_TRASHBAG_INFO extends NetSDKLibStructure
     */
     public int              nDetectRegionNum;
     /**
-     * 检测区,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_POINT}
+     * 检测区,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_POINT}
     */
-    public NetSDKLib.NET_POINT[] stuDetectRegion = new NetSDKLib.NET_POINT[20];
+    public NetSDKLibStructure.NET_POINT[] stuDetectRegion = new NetSDKLibStructure.NET_POINT[20];
     /**
-     * 检测目标的物体信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_MSG_OBJECT}
+     * 检测目标的物体信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_MSG_OBJECT}
     */
-    public NetSDKLib.NET_MSG_OBJECT[] stuObjects = new NetSDKLib.NET_MSG_OBJECT[64];
+    public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[64];
     /**
      * 事件关联ID 应用场景是同一个物体或者同一张图片做不同分析，产生的多个事件的SourceID相同, 格式：类型+时间+序列号，其中类型2位，时间14位，序列号5位
     */
@@ -105,14 +107,14 @@ public class NET_DEV_EVENT_PERSON_CARRY_TRASHBAG_INFO extends NetSDKLibStructure
     /**
      * 预留字节
     */
-    public byte[]           szReserved = new byte[508-NetSDKLib.POINTERSIZE];
+    public byte[]           szReserved = new byte[508-NetSDKLibStructure.POINTERSIZE];
 
     public NET_DEV_EVENT_PERSON_CARRY_TRASHBAG_INFO() {
         for(int i = 0; i < stuDetectRegion.length; i++){
-            stuDetectRegion[i] = new NetSDKLib.NET_POINT();
+            stuDetectRegion[i] = new NetSDKLibStructure.NET_POINT();
         }
         for(int i = 0; i < stuObjects.length; i++){
-            stuObjects[i] = new NetSDKLib.NET_MSG_OBJECT();
+            stuObjects[i] = new NetSDKLibStructure.NET_MSG_OBJECT();
         }
     }
 }

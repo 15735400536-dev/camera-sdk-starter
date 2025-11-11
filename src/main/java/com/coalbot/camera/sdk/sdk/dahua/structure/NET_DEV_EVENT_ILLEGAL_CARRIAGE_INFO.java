@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -60,7 +61,7 @@ public class NET_DEV_EVENT_ILLEGAL_CARRIAGE_INFO extends NetSDKLibStructure.SdkS
 	/**
 	 * 车辆信息
 	 */
-    public NetSDKLib.NET_MSG_OBJECT_EX2[] stuVehicles = new NetSDKLib.NET_MSG_OBJECT_EX2[10];
+    public NetSDKLibStructure.NET_MSG_OBJECT_EX2[] stuVehicles = new NetSDKLibStructure.NET_MSG_OBJECT_EX2[10];
 	/**
 	 * 检测到的车辆信息个数(配合stuVehicles使用)
 	 */
@@ -72,11 +73,11 @@ public class NET_DEV_EVENT_ILLEGAL_CARRIAGE_INFO extends NetSDKLibStructure.SdkS
 	/**
 	 * 车牌信息
 	 */
-    public NetSDKLib.NET_MSG_OBJECT_EX2[] stuObjects = new NetSDKLib.NET_MSG_OBJECT_EX2[10];
+    public NetSDKLibStructure.NET_MSG_OBJECT_EX2[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT_EX2[10];
 	/**
 	 * 全景广角图, 仅nIndexInData字段有效
 	 */
-    public NetSDKLib.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO();
 	/**
 	 * 大客车周身门的状态(比如车门, 行李箱门是否打开), 0-未知, 1-是, 2-不是
 	 */
@@ -104,14 +105,14 @@ public class NET_DEV_EVENT_ILLEGAL_CARRIAGE_INFO extends NetSDKLibStructure.SdkS
 	/**
 	 * 预留字节
 	 */
-    public byte[]           szReserved = new byte[1936 - NetSDKLib.POINTERSIZE];
+    public byte[]           szReserved = new byte[1936 - NetSDKLibStructure.POINTERSIZE];
 
 	public NET_DEV_EVENT_ILLEGAL_CARRIAGE_INFO() {
 		for (int i = 0; i < stuVehicles.length; i++) {
-			stuVehicles[i] = new NetSDKLib.NET_MSG_OBJECT_EX2();
+			stuVehicles[i] = new NetSDKLibStructure.NET_MSG_OBJECT_EX2();
 		}
 		for (int i = 0; i < stuObjects.length; i++) {
-			stuObjects[i] = new NetSDKLib.NET_MSG_OBJECT_EX2();
+			stuObjects[i] = new NetSDKLibStructure.NET_MSG_OBJECT_EX2();
 		}
 		for (int i = 0; i < stuDetectRegion.length; i++) {
 			stuDetectRegion[i] = new NET_POINT_EX();

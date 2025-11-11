@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 /**
  * 雷达检测对象
@@ -104,6 +105,6 @@ public class NET_RADAR_DETECT_OBJECT extends NetSDKLibStructure.SdkStructure {
     /**
      *  预留字节 
      */
-    public byte[]           byReserved = new byte[436-NetSDKLib.POINTERSIZE];
+    public byte[]           byReserved = new byte[436-NetSDKLibStructure.POINTERSIZE];
 }
 

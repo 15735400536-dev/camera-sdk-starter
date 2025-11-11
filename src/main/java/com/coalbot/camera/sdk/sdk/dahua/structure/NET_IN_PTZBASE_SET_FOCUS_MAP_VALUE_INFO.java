@@ -1,11 +1,12 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 设置当前位置聚焦值
  * 对应接口 {@link NetSDKLib#CLIENT_DHPTZControlEx2}
- * 对应枚举 {@link NetSDKLib.NET_EXTPTZ_ControlType#NET_EXTPTZ_BASE_SET_FOCUS_MAP_VALUE}
+ * 对应枚举 {@link NetSDKLibStructure.NET_EXTPTZ_ControlType#NET_EXTPTZ_BASE_SET_FOCUS_MAP_VALUE}
  *
  * @author ： 47040
  * @since ： Created in 2021/3/26 17:04

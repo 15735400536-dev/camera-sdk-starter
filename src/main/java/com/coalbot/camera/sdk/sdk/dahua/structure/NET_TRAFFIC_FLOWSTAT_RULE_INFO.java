@@ -1,9 +1,10 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.DH_POINT;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.POINTCOORDINATE;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SdkStructure;
+
 /**
  * @description 事件类型EVENT_IVS_TRAFFIC_FLOWSTATE(交通流量统计事件) 对应的规则配置
  * @author 119178
@@ -25,7 +26,7 @@ public class NET_TRAFFIC_FLOWSTAT_RULE_INFO extends SdkStructure {
 	/**
 	 * 规则检测线
 	 */
-    public DH_POINT[]       DetectLine = (DH_POINT[])new DH_POINT().toArray(NetSDKLib.NET_MAX_DETECT_LINE_NUM);
+    public DH_POINT[]       DetectLine = (DH_POINT[])new DH_POINT().toArray(NetSDKLibStructure.NET_MAX_DETECT_LINE_NUM);
 	/**
 	 * 车道编号 与场景中的车道号对应
 	 */

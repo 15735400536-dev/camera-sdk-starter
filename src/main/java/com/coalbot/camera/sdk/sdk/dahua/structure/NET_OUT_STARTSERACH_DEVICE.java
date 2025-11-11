@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 public class NET_OUT_STARTSERACH_DEVICE extends NetSDKLibStructure.SdkStructure {
 	/**

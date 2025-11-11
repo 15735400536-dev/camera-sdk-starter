@@ -1,7 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 
 /** 
@@ -14,11 +14,11 @@ public class NET_RADIOMETRY_CURRENTHOTCOLDSPOT_INFO extends NetSDKLibStructure.S
 /** 
 热点坐标，范围：【0~8191】
 */
-    public NetSDKLib.NET_POINT stuHotPoint = new NetSDKLib.NET_POINT();
+    public NetSDKLibStructure.NET_POINT stuHotPoint = new NetSDKLibStructure.NET_POINT();
 /** 
 冷点坐标，范围：【0~8191】
 */
-    public NetSDKLib.NET_POINT stuColdPoint = new NetSDKLib.NET_POINT();
+    public NetSDKLibStructure.NET_POINT stuColdPoint = new NetSDKLibStructure.NET_POINT();
 /** 
 热点温度值（最高的温度）
 */

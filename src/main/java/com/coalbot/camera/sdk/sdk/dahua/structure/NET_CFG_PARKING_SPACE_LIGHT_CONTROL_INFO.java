@@ -1,6 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
+
 /**
  * NET_CFG_PARKING_SPACE_LIGHT_CONTROL_INFO 车位状态指示灯控制配置
 */

@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SdkStructure;
 import com.sun.jna.Pointer;
 /**
@@ -36,7 +37,7 @@ public class NET_ANALYSE_TASK_GLOBAL extends SdkStructure {
 	/**
 	 * 保留字节
 	 */
-    public	byte[]           byReserved = new byte[1016-NetSDKLib.POINTERSIZE];
+    public	byte[]           byReserved = new byte[1016- NetSDKLibStructure.POINTERSIZE];
 
 	public  NET_ANALYSE_TASK_GLOBAL(){
 		for(int i=0;i<stuLanes.length;i++){

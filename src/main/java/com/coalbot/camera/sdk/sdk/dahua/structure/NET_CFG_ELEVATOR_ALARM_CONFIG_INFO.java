@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 电梯楼层报警相关配置, 对应枚举 NET_EM_CFG_ELEVATOR_ALARM_CONFIG
 */

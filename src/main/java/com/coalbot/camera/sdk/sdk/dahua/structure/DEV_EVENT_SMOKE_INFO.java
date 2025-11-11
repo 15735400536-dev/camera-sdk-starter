@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -28,7 +29,7 @@ public class DEV_EVENT_SMOKE_INFO extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 事件发生的时间
 	 */
-    public NetSDKLib.NET_TIME_EX UTC;
+    public NetSDKLibStructure.NET_TIME_EX UTC;
 	/**
 	 * 事件ID
 	 */
@@ -36,11 +37,11 @@ public class DEV_EVENT_SMOKE_INFO extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 检测到的物体
 	 */
-    public NetSDKLib.NET_MSG_OBJECT stuObject;
+    public NetSDKLibStructure.NET_MSG_OBJECT stuObject;
 	/**
 	 * 事件对应文件信息
 	 */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo;
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;
 	/**
 	 * 事件动作,0表示脉冲事件,1表示持续性事件开始,2表示持续性事件结束
 	 */
@@ -64,11 +65,11 @@ public class DEV_EVENT_SMOKE_INFO extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 智能事件公共信息
 	 */
-    public NetSDKLib.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;
+    public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;
 	/**
 	 * 云台的坐标和放大倍数
 	 */
-    public NetSDKLib.PTZ_SPACE_UNIT stuPtzPosition;
+    public NetSDKLibStructure.PTZ_SPACE_UNIT stuPtzPosition;
 	/**
 	 * stuSceneImage 是否有效
 	 */
@@ -76,11 +77,11 @@ public class DEV_EVENT_SMOKE_INFO extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 全景广角图
 	 */
-    public NetSDKLib.SCENE_IMAGE_INFO_EX stuSceneImage;
+    public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage;
 	/**
 	 * 车身信息
 	 */
-    public NetSDKLib.NET_MSG_OBJECT stuVehicle;
+    public NetSDKLibStructure.NET_MSG_OBJECT stuVehicle;
 	/**
 	 * 触发类型,参考EM_TRIGGER_TYPE
 	 */
@@ -100,11 +101,11 @@ public class DEV_EVENT_SMOKE_INFO extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 交通车辆信息
 	 */
-    public NetSDKLib.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
+    public NetSDKLibStructure.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
 	/**
 	 * 公共信息
 	 */
-    public NetSDKLib.EVENT_COMM_INFO stuCommInfo;
+    public NetSDKLibStructure.EVENT_COMM_INFO stuCommInfo;
 	/**
 	 * 抓拍过程,参考EM_CAPTURE_PROCESS_END_TYPE
 	 */
@@ -128,7 +129,7 @@ public class DEV_EVENT_SMOKE_INFO extends NetSDKLibStructure.SdkStructure {
     /**
      *  烟雾检测点信息
      */
-    public NetSDKLib.NET_MSG_OBJECT_EX2[] stuObjects = (NetSDKLib.NET_MSG_OBJECT_EX2[]) new NetSDKLib.NET_MSG_OBJECT_EX2().toArray(16);
+    public NetSDKLibStructure.NET_MSG_OBJECT_EX2[] stuObjects = (NetSDKLibStructure.NET_MSG_OBJECT_EX2[]) new NetSDKLibStructure.NET_MSG_OBJECT_EX2().toArray(16);
 	/**
 	 * 烟雾颜色,参考EM_SMOKE_COLOR
 	 */

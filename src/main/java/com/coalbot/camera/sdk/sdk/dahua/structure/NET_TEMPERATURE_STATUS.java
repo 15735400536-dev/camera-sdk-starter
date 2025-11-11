@@ -27,7 +27,7 @@ public class NET_TEMPERATURE_STATUS extends NetSDKLibStructure.SdkStructure {
     /**
      *  温度信息
      */
-    public NET_TEMPERATURE_INFO[] stuTemps = (NET_TEMPERATURE_INFO[]) new NET_TEMPERATURE_INFO().toArray(NET_MAX_TEMPERATURE_NUM);
+    public NET_TEMPERATURE_INFO[] stuTemps = (NET_TEMPERATURE_INFO[]) new NET_TEMPERATURE_INFO().toArray(NetSDKLibStructure.NET_MAX_TEMPERATURE_NUM);
 
     public NET_TEMPERATURE_STATUS(){
         this.dwSize = this.size();

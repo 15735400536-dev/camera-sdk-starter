@@ -1,6 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * CLIENT_QueryDevInfo , NET_QUERY_DEV_STORAGE_INFOS接口输出参数
  * @author 29779

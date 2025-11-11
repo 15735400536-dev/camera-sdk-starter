@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 隔栏传物事件 (对应 DH_ALARM_RAILING_PASS_DETECTION)
 */
@@ -18,9 +20,9 @@ public class NET_DEV_EVENT_RAILING_PASS_DETECTION_INFO extends NetSDKLibStructur
     */
     public int              nRuleID;
     /**
-     * 事件发生的时间,标准的（不带时区偏差的）UTC时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,标准的（不带时区偏差的）UTC时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX stuUTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX stuUTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 事件公共扩展字段结构体,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_EVENT_INFO_EXTEND}
     */

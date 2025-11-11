@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_EVENT_IVS;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_EVENT_IVS_TYPE;
 
@@ -23,7 +24,7 @@ public class NET_IN_SNAP_BY_EVENT extends NetSDKLibStructure.SdkStructure {
     public int              nChannel;
     /**
      * 参考 CLIENT_RealLoadPicEx 的事件类型
-     * {@link NetSDKLib#EVENT_IVS_ALL ...}
+     * {@link NetSDKLibStructure#EVENT_IVS_ALL ...}
      * {@link EM_EVENT_IVS}
      * {@link EM_EVENT_IVS_TYPE}
      */

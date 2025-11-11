@@ -20,7 +20,7 @@ public class NET_VEHICLEHISTORY_CANDIDATE extends NetSDKLibStructure.SdkStructur
     /**
      * 查询人员出现的时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuTime = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 人体全景图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_FACE_IMAGE_INFO}
     */
@@ -28,7 +28,7 @@ public class NET_VEHICLEHISTORY_CANDIDATE extends NetSDKLibStructure.SdkStructur
     /**
      * 历史库中人员出现的时间(UTC时间格式),参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuTimeRealUTC = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuTimeRealUTC = new NetSDKLibStructure.NET_TIME();
     /**
      * stuTimeRealUTC是否有效
     */

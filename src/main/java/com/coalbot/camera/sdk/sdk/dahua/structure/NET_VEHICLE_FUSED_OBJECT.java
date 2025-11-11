@@ -1,7 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 291189
@@ -29,15 +28,15 @@ public class NET_VEHICLE_FUSED_OBJECT extends NetSDKLibStructure.SdkStructure {
     /**
      * 车牌信息
      */
-    public NetSDKLib.NET_MSG_OBJECT stuPlate = new NetSDKLib.NET_MSG_OBJECT();
+    public NetSDKLibStructure.NET_MSG_OBJECT stuPlate = new NetSDKLibStructure.NET_MSG_OBJECT();
     /**
      * 机动车信息
      */
-    public NetSDKLib.NET_MSG_OBJECT stuVehicle = new NetSDKLib.NET_MSG_OBJECT();
+    public NetSDKLibStructure.NET_MSG_OBJECT stuVehicle = new NetSDKLibStructure.NET_MSG_OBJECT();
     /**
      * 非机动车信息
      */
-    public NetSDKLib.VA_OBJECT_NONMOTOR stuNonMotor = new NetSDKLib.VA_OBJECT_NONMOTOR();
+    public NetSDKLibStructure.VA_OBJECT_NONMOTOR stuNonMotor = new NetSDKLibStructure.VA_OBJECT_NONMOTOR();
     /**
      * 车道ID
      */

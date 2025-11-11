@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -45,7 +45,7 @@ public class DEV_EVENT_CROWD_LEVEL_DETECTION_INFO extends NetSDKLibStructure.Sdk
 	/**
 	 * 规则区域
 	 */
-    public NetSDKLib.NET_POINT[] stuDetectRegion = new NetSDKLib.NET_POINT[20];
+    public NetSDKLibStructure.NET_POINT[] stuDetectRegion = new NetSDKLibStructure.NET_POINT[20];
 	/**
 	 * 规则区域个数
 	 */
@@ -89,11 +89,11 @@ public class DEV_EVENT_CROWD_LEVEL_DETECTION_INFO extends NetSDKLibStructure.Sdk
 	/**
 	 * 预留字节
 	 */
-    public byte[]           szReserved = new byte[1020 - NetSDKLib.POINTERSIZE];
+    public byte[]           szReserved = new byte[1020 - NetSDKLibStructure.POINTERSIZE];
 
 	public DEV_EVENT_CROWD_LEVEL_DETECTION_INFO() {
 		for (int i = 0; i < stuDetectRegion.length; i++) {
-			stuDetectRegion[i] = new NetSDKLib.NET_POINT();
+			stuDetectRegion[i] = new NetSDKLibStructure.NET_POINT();
 		}
 	}
 }

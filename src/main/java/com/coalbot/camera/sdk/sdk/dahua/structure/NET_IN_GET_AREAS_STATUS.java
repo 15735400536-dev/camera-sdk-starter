@@ -1,5 +1,5 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 /**
  * 获取区域状态 输入参数。此时CLIENT_GetAlarmRegionInfo的emType参数为NET_EM_GET_ALARMREGION_INFO_AREASTATUS
 */

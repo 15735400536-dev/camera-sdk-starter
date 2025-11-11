@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 47081
@@ -20,11 +20,11 @@ public class NET_BURN_PARAM_INFO extends NetSDKLibStructure.SdkStructure {
      */
     public int[]            nChannels = new int[64];
     /**
-     * 刻录模式,对应枚举{@link NetSDKLib.NET_BURN_MODE}
+     * 刻录模式,对应枚举{@link NetSDKLibStructure.NET_BURN_MODE}
      */
     public int              emMode;
     /**
-     * 刻录格式,对应枚举{@link NetSDKLib.NET_BURN_RECORD_PACK}
+     * 刻录格式,对应枚举{@link NetSDKLibStructure.NET_BURN_RECORD_PACK}
      */
     public int              emFormat;
     /**

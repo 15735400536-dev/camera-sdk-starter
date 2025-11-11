@@ -1,7 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 260611
@@ -52,7 +51,7 @@ public class DEV_EVENT_TRAFFIC_REAREND_ACCIDENT_INFO extends NetSDKLibStructure.
     /**
      * 公共信息
      */
-    public NetSDKLib.EVENT_COMM_INFO stuCommInfo = new NetSDKLib.EVENT_COMM_INFO();
+    public NetSDKLibStructure.EVENT_COMM_INFO stuCommInfo = new NetSDKLibStructure.EVENT_COMM_INFO();
     /**
      * 抓拍过程 {@link com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_CAPTURE_PROCESS_END_TYPE}
      */
@@ -60,7 +59,7 @@ public class DEV_EVENT_TRAFFIC_REAREND_ACCIDENT_INFO extends NetSDKLibStructure.
     /**
      * 事件对应的文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLib.NET_EVENT_FILE_INFO();
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLibStructure.NET_EVENT_FILE_INFO();
     /**
      * 交通车辆信息
      */
@@ -68,7 +67,7 @@ public class DEV_EVENT_TRAFFIC_REAREND_ACCIDENT_INFO extends NetSDKLibStructure.
     /**
      * 检测到的物体信息
      */
-    public NetSDKLib.NET_MSG_OBJECT[] stuObjects = new NetSDKLib.NET_MSG_OBJECT[50];
+    public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[50];
     /**
      * 返回检测到的个数
      */
@@ -80,7 +79,7 @@ public class DEV_EVENT_TRAFFIC_REAREND_ACCIDENT_INFO extends NetSDKLibStructure.
 
     public DEV_EVENT_TRAFFIC_REAREND_ACCIDENT_INFO() {
        for (int i = 0; i < stuObjects.length; i++) {
-           stuObjects[i] = new NetSDKLib.NET_MSG_OBJECT();
+           stuObjects[i] = new NetSDKLibStructure.NET_MSG_OBJECT();
        }
     }
 }

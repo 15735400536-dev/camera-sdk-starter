@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -48,11 +48,11 @@ public class DEV_EVENT_ANYTHING_DETECT_INFO extends NetSDKLibStructure.SdkStruct
     /**
      *  事件对应文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo;
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;
     /**
      *  全景广角图
      */
-    public NetSDKLib.SCENE_IMAGE_INFO_EX stuSceneImage;
+    public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage;
     /**
      *  检测到的物体个数
      */

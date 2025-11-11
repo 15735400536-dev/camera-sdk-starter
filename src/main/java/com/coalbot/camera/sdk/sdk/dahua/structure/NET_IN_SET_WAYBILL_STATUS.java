@@ -1,5 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * CLIENT_SetWaybillStatus 接口输入参数

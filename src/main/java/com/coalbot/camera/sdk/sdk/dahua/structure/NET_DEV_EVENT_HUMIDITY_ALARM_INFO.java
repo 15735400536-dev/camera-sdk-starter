@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description  事件类型 EVENT_IVS_HUMIDITY_ALARM(湿度报警事件)对应的数据块描述信息 
 * @origin autoTool

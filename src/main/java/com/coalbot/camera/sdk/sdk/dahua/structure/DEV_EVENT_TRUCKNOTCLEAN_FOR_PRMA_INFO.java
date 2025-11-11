@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description  事件类型 EVENT_IVS_TRUCKNOTCLEAN_FOR_PRMA 工程车未清洗 对应的数据块描述信息 
 * @date 2022/12/20 14:23:14
@@ -36,7 +35,7 @@ public class DEV_EVENT_TRUCKNOTCLEAN_FOR_PRMA_INFO extends NetSDKLibStructure.Sd
 /** 
 事件对应文件信息
 */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLib.NET_EVENT_FILE_INFO();
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLibStructure.NET_EVENT_FILE_INFO();
 /** 
 智能事件所属大类 {@link com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_CLASS_TYPE}
 */
@@ -48,7 +47,7 @@ public class DEV_EVENT_TRUCKNOTCLEAN_FOR_PRMA_INFO extends NetSDKLibStructure.Sd
 /** 
 检测到的车牌信息
 */
-    public NetSDKLib.NET_MSG_OBJECT stuObject = new NetSDKLib.NET_MSG_OBJECT();
+    public NetSDKLibStructure.NET_MSG_OBJECT stuObject = new NetSDKLibStructure.NET_MSG_OBJECT();
 /** 
 stuSceneImage 是否有效
 */
@@ -56,7 +55,7 @@ stuSceneImage 是否有效
 /** 
 全景广角图
 */
-    public NetSDKLib.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO_EX();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO_EX();
 /** 
 保留字节
 */

@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -15,7 +16,7 @@ public class CFG_LOCATION_CALIBRATE_POINT_INFO extends NetSDKLibStructure.SdkStr
 	/**
 	 * 标定点名称
 	 */
-    public byte[]           szName = new byte[NetSDKLib.CFG_COMMON_STRING_128];
+    public byte[]           szName = new byte[NetSDKLibStructure.CFG_COMMON_STRING_128];
 	/**
 	 * 使能
 	 */

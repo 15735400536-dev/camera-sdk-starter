@@ -1,9 +1,9 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-/** 
+/**
 * @author 291189
 * @description  事件类型 EVENT_IVS_CROSSLINE_STAT (绊线计数事件)对应的数据块描述信息( 注意该事件暂时不支持单独使用，仅配合“开放智能事件(EVENT_IVS_OPEN_INTELLI)”使用) 
 * @date 2023/02/06 16:07:27

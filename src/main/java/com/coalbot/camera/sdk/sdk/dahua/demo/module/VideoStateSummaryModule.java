@@ -1,9 +1,14 @@
 package com.coalbot.camera.sdk.sdk.dahua.demo.module;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author ： 47040
@@ -23,11 +28,11 @@ public class VideoStateSummaryModule {
 
         if (!m_hAttachMap.containsKey(channel)) {
 
-            NetSDKLib.NET_IN_ATTACH_VIDEOSTAT_SUM inParam = new NetSDKLib.NET_IN_ATTACH_VIDEOSTAT_SUM();
+            NetSDKLibStructure.NET_IN_ATTACH_VIDEOSTAT_SUM inParam = new NetSDKLibStructure.NET_IN_ATTACH_VIDEOSTAT_SUM();
             inParam.nChannel = channel;
             inParam.cbVideoStatSum = fVideoStatSumCallBack;
 
-            NetSDKLib.NET_OUT_ATTACH_VIDEOSTAT_SUM outParam = new NetSDKLib.NET_OUT_ATTACH_VIDEOSTAT_SUM();
+            NetSDKLibStructure.NET_OUT_ATTACH_VIDEOSTAT_SUM outParam = new NetSDKLibStructure.NET_OUT_ATTACH_VIDEOSTAT_SUM();
             NetSDKLib.LLong m_hAttachHandle = LoginModule.netsdk.CLIENT_AttachVideoStatSummary(LoginModule.m_hLoginHandle, inParam, outParam, 5000);
             if (m_hAttachHandle.longValue() == 0) {
                 System.err.printf("Attach Failed!LastError = %s\n", ToolKits.getErrorCodePrint());
@@ -99,11 +104,11 @@ public class VideoStateSummaryModule {
             }
             System.out.println("Channel " + channel + ". Handle: " + m_hAttachHandle.longValue() + ". Detach Succeed!");
 
-            NetSDKLib.NET_IN_ATTACH_VIDEOSTAT_SUM inParam = new NetSDKLib.NET_IN_ATTACH_VIDEOSTAT_SUM();
+            NetSDKLibStructure.NET_IN_ATTACH_VIDEOSTAT_SUM inParam = new NetSDKLibStructure.NET_IN_ATTACH_VIDEOSTAT_SUM();
             inParam.nChannel = channel;
             inParam.cbVideoStatSum = fVideoStatSumCallBack;
 
-            NetSDKLib.NET_OUT_ATTACH_VIDEOSTAT_SUM outParam = new NetSDKLib.NET_OUT_ATTACH_VIDEOSTAT_SUM();
+            NetSDKLibStructure.NET_OUT_ATTACH_VIDEOSTAT_SUM outParam = new NetSDKLibStructure.NET_OUT_ATTACH_VIDEOSTAT_SUM();
             m_hAttachHandle = LoginModule.netsdk.CLIENT_AttachVideoStatSummary(LoginModule.m_hLoginHandle, inParam, outParam, 5000);
             if (m_hAttachHandle.longValue() == 0) {
                 System.err.printf("Attach Failed!LastError = %s\n", ToolKits.getErrorCodePrint());
@@ -118,7 +123,7 @@ public class VideoStateSummaryModule {
         NetSDKLib.NET_CTRL_CLEAR_SECTION_STAT_INFO info = new NetSDKLib.NET_CTRL_CLEAR_SECTION_STAT_INFO();
         info.nChannel = channel;
         info.write();
-        if (!LoginModule.netsdk.CLIENT_ControlDevice(LoginModule.m_hLoginHandle, NetSDKLib.CtrlType.CTRLTYPE_CTRL_CLEAR_SECTION_STAT, info.getPointer(), 5000)) {
+        if (!LoginModule.netsdk.CLIENT_ControlDevice(LoginModule.m_hLoginHandle, NetSDKLibStructure.CtrlType.CTRLTYPE_CTRL_CLEAR_SECTION_STAT, info.getPointer(), 5000)) {
             System.err.printf("Clear Video State Summary Failed!LastError = %s\n", ToolKits.getErrorCodePrint());
             return false;
         }

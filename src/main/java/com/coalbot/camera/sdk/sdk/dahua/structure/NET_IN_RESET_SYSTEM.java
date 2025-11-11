@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
+
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 恢复出厂设置入参
 */

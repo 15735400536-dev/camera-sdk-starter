@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 /**
  * CLIENT_PostLoginTask 输入参数
@@ -23,9 +25,9 @@ public class NET_POST_LOGIN_TASK extends NetSDKLibStructure.SdkStructure
     */
     public int              bOnline;
     /**
-     * 设备信息扩展,参见结构体定义 {@link NetSDKLib.NET_DEVICEINFO_Ex}
+     * 设备信息扩展,参见结构体定义 {@link NetSDKLibStructure.NET_DEVICEINFO_Ex}
     */
-    public NetSDKLib.NET_DEVICEINFO_Ex stuDeviceInfo = new NetSDKLib.NET_DEVICEINFO_Ex();
+    public NetSDKLibStructure.NET_DEVICEINFO_Ex stuDeviceInfo = new NetSDKLibStructure.NET_DEVICEINFO_Ex();
     /**
      * 当登陆失败时（bOnline为FALSE），nError 的错误码含义说明参考 CLIENT_Login 中的 error 说明，同时，当nError为 LOGIN_TYPE_DEVICE_NOT_SUPPORT 时，表示设备不支持此种登录方式
     */

@@ -1,5 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -18,7 +19,7 @@ public class CTRL_ARM_DISARM_PARAM_EX_OUT extends NetSDKLibStructure.SdkStructur
     /**
      *  有报警源输入失败的防区号, 防区号从0开始
      */
-    public int[]            nSource = new int[NetSDKLib.ARM_DISARM_ZONE_MAX];
+    public int[]            nSource = new int[NetSDKLibStructure.ARM_DISARM_ZONE_MAX];
     /**
      *  有联动报警布防失败的防区个数
      */
@@ -26,7 +27,7 @@ public class CTRL_ARM_DISARM_PARAM_EX_OUT extends NetSDKLibStructure.SdkStructur
     /**
      *  有联动报警失败的防区号, 防区号从0开始
      */
-    public int[]            nLink = new int[NetSDKLib.ARM_DISARM_ZONE_MAX];
+    public int[]            nLink = new int[NetSDKLibStructure.ARM_DISARM_ZONE_MAX];
 
     public CTRL_ARM_DISARM_PARAM_EX_OUT(){
         this.dwSize = this.size();

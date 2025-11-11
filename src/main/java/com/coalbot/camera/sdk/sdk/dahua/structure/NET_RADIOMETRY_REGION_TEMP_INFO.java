@@ -1,12 +1,14 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 随机测温区域的温度信息
 */
 public class NET_RADIOMETRY_REGION_TEMP_INFO extends NetSDKLibStructure.SdkStructure
 {
     /**
-     * 温度单位,参见枚举定义 {@link NetSDKLib.EM_TEMPERATURE_UNIT}
+     * 温度单位,参见枚举定义 {@link NetSDKLibStructure.EM_TEMPERATURE_UNIT}
     */
     public int              emTemperatureUnit;
     /**
@@ -22,13 +24,13 @@ public class NET_RADIOMETRY_REGION_TEMP_INFO extends NetSDKLibStructure.SdkStruc
     */
     public int              nTemperMin;
     /**
-     * 随机区域内最高的温度的点的坐标,8192坐标系,参见结构体定义 {@link NetSDKLib.NET_POINT}
+     * 随机区域内最高的温度的点的坐标,8192坐标系,参见结构体定义 {@link NetSDKLibStructure.NET_POINT}
     */
-    public NetSDKLib.NET_POINT stuTemperMaxPoint = new NetSDKLib.NET_POINT();
+    public NetSDKLibStructure.NET_POINT stuTemperMaxPoint = new NetSDKLibStructure.NET_POINT();
     /**
-     * 随机区域内最低的温度的点的坐标,8192坐标系,参见结构体定义 {@link NetSDKLib.NET_POINT}
+     * 随机区域内最低的温度的点的坐标,8192坐标系,参见结构体定义 {@link NetSDKLibStructure.NET_POINT}
     */
-    public NetSDKLib.NET_POINT stuTemperMinPoint = new NetSDKLib.NET_POINT();
+    public NetSDKLibStructure.NET_POINT stuTemperMinPoint = new NetSDKLibStructure.NET_POINT();
     /**
      * 保留字节
     */

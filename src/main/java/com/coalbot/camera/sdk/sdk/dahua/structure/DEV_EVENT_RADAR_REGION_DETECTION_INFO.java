@@ -1,9 +1,9 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-/** 
+/**
 * @author 291189
 * @description  事件类型EVENT_IVS_RADAR_REGION_DETECTION(雷达警戒区检测事件)对应的数据块描述信息 
 * @date 2022/09/01 20:07:33
@@ -44,7 +44,7 @@ public class DEV_EVENT_RADAR_REGION_DETECTION_INFO extends NetSDKLibStructure.Sd
 /** 
 事件对应文件信息
 */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLib.NET_EVENT_FILE_INFO();
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLibStructure.NET_EVENT_FILE_INFO();
 /** 
 检测到的对象个数
 */
@@ -64,11 +64,11 @@ public class DEV_EVENT_RADAR_REGION_DETECTION_INFO extends NetSDKLibStructure.Sd
 /** 
 检测区域,[0,8191]
 */
-    public			NetSDKLib.NET_POINT[] stuDetectRegion = new NetSDKLib.NET_POINT[20];
+    public			NetSDKLibStructure.NET_POINT[] stuDetectRegion = new NetSDKLibStructure.NET_POINT[20];
 /** 
 全景广角图（当图片超过1张时 使用stuSceneImageEx）
 */
-    public NetSDKLib.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO_EX();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO_EX();
 /** 
 报警类型 {@link com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_RADAR_ALARM_TYPE}
 */
@@ -92,7 +92,7 @@ RFID卡片信息，最多支持256张卡片信息
 /** 
 全景广角图（扩展为10张）
 */
-    public			NetSDKLib.SCENE_IMAGE_INFO_EX[] stuSceneImageEx = new NetSDKLib.SCENE_IMAGE_INFO_EX[10];
+    public			NetSDKLibStructure.SCENE_IMAGE_INFO_EX[] stuSceneImageEx = new NetSDKLibStructure.SCENE_IMAGE_INFO_EX[10];
 /** 
 全景广角图个数
 */
@@ -147,13 +147,13 @@ public DEV_EVENT_RADAR_REGION_DETECTION_INFO(){
 			stuObjects[i]=new NET_RADAR_DETECT_OBJECT();
 			}
 		for(int i=0;i<stuDetectRegion.length;i++){
-			stuDetectRegion[i]=new NetSDKLib.NET_POINT();
+			stuDetectRegion[i]=new NetSDKLibStructure.NET_POINT();
 			}
 		for(int i=0;i<stuRFIDCardId.length;i++){
 			stuRFIDCardId[i]=new NET_RFID_CARD_INFO();
 			}
 		for(int i=0;i<stuSceneImageEx.length;i++){
-			stuSceneImageEx[i]=new NetSDKLib.SCENE_IMAGE_INFO_EX();
+			stuSceneImageEx[i]=new NetSDKLibStructure.SCENE_IMAGE_INFO_EX();
 			}
 }
 }

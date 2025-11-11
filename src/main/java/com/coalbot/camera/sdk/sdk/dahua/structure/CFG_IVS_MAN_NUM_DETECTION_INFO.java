@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -31,15 +32,15 @@ public class CFG_IVS_MAN_NUM_DETECTION_INFO extends NetSDKLibStructure.SdkStruct
 	/**
 	 * 相应物体类型列表
 	 */
-    public MaxNameByteArrInfo[] szObjectTypes = (MaxNameByteArrInfo[])new MaxNameByteArrInfo().toArray(NetSDKLib.MAX_OBJECT_LIST_SIZE);
+    public MaxNameByteArrInfo[] szObjectTypes = (MaxNameByteArrInfo[])new MaxNameByteArrInfo().toArray(NetSDKLibStructure.MAX_OBJECT_LIST_SIZE);
 	/**
 	 * 报警联动
 	 */
-    public NetSDKLib.CFG_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLib.CFG_ALARM_MSG_HANDLE();
+    public NetSDKLibStructure.CFG_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLibStructure.CFG_ALARM_MSG_HANDLE();
 	/**
 	 * 事件响应时间段
 	 */
-    public NetSDKLib.TIME_SECTION_WEEK_DAY_10[] stuTimeSection = (NetSDKLib.TIME_SECTION_WEEK_DAY_10[])new NetSDKLib.TIME_SECTION_WEEK_DAY_10().toArray(NetSDKLib.WEEK_DAY_NUM);
+    public NetSDKLibStructure.TIME_SECTION_WEEK_DAY_10[] stuTimeSection = (NetSDKLibStructure.TIME_SECTION_WEEK_DAY_10[])new NetSDKLibStructure.TIME_SECTION_WEEK_DAY_10().toArray(NetSDKLibStructure.WEEK_DAY_NUM);
 	/**
 	 * 云台预置点编号 0~65535
 	 */
@@ -51,7 +52,7 @@ public class CFG_IVS_MAN_NUM_DETECTION_INFO extends NetSDKLibStructure.SdkStruct
 	/**
 	 * 检测区域坐标
 	 */
-    public NetSDKLib.CFG_POLYGON[] stuDetectRegion = new NetSDKLib.CFG_POLYGON[20];
+    public NetSDKLibStructure.CFG_POLYGON[] stuDetectRegion = new NetSDKLibStructure.CFG_POLYGON[20];
 	/**
 	 * 异常人数阈值
 	 */
@@ -99,10 +100,10 @@ public class CFG_IVS_MAN_NUM_DETECTION_INFO extends NetSDKLibStructure.SdkStruct
 
 	public CFG_IVS_MAN_NUM_DETECTION_INFO() {
 		for (int i = 0; i < stuTimeSection.length; i++) {
-			stuTimeSection[i] = new NetSDKLib.TIME_SECTION_WEEK_DAY_10();
+			stuTimeSection[i] = new NetSDKLibStructure.TIME_SECTION_WEEK_DAY_10();
 		}
 		for (int i = 0; i < stuDetectRegion.length; i++) {
-			stuDetectRegion[i] = new NetSDKLib.CFG_POLYGON();
+			stuDetectRegion[i] = new NetSDKLibStructure.CFG_POLYGON();
 		}
 	}
 }

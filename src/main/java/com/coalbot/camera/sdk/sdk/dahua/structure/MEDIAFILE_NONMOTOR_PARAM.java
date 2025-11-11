@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * DH_FILE_QUERY_NONMOTOR 非机动车对应查询参数
 */
@@ -16,11 +18,11 @@ public class MEDIAFILE_NONMOTOR_PARAM extends NetSDKLibStructure.SdkStructure
     /**
      * 开始时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stStartTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stStartTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 结束时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stEndTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stEndTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 骑车人数最小值
     */

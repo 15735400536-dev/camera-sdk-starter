@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_TSECT;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TSECT;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SdkStructure;
 
 public class NET_PROJECT_TASK extends SdkStructure {
@@ -8,7 +8,7 @@ public class NET_PROJECT_TASK extends SdkStructure {
     public byte[]           szTaskName = new byte[260];           // 任务名称Ansi编码
     public CFG_TIME_SECTION[] Section = (CFG_TIME_SECTION[])new CFG_TIME_SECTION().toArray(7); // 任务时间段
     public int              bIsCycle;                             // 任务是否循环,TRUE表示循环,FALSE表示不循环
-	/** {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.EM_VIDEODIAGNOSIS_PROJECT_TASK_TYPE} */
+	/** {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.EM_VIDEODIAGNOSIS_PROJECT_TASK_TYPE} */
     public int              emTaskType;                           // 任务类型
     public int              bIsRepeat;                            // 任务是否重复执行，（跨天/周是否重复执行）
     public int              nCycleInterval;                       // 任务循环间隔，单位秒

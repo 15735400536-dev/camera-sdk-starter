@@ -1,6 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
+
 /**
  * 事件类型 EVENT_IVS_INTELLITASK_CUSTOM_EVENT (智能组合自定义报警事件)对应的数据块描述信息
 */
@@ -21,7 +23,7 @@ public class NET_INTELLITASK_CUSTOM_EVENT_INFO extends NetSDKLibStructure.SdkStr
     /**
      * 事件发生的时间,参见结构体定义 {@link NetSDKLib.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX stuUTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX stuUTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 自定义报警id
     */

@@ -10,7 +10,7 @@ public class NET_RADIOMETRY_QUERY_INFO extends NetSDKLibStructure.SdkStructure
     /**
      * 记录时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuTime = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 预置点编号
     */

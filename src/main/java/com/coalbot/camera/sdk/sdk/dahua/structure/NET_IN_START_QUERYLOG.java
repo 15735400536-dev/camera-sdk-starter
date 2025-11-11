@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -34,7 +34,7 @@ public class NET_IN_START_QUERYLOG extends NetSDKLibStructure.SdkStructure {
 	 */
     public byte[]           szLogTypeEx = new byte[64 * 128];
 	/**
-	 * 查询结果排序方式 {@link EM_RESULT_ORDER_TYPE}
+	 * 查询结果排序方式 {@link NetSDKLibStructure.EM_RESULT_ORDER_TYPE}
 	 */
     public int              emResultOrder;
 	/**

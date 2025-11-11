@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 import java.text.NumberFormat;
@@ -45,11 +46,11 @@ public class DEV_EVENT_TRAFFIC_PEDESTRAINRUNREDLIGHT_INFO extends NetSDKLibStruc
     /**
      * 行人信息
      */
-    public NetSDKLib.NET_MSG_OBJECT stuObject;
+    public NetSDKLibStructure.NET_MSG_OBJECT stuObject;
     /**
      * 事件对应文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo;
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;
     /**
      * 表示抓拍序号,如3,2,1,1表示抓拍结束,0表示异常结束
      */
@@ -71,27 +72,27 @@ public class DEV_EVENT_TRAFFIC_PEDESTRAINRUNREDLIGHT_INFO extends NetSDKLibStruc
     /**
      * 对应图片的分辨率
      */
-    public NetSDKLib.NET_RESOLUTION_INFO stuResolution;
+    public NetSDKLibStructure.NET_RESOLUTION_INFO stuResolution;
     /**
-     * 行人信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_MSG_OBJECT}
+     * 行人信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_MSG_OBJECT}
     */
     public Pointer          pstuVehicle;
     /**
-     * 全景图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.SCENE_IMAGE_INFO_EX}
+     * 全景图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SCENE_IMAGE_INFO_EX}
     */
     public Pointer          pstuSceneImage;
     /**
-     * 交通车辆信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO}
+     * 交通车辆信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO}
     */
     public Pointer          pstuTrafficCar;
     /**
      * 保留字节
      */
-    public byte[]           bReserved = new byte[1024-3*NetSDKLib.POINTERSIZE];
+    public byte[]           bReserved = new byte[1024-3*NetSDKLibStructure.POINTERSIZE];
     /**
      * 公共信息
      */
-    public NetSDKLib.EVENT_COMM_INFO stCommInfo;
+    public NetSDKLibStructure.EVENT_COMM_INFO stCommInfo;
     /**
      * 扩展协议字段,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_EVENT_INFO_EXTEND}
     */

@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_STORAGE_DISK_POWERMODE;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_STORAGE_DISK_PREDISKCHECK;
 

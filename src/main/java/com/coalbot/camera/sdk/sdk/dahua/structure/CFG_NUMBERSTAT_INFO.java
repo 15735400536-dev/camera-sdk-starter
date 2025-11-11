@@ -109,7 +109,7 @@ public class CFG_NUMBERSTAT_INFO extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 前端视频分析联动响应时间段
 	 */
-    public NetSDKLibStructure.TIME_SECTION_WEEK_DAY_10[] stuRemoteTimeSection = (NetSDKLibStructure.TIME_SECTION_WEEK_DAY_10[])new NetSDKLibStructure.TIME_SECTION_WEEK_DAY_10().toArray(NetSDKLib.WEEK_DAY_NUM);
+    public NetSDKLibStructure.TIME_SECTION_WEEK_DAY_10[] stuRemoteTimeSection = (NetSDKLibStructure.TIME_SECTION_WEEK_DAY_10[])new NetSDKLibStructure.TIME_SECTION_WEEK_DAY_10().toArray(NetSDKLibStructure.WEEK_DAY_NUM);
     /**
      * 人数去重策略配置,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.CFG_DUPLICATE_REMOVE_INFO}
     */

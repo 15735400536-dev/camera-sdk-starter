@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -23,11 +24,11 @@ public class NET_ALARM_IN_CHANNEL extends NetSDKLibStructure.SdkStructure {
     /**
      *  设备ID, 本地报警通道: "Local", 远程设备: 使用uuid表示
      */
-    public byte[]           szDeviceID = new byte[NetSDKLib.NET_DEV_ID_LEN];
+    public byte[]           szDeviceID = new byte[NetSDKLibStructure.NET_DEV_ID_LEN];
     /**
      *  报警通道名称
      */
-    public byte[]           szName = new byte[NetSDKLib.NET_DEV_NAME_LEN];
+    public byte[]           szName = new byte[NetSDKLibStructure.NET_DEV_NAME_LEN];
 
     public NET_ALARM_IN_CHANNEL(){
         this.dwSize = this.size();

@@ -46,7 +46,7 @@ public class PTZ_LOCATION_TRACK_OBJECT extends NetSDKLibStructure.SdkStructure
     /**
      * 外部设备（如雷达）识别到目标上报报警的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuLinkRealUTC = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuLinkRealUTC = new NetSDKLibStructure.NET_TIME();
     /**
      * 航向：正北方向为0° 顺时针为正，范围 0-360°，扩大100倍表示
     */

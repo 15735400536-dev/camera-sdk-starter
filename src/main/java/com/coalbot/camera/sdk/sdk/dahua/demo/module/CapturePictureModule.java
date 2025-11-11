@@ -1,9 +1,9 @@
 package com.coalbot.camera.sdk.sdk.dahua.demo.module;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.LLong;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
-
 import com.sun.jna.ptr.IntByReference;
 
 /**
@@ -26,7 +26,7 @@ public class CapturePictureModule {
 	 */
 	public static boolean localCapturePicture(LLong hPlayHandle, String picFileName) {
 				
-		if (!LoginModule.netsdk.CLIENT_CapturePictureEx(hPlayHandle, picFileName, NetSDKLib.NET_CAPTURE_FORMATS.NET_CAPTURE_JPEG)) { 
+		if (!LoginModule.netsdk.CLIENT_CapturePictureEx(hPlayHandle, picFileName, NetSDKLibStructure.NET_CAPTURE_FORMATS.NET_CAPTURE_JPEG)) {
 			System.err.printf("CLIENT_CapturePicture Failed!" + ToolKits.getErrorCodePrint());
 			return false;
 		} else { 
@@ -77,7 +77,7 @@ public class CapturePictureModule {
 	 */
 	private static boolean snapPicture(int chn, int mode, int interval) {
 		// send caputre picture command to device
-		NetSDKLib.SNAP_PARAMS stuSnapParams = new NetSDKLib.SNAP_PARAMS(); 
+		NetSDKLibStructure.SNAP_PARAMS stuSnapParams = new NetSDKLibStructure.SNAP_PARAMS();
 		stuSnapParams.Channel = chn;  			// channel
 		stuSnapParams.mode = mode;    			// capture picture mode
 		stuSnapParams.Quality = 3;				// picture quality
@@ -101,7 +101,7 @@ public class CapturePictureModule {
 	 * 设置抓图回调函数
 	 * \endif
 	 */
-	public static void setSnapRevCallBack(NetSDKLib.fSnapRev cbSnapReceive){ 
+	public static void setSnapRevCallBack(NetSDKLib.fSnapRev cbSnapReceive){
 		LoginModule.netsdk.CLIENT_SetSnapRevCallBack(cbSnapReceive, null);
 	}
 }

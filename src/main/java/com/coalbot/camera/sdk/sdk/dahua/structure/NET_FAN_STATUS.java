@@ -1,8 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_MAX_FAN_NUM;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * className：NET_FAN_STATUS
@@ -29,7 +27,7 @@ public class NET_FAN_STATUS extends NetSDKLibStructure.SdkStructure {
     /**
      *  风扇状态
      */
-    public NET_FAN_INFO[]   stuFans = (NET_FAN_INFO[]) new NET_FAN_INFO().toArray(NET_MAX_FAN_NUM);
+    public NET_FAN_INFO[]   stuFans = (NET_FAN_INFO[]) new NET_FAN_INFO().toArray(NetSDKLibStructure.NET_MAX_FAN_NUM);
 
     public NET_FAN_STATUS(){
         this.dwSize = this.size();

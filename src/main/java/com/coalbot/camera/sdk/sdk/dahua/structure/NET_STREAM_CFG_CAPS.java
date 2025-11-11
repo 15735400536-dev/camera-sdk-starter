@@ -37,7 +37,7 @@ public class NET_STREAM_CFG_CAPS extends NetSDKLibStructure.SdkStructure {
      * {@link #abIndivResolution} 为 0 时生效
      * 有效长度由 {@link #nResolutionTypeNum} 决定
      */
-    public NetSDKLib.NET_RESOLUTION_INFO[] stuResolutionTypes = new NetSDKLib.NET_RESOLUTION_INFO[CFG_MAX_CAPTURE_SIZE_NUM];
+    public NetSDKLibStructure.NET_RESOLUTION_INFO[] stuResolutionTypes = new NetSDKLibStructure.NET_RESOLUTION_INFO[CFG_MAX_CAPTURE_SIZE_NUM];
     /**
      * 不同分辨率下帧率最大值
      * {@link #nFPSMax} 不为 0 时使用
@@ -124,7 +124,7 @@ public class NET_STREAM_CFG_CAPS extends NetSDKLibStructure.SdkStructure {
     public NET_STREAM_CFG_CAPS() {
         dwSize = this.size();
         for (int i = 0; i < stuResolutionTypes.length; i++) {
-            stuResolutionTypes[i] = new NetSDKLib.NET_RESOLUTION_INFO();
+            stuResolutionTypes[i] = new NetSDKLibStructure.NET_RESOLUTION_INFO();
         }
         for (int i = 0; i < stuIndivResolutionTypes.length; i++) {
             stuIndivResolutionTypes[i] = new NET_RESOLUTION_INFO_ARRAY();

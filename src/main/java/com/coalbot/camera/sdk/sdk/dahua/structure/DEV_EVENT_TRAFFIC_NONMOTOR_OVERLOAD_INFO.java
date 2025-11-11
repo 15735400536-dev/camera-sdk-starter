@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -36,11 +36,11 @@ public class DEV_EVENT_TRAFFIC_NONMOTOR_OVERLOAD_INFO extends NetSDKLibStructure
     /**
      *  事件对应文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo;
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;
     /**
      *  智能事件公共信息 
      */
-    public NetSDKLib.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;
+    public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;
     /**
      *  抓图标志(按位),具体见 { @link NET_RESERVED_COMMON}
      */
@@ -48,11 +48,11 @@ public class DEV_EVENT_TRAFFIC_NONMOTOR_OVERLOAD_INFO extends NetSDKLibStructure
     /**
      *  对应图片的分辨率
      */
-    public NetSDKLib.NET_RESOLUTION_INFO stuResolution;
+    public NetSDKLibStructure.NET_RESOLUTION_INFO stuResolution;
     /**
      *  非机动车信息
      */
-    public NetSDKLib.VA_OBJECT_NONMOTOR stuNonMotor;
+    public NetSDKLibStructure.VA_OBJECT_NONMOTOR stuNonMotor;
     /**
      *  车道号
      */
@@ -64,11 +64,11 @@ public class DEV_EVENT_TRAFFIC_NONMOTOR_OVERLOAD_INFO extends NetSDKLibStructure
     /**
      *  公共信息
      */
-    public NetSDKLib.EVENT_COMM_INFO stuCommInfo;
+    public NetSDKLibStructure.EVENT_COMM_INFO stuCommInfo;
     /**
      *  交通车辆信息
      */
-    public NetSDKLib.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
+    public NetSDKLibStructure.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
     /**
      * 图片信息数组,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_IMAGE_INFO_EX3}
     */
@@ -84,6 +84,6 @@ public class DEV_EVENT_TRAFFIC_NONMOTOR_OVERLOAD_INFO extends NetSDKLibStructure
     /**
      *  保留字节 
      */
-    public byte[]           byReserved = new byte[980-NetSDKLib.POINTERSIZE];
+    public byte[]           byReserved = new byte[980-NetSDKLibStructure.POINTERSIZE];
 }
 

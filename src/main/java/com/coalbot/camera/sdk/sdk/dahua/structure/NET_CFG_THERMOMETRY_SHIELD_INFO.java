@@ -1,9 +1,9 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-/** 
+/**
 * @author 291189
 * @description  屏蔽区的测温屏蔽区配置信息 
 * @date 2022/11/07 10:53:23

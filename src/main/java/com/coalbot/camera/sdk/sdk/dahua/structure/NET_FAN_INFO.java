@@ -2,7 +2,7 @@ package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
 
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_DEVICE_NAME_LEN;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * className：NET_FAN_INFO
@@ -21,7 +21,7 @@ public class NET_FAN_INFO extends NetSDKLibStructure.SdkStructure {
     /**
      *  名称
      */
-    public byte[]           szName = new byte[NET_DEVICE_NAME_LEN];
+    public byte[]           szName = new byte[NetSDKLibStructure.NET_DEVICE_NAME_LEN];
     /**
      *  速度
      */

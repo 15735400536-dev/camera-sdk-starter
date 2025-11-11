@@ -1,11 +1,11 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.GetDevCaps_Type;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.REC_TYPE;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.SNAP_TYPE;
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_N_ENCODE_AUX;
 
 /**
  * 获取设备编码配置对应能力输出参数
@@ -35,7 +35,7 @@ public class NET_OUT_ENCODE_CFG_CAPS extends NetSDKLibStructure.SdkStructure {
      * 第三个表示辅码流 3
      * 有效长度由 {@link #nExtraFormCaps} 决定
      */
-    public NET_STREAM_CFG_CAPS[] stuExtraFormatCaps = new NET_STREAM_CFG_CAPS[NET_N_ENCODE_AUX];
+    public NET_STREAM_CFG_CAPS[] stuExtraFormatCaps = new NET_STREAM_CFG_CAPS[NetSDKLibStructure.NET_N_ENCODE_AUX];
     /**
      * 抓图码流配置对应能力:如果有多个:
      * 第一个表示普通抓图

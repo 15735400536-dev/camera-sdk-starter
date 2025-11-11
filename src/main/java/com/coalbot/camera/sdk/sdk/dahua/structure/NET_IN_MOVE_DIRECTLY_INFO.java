@@ -1,7 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 291189
@@ -17,11 +16,11 @@ public class NET_IN_MOVE_DIRECTLY_INFO extends NetSDKLibStructure.SdkStructure {
     /**
      * 屏幕坐标
      */
-    public NetSDKLib.PTZ_SPEED_UNIT stuScreen = new NetSDKLib.PTZ_SPEED_UNIT();
+    public NetSDKLibStructure.PTZ_SPEED_UNIT stuScreen = new NetSDKLibStructure.PTZ_SPEED_UNIT();
     /**
      * 云台运行速度
      */
-    public NetSDKLib.PTZ_SPEED_UNIT stuSpeed = new NetSDKLib.PTZ_SPEED_UNIT();
+    public NetSDKLibStructure.PTZ_SPEED_UNIT stuSpeed = new NetSDKLibStructure.PTZ_SPEED_UNIT();
 
     public NET_IN_MOVE_DIRECTLY_INFO() {
         this.dwSize = this.size();

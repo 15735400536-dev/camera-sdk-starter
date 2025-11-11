@@ -1,5 +1,5 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 /**
  * CLIENT_AttachNormalUsingJson的回调信息

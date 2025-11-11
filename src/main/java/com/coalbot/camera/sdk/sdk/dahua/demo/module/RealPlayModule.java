@@ -1,21 +1,18 @@
 package com.coalbot.camera.sdk.sdk.dahua.demo.module;
 
-import java.awt.Panel;
-import java.io.*;
-import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
-import java.nio.file.StandardOpenOption;
-
-import com.coalbot.camera.sdk.sdk.dahua.common.SavePath;
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.LLong;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
-
-import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_AUDIO_DATA_TYPE;
-import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_REAL_DATA_TYPE;
+import com.coalbot.camera.sdk.sdk.dahua.common.SavePath;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.ENUMERROR;
 import com.sun.jna.Native;
 import com.sun.jna.Pointer;
+
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 
 /**
  * 实时预览接口实现
@@ -76,7 +73,7 @@ public class RealPlayModule {
 			int channelID,
 			int dataType,
 			Panel panel) {
-		NetSDKLib.NET_IN_REALPLAY_BY_DATA_TYPE inParam = new NetSDKLib.NET_IN_REALPLAY_BY_DATA_TYPE();
+		NetSDKLibStructure.NET_IN_REALPLAY_BY_DATA_TYPE inParam = new NetSDKLibStructure.NET_IN_REALPLAY_BY_DATA_TYPE();
 		inParam.rType = 0;
 		inParam.nChannelID = channelID;
 		inParam.emDataType = dataType;
@@ -92,8 +89,8 @@ public class RealPlayModule {
 			inParam.hWnd = Native.getComponentPointer(panel);
 		}
 
-		NetSDKLib.NET_OUT_REALPLAY_BY_DATA_TYPE outParam =
-				new NetSDKLib.NET_OUT_REALPLAY_BY_DATA_TYPE();
+		NetSDKLibStructure.NET_OUT_REALPLAY_BY_DATA_TYPE outParam =
+				new NetSDKLibStructure.NET_OUT_REALPLAY_BY_DATA_TYPE();
 		NetSDKLib.LLong realplay =
 				LoginModule.netsdk
 						.CLIENT_RealPlayByDataType(

@@ -1,9 +1,9 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-/** 
+/**
 事件类型 EVENT_IVS_SEWAGE_DETECTION (排污检测事件) 对应的数据描述信息
 */
 public class DEV_EVENT_SEWAGE_DETECTION_INFO extends NetSDKLibStructure.SdkStructure {
@@ -58,7 +58,7 @@ public class DEV_EVENT_SEWAGE_DETECTION_INFO extends NetSDKLibStructure.SdkStruc
 /** 
 检测区域
 */
-    public			NetSDKLib.DH_POINT[] stuDetectRegion = (NetSDKLib.DH_POINT[])new NetSDKLib.DH_POINT().toArray(20);
+    public			NetSDKLibStructure.DH_POINT[] stuDetectRegion = (NetSDKLibStructure.DH_POINT[])new NetSDKLibStructure.DH_POINT().toArray(20);
 /** 
 事件触发的预置点号，从1开始, 没有该字段，表示预置点未知
 */
@@ -66,11 +66,11 @@ public class DEV_EVENT_SEWAGE_DETECTION_INFO extends NetSDKLibStructure.SdkStruc
 /** 
 原始图
 */
-    public NetSDKLib.NET_INTELLIGENCE_IMAGE_INFO stuOriginalImage = new NetSDKLib.NET_INTELLIGENCE_IMAGE_INFO();
+    public NetSDKLibStructure.NET_INTELLIGENCE_IMAGE_INFO stuOriginalImage = new NetSDKLibStructure.NET_INTELLIGENCE_IMAGE_INFO();
 /** 
 球机变到最小倍下的抓图
 */
-    public NetSDKLib.NET_INTELLIGENCE_IMAGE_INFO stuSceneImage = new NetSDKLib.NET_INTELLIGENCE_IMAGE_INFO();
+    public NetSDKLibStructure.NET_INTELLIGENCE_IMAGE_INFO stuSceneImage = new NetSDKLibStructure.NET_INTELLIGENCE_IMAGE_INFO();
 /** 
 保留字节
 */

@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 目标事件列表
 */
@@ -40,11 +42,11 @@ public class NET_OBJECT_EVENTS_INFO extends NetSDKLibStructure.SdkStructure
     /**
      * 物体进入画面时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuEnterTimeRealUTC = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuEnterTimeRealUTC = new NetSDKLibStructure.NET_TIME();
     /**
      * 物体离开画面时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuLeaveTimeRealUTC = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuLeaveTimeRealUTC = new NetSDKLibStructure.NET_TIME();
     /**
      * 关联记录编号
     */

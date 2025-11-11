@@ -27,7 +27,7 @@ public class DHDEV_SMART_HARDDISK extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 硬盘的smart信息,可能会有很多条,最多不超过30个
 	 */
-    public DHDEV_SMART_VALUE[] smartValue = new DHDEV_SMART_VALUE[NetSDKLib.MAX_SMART_VALUE_NUM];
+    public DHDEV_SMART_VALUE[] smartValue = new DHDEV_SMART_VALUE[NetSDKLibStructure.MAX_SMART_VALUE_NUM];
 
 	public DHDEV_SMART_HARDDISK() {
 		for (int i = 0; i < smartValue.length; i++) {

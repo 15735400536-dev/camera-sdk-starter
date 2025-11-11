@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description  事件类型 EVENT_IVS_CIGARETTE_CASE_DETECTION (烟盒检测事件)对应的数据块描述信息 
 * @date 2022/12/14 14:33:00

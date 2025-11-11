@@ -1,6 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 事件类型 EVENT_IVS_PARKING_LOT_STATUS_DETECTION(室外停车位状态检测)对应的数据块描述信息
@@ -56,7 +58,7 @@ public class DEV_EVENT_PARKING_LOT_STATUS_DETECTION_INFO extends NetSDKLibStruct
     /**
      * 全景广角图
      */
-    public NetSDKLib.SCENE_IMAGE_INFO_EX stuSceneImage;
+    public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage;
     /**
      * 图片信息数组
      */

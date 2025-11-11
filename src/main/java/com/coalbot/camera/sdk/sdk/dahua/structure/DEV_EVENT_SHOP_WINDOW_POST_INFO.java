@@ -1,8 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.HDBJ_MAX_OBJECTS_NUM;
 import static com.coalbot.camera.sdk.sdk.dahua.constant.SDKStructureFieldLenth.SDK_MAX_DETECT_REGION_NUM;
 
 /**
@@ -48,7 +48,7 @@ public class DEV_EVENT_SHOP_WINDOW_POST_INFO extends NetSDKLibStructure.SdkStruc
     /**
      * 事件对应文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo;
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;
     /**
      * 检测区域顶点数
      */
@@ -56,7 +56,7 @@ public class DEV_EVENT_SHOP_WINDOW_POST_INFO extends NetSDKLibStructure.SdkStruc
     /**
      * 检测区域
      */
-    public NetSDKLib.NET_POINT[] stuDetectRegion = (NetSDKLib.NET_POINT[]) new NetSDKLib.NET_POINT().toArray(SDK_MAX_DETECT_REGION_NUM);
+    public NetSDKLibStructure.NET_POINT[] stuDetectRegion = (NetSDKLibStructure.NET_POINT[]) new NetSDKLibStructure.NET_POINT().toArray(SDK_MAX_DETECT_REGION_NUM);
     /**
      * 检测到的物体个数
      */
@@ -64,7 +64,7 @@ public class DEV_EVENT_SHOP_WINDOW_POST_INFO extends NetSDKLibStructure.SdkStruc
     /**
      * 检测到的物体
      */
-    public NetSDKLib.NET_MSG_OBJECT[] stuObjects = (NetSDKLib.NET_MSG_OBJECT[]) new NetSDKLib.NET_MSG_OBJECT().toArray(HDBJ_MAX_OBJECTS_NUM);
+    public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = (NetSDKLibStructure.NET_MSG_OBJECT[]) new NetSDKLibStructure.NET_MSG_OBJECT().toArray(NetSDKLibStructure.HDBJ_MAX_OBJECTS_NUM);
     /**
      * 事件触发的预置点号，从1开始
      */

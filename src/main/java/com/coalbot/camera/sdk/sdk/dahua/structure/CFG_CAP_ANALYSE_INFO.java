@@ -127,7 +127,7 @@ public class CFG_CAP_ANALYSE_INFO extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 实际返回客流量统计场景PD个数
 	 */
-    public CFG_NUMBERSTAT_MULT_INFO[] stuNumberStatMult = (CFG_NUMBERSTAT_MULT_INFO[])new CFG_NUMBERSTAT_MULT_INFO().toArray(NetSDKLib.MAX_NUMBER_STAT_MAULT_NUM);
+    public CFG_NUMBERSTAT_MULT_INFO[] stuNumberStatMult = (CFG_NUMBERSTAT_MULT_INFO[])new CFG_NUMBERSTAT_MULT_INFO().toArray(NetSDKLibStructure.MAX_NUMBER_STAT_MAULT_NUM);
 	/**
 	 * 全能力集，表示视频通道能力 full可以认为是不变的
 	 */

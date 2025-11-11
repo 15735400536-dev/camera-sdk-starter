@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 人员信息扩展结构体2
 */
@@ -16,11 +18,11 @@ public class FACERECOGNITION_PERSON_INFOEX2 extends NetSDKLibStructure.SdkStruct
     /**
      * 人员预约开始时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuAppointmentStartTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuAppointmentStartTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 人员预约结束时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuAppointmentEndTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuAppointmentEndTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 允许到达楼层, 已废弃, 建议使用szAllowFloorsEx
     */
@@ -44,11 +46,11 @@ public class FACERECOGNITION_PERSON_INFOEX2 extends NetSDKLibStructure.SdkStruct
     /**
      * 平台最近一次修改注册库人员信息的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuModifyTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuModifyTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 注册库入库时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuRegisterStorageTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuRegisterStorageTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 允许到达楼层
     */

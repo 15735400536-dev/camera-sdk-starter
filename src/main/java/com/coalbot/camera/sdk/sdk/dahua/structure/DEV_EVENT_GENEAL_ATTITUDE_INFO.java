@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -53,7 +54,7 @@ public class DEV_EVENT_GENEAL_ATTITUDE_INFO extends NetSDKLibStructure.SdkStruct
 	/**
 	 * 全景广角图
 	 */
-    public NetSDKLib.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO();
 	/**
 	 * 姿态类型 {@link com.coalbot.camera.sdk.sdk.dahua.enumeration.NET_EM_ATTITUDE_TYPE}
 	 */
@@ -73,7 +74,7 @@ public class DEV_EVENT_GENEAL_ATTITUDE_INFO extends NetSDKLibStructure.SdkStruct
 	/**
 	 * 保留字节,留待扩展
 	 */
-    public byte[]           szReserved = new byte[1016-NetSDKLib.POINTERSIZE];
+    public byte[]           szReserved = new byte[1016-NetSDKLibStructure.POINTERSIZE];
 
 	public DEV_EVENT_GENEAL_ATTITUDE_INFO() {
 		for (int i = 0; i < stuObjects.length; i++) {

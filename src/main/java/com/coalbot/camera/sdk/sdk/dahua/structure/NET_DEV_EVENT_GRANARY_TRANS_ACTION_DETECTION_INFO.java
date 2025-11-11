@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 421657
@@ -48,7 +48,7 @@ public class NET_DEV_EVENT_GRANARY_TRANS_ACTION_DETECTION_INFO extends NetSDKLib
     /**
      * / 物体信息列表
      */
-    public NetSDKLib.NET_MSG_OBJECT[] stuObjects = new NetSDKLib.NET_MSG_OBJECT[128];
+    public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[128];
     /**
      * / 相对事件时间戳,单位毫秒
      */
@@ -56,7 +56,7 @@ public class NET_DEV_EVENT_GRANARY_TRANS_ACTION_DETECTION_INFO extends NetSDKLib
     /**
      * / 全景图
      */
-    public NetSDKLib.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO_EX();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO_EX();
     /**
      * / 检测区域
      */
@@ -72,7 +72,7 @@ public class NET_DEV_EVENT_GRANARY_TRANS_ACTION_DETECTION_INFO extends NetSDKLib
 
     public NET_DEV_EVENT_GRANARY_TRANS_ACTION_DETECTION_INFO() {
         for (int i = 0; i < stuObjects.length; i++) {
-            stuObjects[i] = new NetSDKLib.NET_MSG_OBJECT();
+            stuObjects[i] = new NetSDKLibStructure.NET_MSG_OBJECT();
         }
         for (int i = 0; i < stuDetectRegion.length; i++) {
             stuDetectRegion[i] = new NET_POINT_EX();

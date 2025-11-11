@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 public class NET_ISCSI_TARGET extends NetSDKLibStructure.SdkStructure {
     public int              dwSize;

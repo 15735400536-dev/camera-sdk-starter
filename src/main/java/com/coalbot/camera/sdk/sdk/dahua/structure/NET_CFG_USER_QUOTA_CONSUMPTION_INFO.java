@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 人员定额消费配置，对应 NET_EM_CFG_USER_QUOTA_CONSUMPTION
 */

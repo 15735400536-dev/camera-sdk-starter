@@ -1,11 +1,9 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_REAL_DATA_TYPE;
 import com.sun.jna.Pointer;
-
-import static com.coalbot.camera.sdk.sdk.dahua.constant.SDKStructureFieldLenth.MAX_PATH;
 
 /**
  * 自适应下载录像 按文件 {@link NetSDKLib#CLIENT_DownloadByFileSelfAdapt} 入参
@@ -24,7 +22,7 @@ public class NET_IN_DOWNLOAD_BYFILE_SELFADAPT extends NetSDKLibStructure.SdkStru
      */
     public int              nChannelID;
     /**
-     * 录像类型枚举值 {@link NetSDKLib.EM_QUERY_RECORD_TYPE}
+     * 录像类型枚举值 {@link NetSDKLibStructure.EM_QUERY_RECORD_TYPE}
      */
     public int              emRecordType;
     /**
@@ -62,11 +60,11 @@ public class NET_IN_DOWNLOAD_BYFILE_SELFADAPT extends NetSDKLibStructure.SdkStru
     /**
      * 开始时间
      */
-    public NetSDKLib.NET_TIME stuStartTime;
+    public NetSDKLibStructure.NET_TIME stuStartTime;
     /**
      * 结束时间
      */
-    public NetSDKLib.NET_TIME stuEndTime;
+    public NetSDKLibStructure.NET_TIME stuEndTime;
     /**
      * 磁盘号(区分网络录像和本地录像的类型,0－127表示本地录像,其中64表示光盘1,128表示网络录像)
      */

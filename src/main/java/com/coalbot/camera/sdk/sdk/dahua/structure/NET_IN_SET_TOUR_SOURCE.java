@@ -1,5 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 /**
  * CLIENT_SetTourSource 接口输入参数(设置窗口轮巡显示源)
@@ -16,7 +17,7 @@ public class NET_IN_SET_TOUR_SOURCE extends NetSDKLibStructure.SdkStructure
     */
     public int              nWindow;
     /**
-     * 显示源数组, 可进行窗口轮巡,由用户申请内存，大小为sizeof(DH_SPLIT_SOURCE)*nSrcCount,参见结构体定义 {@link NetSDKLib.NET_SPLIT_SOURCE}
+     * 显示源数组, 可进行窗口轮巡,由用户申请内存，大小为sizeof(DH_SPLIT_SOURCE)*nSrcCount,参见结构体定义 {@link NetSDKLibStructure.NET_SPLIT_SOURCE}
     */
     public Pointer          pstuSrcs;
     /**

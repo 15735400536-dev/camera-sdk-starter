@@ -18,7 +18,7 @@ public class NET_OUT_GET_SOFTWAREVERSION_INFO extends NetSDKLibStructure.SdkStru
     /**
      * 日期,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuBuildDate = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuBuildDate = new NetSDKLibStructure.NET_TIME();
     /**
      * web软件信息
     */

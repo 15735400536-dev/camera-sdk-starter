@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 事件类型EVENT_IVS_MAN_STAND_DETECTION(立体视觉站立事件), EVENT_IVS_NEAR_DISTANCE_DETECTION(近距离接触事件)对应的规则配置
 */
@@ -30,11 +32,11 @@ public class CFG_STEREO_VISION_INFO extends NetSDKLibStructure.SdkStructure
     */
     public BYTE_ARRAY_128[] szObjectTypes = new BYTE_ARRAY_128[16];
     /**
-     * 相应物体类型列表,参见结构体定义 {@link NetSDKLib.CFG_ALARM_MSG_HANDLE}
+     * 相应物体类型列表,参见结构体定义 {@link NetSDKLibStructure.CFG_ALARM_MSG_HANDLE}
     */
-    public NetSDKLib.CFG_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLib.CFG_ALARM_MSG_HANDLE();
+    public NetSDKLibStructure.CFG_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLibStructure.CFG_ALARM_MSG_HANDLE();
     /**
-     * 报警联动,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.CFG_TIME_SECTION}
+     * 报警联动,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.CFG_TIME_SECTION}
     */
     public CFG_TIME_SECTION_ARRAY_10[] stuTimeSection = new CFG_TIME_SECTION_ARRAY_10[7];
     /**
@@ -46,17 +48,17 @@ public class CFG_STEREO_VISION_INFO extends NetSDKLibStructure.SdkStructure
     */
     public int              nDetectLinePoint;
     /**
-     * 检测区域,参见结构体定义 {@link NetSDKLib.CFG_POLYLINE}
+     * 检测区域,参见结构体定义 {@link NetSDKLibStructure.CFG_POLYLINE}
     */
-    public NetSDKLib.CFG_POLYLINE[] stuDetectLine = new NetSDKLib.CFG_POLYLINE[20];
+    public NetSDKLibStructure.CFG_POLYLINE[] stuDetectLine = new NetSDKLibStructure.CFG_POLYLINE[20];
     /**
      * 检测区域顶点数
     */
     public int              nDetectRegionPoint;
     /**
-     * 检测区域坐标,参见结构体定义 {@link NetSDKLib.CFG_POLYGON}
+     * 检测区域坐标,参见结构体定义 {@link NetSDKLibStructure.CFG_POLYGON}
     */
-    public NetSDKLib.CFG_POLYGON[] stuDetectRegion = new NetSDKLib.CFG_POLYGON[20];
+    public NetSDKLibStructure.CFG_POLYGON[] stuDetectRegion = new NetSDKLibStructure.CFG_POLYGON[20];
     /**
      * 异常阈值
     */
@@ -95,10 +97,10 @@ public class CFG_STEREO_VISION_INFO extends NetSDKLibStructure.SdkStructure
             stuTimeSection[i] = new CFG_TIME_SECTION_ARRAY_10();
         }
         for(int i = 0; i < stuDetectLine.length; i++){
-            stuDetectLine[i] = new NetSDKLib.CFG_POLYLINE();
+            stuDetectLine[i] = new NetSDKLibStructure.CFG_POLYLINE();
         }
         for(int i = 0; i < stuDetectRegion.length; i++){
-            stuDetectRegion[i] = new NetSDKLib.CFG_POLYGON();
+            stuDetectRegion[i] = new NetSDKLibStructure.CFG_POLYGON();
         }
     }
 }

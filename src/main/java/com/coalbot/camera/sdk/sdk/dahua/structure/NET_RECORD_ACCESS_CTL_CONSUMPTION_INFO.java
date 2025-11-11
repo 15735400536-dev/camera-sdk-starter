@@ -1,7 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /** 
 * @author 291189
@@ -34,7 +34,7 @@ public class NET_RECORD_ACCESS_CTL_CONSUMPTION_INFO extends NetSDKLibStructure.S
 */
     public			byte[]         szCardName = new byte[128];
 /** 
-卡类型  {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_ACCESSCTLCARD_TYPE}
+卡类型  {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_ACCESSCTLCARD_TYPE}
 */
     public			int            emCardType;
 /** 
@@ -42,7 +42,7 @@ public class NET_RECORD_ACCESS_CTL_CONSUMPTION_INFO extends NetSDKLibStructure.S
 */
     public			byte[]         szUserID = new byte[12];
 /** 
-事件类型   {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_ENUM_DIRECTION_ACCESS_CTL}
+事件类型   {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_ENUM_DIRECTION_ACCESS_CTL}
 */
     public			int            emType;
 /** 
@@ -50,7 +50,7 @@ public class NET_RECORD_ACCESS_CTL_CONSUMPTION_INFO extends NetSDKLibStructure.S
 */
     public			int            emStatus;
 /** 
-开门方式   {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_ACCESS_DOOROPEN_METHOD}
+开门方式   {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_ACCESS_DOOROPEN_METHOD}
 */
     public			int            emMethod;
 /** 

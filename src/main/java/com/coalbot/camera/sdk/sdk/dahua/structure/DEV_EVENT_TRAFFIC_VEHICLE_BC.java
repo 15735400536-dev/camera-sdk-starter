@@ -1,12 +1,10 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.POINTERSIZE;
-
-/** 
+/**
 * @author 291189
 * @description  事件类型EVENT_IVS_TRAFFIC_VEHICLE_BC(飙车事件)对应的数据块描述信息 
 * @origin autoTool
@@ -72,11 +70,11 @@ public class DEV_EVENT_TRAFFIC_VEHICLE_BC extends NetSDKLibStructure.SdkStructur
 /** 
 公共信息
 */
-    public NetSDKLib.EVENT_COMM_INFO stCommInfo = new NetSDKLib.EVENT_COMM_INFO();
+    public NetSDKLibStructure.EVENT_COMM_INFO stCommInfo = new NetSDKLibStructure.EVENT_COMM_INFO();
 /** 
 事件对应文件信息
 */
-    public NetSDKLib.NET_EVENT_FILE_INFO stFileInfo = new NetSDKLib.NET_EVENT_FILE_INFO();
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stFileInfo = new NetSDKLibStructure.NET_EVENT_FILE_INFO();
 /** 
 图片信息数组, refer to {@link NET_IMAGE_INFO_EX3}
 */
@@ -88,7 +86,7 @@ public class DEV_EVENT_TRAFFIC_VEHICLE_BC extends NetSDKLibStructure.SdkStructur
 /** 
 预留字段
 */
-    public			byte[]         byReserved = new byte[1020-POINTERSIZE];
+    public			byte[]         byReserved = new byte[1020-NetSDKLibStructure.POINTERSIZE];
 
 public DEV_EVENT_TRAFFIC_VEHICLE_BC(){
 }

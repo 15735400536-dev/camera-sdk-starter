@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 抓图配置能力
 */
@@ -10,9 +12,9 @@ public class NET_OUT_SNAP_CFG_CAPS extends NetSDKLibStructure.SdkStructure
     */
     public int              nResolutionTypeNum;
     /**
-     * 参见结构体定义 {@link NetSDKLib.NET_RESOLUTION_INFO}
+     * 参见结构体定义 {@link NetSDKLibStructure.NET_RESOLUTION_INFO}
     */
-    public NetSDKLib.NET_RESOLUTION_INFO[] stuResolutionTypes = new NetSDKLib.NET_RESOLUTION_INFO[64];
+    public NetSDKLibStructure.NET_RESOLUTION_INFO[] stuResolutionTypes = new NetSDKLibStructure.NET_RESOLUTION_INFO[64];
     /**
      * 支持的帧率信息
     */
@@ -44,7 +46,7 @@ public class NET_OUT_SNAP_CFG_CAPS extends NetSDKLibStructure.SdkStructure
 
     public NET_OUT_SNAP_CFG_CAPS() {
         for(int i = 0; i < stuResolutionTypes.length; i++){
-            stuResolutionTypes[i] = new NetSDKLib.NET_RESOLUTION_INFO();
+            stuResolutionTypes[i] = new NetSDKLibStructure.NET_RESOLUTION_INFO();
         }
     }
 }

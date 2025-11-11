@@ -46,7 +46,7 @@ public class NET_NOTIFY_ELEVATOR_FLOOR_COUNTER_INFO extends NetSDKLibStructure.S
     /**
      * 保留字段
     */
-    public byte[]           szResvered = new byte[1020-NetSDKLib.POINTERSIZE];
+    public byte[]           szResvered = new byte[1020-NetSDKLibStructure.POINTERSIZE];
 
     public NET_NOTIFY_ELEVATOR_FLOOR_COUNTER_INFO() {
     }

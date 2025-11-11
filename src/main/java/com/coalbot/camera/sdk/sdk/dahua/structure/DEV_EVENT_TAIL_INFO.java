@@ -1,5 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 /**
  * 事件类型EVENT_IVS_TAILDETECTION(尾随事件)对应的数据块描述信息
@@ -23,21 +24,21 @@ public class DEV_EVENT_TAIL_INFO extends NetSDKLibStructure.SdkStructure
     */
     public double           PTS;
     /**
-     * 事件发生的时间,参见结构体定义 {@link NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX UTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX UTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 事件ID
     */
     public int              nEventID;
     /**
-     * 检测到的物体,参见结构体定义 {@link NetSDKLib.NET_MSG_OBJECT}
+     * 检测到的物体,参见结构体定义 {@link NetSDKLibStructure.NET_MSG_OBJECT}
     */
-    public NetSDKLib.NET_MSG_OBJECT stuObject = new NetSDKLib.NET_MSG_OBJECT();
+    public NetSDKLibStructure.NET_MSG_OBJECT stuObject = new NetSDKLibStructure.NET_MSG_OBJECT();
     /**
-     * 事件对应文件信息,参见结构体定义 {@link NetSDKLib.NET_EVENT_FILE_INFO}
+     * 事件对应文件信息,参见结构体定义 {@link NetSDKLibStructure.NET_EVENT_FILE_INFO}
     */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLib.NET_EVENT_FILE_INFO();
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLibStructure.NET_EVENT_FILE_INFO();
     /**
      * 事件动作,0表示脉冲事件,1表示持续性事件开始,2表示持续性事件结束;
     */
@@ -52,9 +53,9 @@ public class DEV_EVENT_TAIL_INFO extends NetSDKLibStructure.SdkStructure
     */
     public int              nDetectRegionNum;
     /**
-     * 规则检测区域,参见结构体定义 {@link NetSDKLib.NET_POINT}
+     * 规则检测区域,参见结构体定义 {@link NetSDKLibStructure.NET_POINT}
     */
-    public NetSDKLib.NET_POINT[] DetectRegion = new NetSDKLib.NET_POINT[20];
+    public NetSDKLibStructure.NET_POINT[] DetectRegion = new NetSDKLibStructure.NET_POINT[20];
     /**
      * 抓图标志(按位),具体见NET_RESERVED_COMMON
     */
@@ -72,9 +73,9 @@ public class DEV_EVENT_TAIL_INFO extends NetSDKLibStructure.SdkStructure
     */
     public int              nOccurrenceCount;
     /**
-     * 智能事件公共信息,参见结构体定义 {@link NetSDKLib.EVENT_INTELLI_COMM_INFO}
+     * 智能事件公共信息,参见结构体定义 {@link NetSDKLibStructure.EVENT_INTELLI_COMM_INFO}
     */
-    public NetSDKLib.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo = new NetSDKLib.EVENT_INTELLI_COMM_INFO();
+    public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo = new NetSDKLibStructure.EVENT_INTELLI_COMM_INFO();
     /**
      * 事件公共扩展字段结构体,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_EVENT_INFO_EXTEND}
     */
@@ -90,11 +91,11 @@ public class DEV_EVENT_TAIL_INFO extends NetSDKLibStructure.SdkStructure
     /**
      * 保留字节,留待扩展.
     */
-    public byte[]           bReserved = new byte[484-NetSDKLib.POINTERSIZE];
+    public byte[]           bReserved = new byte[484-NetSDKLibStructure.POINTERSIZE];
 
     public DEV_EVENT_TAIL_INFO() {
         for(int i = 0; i < DetectRegion.length; i++){
-            DetectRegion[i] = new NetSDKLib.NET_POINT();
+            DetectRegion[i] = new NetSDKLibStructure.NET_POINT();
         }
     }
 }

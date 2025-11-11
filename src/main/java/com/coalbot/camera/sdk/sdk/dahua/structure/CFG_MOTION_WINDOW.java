@@ -7,6 +7,8 @@ package com.coalbot.camera.sdk.sdk.dahua.structure;
  */
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * @author 47081
  * @description 动检支持的视频窗口配置
@@ -19,6 +21,6 @@ public class CFG_MOTION_WINDOW extends NetSDKLibStructure.SdkStructure {
   /** 灵敏度，取值[0, 100] */
     public int              nSensitive;
   /** 动检窗口区域, 坐标位置取值[0, 8192) */
-    public NetSDKLib.CFG_RECT stuWindow;
+    public NetSDKLibStructure.CFG_RECT stuWindow;
 }
 

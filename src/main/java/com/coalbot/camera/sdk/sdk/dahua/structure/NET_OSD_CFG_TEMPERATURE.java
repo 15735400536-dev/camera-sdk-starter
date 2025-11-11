@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_TEMPERATURE_UNIT_EX;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.NET_EM_CFG_OPERATE_TYPE;
 
@@ -40,7 +41,7 @@ public class NET_OSD_CFG_TEMPERATURE extends NetSDKLibStructure.SdkStructure {
     /**
      * 区域
      */
-    public NetSDKLib.NET_RECT stuRect;
+    public NetSDKLibStructure.NET_RECT stuRect;
     /**
      * 温度单位的类型 枚举值{@link EM_TEMPERATURE_UNIT_EX}
      */

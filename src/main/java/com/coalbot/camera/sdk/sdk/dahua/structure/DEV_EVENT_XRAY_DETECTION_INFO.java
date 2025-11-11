@@ -1,10 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.MAX_INSIDEOBJECT_NUM;
-
 
 /**
  * X光机关联图片类型
@@ -56,7 +54,7 @@ public class DEV_EVENT_XRAY_DETECTION_INFO extends NetSDKLibStructure.SdkStructu
     /**
      * 主视角包裹内物品信息
      */
-    public NET_INSIDE_OBJECT stuInsideObj[] = (NET_INSIDE_OBJECT[]) new NET_INSIDE_OBJECT().toArray(MAX_INSIDEOBJECT_NUM);
+    public NET_INSIDE_OBJECT stuInsideObj[] = (NET_INSIDE_OBJECT[]) new NET_INSIDE_OBJECT().toArray(NetSDKLibStructure.MAX_INSIDEOBJECT_NUM);
     /**
      * 从视角包裹内物品个数
      */
@@ -64,7 +62,7 @@ public class DEV_EVENT_XRAY_DETECTION_INFO extends NetSDKLibStructure.SdkStructu
     /**
      * 从视角包裹内物品信息
      */
-    public NET_INSIDE_OBJECT stuSlaveViewInsideObj[] = (NET_INSIDE_OBJECT[]) new NET_INSIDE_OBJECT().toArray(MAX_INSIDEOBJECT_NUM);
+    public NET_INSIDE_OBJECT stuSlaveViewInsideObj[] = (NET_INSIDE_OBJECT[]) new NET_INSIDE_OBJECT().toArray(NetSDKLibStructure.MAX_INSIDEOBJECT_NUM);
     /**
      * 图片数量
      */
@@ -156,7 +154,7 @@ public class DEV_EVENT_XRAY_DETECTION_INFO extends NetSDKLibStructure.SdkStructu
     /**
      * 保留字节,留待扩展
      */
-    public byte             byReserved[] = new byte[248-NetSDKLib.POINTERSIZE*4];
+    public byte             byReserved[] = new byte[248-NetSDKLibStructure.POINTERSIZE*4];
 
     public DEV_EVENT_XRAY_DETECTION_INFO() {
         for (int i = 0; i < stuRelatedImageInfo.length; i++) {

@@ -1,9 +1,9 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-/** 
+/**
 * @author 291189
 * @description  CLIENT_GetFinancialCabinInfo 输出参数 
 * @date 2022/08/01 14:13:49

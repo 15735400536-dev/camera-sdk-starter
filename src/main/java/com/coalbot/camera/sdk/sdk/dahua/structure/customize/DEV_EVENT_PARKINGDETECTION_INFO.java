@@ -1,11 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure.customize;
 
-
-
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.MAX_PATH;
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_MAX_DETECT_REGION_NUM;
 
 /**
  * 停船检测事件结构体

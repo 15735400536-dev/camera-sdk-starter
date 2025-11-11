@@ -1,9 +1,9 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-/** 
+/**
 * @author 291189
 * @description  时间间隔配置, 对应 NET_EM_TRAFFIC_LAMP_CONFIG 
 * @origin autoTool

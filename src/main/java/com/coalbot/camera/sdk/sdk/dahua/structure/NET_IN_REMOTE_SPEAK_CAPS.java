@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * CLIENT_GetDevCaps NET_REMOTE_SPEAK_CAPS 入参
 */

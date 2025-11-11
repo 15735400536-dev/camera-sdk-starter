@@ -1,22 +1,23 @@
 package com.coalbot.camera.sdk.sdk.dahua.demo.module;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.LLong;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.fSearchDevicesCB;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.fSearchDevicesCBEx;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
+import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_SEND_SEARCH_TYPE;
+import com.coalbot.camera.sdk.sdk.dahua.structure.NET_IN_STARTSERACH_DEVICE;
+import com.coalbot.camera.sdk.sdk.dahua.structure.NET_OUT_STARTSERACH_DEVICE;
+import com.sun.jna.Memory;
+import com.sun.jna.Pointer;
+
 import java.net.Inet4Address;
-import java.net.Inet6Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
-
-import com.sun.jna.Memory;
-import com.sun.jna.Pointer;
-
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.*;
-import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
-import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_SEND_SEARCH_TYPE;
-import com.coalbot.camera.sdk.sdk.dahua.structure.NET_IN_STARTSERACH_DEVICE;
-import com.coalbot.camera.sdk.sdk.dahua.structure.NET_OUT_STARTSERACH_DEVICE;
 
 
 /**
@@ -67,8 +68,8 @@ public class DeviceSearchModule {
 	 */
 	public static boolean unicastDeviceSearch(String localIp,String startIP, int nIpNum, fSearchDevicesCB cbSearchDevices) throws SocketException {
 		String[] szIPStr = startIP.split("\\.");
-		
-		DEVICE_IP_SEARCH_INFO deviceSearchInfo = new DEVICE_IP_SEARCH_INFO();
+
+		NetSDKLibStructure.DEVICE_IP_SEARCH_INFO deviceSearchInfo = new NetSDKLibStructure.DEVICE_IP_SEARCH_INFO();
 		deviceSearchInfo.nIpNum = nIpNum;
 		for(int i = 0; i < deviceSearchInfo.nIpNum; i++) {
 			System.arraycopy(getIp(szIPStr, i).getBytes(), 0, deviceSearchInfo.szIPArr[i].szIP, 0, getIp(szIPStr, i).getBytes().length);

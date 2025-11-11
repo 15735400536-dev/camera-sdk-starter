@@ -1,7 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 260611
@@ -36,7 +35,7 @@ public class NET_DEV_EVENT_TEMPERATURE_ALARM_INFO extends NetSDKLibStructure.Sdk
     /**
      * GPS信息
      */
-    public NetSDKLib.NET_GPS_STATUS_INFO stuGPS = new NetSDKLib.NET_GPS_STATUS_INFO();
+    public NetSDKLibStructure.NET_GPS_STATUS_INFO stuGPS = new NetSDKLibStructure.NET_GPS_STATUS_INFO();
     /**
      *  RealUTC 是否有效，bRealUTC 为 TRUE 时，用 stuRealUTC，否则 stuRealUTC 字段无效(用原事件结构体中的 事件发生时间/事件触发时间(UTC) 字段)
      */

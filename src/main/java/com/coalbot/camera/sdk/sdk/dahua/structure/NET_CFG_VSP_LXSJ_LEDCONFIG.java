@@ -1,6 +1,8 @@
  package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+ import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
  /**LED屏幕配置  */
 public class NET_CFG_VSP_LXSJ_LEDCONFIG extends NetSDKLibStructure.SdkStructure {
 /** 车位个数*/

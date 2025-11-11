@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 视频日夜配置切换模式, 对应枚举 NET_EM_CFG_VIDEO_IN_MODE
 */
@@ -22,7 +24,7 @@ public class NET_CFG_VIDEO_IN_MODE_INFO extends NetSDKLibStructure.SdkStructure
     */
     public int[]            nConfig = new int[3];
     /**
-     * Mode=1定时模式时有效，[0][0]表示白天时间段, [0][1]表示清晨时间段, [0][2]表示傍晚时间段,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_TSECT}
+     * Mode=1定时模式时有效，[0][0]表示白天时间段, [0][1]表示清晨时间段, [0][2]表示傍晚时间段,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TSECT}
     */
     public NET_TSECT_ARRAY_6[] stuTimeSection = new NET_TSECT_ARRAY_6[7];
     /**

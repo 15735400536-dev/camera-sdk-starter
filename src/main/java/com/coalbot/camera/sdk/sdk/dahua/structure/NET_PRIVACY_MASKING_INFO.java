@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -28,7 +29,7 @@ public class NET_PRIVACY_MASKING_INFO extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 矩形区域,使用相对坐标体系，取值均为0-8192
 	 */
-    public NetSDKLib.DH_RECT stuRect = new  NetSDKLib.DH_RECT();
+    public NetSDKLibStructure.DH_RECT stuRect = new  NetSDKLibStructure.DH_RECT();
 	/**
 	 * 多边形顶点坐标，多边形顶点不超过64, 使用相对坐标体系，取值均为0-8192
 	 */

@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 事件类型EVENT_IVS_BACK_TO_DETECTION(背对检测事件)对应的数据块描述信息
 */
@@ -22,9 +24,9 @@ public class DEV_EVENT_BACK_TO_DETECTION_INFO extends NetSDKLibStructure.SdkStru
     */
     public int              emClassType;
     /**
-     * 事件发生的时间,参见结构体定义 {@link NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX UTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX UTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 时间戳(单位是毫秒)
     */

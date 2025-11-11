@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 烟火检测查询条件 ( CLIENT_FindFileEx + DH_FILE_QUERY_SMOKE_FIRE )
 */
@@ -20,7 +22,7 @@ public class MEDIAFILE_SMOKE_FIRE_PARAM extends NetSDKLibStructure.SdkStructure
     /**
      * 开始时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuBeginTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuBeginTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 结束时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */

@@ -1,8 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.MAX_PREVIEW_CHANNEL_NUM;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 获取录播主机默认真实通道号出参，对应接口 {@link NetSDKLib#CLIENT_GetLogicChannel}
@@ -22,7 +21,7 @@ public class NET_OUT_GET_COURSE_LOGIC_CHANNEL extends NetSDKLibStructure.SdkStru
     /**
      * 逻辑通道信息，下标为将要获取的真实通道数
      */
-    public NET_LOGIC_CHANNEL_INFO[] stuChannelInfo = new NET_LOGIC_CHANNEL_INFO[MAX_PREVIEW_CHANNEL_NUM];
+    public NET_LOGIC_CHANNEL_INFO[] stuChannelInfo = new NET_LOGIC_CHANNEL_INFO[NetSDKLibStructure.MAX_PREVIEW_CHANNEL_NUM];
 
     public NET_OUT_GET_COURSE_LOGIC_CHANNEL() {
         dwSize = this.size();

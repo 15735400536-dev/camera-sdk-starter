@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 CLIENT_TransferSubLinkInfo 接口输出参数
 */
 public class NET_OUT_TRANSFER_SUBLINK_INFO extends NetSDKLibStructure.SdkStructure {

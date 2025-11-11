@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description  接口 CLIENT_SetXRayMultiLevelDetectCFG 的输出参数 
 * @date 2022/12/01 17:26:25

@@ -1,8 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
-
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_MSG_OBJECT_EX2;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -62,7 +62,7 @@ public class DEV_EVENT_OBJECT_REMOVAL_DETECTION_INFO extends NetSDKLibStructure.
     /**
      * 广角图
      */
-    public NetSDKLib.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO();
     /**
      * 检测目标物体的个数
      */
@@ -70,7 +70,7 @@ public class DEV_EVENT_OBJECT_REMOVAL_DETECTION_INFO extends NetSDKLibStructure.
     /**
      * 表示检测到的物体信息 有Objects, 以Objects为准，无Objects, 以Object为准，为兼容老的客户端，有Objects的，Object也要填数据
      */
-    public NetSDKLibStructure.NET_MSG_OBJECT_EX2[] stuObjects = new NET_MSG_OBJECT_EX2[128];
+    public NetSDKLibStructure.NET_MSG_OBJECT_EX2[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT_EX2[128];
     /**
      * 图片信息数组,{@link NET_IMAGE_INFO_EX2}
      */
@@ -90,7 +90,7 @@ public class DEV_EVENT_OBJECT_REMOVAL_DETECTION_INFO extends NetSDKLibStructure.
 
     public DEV_EVENT_OBJECT_REMOVAL_DETECTION_INFO() {
         for (int i = 0; i < stuObjects.length; i++) {
-            stuObjects[i] = new NET_MSG_OBJECT_EX2();
+            stuObjects[i] = new NetSDKLibStructure.NET_MSG_OBJECT_EX2();
         }
     }
 }

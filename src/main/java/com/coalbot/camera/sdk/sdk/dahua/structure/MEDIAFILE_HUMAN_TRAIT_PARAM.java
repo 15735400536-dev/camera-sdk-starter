@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * DH_FILE_QUERY_HUMAN_TRAIT人体检测对应查询参数
 */
@@ -16,25 +18,25 @@ public class MEDIAFILE_HUMAN_TRAIT_PARAM extends NetSDKLibStructure.SdkStructure
     /**
      * 开始时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stStartTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stStartTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 结束时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stEndTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stEndTime = new NetSDKLibStructure.NET_TIME();
     /**
-     * 上衣颜色,参见枚举定义 {@link NetSDKLib.EM_CLOTHES_COLOR}
+     * 上衣颜色,参见枚举定义 {@link NetSDKLibStructure.EM_CLOTHES_COLOR}
     */
     public int[]            emCoatColor = new int[4];
     /**
-     * 裤子颜色,参见枚举定义 {@link NetSDKLib.EM_CLOTHES_COLOR}
+     * 裤子颜色,参见枚举定义 {@link NetSDKLibStructure.EM_CLOTHES_COLOR}
     */
     public int[]            emTrousersColor = new int[4];
     /**
-     * 上衣类型,参见枚举定义 {@link NetSDKLib.EM_COAT_TYPE}
+     * 上衣类型,参见枚举定义 {@link NetSDKLibStructure.EM_COAT_TYPE}
     */
     public int[]            emCoatType = new int[2];
     /**
-     * 裤子类型,参见枚举定义 {@link NetSDKLib.EM_TROUSERS_TYPE}
+     * 裤子类型,参见枚举定义 {@link NetSDKLibStructure.EM_TROUSERS_TYPE}
     */
     public int[]            emTrousersType = new int[2];
     /**
@@ -54,19 +56,19 @@ public class MEDIAFILE_HUMAN_TRAIT_PARAM extends NetSDKLibStructure.SdkStructure
     */
     public int              nTrousersTypeNum;
     /**
-     * 是否戴帽子,参见枚举定义 {@link NetSDKLib.EM_HAS_HAT}
+     * 是否戴帽子,参见枚举定义 {@link NetSDKLibStructure.EM_HAS_HAT}
     */
     public int              emHasHat;
     /**
-     * 是否带包,参见枚举定义 {@link NetSDKLib.EM_HAS_BAG}
+     * 是否带包,参见枚举定义 {@link NetSDKLibStructure.EM_HAS_BAG}
     */
     public int              emHasBag;
     /**
-     * 性别,参见枚举定义 {@link NetSDKLib.EM_SEX_TYPE}
+     * 性别,参见枚举定义 {@link NetSDKLibStructure.EM_SEX_TYPE}
     */
     public int              emSex;
     /**
-     * 头发样式,参见枚举定义 {@link NetSDKLib.EM_HAIR_STYLE}
+     * 头发样式,参见枚举定义 {@link NetSDKLibStructure.EM_HAIR_STYLE}
     */
     public int              emHairStyle;
     /**
@@ -90,11 +92,11 @@ public class MEDIAFILE_HUMAN_TRAIT_PARAM extends NetSDKLibStructure.SdkStructure
     */
     public NetSDKLibStructure.NET_TIME stuEndTimeRealUTC = new NetSDKLibStructure.NET_TIME();
     /**
-     * 是否打伞,参见枚举定义 {@link NetSDKLib.EM_HAS_UMBRELLA}
+     * 是否打伞,参见枚举定义 {@link NetSDKLibStructure.EM_HAS_UMBRELLA}
     */
     public int              emHasUmbrella;
     /**
-     * 帽类型,参见枚举定义 {@link NetSDKLib.EM_CAP_TYPE}
+     * 帽类型,参见枚举定义 {@link NetSDKLibStructure.EM_CAP_TYPE}
     */
     public int              emCap;
     /**

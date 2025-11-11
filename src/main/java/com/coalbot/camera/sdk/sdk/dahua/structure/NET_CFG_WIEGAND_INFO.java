@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description 韦根配置,   对应配置项 NET_EM_CFG_WIEGAND
 * @date 2022/03/08 09:56:03

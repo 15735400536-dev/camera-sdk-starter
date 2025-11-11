@@ -1,8 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_EVENT_FILE_INFO;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -54,7 +53,7 @@ public class DEV_EVENT_ABNORMALRUNDETECTION_INFO extends NetSDKLibStructure.SdkS
     /**
      * 规则检测区域
      */
-    public NetSDKLib.DH_POINT[] DetectRegion = new NetSDKLib.DH_POINT[20];
+    public NetSDKLibStructure.DH_POINT[] DetectRegion = new NetSDKLibStructure.DH_POINT[20];
     /**
      * 物体运动轨迹顶点数
      */
@@ -62,11 +61,11 @@ public class DEV_EVENT_ABNORMALRUNDETECTION_INFO extends NetSDKLibStructure.SdkS
     /**
      * 物体运动轨迹
      */
-    public NetSDKLib.DH_POINT[] TrackLine = new NetSDKLib.DH_POINT[20];
+    public NetSDKLibStructure.DH_POINT[] TrackLine = new NetSDKLibStructure.DH_POINT[20];
     /**
      * 事件对应文件信息
      */
-    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NET_EVENT_FILE_INFO();
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLibStructure.NET_EVENT_FILE_INFO();
     /**
      * 事件动作,0表示脉冲事件,1表示持续性事件开始,2表示持续性事件结束;
      */
@@ -99,7 +98,7 @@ public class DEV_EVENT_ABNORMALRUNDETECTION_INFO extends NetSDKLibStructure.SdkS
     /**
      * 智能事件公共信息
      */
-    public NetSDKLib.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo = new NetSDKLib.EVENT_INTELLI_COMM_INFO();
+    public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo = new NetSDKLibStructure.EVENT_INTELLI_COMM_INFO();
     /**
      * 图片信息数组,{@link NET_IMAGE_INFO_EX2}
      */
@@ -117,20 +116,20 @@ public class DEV_EVENT_ABNORMALRUNDETECTION_INFO extends NetSDKLibStructure.SdkS
     */
     public byte[]           szReserved3 = new byte[4];
     /**
-     * 全景图,参见结构体定义 {@link NetSDKLib.SCENE_IMAGE_INFO_EX}
+     * 全景图,参见结构体定义 {@link NetSDKLibStructure.SCENE_IMAGE_INFO_EX}
     */
     public Pointer          pstuSceneImage;
     /**
      * 保留字节,留待扩展.
      */
-    public byte[]           bReserved = new byte[600-NetSDKLib.POINTERSIZE];
+    public byte[]           bReserved = new byte[600-NetSDKLibStructure.POINTERSIZE];
 
     public DEV_EVENT_ABNORMALRUNDETECTION_INFO() {
         for (int i = 0; i < DetectRegion.length; i++) {
-            DetectRegion[i] = new NetSDKLib.DH_POINT();
+            DetectRegion[i] = new NetSDKLibStructure.DH_POINT();
         }
         for (int i = 0; i < TrackLine.length; i++) {
-            TrackLine[i] = new NetSDKLib.DH_POINT();
+            TrackLine[i] = new NetSDKLibStructure.DH_POINT();
         }
     }
 }

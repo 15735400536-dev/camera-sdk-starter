@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 事件类型EVENT_IVS_NONMOTORDETECT(非机动车事件)对应的规则配置
 */
@@ -26,11 +28,11 @@ public class CFG_NONMOTORDETECT_INFO extends NetSDKLibStructure.SdkStructure
     */
     public int              nPtzPresetId;
     /**
-     * 报警联动,参见结构体定义 {@link NetSDKLib.CFG_ALARM_MSG_HANDLE}
+     * 报警联动,参见结构体定义 {@link NetSDKLibStructure.CFG_ALARM_MSG_HANDLE}
     */
-    public NetSDKLib.CFG_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLib.CFG_ALARM_MSG_HANDLE();
+    public NetSDKLibStructure.CFG_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLibStructure.CFG_ALARM_MSG_HANDLE();
     /**
-     * 事件响应时间段,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.CFG_TIME_SECTION}
+     * 事件响应时间段,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.CFG_TIME_SECTION}
     */
     public CFG_TIME_SECTION_ARRAY_10[] stuTimeSection = new CFG_TIME_SECTION_ARRAY_10[7];
     /**

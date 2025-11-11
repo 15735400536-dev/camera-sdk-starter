@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 260611
 * @description  设备属性过滤内容(对应EM_THINGS_CONDITION_TYPE_PROPERTY) 
 * @date 2022/04/20 11:28:15

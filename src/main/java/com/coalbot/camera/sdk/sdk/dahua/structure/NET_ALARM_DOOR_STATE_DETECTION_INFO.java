@@ -1,6 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
+
 /**
  * 事件类型 DH_ALARM_DOOR_STATE_DETECTION (开关门检测事件)对应的数据块描述信息
 */
@@ -43,9 +45,9 @@ public class NET_ALARM_DOOR_STATE_DETECTION_INFO extends NetSDKLibStructure.SdkS
     */
     public double           dbPTS;
     /**
-     * 事件发生的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX stuUTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX stuUTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 事件ID
     */
@@ -59,13 +61,13 @@ public class NET_ALARM_DOOR_STATE_DETECTION_INFO extends NetSDKLibStructure.SdkS
     */
     public int              nDetectRegionNum;
     /**
-     * 检测区,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_POINT}
+     * 检测区,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_POINT}
     */
-    public NetSDKLib.NET_POINT[] stuDetectRegion = new NetSDKLib.NET_POINT[20];
+    public NetSDKLibStructure.NET_POINT[] stuDetectRegion = new NetSDKLibStructure.NET_POINT[20];
     /**
-     * 全景广角图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.SCENE_IMAGE_INFO}
+     * 全景广角图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SCENE_IMAGE_INFO}
     */
-    public NetSDKLib.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO();
     /**
      * 报警类型 门状态异常或开门异常
     */
@@ -79,7 +81,7 @@ public class NET_ALARM_DOOR_STATE_DETECTION_INFO extends NetSDKLibStructure.SdkS
     */
     public NET_OPEN_DOOR_ABNORMAL_INFO stuOpenDoorAbnormal = new NET_OPEN_DOOR_ABNORMAL_INFO();
     /**
-     * 检测目标的物体信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_MSG_OBJECT}
+     * 检测目标的物体信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_MSG_OBJECT}
     */
     public Pointer          pstuObjects;
     /**
@@ -89,11 +91,11 @@ public class NET_ALARM_DOOR_STATE_DETECTION_INFO extends NetSDKLibStructure.SdkS
     /**
      * 预留字节
     */
-    public byte[]           szReserved = new byte[1020-NetSDKLib.POINTERSIZE];
+    public byte[]           szReserved = new byte[1020-NetSDKLibStructure.POINTERSIZE];
 
     public NET_ALARM_DOOR_STATE_DETECTION_INFO() {
         for(int i = 0; i < stuDetectRegion.length; i++){
-            stuDetectRegion[i] = new NetSDKLib.NET_POINT();
+            stuDetectRegion[i] = new NetSDKLibStructure.NET_POINT();
         }
     }
 }

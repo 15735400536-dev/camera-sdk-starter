@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -35,11 +35,11 @@ public class DEV_EVENT_TRAFFIC_NONMOTOR_HOLDUMBRELLA_INFO extends NetSDKLibStruc
     /**
      *  事件对应文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo;
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;
     /**
      *  智能事件公共信息 
      */
-    public NetSDKLib.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;
+    public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo;
     /**
      *  抓图标志(按位),具体见NET_RESERVED_COMMON 
      */
@@ -47,15 +47,15 @@ public class DEV_EVENT_TRAFFIC_NONMOTOR_HOLDUMBRELLA_INFO extends NetSDKLibStruc
     /**
      *  对应图片的分辨率
      */
-    public NetSDKLib.NET_RESOLUTION_INFO stuResolution;
+    public NetSDKLibStructure.NET_RESOLUTION_INFO stuResolution;
     /**
      *  检测到的物体
      */
-    public NetSDKLib.NET_MSG_OBJECT stuObject;
+    public NetSDKLibStructure.NET_MSG_OBJECT stuObject;
     /**
      *  非机动车信息
      */
-    public NetSDKLib.VA_OBJECT_NONMOTOR stuNonMotor;
+    public NetSDKLibStructure.VA_OBJECT_NONMOTOR stuNonMotor;
     /**
      *  车道号
      */
@@ -67,11 +67,11 @@ public class DEV_EVENT_TRAFFIC_NONMOTOR_HOLDUMBRELLA_INFO extends NetSDKLibStruc
     /**
      *  公共信息
      */
-    public NetSDKLib.EVENT_COMM_INFO stCommInfo;
+    public NetSDKLibStructure.EVENT_COMM_INFO stCommInfo;
     /**
      *  交通车辆信息
      */
-    public NetSDKLib.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
+    public NetSDKLibStructure.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
     /**
      *  保留字节 
      */

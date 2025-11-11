@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description  事件类型EVENT_IVS_REMOTE_APPROVAL_ALARM(金融远程审批事件)对应的数据块描述信息 
 * @date 2022/08/10 10:37:46

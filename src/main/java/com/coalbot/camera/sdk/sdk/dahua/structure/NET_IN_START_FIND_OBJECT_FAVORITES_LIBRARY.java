@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * CLIENT_StartFindObjectFavoritesLibrary 接口输入参数
 */
@@ -12,11 +14,11 @@ public class NET_IN_START_FIND_OBJECT_FAVORITES_LIBRARY extends NetSDKLibStructu
     /**
      * 收藏的开始时间点,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuCollectBegin = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuCollectBegin = new NetSDKLibStructure.NET_TIME();
     /**
      * 收藏的结束时间点,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuCollectEnd = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuCollectEnd = new NetSDKLibStructure.NET_TIME();
     /**
      * 目标类型列表个数
     */

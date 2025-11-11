@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 目标轨迹过滤规则
 */
@@ -10,9 +12,9 @@ public class NET_OBJECT_TRACK_FILTER extends NetSDKLibStructure.SdkStructure
     */
     public int              nDetectRuleCount;
     /**
-     * 目标过滤规则坐标点集合,参见结构体定义 {@link NetSDKLib.NET_POINT}
+     * 目标过滤规则坐标点集合,参见结构体定义 {@link NetSDKLibStructure.NET_POINT}
     */
-    public NetSDKLib.NET_POINT[] stuDetectRule = new NetSDKLib.NET_POINT[32];
+    public NetSDKLibStructure.NET_POINT[] stuDetectRule = new NetSDKLibStructure.NET_POINT[32];
     /**
      * 规则类型, 0,区域内,DetectRule字段为描述不规则区域的各顶点坐标, 1,过线,DetectRule字段为描述线段点，并且Direction字段表示目标经过方向
     */
@@ -28,7 +30,7 @@ public class NET_OBJECT_TRACK_FILTER extends NetSDKLibStructure.SdkStructure
 
     public NET_OBJECT_TRACK_FILTER() {
         for(int i = 0; i < stuDetectRule.length; i++){
-            stuDetectRule[i] = new NetSDKLib.NET_POINT();
+            stuDetectRule[i] = new NetSDKLibStructure.NET_POINT();
         }
     }
 }

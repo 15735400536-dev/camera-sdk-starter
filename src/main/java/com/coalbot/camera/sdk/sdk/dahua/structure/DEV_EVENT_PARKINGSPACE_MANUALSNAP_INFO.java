@@ -1,10 +1,10 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 事件 路侧停车位手动抓图
- * 枚举 {@link NetSDKLib#EVENT_IVS_TRAFFIC_PARKINGSPACE_MANUALSNAP}
+ * 枚举 {@link NetSDKLibStructure#EVENT_IVS_TRAFFIC_PARKINGSPACE_MANUALSNAP}
  *
  * @author 47040
  * @since Created in 2020/11/18 14:25
@@ -37,11 +37,11 @@ public class DEV_EVENT_PARKINGSPACE_MANUALSNAP_INFO extends NetSDKLibStructure.S
     /**
      * 事件对应文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo;
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;
     /**
      * 表示交通车辆的数据库记录
      */
-    public NetSDKLib.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
+    public NetSDKLibStructure.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
     /**
      * 和客户端请求的抓图序列号对应
      */

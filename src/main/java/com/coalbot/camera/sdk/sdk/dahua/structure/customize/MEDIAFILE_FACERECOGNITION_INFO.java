@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure.customize;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.Utils;
 import com.coalbot.camera.sdk.sdk.dahua.structure.NET_TIME;
 

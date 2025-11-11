@@ -1,20 +1,18 @@
 package com.coalbot.camera.sdk.sdk.dahua;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.LLong;
 import com.coalbot.camera.sdk.sdk.dahua.common.ErrorCode;
 import com.coalbot.camera.sdk.sdk.dahua.demo.module.LoginModule;
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.LLong;
 import com.sun.jna.Memory;
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
 import com.sun.jna.ptr.IntByReference;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.text.SimpleDateFormat;
 
@@ -309,109 +307,6 @@ public class ToolKits {
 		}
 	}
 	
-	/*
-	 * 用选择器选择图片, 获取图片路径，并在界面显示
-	 */
-	public static String openPictureFile(PaintPanel paintPanel) {	
-    	try {
-            UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
-        } catch (Exception e) {
-        	e.printStackTrace();
-        } 
-    	
-		String picPath = "";
-		
-		// 读取图片
-		JFileChooser jfc = new JFileChooser("d:/");
-		jfc.setMultiSelectionEnabled(false);    // 不可以拖选多个文件
-		jfc.setAcceptAllFileFilterUsed(false);  // 关闭显示所有
-
-		//添加过滤器
-		JPGFilter filter = new JPGFilter();
-		jfc.addChoosableFileFilter(filter);
-		jfc.setFileFilter(filter);
-		
-        if( jfc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-        	picPath = jfc.getSelectedFile().getAbsolutePath();
-        	
-        	/*
-        	 * 读取本地图片, 并在面板上显示
-        	 */
-        	BufferedImage bufferedImage = null;
-			if(picPath == null || picPath.equals("")) {
-				return "";
-			}
-			
-			File file = new File(picPath);
-			if(!file.exists()) {
-				return "";
-			}
-			
-			try {
-				bufferedImage = ImageIO.read(file);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			
-			if(bufferedImage == null) {
-				paintPanel.setOpaque(true);
-				paintPanel.repaint();
-				
-				System.err.println("打开图片失败，请重新选择！");
-				return "";
-			} else {
-				paintPanel.setOpaque(false);
-				paintPanel.setImage(bufferedImage);
-				paintPanel.repaint();
-			}
-		}
-        
-    	try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (Exception e) {
-        	e.printStackTrace();
-        } 
-        return picPath;
-	}
-	
-	/*
-	 * 传入图片路径, 打开图片, 并在面板显示
-	 */
-	public static File openPictureFile(String picPath, PaintPanel paintPanel) {		
-    	/*
-    	 * 读取本地图片, 并在面板上显示
-    	 */
-    	BufferedImage bufferedImage = null;
-		if(picPath == null || picPath.equals("")) {
-			return null;
-		}
-		
-		File file = new File(picPath);
-		if(!file.exists()) {
-			return null;
-		}
-		
-		try {
-			bufferedImage = ImageIO.read(file);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		if(bufferedImage == null) {
-			paintPanel.setOpaque(true);
-			paintPanel.repaint();
-			
-			System.err.println("打开图片失败，请重新选择！");
-			return null;
-		} else {
-			paintPanel.setOpaque(false);
-			paintPanel.setImage(bufferedImage);
-			paintPanel.repaint();
-		}
-		
-        return file;
-	}
-	
 	/**
 	 * 读取图片
 	 * @return 图片缓存
@@ -558,7 +453,7 @@ public class ToolKits {
 	
 	/**
 	 * 数组拷贝， 用于先获取，再设置(src → dst)
-	 * @param b
+	 * @param src
 	 * @param dst
 	 */
 	public static void ByteArrayToByteArray(byte[] src, byte[] dst) {

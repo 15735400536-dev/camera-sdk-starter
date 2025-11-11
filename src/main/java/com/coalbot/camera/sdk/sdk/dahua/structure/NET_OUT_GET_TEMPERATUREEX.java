@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -19,7 +20,7 @@ public class NET_OUT_GET_TEMPERATUREEX extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 监测点温度
 	 */
-    public NET_TEMPERATUREEX_VALUE[] stuTemperatureEx = new NET_TEMPERATUREEX_VALUE[NetSDKLib.MAX_TEMPERATUREEX_POINT_NUM];
+    public NET_TEMPERATUREEX_VALUE[] stuTemperatureEx = new NET_TEMPERATUREEX_VALUE[NetSDKLibStructure.MAX_TEMPERATUREEX_POINT_NUM];
 
 	public NET_OUT_GET_TEMPERATUREEX() {
 		for (int i = 0; i < stuTemperatureEx.length; i++) {

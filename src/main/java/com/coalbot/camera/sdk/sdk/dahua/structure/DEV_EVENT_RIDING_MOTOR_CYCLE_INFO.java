@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -59,11 +59,11 @@ public class DEV_EVENT_RIDING_MOTOR_CYCLE_INFO extends NetSDKLibStructure.SdkStr
     /**
      *  表示检测到的物体信息
      */
-    public NetSDKLib.NET_MSG_OBJECT_EX2[] stuObjects = (NetSDKLib.NET_MSG_OBJECT_EX2[]) new NetSDKLib.NET_MSG_OBJECT_EX2().toArray(64);
+    public NetSDKLibStructure.NET_MSG_OBJECT_EX2[] stuObjects = (NetSDKLibStructure.NET_MSG_OBJECT_EX2[]) new NetSDKLibStructure.NET_MSG_OBJECT_EX2().toArray(64);
     /**
      *  全景广角图，仅IndexInData字段有效
      */
-    public NetSDKLib.SCENE_IMAGE_INFO stuSceneImage;
+    public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImage;
     /**
      *  预留字节
      */

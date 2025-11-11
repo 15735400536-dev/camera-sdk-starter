@@ -1,5 +1,5 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 /**
  * 事件类型EVENT_IVS_FLOWSTAT(流量统计事件)对应的数据块描述信息
 */
@@ -22,9 +22,9 @@ public class DEV_EVENT_FLOWSTAT_INFO extends NetSDKLibStructure.SdkStructure
     */
     public double           PTS;
     /**
-     * 事件发生的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX UTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX UTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 事件ID
     */
@@ -44,7 +44,7 @@ public class DEV_EVENT_FLOWSTAT_INFO extends NetSDKLibStructure.SdkStructure
     /**
      * 事件对应文件信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_EVENT_FILE_INFO}
     */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLib.NET_EVENT_FILE_INFO();
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLibStructure.NET_EVENT_FILE_INFO();
     /**
      * 事件动作,0表示脉冲事件,1表示持续性事件开始,2表示持续性事件结束;
     */

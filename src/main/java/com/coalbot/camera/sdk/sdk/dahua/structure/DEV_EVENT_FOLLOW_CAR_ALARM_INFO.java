@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -19,7 +19,7 @@ public class DEV_EVENT_FOLLOW_CAR_ALARM_INFO extends NetSDKLibStructure.SdkStruc
 	/**
 	 * 事件发生的时间
 	 */
-    public NetSDKLib.NET_TIME_EX UTC;
+    public NetSDKLibStructure.NET_TIME_EX UTC;
 	/**
 	 * 跟车图片信息个数
 	 */
@@ -35,7 +35,7 @@ public class DEV_EVENT_FOLLOW_CAR_ALARM_INFO extends NetSDKLibStructure.SdkStruc
 	/**
 	 * 交通车辆信息
 	 */
-    public NetSDKLib.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
+    public NetSDKLibStructure.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
 	/**
 	 * 保留字节
 	 */

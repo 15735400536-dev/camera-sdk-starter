@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_ENTRY_DIRECTION;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_ENTRY_TYPE;
 import com.sun.jna.Pointer;

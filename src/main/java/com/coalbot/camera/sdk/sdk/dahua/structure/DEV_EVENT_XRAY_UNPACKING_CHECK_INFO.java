@@ -1,6 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * @author 291189
  * @version 1.0
@@ -14,7 +16,7 @@ public class DEV_EVENT_XRAY_UNPACKING_CHECK_INFO extends NetSDKLibStructure.SdkS
  /** 事件动作,0表示脉冲事件*/
     public			int            nAction;
  /** 事件名称*/
-    public			byte[]         szName = new byte[NetSDKLib.NET_EVENT_NAME_LEN];
+    public			byte[]         szName = new byte[NetSDKLibStructure.NET_EVENT_NAME_LEN];
  /** 智能事件所属大类*/
     public			byte[]         szClass = new byte[16];
  /** 相对事件时间戳(单位是毫秒)*/

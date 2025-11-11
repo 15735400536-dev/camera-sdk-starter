@@ -1,7 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.enumeration;
 
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 规则区内车辆行驶方向

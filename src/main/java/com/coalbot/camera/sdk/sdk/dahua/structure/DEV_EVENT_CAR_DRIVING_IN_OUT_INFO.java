@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_DRIVING_DIRECTION;
 
 /**
@@ -39,7 +40,7 @@ public class DEV_EVENT_CAR_DRIVING_IN_OUT_INFO extends NetSDKLibStructure.SdkStr
     /**
      * 事件对应文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo;
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;
     /**
      * 表示抓拍序号,如3-2-1/0,1表示抓拍正常结束,0表示抓拍异常结束
      */

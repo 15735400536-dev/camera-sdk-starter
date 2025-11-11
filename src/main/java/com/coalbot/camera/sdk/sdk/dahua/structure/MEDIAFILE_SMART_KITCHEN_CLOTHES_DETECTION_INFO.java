@@ -1,7 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 291189
@@ -12,8 +12,8 @@ package com.coalbot.camera.sdk.sdk.dahua.structure;
 public class MEDIAFILE_SMART_KITCHEN_CLOTHES_DETECTION_INFO extends NetSDKLibStructure.SdkStructure {
     public  int             dwSize;                               // 结构体大小
     public 	int             nChannelID;                           // 通道号从0开始,-1表示查询所有通道
-    public  NetSDKLib.NET_TIME stuStartTime;                      // 开始时间
-    public 	NetSDKLib.NET_TIME stuEndTime;                        // 结束时间
+    public  NetSDKLibStructure.NET_TIME stuStartTime;                      // 开始时间
+    public 	NetSDKLibStructure.NET_TIME stuEndTime;                        // 结束时间
     public  int             emHasMask;                            /** 厨师口罩状态 {@link com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_SMART_KITCHEN_CLOTHES_STATE} */
     public 	int             emHasChefHat;                         /** 厨师帽状态 {@link com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_SMART_KITCHEN_CLOTHES_STATE} */
     public 	int             emHasChefClothes;                     /** 厨师服状态 {@link com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_SMART_KITCHEN_CLOTHES_STATE} */
@@ -25,8 +25,8 @@ public class MEDIAFILE_SMART_KITCHEN_CLOTHES_DETECTION_INFO extends NetSDKLibStr
     public  byte[]          szSceneImagePath = new byte[260];     // 人体小图对应的全景图路径
     public 	int             nSceneImageLength;                    // 人体小图对应的全景图图片大小，单位字节
     public  int             bRealUTC;                             // 为TRUE表示仅stuStartTimeRealUTC和stuEndTimeRealUTC有效(仅使用stuStartTimeRealUTC和stuEndTimeRealUTC), 为FALSE表示仅stuStartTime和stuEndTime有效(仅使用stuStartTime和stuEndTime)
-    public  NetSDKLib.NET_TIME stuStartTimeRealUTC;               // UTC开始时间(标准UTC时间), 与stuEndTimeRealUTC配对使用
-    public  NetSDKLib.NET_TIME stuEndTimeRealUTC;                 // UTC结束时间(标准UTC时间), 与stuStartTimeRealUTC配对使用
+    public  NetSDKLibStructure.NET_TIME stuStartTimeRealUTC;               // UTC开始时间(标准UTC时间), 与stuEndTimeRealUTC配对使用
+    public  NetSDKLibStructure.NET_TIME stuEndTimeRealUTC;                 // UTC结束时间(标准UTC时间), 与stuStartTimeRealUTC配对使用
 
     public MEDIAFILE_SMART_KITCHEN_CLOTHES_DETECTION_INFO() {
         this.dwSize = this.size();

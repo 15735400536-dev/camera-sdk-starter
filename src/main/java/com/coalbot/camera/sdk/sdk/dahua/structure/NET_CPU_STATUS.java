@@ -1,8 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_MAX_CPU_NUM;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * className：NET_CPU_STATUS
@@ -29,7 +27,7 @@ public class NET_CPU_STATUS extends NetSDKLibStructure.SdkStructure {
     /**
      *  CPU信息
      */
-    public NET_CPU_INFO[]   stuCPUs = (NET_CPU_INFO[]) new NET_CPU_INFO().toArray(NET_MAX_CPU_NUM);
+    public NET_CPU_INFO[]   stuCPUs = (NET_CPU_INFO[]) new NET_CPU_INFO().toArray(NetSDKLibStructure.NET_MAX_CPU_NUM);
 
     public NET_CPU_STATUS(){
         this.dwSize = this.size();

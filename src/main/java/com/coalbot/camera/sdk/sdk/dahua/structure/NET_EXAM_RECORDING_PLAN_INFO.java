@@ -28,7 +28,7 @@ public class NET_EXAM_RECORDING_PLAN_INFO extends NetSDKLibStructure.SdkStructur
 /** 
 开始时间
 */
-    public NetSDKLibStructure.NET_TIME stuStartTime = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuStartTime = new NetSDKLibStructure.NET_TIME();
 /** 
 结束时间
 */

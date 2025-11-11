@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 import static com.coalbot.camera.sdk.sdk.dahua.constant.SDKStructureFieldLenth.NET_MAX_COLLECTION_NUM;
 

@@ -1,7 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 260611
@@ -16,7 +15,7 @@ public class NET_FACERECOGNITION_PERSON_INFOEX2 extends NetSDKLibStructure.SdkSt
     /**
      * 人员信息扩展
      */
-    public NetSDKLib.FACERECOGNITION_PERSON_INFOEX stPersonInfoEx = new NetSDKLib.FACERECOGNITION_PERSON_INFOEX();
+    public NetSDKLibStructure.FACERECOGNITION_PERSON_INFOEX stPersonInfoEx = new NetSDKLibStructure.FACERECOGNITION_PERSON_INFOEX();
     /**
      * 目标图片数据信息的个数, 最大值为48
      */

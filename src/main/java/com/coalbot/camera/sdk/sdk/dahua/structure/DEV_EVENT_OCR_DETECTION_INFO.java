@@ -1,5 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 /**
  * 事件类型 EVENT_IVS_OCR_DETECTION (OCR检测事件)对应的数据块描述信息
@@ -39,9 +40,9 @@ public class DEV_EVENT_OCR_DETECTION_INFO extends NetSDKLibStructure.SdkStructur
     */
     public int              nIndexInGroup;
     /**
-     * 事件发生时间，带时区偏差的UTC时间，单位：秒,参见结构体定义 {@link NetSDKLib.NET_TIME_EX}
+     * 事件发生时间，带时区偏差的UTC时间，单位：秒,参见结构体定义 {@link NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX stuUTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX stuUTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 事件时间毫秒数
     */
@@ -71,9 +72,9 @@ public class DEV_EVENT_OCR_DETECTION_INFO extends NetSDKLibStructure.SdkStructur
     */
     public int              emTriggerType;
     /**
-     * 全景广角图，仅IndexInData字段有效,参见结构体定义 {@link NetSDKLib.SCENE_IMAGE_INFO}
+     * 全景广角图，仅IndexInData字段有效,参见结构体定义 {@link NetSDKLibStructure.SCENE_IMAGE_INFO}
     */
-    public NetSDKLib.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO();
     /**
      * 图片信息数组,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_IMAGE_INFO_EX2}
     */
@@ -87,13 +88,13 @@ public class DEV_EVENT_OCR_DETECTION_INFO extends NetSDKLibStructure.SdkStructur
     */
     public int              nObjectNum;
     /**
-     * 物体信息数据,参见结构体定义 {@link NetSDKLib.NET_MSG_OBJECT_EX2}
+     * 物体信息数据,参见结构体定义 {@link NetSDKLibStructure.NET_MSG_OBJECT_EX2}
     */
     public Pointer          pstuObjectInfo;
     /**
      * 预留字节
     */
-    public byte[]           szReserved = new byte[1016-NetSDKLib.POINTERSIZE];
+    public byte[]           szReserved = new byte[1016-NetSDKLibStructure.POINTERSIZE];
 
     public DEV_EVENT_OCR_DETECTION_INFO() {
         for(int i = 0; i < stuImageInfo.length; i++){

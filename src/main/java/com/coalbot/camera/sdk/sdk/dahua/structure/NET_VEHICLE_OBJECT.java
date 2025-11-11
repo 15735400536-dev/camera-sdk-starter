@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_DETECT_SENSOR_TYPE;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_VEHICLEINOUT_CAR_TYPE;
 
@@ -26,7 +26,7 @@ public class NET_VEHICLE_OBJECT extends NetSDKLibStructure.SdkStructure {
      */
     public byte[]           szObjectType = new byte[16];
     /**
-     * 物体类型中的子类别 {@link NetSDKLib.EM_CATEGORY_TYPE}
+     * 物体类型中的子类别 {@link NetSDKLibStructure.EM_CATEGORY_TYPE}
      */
     public int              emSubObject;
     /**
@@ -78,7 +78,7 @@ public class NET_VEHICLE_OBJECT extends NetSDKLibStructure.SdkStructure {
      */
     public int              emCarType;
     /**
-     * 车辆驶入驶出虚拟线圈的状态 {@link NetSDKLib.NET_FLOWSTAT_DIRECTION}
+     * 车辆驶入驶出虚拟线圈的状态 {@link NetSDKLibStructure.NET_FLOWSTAT_DIRECTION}
      */
     public int              emVirtualCoilDirection;
     /**

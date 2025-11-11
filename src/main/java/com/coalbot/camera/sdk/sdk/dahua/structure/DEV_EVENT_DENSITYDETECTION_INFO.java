@@ -1,10 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.DH_MSG_OBJECT;
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.DH_POINT;
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.EVENT_INTELLI_COMM_INFO;
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_EVENT_FILE_INFO;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -60,6 +57,6 @@ public class DEV_EVENT_DENSITYDETECTION_INFO extends NetSDKLibStructure.SdkStruc
   /**图片信息个数 */
     public int              nImageInfoNum;
   /** 保留字节,留待扩展. */
-    public byte[]           bReserved = new byte[608-NetSDKLib.POINTERSIZE];
+    public byte[]           bReserved = new byte[608-NetSDKLibStructure.POINTERSIZE];
 }
 

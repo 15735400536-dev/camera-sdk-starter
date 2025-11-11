@@ -1,5 +1,5 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 /**
  * DH_FILE_QUERY_NONMOTOR 非机动车对应FINDNEXT查询返回参数
 */
@@ -16,11 +16,11 @@ public class MEDIAFILE_NONMOTOR_INFO extends NetSDKLibStructure.SdkStructure
     /**
      * 开始时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stStartTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stStartTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 结束时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stEndTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stEndTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 文件路径
     */
@@ -46,9 +46,9 @@ public class MEDIAFILE_NONMOTOR_INFO extends NetSDKLibStructure.SdkStructure
     */
     public int              emHelmetState;
     /**
-     * 目标型心(不是包围盒中心), 0-8191相对坐标, 相对于小图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_POINT}
+     * 目标型心(不是包围盒中心), 0-8191相对坐标, 相对于小图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_POINT}
     */
-    public NetSDKLib.NET_POINT stuFaceCenter = new NetSDKLib.NET_POINT();
+    public NetSDKLibStructure.NET_POINT stuFaceCenter = new NetSDKLibStructure.NET_POINT();
     /**
      * 为TRUE表示仅stuStartTimeRealUTC和stuEndTimeRealUTC有效(仅使用stuStartTimeRealUTC和stuEndTimeRealUTC), 为FALSE表示仅stStartTime和stEndTime有效(仅使用stStartTime和stEndTime)
     */

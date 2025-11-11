@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description  事件类型 EVENT_IVS_TRAFFIC_UNDERSPEED (交通违章-欠速)对应的规则配置 
 * @date 2022/09/07 15:17:26
@@ -52,15 +51,15 @@ public class CFG_TRAFFIC_UNDERSPEED_INFO extends NetSDKLibStructure.SdkStructure
 /** 
 报警联动
 */
-    public NetSDKLib.CFG_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLib.CFG_ALARM_MSG_HANDLE();
+    public NetSDKLibStructure.CFG_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLibStructure.CFG_ALARM_MSG_HANDLE();
 /** 
 事件响应时间段
 */
-    public			NetSDKLib.CFG_TIME_SECTION[] stuTimeSection = new NetSDKLib.CFG_TIME_SECTION[7*10];
+    public			NetSDKLibStructure.CFG_TIME_SECTION[] stuTimeSection = new NetSDKLibStructure.CFG_TIME_SECTION[7*10];
 
 public CFG_TRAFFIC_UNDERSPEED_INFO(){
 		for(int i=0;i<stuTimeSection.length;i++){
-			stuTimeSection[i]=new NetSDKLib.CFG_TIME_SECTION();
+			stuTimeSection[i]=new NetSDKLibStructure.CFG_TIME_SECTION();
 			}
 }
 }

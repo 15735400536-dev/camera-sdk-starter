@@ -1,7 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 421657
@@ -53,11 +53,11 @@ public class DEV_EVENT_FIRE_LINE_DETECTION_INFO extends NetSDKLibStructure.SdkSt
     /**
      * / 检测到的物体
      */
-    public NetSDKLib.NET_MSG_OBJECT[] stuObjects = new NetSDKLib.NET_MSG_OBJECT[32];
+    public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[32];
     /**
      * / 全景广角图
      */
-    public NetSDKLib.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO();
     /**
      * / 保留字节
      */
@@ -65,7 +65,7 @@ public class DEV_EVENT_FIRE_LINE_DETECTION_INFO extends NetSDKLibStructure.SdkSt
 
     public DEV_EVENT_FIRE_LINE_DETECTION_INFO() {
         for (int i = 0; i < stuObjects.length; i++) {
-            stuObjects[i] = new NetSDKLib.NET_MSG_OBJECT();
+            stuObjects[i] = new NetSDKLibStructure.NET_MSG_OBJECT();
         }
     }
 }

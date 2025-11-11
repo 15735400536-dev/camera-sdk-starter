@@ -35,7 +35,7 @@ public class NET_RADAR_NOTIFY_ALARMPOINTINFO extends NetSDKLibStructure.SdkStruc
     /**
      * 雷达设备识别到目标上报的时间，时间是标准UTC时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuRealUTC = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuRealUTC = new NetSDKLibStructure.NET_TIME();
     /**
      * 雷达报警点的数量扩展
     */

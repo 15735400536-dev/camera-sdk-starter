@@ -1,7 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.*;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 421657
@@ -9,7 +8,7 @@ import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.*;
  * @origin autoTool
  * @date 2023/10/30 10:46:13
  */
-public class NET_DEV_EVENT_SAME_OBJECT_SEARCH_COUNT_INFO extends SdkStructure {
+public class NET_DEV_EVENT_SAME_OBJECT_SEARCH_COUNT_INFO extends NetSDKLibStructure.SdkStructure {
     /**
      * / 通道号
      */
@@ -65,7 +64,7 @@ public class NET_DEV_EVENT_SAME_OBJECT_SEARCH_COUNT_INFO extends SdkStructure {
     /**
      * / 物体信息列表，最大支持64个物体
      */
-    public NetSDKLibStructure.NET_MSG_OBJECT_EX2[] stObjects = new NET_MSG_OBJECT_EX2[64];
+    public NetSDKLibStructure.NET_MSG_OBJECT_EX2[] stObjects = new NetSDKLibStructure.NET_MSG_OBJECT_EX2[64];
     /**
      * / 算法名称
      */
@@ -85,7 +84,7 @@ public class NET_DEV_EVENT_SAME_OBJECT_SEARCH_COUNT_INFO extends SdkStructure {
     /**
      * / 全景图
      */
-    public NetSDKLibStructure.SCENE_IMAGE_INFO stImage = new SCENE_IMAGE_INFO();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO stImage = new NetSDKLibStructure.SCENE_IMAGE_INFO();
     /**
      * / 规则使用的按图索骥算法id
      */
@@ -101,7 +100,7 @@ public class NET_DEV_EVENT_SAME_OBJECT_SEARCH_COUNT_INFO extends SdkStructure {
 
     public NET_DEV_EVENT_SAME_OBJECT_SEARCH_COUNT_INFO() {
         for (int i = 0; i < stObjects.length; i++) {
-            stObjects[i] = new NET_MSG_OBJECT_EX2();
+            stObjects[i] = new NetSDKLibStructure.NET_MSG_OBJECT_EX2();
         }
     }
 }

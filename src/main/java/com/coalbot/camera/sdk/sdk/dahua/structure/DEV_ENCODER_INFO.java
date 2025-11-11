@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 /**
  * @author 251823
  * @description 连接的编码器信息
@@ -10,7 +10,7 @@ public class DEV_ENCODER_INFO extends NetSDKLibStructure.SdkStructure {
     /**
      *  前端DVR的IP地址
      */
-    public byte[]           szDevIp = new byte[NetSDKLib.NET_MAX_IPADDR_LEN];
+    public byte[]           szDevIp = new byte[NetSDKLibStructure.NET_MAX_IPADDR_LEN];
     /**
      *  前端DVR的端口号
      */
@@ -26,11 +26,11 @@ public class DEV_ENCODER_INFO extends NetSDKLibStructure.SdkStructure {
     /**
      *  用户名
      */
-    public byte[]           szDevUser = new byte[NetSDKLib.NET_USER_NAME_LENGTH_EX];
+    public byte[]           szDevUser = new byte[NetSDKLibStructure.NET_USER_NAME_LENGTH_EX];
     /**
      *  密码
      */
-    public byte[]           szDevPwd = new byte[NetSDKLib.NET_USER_PSW_LENGTH_EX];
+    public byte[]           szDevPwd = new byte[NetSDKLibStructure.NET_USER_PSW_LENGTH_EX];
     /**
      *  通道号
      */
@@ -71,7 +71,7 @@ public class DEV_ENCODER_INFO extends NetSDKLibStructure.SdkStructure {
     /**
      *  szDevIp扩展,前端DVR的IP地址(可以输入域名)
      */
-    public byte[]           szDevIpEx = new byte[NetSDKLib.NET_MAX_IPADDR_OR_DOMAIN_LEN];
+    public byte[]           szDevIpEx = new byte[NetSDKLibStructure.NET_MAX_IPADDR_OR_DOMAIN_LEN];
     /**
      *  抓图模式(nStreamType==2时有效) 0：表示请求一帧,1：表示定时发送请求
      */

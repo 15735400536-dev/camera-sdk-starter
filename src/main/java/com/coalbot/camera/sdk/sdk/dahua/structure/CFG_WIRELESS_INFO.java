@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -47,7 +47,7 @@ public class CFG_WIRELESS_INFO extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 拨号时间段
 	 */
-    public NetSDKLib.TIME_SECTION_WEEK_DAY_6[] stuTimeSection = new NetSDKLib.TIME_SECTION_WEEK_DAY_6[7];
+    public NetSDKLibStructure.TIME_SECTION_WEEK_DAY_6[] stuTimeSection = new NetSDKLibStructure.TIME_SECTION_WEEK_DAY_6[7];
 	/**
 	 * 鉴权模式 {@link com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_CFG_AUTHMODE}
 	 */
@@ -83,7 +83,7 @@ public class CFG_WIRELESS_INFO extends NetSDKLibStructure.SdkStructure {
 
 	public CFG_WIRELESS_INFO() {
 		for (int i = 0; i < stuTimeSection.length; i++) {
-			stuTimeSection[i] = new NetSDKLib.TIME_SECTION_WEEK_DAY_6();
+			stuTimeSection[i] = new NetSDKLibStructure.TIME_SECTION_WEEK_DAY_6();
 		}
 	}
 }

@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -11,7 +11,7 @@ public class NET_RECORDFILE_INFOEX extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 录像文件信息
 	 */
-    public NetSDKLib.NET_RECORDFILE_INFO stuRecordFileInfo = new NetSDKLib.NET_RECORDFILE_INFO();
+    public NetSDKLibStructure.NET_RECORDFILE_INFO stuRecordFileInfo = new NetSDKLibStructure.NET_RECORDFILE_INFO();
 	/**
 	 * 字节对齐
 	 */

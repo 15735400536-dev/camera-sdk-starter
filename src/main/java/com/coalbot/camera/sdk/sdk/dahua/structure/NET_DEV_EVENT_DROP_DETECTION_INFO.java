@@ -1,9 +1,9 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.POINTERSIZE;
 
 /**
  * @author 260611
@@ -55,7 +55,7 @@ public class NET_DEV_EVENT_DROP_DETECTION_INFO extends NetSDKLibStructure.SdkStr
 	/**
 	 * 全景广角图，仅 nIndexInData字段有效
 	 */
-    public NetSDKLib.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO();
 	/**
 	 * 图片信息数组, refer to {@link NET_IMAGE_INFO_EX2}
 	 */
@@ -67,7 +67,7 @@ public class NET_DEV_EVENT_DROP_DETECTION_INFO extends NetSDKLibStructure.SdkStr
 	/**
 	 * null
 	 */
-    public byte[]           szReserved = new byte[508 - POINTERSIZE];
+    public byte[]           szReserved = new byte[508 - NetSDKLibStructure.POINTERSIZE];
 
 	public NET_DEV_EVENT_DROP_DETECTION_INFO() {
 		for (int i = 0; i < stuObjects.length; i++) {

@@ -1,9 +1,10 @@
 package com.coalbot.camera.sdk.sdk.dahua.demo.module;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.LLong;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.fFaceFindState;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.*;
-
 import com.sun.jna.Memory;
 import com.sun.jna.ptr.IntByReference;
 
@@ -44,7 +45,7 @@ public class SearchByPictureModule {
 		/*
 		 * 入参, IVVS设备，查询条件只有  stuInStartFind.stPerson 里的参数有效
 		 */
-		NET_IN_STARTFIND_FACERECONGNITION stuIn = new NET_IN_STARTFIND_FACERECONGNITION();
+		NetSDKLibStructure.NET_IN_STARTFIND_FACERECONGNITION stuIn = new NetSDKLibStructure.NET_IN_STARTFIND_FACERECONGNITION();
 
 		// 人员信息查询条件是否有效, 并使用扩展结构体
 		stuIn.bPersonExEnable = 1; 
@@ -69,7 +70,7 @@ public class SearchByPictureModule {
 		if(isHistory) {  // 历史库
 			// 通道号
 			stuIn.nChannelID = nChn; 
-			stuIn.stFilterInfo.szRange[0] = EM_FACE_DB_TYPE.NET_FACE_DB_TYPE_HISTORY;  // 待查询数据库类型，设备只支持一个
+			stuIn.stFilterInfo.szRange[0] = NetSDKLibStructure.EM_FACE_DB_TYPE.NET_FACE_DB_TYPE_HISTORY;  // 待查询数据库类型，设备只支持一个
 			// 开始时间
 			String[] startTimeStr = startTime.split("-");
 			stuIn.stFilterInfo.stStartTime.dwYear = Integer.parseInt(startTimeStr[0]);
@@ -86,15 +87,15 @@ public class SearchByPictureModule {
 			stuIn.stFilterInfo.stEndTime.dwHour=23;
 			stuIn.stFilterInfo.stEndTime.dwMinute=59;
 			stuIn.stFilterInfo.stEndTime.dwSecond=59;
-			stuIn.stFilterInfo.emFaceType = EM_FACERECOGNITION_FACE_TYPE.EM_FACERECOGNITION_FACE_TYPE_ALL;
+			stuIn.stFilterInfo.emFaceType = NetSDKLibStructure.EM_FACERECOGNITION_FACE_TYPE.EM_FACERECOGNITION_FACE_TYPE_ALL;
 		} else {        // 人脸库
-			stuIn.stFilterInfo.szRange[0] = EM_FACE_DB_TYPE.NET_FACE_DB_TYPE_BLACKLIST;  // 待查询数据库类型，设备只支持一个
+			stuIn.stFilterInfo.szRange[0] = NetSDKLibStructure.EM_FACE_DB_TYPE.NET_FACE_DB_TYPE_BLACKLIST;  // 待查询数据库类型，设备只支持一个
 		}
 	
 	    /*
 	     * 出参
 	     */
-	    NET_OUT_STARTFIND_FACERECONGNITION stuOut = new NET_OUT_STARTFIND_FACERECONGNITION();
+		NetSDKLibStructure.NET_OUT_STARTFIND_FACERECONGNITION stuOut = new NetSDKLibStructure.NET_OUT_STARTFIND_FACERECONGNITION();
 	    stuIn.write();
 	    stuOut.write();
 	    if(LoginModule.netsdk.CLIENT_StartFindFaceRecognition(LoginModule.m_hLoginHandle, stuIn,  stuOut, 4000)) {        
@@ -114,11 +115,11 @@ public class SearchByPictureModule {
 	 * @param nCount  当前想查询的记录条数
 	 * @return 返回的人员信息数组
 	 */
-	public static CANDIDATE_INFOEX[] doFindNextPerson(int beginNum, int nCount) {
+	public static NetSDKLibStructure.CANDIDATE_INFOEX[] doFindNextPerson(int beginNum, int nCount) {
     	/*
     	 *入参
     	 */
-        NetSDKLib.NET_IN_DOFIND_FACERECONGNITION  stuIn = new NetSDKLib.NET_IN_DOFIND_FACERECONGNITION();
+		NetSDKLibStructure.NET_IN_DOFIND_FACERECONGNITION  stuIn = new NetSDKLibStructure.NET_IN_DOFIND_FACERECONGNITION();
         stuIn.lFindHandle = m_FindHandle;
         stuIn.nCount      = nCount;  	 // 当前想查询的记录条数
         stuIn.nBeginNum   = beginNum;     // 查询起始序号
@@ -126,7 +127,7 @@ public class SearchByPictureModule {
         /*
          * 出参
          */
-        NetSDKLib.NET_OUT_DOFIND_FACERECONGNITION stuOut = new NetSDKLib.NET_OUT_DOFIND_FACERECONGNITION();;	
+		NetSDKLibStructure.NET_OUT_DOFIND_FACERECONGNITION stuOut = new NetSDKLibStructure.NET_OUT_DOFIND_FACERECONGNITION();;
         stuOut.bUseCandidatesEx = 1;				// 是否使用候选对象扩展结构体
         
         // 必须申请内存，每次查询几个，必须至少申请几个，最大申请20个
@@ -146,9 +147,9 @@ public class SearchByPictureModule {
         	}
         	
         	// 获取到的信息
-        	CANDIDATE_INFOEX[]	stuCandidatesEx = new CANDIDATE_INFOEX[stuOut.nCadidateExNum];
+			NetSDKLibStructure.CANDIDATE_INFOEX[]	stuCandidatesEx = new NetSDKLibStructure.CANDIDATE_INFOEX[stuOut.nCadidateExNum];
         	for(int i = 0; i < stuOut.nCadidateExNum; i++) {
-        		stuCandidatesEx[i] = new CANDIDATE_INFOEX();
+        		stuCandidatesEx[i] = new NetSDKLibStructure.CANDIDATE_INFOEX();
         		stuCandidatesEx[i] = stuOut.stuCandidatesEx[i];
         	}
         	
@@ -180,7 +181,7 @@ public class SearchByPictureModule {
 		/*
 		 * 入参
 		 */
-		NET_IN_FACE_FIND_STATE stuIn = new NET_IN_FACE_FIND_STATE();
+		NetSDKLibStructure.NET_IN_FACE_FIND_STATE stuIn = new NetSDKLibStructure.NET_IN_FACE_FIND_STATE();
 		stuIn.nTokenNum = 1;   
 		stuIn.nTokens = new IntByReference(nToken);  // 查询令牌
 		stuIn.cbFaceFindState = faceFindStateCb;
@@ -188,7 +189,7 @@ public class SearchByPictureModule {
 		/*
 		 * 出参
 		 */
-		NET_OUT_FACE_FIND_STATE stuOut = new NET_OUT_FACE_FIND_STATE();
+		NetSDKLibStructure.NET_OUT_FACE_FIND_STATE stuOut = new NetSDKLibStructure.NET_OUT_FACE_FIND_STATE();
 		
 		stuIn.write();
 		attachFaceHandle = LoginModule.netsdk.CLIENT_AttachFaceFindState(LoginModule.m_hLoginHandle, stuIn, stuOut, 4000);

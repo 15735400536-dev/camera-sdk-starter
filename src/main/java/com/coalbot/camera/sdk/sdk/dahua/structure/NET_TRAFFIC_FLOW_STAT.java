@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_DETECT_SENSOR_TYPE;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_TRAFFIC_FLOW_STATUS;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_VIRTUAL_COIL_OCCUPANCY_STATUS;

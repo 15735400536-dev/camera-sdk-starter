@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 事件类型 EVENT_IVS_PRAM_DETECTION (婴儿车检测事件)对应的数据块描述信息
 */
@@ -24,7 +26,7 @@ public class DEV_EVENT_PRAM_DETECTION_INFO extends NetSDKLibStructure.SdkStructu
     /**
      * 事件发生的时间,参见结构体定义 {@link NetSDKLib.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX UTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX UTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 事件ID
     */
@@ -56,7 +58,7 @@ public class DEV_EVENT_PRAM_DETECTION_INFO extends NetSDKLibStructure.SdkStructu
     /**
      * 检测到的多个物体,参见结构体定义 {@link NetSDKLib.NET_MSG_OBJECT}
     */
-    public NetSDKLib.NET_MSG_OBJECT[] stuObjects = new NetSDKLib.NET_MSG_OBJECT[128];
+    public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[128];
     /**
      * 检测到的物体个数
     */
@@ -68,7 +70,7 @@ public class DEV_EVENT_PRAM_DETECTION_INFO extends NetSDKLibStructure.SdkStructu
     /**
      * 检测区域,参见结构体定义 {@link NetSDKLib.NET_POINT}
     */
-    public NetSDKLib.NET_POINT[] stuDetectRegion = new NetSDKLib.NET_POINT[20];
+    public NetSDKLibStructure.NET_POINT[] stuDetectRegion = new NetSDKLibStructure.NET_POINT[20];
     /**
      * 保留字节
     */
@@ -76,10 +78,10 @@ public class DEV_EVENT_PRAM_DETECTION_INFO extends NetSDKLibStructure.SdkStructu
 
     public DEV_EVENT_PRAM_DETECTION_INFO() {
         for(int i = 0; i < stuObjects.length; i++){
-            stuObjects[i] = new NetSDKLib.NET_MSG_OBJECT();
+            stuObjects[i] = new NetSDKLibStructure.NET_MSG_OBJECT();
         }
         for(int i = 0; i < stuDetectRegion.length; i++){
-            stuDetectRegion[i] = new NetSDKLib.NET_POINT();
+            stuDetectRegion[i] = new NetSDKLibStructure.NET_POINT();
         }
     }
 }

@@ -1,9 +1,10 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-/** 
+/**
 事件类型 EVENT_IVS_BREAK_RULE_BUILDING_DETECTION （违章建筑检测事件）对应的数据块描述信息
 */
 public class DEV_EVENT_BREAK_RULE_BUILDIING_DETECTION_INFO extends NetSDKLibStructure.SdkStructure {
@@ -34,7 +35,7 @@ public class DEV_EVENT_BREAK_RULE_BUILDIING_DETECTION_INFO extends NetSDKLibStru
 /** 
 全景广角图(当前事件只有：nOffSet、nLength有效)
 */
-    public NetSDKLib.SCENE_IMAGE_INFO stuSceneImageInfo = new NetSDKLib.SCENE_IMAGE_INFO();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImageInfo = new NetSDKLibStructure.SCENE_IMAGE_INFO();
 /** 
 事件ID
 */

@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 291189
@@ -52,7 +52,7 @@ public class DEV_EVENT_BARELAND_DETECTION_INFO extends NetSDKLibStructure.SdkStr
     /**
      * 全景广角图
      */
-    public NetSDKLib.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO();
     /**
      * 通道号
      */
@@ -66,9 +66,9 @@ public class DEV_EVENT_BARELAND_DETECTION_INFO extends NetSDKLibStructure.SdkStr
      */
     public NET_TIME_EX      stuUTC = new NET_TIME_EX();
     /**
-     * 原始图,参见结构体定义 {@link NetSDKLib.NET_INTELLIGENCE_IMAGE_INFO}
+     * 原始图,参见结构体定义 {@link NetSDKLibStructure.NET_INTELLIGENCE_IMAGE_INFO}
     */
-    public NetSDKLib.NET_INTELLIGENCE_IMAGE_INFO stuOriginalImage = new NetSDKLib.NET_INTELLIGENCE_IMAGE_INFO();
+    public NetSDKLibStructure.NET_INTELLIGENCE_IMAGE_INFO stuOriginalImage = new NetSDKLibStructure.NET_INTELLIGENCE_IMAGE_INFO();
     /**
      * 预留字节
      */

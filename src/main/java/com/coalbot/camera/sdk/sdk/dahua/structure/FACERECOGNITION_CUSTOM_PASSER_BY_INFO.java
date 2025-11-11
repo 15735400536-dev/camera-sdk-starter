@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 目标库路人信息
 */
@@ -16,11 +18,11 @@ public class FACERECOGNITION_CUSTOM_PASSER_BY_INFO extends NetSDKLibStructure.Sd
     /**
      * 入库时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuStorageTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuStorageTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 最近出现时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuLastAppearTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuLastAppearTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 最近出现地点对应的通道号
     */

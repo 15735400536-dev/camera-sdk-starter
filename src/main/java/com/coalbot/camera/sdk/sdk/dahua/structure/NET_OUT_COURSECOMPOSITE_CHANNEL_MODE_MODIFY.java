@@ -1,8 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_MAX_MODE_NUMBER;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 录播主机修改模式出参
@@ -22,7 +20,7 @@ public class NET_OUT_COURSECOMPOSITE_CHANNEL_MODE_MODIFY extends NetSDKLibStruct
     /**
      * 返回码: 1 成功, 2 失败, 3, 已满, 4 资源不足
      */
-    public int[]            nReturnCode = new int[NET_MAX_MODE_NUMBER];
+    public int[]            nReturnCode = new int[NetSDKLibStructure.NET_MAX_MODE_NUMBER];
 
     public NET_OUT_COURSECOMPOSITE_CHANNEL_MODE_MODIFY() {
         dwSize = this.size();

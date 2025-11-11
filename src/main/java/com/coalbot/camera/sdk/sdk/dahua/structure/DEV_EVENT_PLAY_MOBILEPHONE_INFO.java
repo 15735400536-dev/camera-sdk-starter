@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -44,7 +45,7 @@ public class DEV_EVENT_PLAY_MOBILEPHONE_INFO extends NetSDKLibStructure.SdkStruc
     /**
      *  事件对应文件信息 
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo;
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;
     /**
      *  事件触发的预置点号,从1开始
      */
@@ -56,7 +57,7 @@ public class DEV_EVENT_PLAY_MOBILEPHONE_INFO extends NetSDKLibStructure.SdkStruc
     /**
      *  检测区域,[0,8191]
      */
-    public NetSDKLib.NET_POINT[] stuDetectRegion = (NetSDKLib.NET_POINT[]) new NetSDKLib.NET_POINT().toArray(20);
+    public NetSDKLibStructure.NET_POINT[] stuDetectRegion = (NetSDKLibStructure.NET_POINT[]) new NetSDKLibStructure.NET_POINT().toArray(20);
     /**
      *  检测到的物体个数
      */
@@ -64,7 +65,7 @@ public class DEV_EVENT_PLAY_MOBILEPHONE_INFO extends NetSDKLibStructure.SdkStruc
     /**
      *  检测到的物体
      */
-    public NetSDKLib.NET_MSG_OBJECT[] stuObjects = (NetSDKLib.NET_MSG_OBJECT[]) new NetSDKLib.NET_MSG_OBJECT().toArray(128);
+    public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = (NetSDKLibStructure.NET_MSG_OBJECT[]) new NetSDKLibStructure.NET_MSG_OBJECT().toArray(128);
     /**
      *  stuSceneImage 是否有效
      */
@@ -72,11 +73,11 @@ public class DEV_EVENT_PLAY_MOBILEPHONE_INFO extends NetSDKLibStructure.SdkStruc
     /**
      *  全景广角图
      */
-    public NetSDKLib.SCENE_IMAGE_INFO_EX stuSceneImage;
+    public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage;
     /**
      *  GPS信息
      */
-    public NetSDKLib.NET_GPS_INFO stuGPSInfo = new NetSDKLib.NET_GPS_INFO();
+    public NetSDKLibStructure.NET_GPS_INFO stuGPSInfo = new NetSDKLibStructure.NET_GPS_INFO();
     /**
      *  违章关联视频FTP上传路径
      */

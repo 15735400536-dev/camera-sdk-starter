@@ -1,8 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_MAX_MODE_NUMBER;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 录播主机添加模式入参
@@ -22,7 +21,7 @@ public class NET_IN_COURSECOMPOSITE_CHANNEL_MODE_ADD extends NetSDKLibStructure.
     /**
      * 模式信息
      */
-    public NET_COMPOSITECHANNELMODE_INFO[] stModeInfo = new NET_COMPOSITECHANNELMODE_INFO[NET_MAX_MODE_NUMBER];
+    public NET_COMPOSITECHANNELMODE_INFO[] stModeInfo = new NET_COMPOSITECHANNELMODE_INFO[NetSDKLibStructure.NET_MAX_MODE_NUMBER];
 
     public NET_IN_COURSECOMPOSITE_CHANNEL_MODE_ADD() {
         dwSize = this.size();

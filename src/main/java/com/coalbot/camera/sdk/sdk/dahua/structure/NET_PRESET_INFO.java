@@ -1,6 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
+
 /**
  * 预置点主动巡视具体信息
 */
@@ -25,7 +27,7 @@ public class NET_PRESET_INFO extends NetSDKLibStructure.SdkStructure
     /**
      * 预留字节
     */
-    public byte[]           szReserved = new byte[252-NetSDKLib.POINTERSIZE];
+    public byte[]           szReserved = new byte[252-NetSDKLibStructure.POINTERSIZE];
 
     public NET_PRESET_INFO() {
     }

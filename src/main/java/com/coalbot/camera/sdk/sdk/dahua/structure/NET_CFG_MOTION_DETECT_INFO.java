@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 动态检测报警配置配置, 对应枚举NET_EM_CFG_MOTION_DETECT
 */
@@ -30,9 +32,9 @@ public class NET_CFG_MOTION_DETECT_INFO extends NetSDKLibStructure.SdkStructure
     */
     public int              nSubRatio;
     /**
-     * 动态检测联动,参见结构体定义 {@link NetSDKLib.NET_ALARM_MSG_HANDLE}
+     * 动态检测联动,参见结构体定义 {@link NetSDKLibStructure.NET_ALARM_MSG_HANDLE}
     */
-    public NetSDKLib.NET_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLib.NET_ALARM_MSG_HANDLE();
+    public NetSDKLibStructure.NET_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLibStructure.NET_ALARM_MSG_HANDLE();
     /**
      * 三代动检支持的视频窗口个数
     */

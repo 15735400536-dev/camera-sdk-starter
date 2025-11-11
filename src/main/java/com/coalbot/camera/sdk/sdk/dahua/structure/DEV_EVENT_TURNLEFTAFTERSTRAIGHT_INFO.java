@@ -1,5 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 /**
  * 事件类型 EVENT_IVS_TRAFFIC_TURNLEFTAFTERSTRAIGHT (左转未礼让直行事件)对应的数据块描述信息
@@ -23,29 +24,29 @@ public class DEV_EVENT_TURNLEFTAFTERSTRAIGHT_INFO extends NetSDKLibStructure.Sdk
     */
     public double           PTS;
     /**
-     * 事件发生的时间,参见结构体定义 {@link NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX UTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX UTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 事件ID
     */
     public int              nEventID;
     /**
-     * 事件对应文件信息,参见结构体定义 {@link NetSDKLib.NET_EVENT_FILE_INFO}
+     * 事件对应文件信息,参见结构体定义 {@link NetSDKLibStructure.NET_EVENT_FILE_INFO}
     */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLib.NET_EVENT_FILE_INFO();
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLibStructure.NET_EVENT_FILE_INFO();
     /**
-     * 车牌信息,参见结构体定义 {@link NetSDKLib.NET_MSG_OBJECT}
+     * 车牌信息,参见结构体定义 {@link NetSDKLibStructure.NET_MSG_OBJECT}
     */
-    public NetSDKLib.NET_MSG_OBJECT stuObject = new NetSDKLib.NET_MSG_OBJECT();
+    public NetSDKLibStructure.NET_MSG_OBJECT stuObject = new NetSDKLibStructure.NET_MSG_OBJECT();
     /**
-     * 车身信息,参见结构体定义 {@link NetSDKLib.NET_MSG_OBJECT}
+     * 车身信息,参见结构体定义 {@link NetSDKLibStructure.NET_MSG_OBJECT}
     */
-    public NetSDKLib.NET_MSG_OBJECT stuVehicle = new NetSDKLib.NET_MSG_OBJECT();
+    public NetSDKLibStructure.NET_MSG_OBJECT stuVehicle = new NetSDKLibStructure.NET_MSG_OBJECT();
     /**
-     * 车辆信息,参见结构体定义 {@link NetSDKLib.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO}
+     * 车辆信息,参见结构体定义 {@link NetSDKLibStructure.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO}
     */
-    public NetSDKLib.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar = new NetSDKLib.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO();
+    public NetSDKLibStructure.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar = new NetSDKLibStructure.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO();
     /**
      * 对应车道号
     */
@@ -68,25 +69,25 @@ public class DEV_EVENT_TURNLEFTAFTERSTRAIGHT_INFO extends NetSDKLibStructure.Sdk
     */
     public int              dwSnapFlagMask;
     /**
-     * 对应图片的分辨率,参见结构体定义 {@link NetSDKLib.NET_RESOLUTION_INFO}
+     * 对应图片的分辨率,参见结构体定义 {@link NetSDKLibStructure.NET_RESOLUTION_INFO}
     */
-    public NetSDKLib.NET_RESOLUTION_INFO stuResolution = new NetSDKLib.NET_RESOLUTION_INFO();
+    public NetSDKLibStructure.NET_RESOLUTION_INFO stuResolution = new NetSDKLibStructure.NET_RESOLUTION_INFO();
     /**
-     * GPS信息,参见结构体定义 {@link NetSDKLib.NET_GPS_INFO}
+     * GPS信息,参见结构体定义 {@link NetSDKLibStructure.NET_GPS_INFO}
     */
-    public NetSDKLib.NET_GPS_INFO stuGPSInfo = new NetSDKLib.NET_GPS_INFO();
+    public NetSDKLibStructure.NET_GPS_INFO stuGPSInfo = new NetSDKLibStructure.NET_GPS_INFO();
     /**
-     * 全景图,参见结构体定义 {@link NetSDKLib.SCENE_IMAGE_INFO_EX}
+     * 全景图,参见结构体定义 {@link NetSDKLibStructure.SCENE_IMAGE_INFO_EX}
     */
     public Pointer          pstuSceneImage;
     /**
      * 保留字节
     */
-    public byte[]           byReserved = new byte[984-NetSDKLib.POINTERSIZE];
+    public byte[]           byReserved = new byte[984-NetSDKLibStructure.POINTERSIZE];
     /**
-     * 公共信息,参见结构体定义 {@link NetSDKLib.EVENT_COMM_INFO}
+     * 公共信息,参见结构体定义 {@link NetSDKLibStructure.EVENT_COMM_INFO}
     */
-    public NetSDKLib.EVENT_COMM_INFO stCommInfo = new NetSDKLib.EVENT_COMM_INFO();
+    public NetSDKLibStructure.EVENT_COMM_INFO stCommInfo = new NetSDKLibStructure.EVENT_COMM_INFO();
     /**
      * 扩展协议字段,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_EVENT_INFO_EXTEND}
     */

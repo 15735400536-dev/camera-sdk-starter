@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 47081
@@ -18,9 +18,9 @@ public class CFG_DETAIL_DRIVEASSISTANT_INFO extends NetSDKLibStructure.SdkStruct
   /** 车头到相机的距离 0-5000mm 单位mm */
     public int              nCamToCarHead;
     /**
-     * 车道中心点,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.CFG_POLYGON}
+     * 车道中心点,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.CFG_POLYGON}
     */
-    public NetSDKLib.CFG_POLYGON stuCenterPoint = new NetSDKLib.CFG_POLYGON();
+    public NetSDKLibStructure.CFG_POLYGON stuCenterPoint = new NetSDKLibStructure.CFG_POLYGON();
   /** 保留 */
     public byte[]           byReserved = new byte[48];
 }

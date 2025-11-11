@@ -1,9 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_MAX_BATTERY_NUM;
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_MAX_POWER_NUM;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * className：NET_POWER_STATUS
@@ -30,7 +27,7 @@ public class NET_POWER_STATUS extends NetSDKLibStructure.SdkStructure {
     /**
      *  电源状态
      */
-    public NET_POWER_INFO[] stuPowers = (NET_POWER_INFO[]) new NET_POWER_INFO().toArray(NET_MAX_POWER_NUM);
+    public NET_POWER_INFO[] stuPowers = (NET_POWER_INFO[]) new NET_POWER_INFO().toArray(NetSDKLibStructure.NET_MAX_POWER_NUM);
     /**
      *  电池数量
      */
@@ -38,7 +35,7 @@ public class NET_POWER_STATUS extends NetSDKLibStructure.SdkStructure {
     /**
      *  电池状态
      */
-    public NET_BATTERY_INFO[] stuBatteries = (NET_BATTERY_INFO[]) new NET_BATTERY_INFO().toArray(NET_MAX_BATTERY_NUM);
+    public NET_BATTERY_INFO[] stuBatteries = (NET_BATTERY_INFO[]) new NET_BATTERY_INFO().toArray(NetSDKLibStructure.NET_MAX_BATTERY_NUM);
 
     public NET_POWER_STATUS(){
         this.dwSize = this.size();

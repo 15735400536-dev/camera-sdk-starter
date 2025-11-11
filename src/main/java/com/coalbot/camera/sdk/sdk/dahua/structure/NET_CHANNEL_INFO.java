@@ -1,8 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
-import static com.coalbot.camera.sdk.sdk.dahua.constant.SDKStructureFieldLenth.MAX_CHANNEL_ID_LEN;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+import com.coalbot.camera.sdk.sdk.dahua.constant.SDKStructureFieldLenth;
 
 /**
  * 通道相关信息
@@ -15,7 +14,7 @@ public class NET_CHANNEL_INFO extends NetSDKLibStructure.SdkStructure {
     /**
      * 通道编号
      */
-    public byte[]           szID = new byte[MAX_CHANNEL_ID_LEN];
+    public byte[]           szID = new byte[SDKStructureFieldLenth.MAX_CHANNEL_ID_LEN];
     /**
      * 报警级别,范围 [1,6]
      */

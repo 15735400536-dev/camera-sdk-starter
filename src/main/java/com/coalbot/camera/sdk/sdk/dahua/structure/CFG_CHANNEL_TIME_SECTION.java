@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -11,11 +12,11 @@ public class CFG_CHANNEL_TIME_SECTION extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 存储时间段
 	 */
-    public NetSDKLib.CFG_TIME_SECTION[] stuTimeSection = new NetSDKLib.CFG_TIME_SECTION[7 * 2];
+    public NetSDKLibStructure.CFG_TIME_SECTION[] stuTimeSection = new NetSDKLibStructure.CFG_TIME_SECTION[7 * 2];
 
 	public CFG_CHANNEL_TIME_SECTION() {
 		for (int i = 0; i < stuTimeSection.length; i++) {
-			stuTimeSection[i] = new NetSDKLib.CFG_TIME_SECTION();
+			stuTimeSection[i] = new NetSDKLibStructure.CFG_TIME_SECTION();
 		}
 	}
 }

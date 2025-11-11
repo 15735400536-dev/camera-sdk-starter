@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -19,7 +19,7 @@ public class NET_CFG_DISABLE_LINKAGE_TIME_SECTION extends NetSDKLibStructure.Sdk
 	/**
 	 * 时间段周期设置, 第一维前7个元素对应每周7天，第8个元素对应节假日，每天最多6个时间段
 	 */
-    public TIME_SECTION_6[] stuTimeSection = new TIME_SECTION_6[NetSDKLib.NET_N_SCHEDULE_TSECT];
+    public TIME_SECTION_6[] stuTimeSection = new TIME_SECTION_6[NetSDKLibStructure.NET_N_SCHEDULE_TSECT];
 
 	public NET_CFG_DISABLE_LINKAGE_TIME_SECTION() {
 		for (int i = 0; i < stuTimeSection.length; i++) {

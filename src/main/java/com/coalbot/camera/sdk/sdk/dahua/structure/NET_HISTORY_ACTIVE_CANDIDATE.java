@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 历史库以图搜图主动上报的候选人信息
 */
@@ -20,7 +22,7 @@ public class NET_HISTORY_ACTIVE_CANDIDATE extends NetSDKLibStructure.SdkStructur
     /**
      * 查询人员出现的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 目标全景图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_FACE_IMAGE_INFO}
     */
@@ -32,7 +34,7 @@ public class NET_HISTORY_ACTIVE_CANDIDATE extends NetSDKLibStructure.SdkStructur
     /**
      * 历史库中人员出现的时间(UTC时间格式),参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuTimeRealUTC = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuTimeRealUTC = new NetSDKLibStructure.NET_TIME();
     /**
      * 事件类型
     */

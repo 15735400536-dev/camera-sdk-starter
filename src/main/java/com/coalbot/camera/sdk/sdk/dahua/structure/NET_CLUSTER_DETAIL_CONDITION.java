@@ -55,11 +55,11 @@ public class NET_CLUSTER_DETAIL_CONDITION extends NetSDKLibStructure.SdkStructur
     /**
      * 查询起始时间, 标准UTC时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuStartRealUTC = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuStartRealUTC = new NetSDKLibStructure.NET_TIME();
     /**
      * 查询结束时间, 标准UTC时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuEndRealUTC = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuEndRealUTC = new NetSDKLibStructure.NET_TIME();
     /**
      * 是否使用带时区偏差的UTC事件
     */
@@ -67,11 +67,11 @@ public class NET_CLUSTER_DETAIL_CONDITION extends NetSDKLibStructure.SdkStructur
     /**
      * 查询起始时间, 带时区偏差的UTC时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuStartUTC = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuStartUTC = new NetSDKLibStructure.NET_TIME();
     /**
      * 查询结束时间, 带时区偏差的UTC时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuEndUTC = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuEndUTC = new NetSDKLibStructure.NET_TIME();
 	/**
 	 * 保留字节
 	 */

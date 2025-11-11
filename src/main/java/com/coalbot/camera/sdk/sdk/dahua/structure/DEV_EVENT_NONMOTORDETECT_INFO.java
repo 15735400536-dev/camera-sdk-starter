@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 事件类型EVENT_IVS_NONMOTORDETECT(非机动车检测) 对应数据块描述信息
 */
@@ -22,25 +24,25 @@ public class DEV_EVENT_NONMOTORDETECT_INFO extends NetSDKLibStructure.SdkStructu
     */
     public double           PTS;
     /**
-     * 事件发生的时间,参见结构体定义 {@link NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX UTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX UTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 0:脉冲 1:开始 2:停止
     */
     public int              nAction;
     /**
-     * 智能事件公共信息,参见结构体定义 {@link NetSDKLib.EVENT_INTELLI_COMM_INFO}
+     * 智能事件公共信息,参见结构体定义 {@link NetSDKLibStructure.EVENT_INTELLI_COMM_INFO}
     */
-    public NetSDKLib.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo = new NetSDKLib.EVENT_INTELLI_COMM_INFO();
+    public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo = new NetSDKLibStructure.EVENT_INTELLI_COMM_INFO();
     /**
      * 抓图标志(按位),具体见NET_RESERVED_COMMON
     */
     public int              dwSnapFlagMask;
     /**
-     * 对应图片的分辨率,参见结构体定义 {@link NetSDKLib.NET_RESOLUTION_INFO}
+     * 对应图片的分辨率,参见结构体定义 {@link NetSDKLibStructure.NET_RESOLUTION_INFO}
     */
-    public NetSDKLib.NET_RESOLUTION_INFO stuResolution = new NetSDKLib.NET_RESOLUTION_INFO();
+    public NetSDKLibStructure.NET_RESOLUTION_INFO stuResolution = new NetSDKLibStructure.NET_RESOLUTION_INFO();
     /**
      * 非机动车抠图信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NONMOTOR_IMAGE_INFO}
     */
@@ -50,15 +52,15 @@ public class DEV_EVENT_NONMOTORDETECT_INFO extends NetSDKLibStructure.SdkStructu
     */
     public int              nNumOfCycling;
     /**
-     * 非机动车颜色,参见枚举定义 {@link NetSDKLib.EM_OBJECT_COLOR_TYPE}
+     * 非机动车颜色,参见枚举定义 {@link NetSDKLibStructure.EM_OBJECT_COLOR_TYPE}
     */
     public int              emNonMotorColor;
     /**
-     * 包围盒,参见结构体定义 {@link NetSDKLib.NET_RECT}
+     * 包围盒,参见结构体定义 {@link NetSDKLibStructure.NET_RECT}
     */
-    public NetSDKLib.NET_RECT stuBoundingBox = new NetSDKLib.NET_RECT();
+    public NetSDKLibStructure.NET_RECT stuBoundingBox = new NetSDKLibStructure.NET_RECT();
     /**
-     * 车上一人时的性别,参见枚举定义 {@link NetSDKLib.EM_SEX_TYPE}
+     * 车上一人时的性别,参见枚举定义 {@link NetSDKLibStructure.EM_SEX_TYPE}
     */
     public int              emSex;
     /**
@@ -66,59 +68,59 @@ public class DEV_EVENT_NONMOTORDETECT_INFO extends NetSDKLibStructure.SdkStructu
     */
     public int              nAge;
     /**
-     * 车上人员头盔状态,参见枚举定义 {@link NetSDKLib.EM_NONMOTOR_OBJECT_STATUS}
+     * 车上人员头盔状态,参见枚举定义 {@link NetSDKLibStructure.EM_NONMOTOR_OBJECT_STATUS}
     */
     public int              emHelmet;
     /**
-     * 车上一人时是否在打电话,参见枚举定义 {@link NetSDKLib.EM_NONMOTOR_OBJECT_STATUS}
+     * 车上一人时是否在打电话,参见枚举定义 {@link NetSDKLibStructure.EM_NONMOTOR_OBJECT_STATUS}
     */
     public int              emCall;
     /**
-     * 车上一人时是否戴帽子,参见枚举定义 {@link NetSDKLib.EM_NONMOTOR_OBJECT_STATUS}
+     * 车上一人时是否戴帽子,参见枚举定义 {@link NetSDKLibStructure.EM_NONMOTOR_OBJECT_STATUS}
     */
     public int              emHat;
     /**
-     * 车上一人时是否有背包,参见枚举定义 {@link NetSDKLib.EM_NONMOTOR_OBJECT_STATUS}
+     * 车上一人时是否有背包,参见枚举定义 {@link NetSDKLibStructure.EM_NONMOTOR_OBJECT_STATUS}
     */
     public int              emBag;
     /**
-     * 车上一人时有没有手提包,参见枚举定义 {@link NetSDKLib.EM_NONMOTOR_OBJECT_STATUS}
+     * 车上一人时有没有手提包,参见枚举定义 {@link NetSDKLibStructure.EM_NONMOTOR_OBJECT_STATUS}
     */
     public int              emCarrierBag;
     /**
-     * 是否打伞,参见枚举定义 {@link NetSDKLib.EM_NONMOTOR_OBJECT_STATUS}
+     * 是否打伞,参见枚举定义 {@link NetSDKLibStructure.EM_NONMOTOR_OBJECT_STATUS}
     */
     public int              emUmbrella;
     /**
-     * 车上一人时是否有带眼镜,参见枚举定义 {@link NetSDKLib.EM_NONMOTOR_OBJECT_STATUS}
+     * 车上一人时是否有带眼镜,参见枚举定义 {@link NetSDKLibStructure.EM_NONMOTOR_OBJECT_STATUS}
     */
     public int              emGlasses;
     /**
-     * 车上一人时是否带口罩,参见枚举定义 {@link NetSDKLib.EM_NONMOTOR_OBJECT_STATUS}
+     * 车上一人时是否带口罩,参见枚举定义 {@link NetSDKLibStructure.EM_NONMOTOR_OBJECT_STATUS}
     */
     public int              emMask;
     /**
-     * 车上一人时的表情,参见枚举定义 {@link NetSDKLib.EM_EMOTION_TYPE}
+     * 车上一人时的表情,参见枚举定义 {@link NetSDKLibStructure.EM_EMOTION_TYPE}
     */
     public int              emEmotion;
     /**
-     * 车上一人时上衣类型,参见枚举定义 {@link NetSDKLib.EM_CLOTHES_TYPE}
+     * 车上一人时上衣类型,参见枚举定义 {@link NetSDKLibStructure.EM_CLOTHES_TYPE}
     */
     public int              emUpClothes;
     /**
-     * 车上一人时下衣类型,参见枚举定义 {@link NetSDKLib.EM_CLOTHES_TYPE}
+     * 车上一人时下衣类型,参见枚举定义 {@link NetSDKLibStructure.EM_CLOTHES_TYPE}
     */
     public int              emDownClothes;
     /**
-     * 车上一人时上衣颜色,参见枚举定义 {@link NetSDKLib.EM_OBJECT_COLOR_TYPE}
+     * 车上一人时上衣颜色,参见枚举定义 {@link NetSDKLibStructure.EM_OBJECT_COLOR_TYPE}
     */
     public int              emUpperBodyColor;
     /**
-     * 车上一人时下衣颜色,参见枚举定义 {@link NetSDKLib.EM_OBJECT_COLOR_TYPE}
+     * 车上一人时下衣颜色,参见枚举定义 {@link NetSDKLibStructure.EM_OBJECT_COLOR_TYPE}
     */
     public int              emLowerBodyColor;
     /**
-     * 物体类型（NonMotor）中的子类别,参见枚举定义 {@link NetSDKLib.EM_CATEGORY_NONMOTOR_TYPE}
+     * 物体类型（NonMotor）中的子类别,参见枚举定义 {@link NetSDKLibStructure.EM_CATEGORY_NONMOTOR_TYPE}
     */
     public int              emCategoryType;
     /**

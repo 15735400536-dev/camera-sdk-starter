@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_REAL_DATA_TYPE;
 import com.sun.jna.Pointer;
 
@@ -21,7 +22,7 @@ public class NET_IN_ADAPTIVE_DOWNLOAD_BY_TIME extends NetSDKLibStructure.SdkStru
 	 */
     public int              nChannelID;
 	/**
-	 * 录像类型枚举值 {@link NetSDKLib.EM_QUERY_RECORD_TYPE}
+	 * 录像类型枚举值 {@link NetSDKLibStructure.EM_QUERY_RECORD_TYPE}
 	 */
     public int              emRecordType;
 	/**
@@ -31,11 +32,11 @@ public class NET_IN_ADAPTIVE_DOWNLOAD_BY_TIME extends NetSDKLibStructure.SdkStru
 	/**
 	 * 开始时间
 	 */
-    public NetSDKLib.NET_TIME stStartTime;
+    public NetSDKLibStructure.NET_TIME stStartTime;
 	/**
 	 * 结束时间
 	 */
-    public NetSDKLib.NET_TIME stStopTime;
+    public NetSDKLibStructure.NET_TIME stStopTime;
 	/**
 	 * 进度回调
 	 */

@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * Onvif 新用户信息
 */
@@ -16,7 +18,7 @@ public class NET_ONVIF_USER_INFO extends NetSDKLibStructure.SdkStructure
     /**
      * 最近修改密码的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuPasswordModifiedTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuPasswordModifiedTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 用户所在的组,参见枚举定义 {@link com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_GROUP_TYPE}
     */

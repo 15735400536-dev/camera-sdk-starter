@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 事件类型 EVENT_IVS_GAS_TANK_DETECTION(煤气罐检测事件)对应的数据块描述信息
 */
@@ -42,9 +44,9 @@ public class NET_DEV_EVENT_GAS_TANK_DETECTION_INFO extends NetSDKLibStructure.Sd
     */
     public double           dbPTS;
     /**
-     * 事件发生的时间,参见结构体定义 {@link NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX stuUTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX stuUTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 仅用于字节对齐,无实际意义
     */
@@ -58,13 +60,13 @@ public class NET_DEV_EVENT_GAS_TANK_DETECTION_INFO extends NetSDKLibStructure.Sd
     */
     public int              nEventID;
     /**
-     * 检测目标的物体信息,参见结构体定义 {@link NetSDKLib.NET_MSG_OBJECT_EX2}
+     * 检测目标的物体信息,参见结构体定义 {@link NetSDKLibStructure.NET_MSG_OBJECT_EX2}
     */
-    public NetSDKLib.NET_MSG_OBJECT_EX2 stuObject = new NetSDKLib.NET_MSG_OBJECT_EX2();
+    public NetSDKLibStructure.NET_MSG_OBJECT_EX2 stuObject = new NetSDKLibStructure.NET_MSG_OBJECT_EX2();
     /**
-     * 检测目标的物体信息数组,参见结构体定义 {@link NetSDKLib.NET_MSG_OBJECT_EX2}
+     * 检测目标的物体信息数组,参见结构体定义 {@link NetSDKLibStructure.NET_MSG_OBJECT_EX2}
     */
-    public NetSDKLib.NET_MSG_OBJECT_EX2[] stuObjects = new NetSDKLib.NET_MSG_OBJECT_EX2[100];
+    public NetSDKLibStructure.NET_MSG_OBJECT_EX2[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT_EX2[100];
     /**
      * 检测到的物体个数(配合stuObjects使用)
     */
@@ -74,9 +76,9 @@ public class NET_DEV_EVENT_GAS_TANK_DETECTION_INFO extends NetSDKLibStructure.Sd
     */
     public int              nDetectRegionNum;
     /**
-     * 检测区,参见结构体定义 {@link NetSDKLib.NET_POINT}
+     * 检测区,参见结构体定义 {@link NetSDKLibStructure.NET_POINT}
     */
-    public NetSDKLib.NET_POINT[] stuDetectRegion = new NetSDKLib.NET_POINT[20];
+    public NetSDKLibStructure.NET_POINT[] stuDetectRegion = new NetSDKLibStructure.NET_POINT[20];
     /**
      * 规则被触发生次数
     */
@@ -94,13 +96,13 @@ public class NET_DEV_EVENT_GAS_TANK_DETECTION_INFO extends NetSDKLibStructure.Sd
     */
     public byte[]           szPresetName = new byte[64];
     /**
-     * GPS信息,参见结构体定义 {@link NetSDKLib.NET_GPS_STATUS_INFO}
+     * GPS信息,参见结构体定义 {@link NetSDKLibStructure.NET_GPS_STATUS_INFO}
     */
-    public NetSDKLib.NET_GPS_STATUS_INFO stuGPSStatusInfo = new NetSDKLib.NET_GPS_STATUS_INFO();
+    public NetSDKLibStructure.NET_GPS_STATUS_INFO stuGPSStatusInfo = new NetSDKLibStructure.NET_GPS_STATUS_INFO();
     /**
-     * 全景广角图,参见结构体定义 {@link NetSDKLib.SCENE_IMAGE_INFO}
+     * 全景广角图,参见结构体定义 {@link NetSDKLibStructure.SCENE_IMAGE_INFO}
     */
-    public NetSDKLib.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO();
     /**
      * 预留字节
     */
@@ -108,10 +110,10 @@ public class NET_DEV_EVENT_GAS_TANK_DETECTION_INFO extends NetSDKLibStructure.Sd
 
     public NET_DEV_EVENT_GAS_TANK_DETECTION_INFO() {
         for(int i = 0; i < stuObjects.length; i++){
-            stuObjects[i] = new NetSDKLib.NET_MSG_OBJECT_EX2();
+            stuObjects[i] = new NetSDKLibStructure.NET_MSG_OBJECT_EX2();
         }
         for(int i = 0; i < stuDetectRegion.length; i++){
-            stuDetectRegion[i] = new NetSDKLib.NET_POINT();
+            stuDetectRegion[i] = new NetSDKLibStructure.NET_POINT();
         }
     }
 }

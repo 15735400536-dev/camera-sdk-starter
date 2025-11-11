@@ -31,7 +31,7 @@ public class NET_PD_SUPPORTED_RULES_INFO extends NetSDKLibStructure.SdkStructure
     /**
      * 保留字节
     */
-    public byte[]           szReserved = new byte[1012-NetSDKLib.POINTERSIZE];
+    public byte[]           szReserved = new byte[1012-NetSDKLibStructure.POINTERSIZE];
 
     public NET_PD_SUPPORTED_RULES_INFO() {
         for(int i = 0; i < szNormal.length; i++){

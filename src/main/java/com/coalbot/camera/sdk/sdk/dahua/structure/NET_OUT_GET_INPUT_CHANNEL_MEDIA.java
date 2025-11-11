@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.NET_ENUM_INPUT_CHANNEL_MEDIA;
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.MAX_PREVIEW_CHANNEL_NUM;
 
 /**
  * 获取录播主机通道输入媒体介质出参 ，对应接口{@link NetSDKLib#CLIENT_GetInputChannelMedia}
@@ -23,7 +22,7 @@ public class NET_OUT_GET_INPUT_CHANNEL_MEDIA extends NetSDKLibStructure.SdkStruc
     /**
      * 输入媒体介质 {@link NET_ENUM_INPUT_CHANNEL_MEDIA}
      */
-    public int[]            emInputMedia = new int[MAX_PREVIEW_CHANNEL_NUM];
+    public int[]            emInputMedia = new int[NetSDKLibStructure.MAX_PREVIEW_CHANNEL_NUM];
 
     public NET_OUT_GET_INPUT_CHANNEL_MEDIA() {
         dwSize = this.size();

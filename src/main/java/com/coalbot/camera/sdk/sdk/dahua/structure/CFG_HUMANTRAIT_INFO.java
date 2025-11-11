@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 事件类型EVENT_IVS_HUMANTRAIT(人员检测规则)对应的规则配置
 */
@@ -26,11 +28,11 @@ public class CFG_HUMANTRAIT_INFO extends NetSDKLibStructure.SdkStructure
     */
     public int              nPtzPresetId;
     /**
-     * 报警联动,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.CFG_ALARM_MSG_HANDLE}
+     * 报警联动,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.CFG_ALARM_MSG_HANDLE}
     */
-    public NetSDKLib.CFG_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLib.CFG_ALARM_MSG_HANDLE();
+    public NetSDKLibStructure.CFG_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLibStructure.CFG_ALARM_MSG_HANDLE();
     /**
-     * 事件响应时间段,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.CFG_TIME_SECTION}
+     * 事件响应时间段,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.CFG_TIME_SECTION}
     */
     public CFG_TIME_SECTION_ARRAY_10[] stuTimeSection = new CFG_TIME_SECTION_ARRAY_10[7];
     /**
@@ -58,9 +60,9 @@ public class CFG_HUMANTRAIT_INFO extends NetSDKLibStructure.SdkStructure
     */
     public int              bSizeFileter;
     /**
-     * 规则特定的尺寸过滤器，提高判断精度,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.CFG_SIZEFILTER_INFO}
+     * 规则特定的尺寸过滤器，提高判断精度,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.CFG_SIZEFILTER_INFO}
     */
-    public NetSDKLib.CFG_SIZEFILTER_INFO stuSizeFileter = new NetSDKLib.CFG_SIZEFILTER_INFO();
+    public NetSDKLibStructure.CFG_SIZEFILTER_INFO stuSizeFileter = new NetSDKLibStructure.CFG_SIZEFILTER_INFO();
     /**
      * 是否开启目标属性识别
     */

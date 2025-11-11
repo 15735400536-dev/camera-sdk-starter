@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 /**
  * 二次录像分析实时结果订阅回调结果结构体
@@ -13,7 +15,7 @@ public class NET_CB_ANALYSE_RESULT_INFO extends NetSDKLibStructure.SdkStructure
     /**
      * 图片时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuPicTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuPicTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 实际的事件个数
     */

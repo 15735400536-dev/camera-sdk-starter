@@ -1,7 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 421657
@@ -49,11 +48,11 @@ public class DEV_EVENT_TRAFFIC_PARKING_BACKING_INFO extends NetSDKLibStructure.S
     /**
      * / 车牌信息
      */
-    public NetSDKLib.NET_MSG_OBJECT stuObject = new NetSDKLib.NET_MSG_OBJECT();
+    public NetSDKLibStructure.NET_MSG_OBJECT stuObject = new NetSDKLibStructure.NET_MSG_OBJECT();
     /**
      * / 车身信息
      */
-    public NetSDKLib.NET_MSG_OBJECT stuVehicle = new NetSDKLib.NET_MSG_OBJECT();
+    public NetSDKLibStructure.NET_MSG_OBJECT stuVehicle = new NetSDKLibStructure.NET_MSG_OBJECT();
     /**
      * / TriggerType:触发类型,0车检器,1雷达,2视频 {@link com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_TRIGGER_TYPE}
      */
@@ -85,7 +84,7 @@ public class DEV_EVENT_TRAFFIC_PARKING_BACKING_INFO extends NetSDKLibStructure.S
     /**
      * / 公共信息
      */
-    public NetSDKLib.EVENT_COMM_INFO stuCommInfo = new NetSDKLib.EVENT_COMM_INFO();
+    public NetSDKLibStructure.EVENT_COMM_INFO stuCommInfo = new NetSDKLibStructure.EVENT_COMM_INFO();
     /**
      * / 保留字节,留待扩展
      */

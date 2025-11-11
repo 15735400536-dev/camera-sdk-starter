@@ -19,9 +19,9 @@ public class ALARM_PROFILE_ALARM_TRANSMIT_INFO extends NetSDKLibStructure.SdkStr
     /**
      * 事件发生时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuTime = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuTime = new NetSDKLibStructure.NET_TIME();
     /**
-     * 传感器类型,参见枚举定义 {@link NetSDKLibStructure.NET_SENSE_METHOD}
+     * 传感器类型,参见枚举定义 {@link NetSDKLib.NET_SENSE_METHOD}
     */
     public int              emSenseMethod;
     /**

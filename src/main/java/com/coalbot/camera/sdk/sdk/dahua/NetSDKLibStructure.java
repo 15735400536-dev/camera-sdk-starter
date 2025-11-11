@@ -4861,7 +4861,7 @@ public class NetSDKLibStructure {
         public byte[]           byReserved2 = new byte[4];            // 字节对齐
         public NET_IMAGE_INFO_EX2[] stuImageInfo = (NET_IMAGE_INFO_EX2[])new NET_IMAGE_INFO_EX2().toArray(32); // 图片信息数组
         public int              nImageInfoNum;                        // 图片信息个数
-        public NetSDKLibStructure.NET_MSG_OBJECT_SUPPLEMENT stuObjectSupplement;         // 检测到的物体补充字段
+        public NET_MSG_OBJECT_SUPPLEMENT stuObjectSupplement;         // 检测到的物体补充字段
         public int              nMode;                                //0-普通  1-开启陌生人模式
         public NetSDKLibStructure.SCENE_IMAGE_INFO stuThumImageInfo = new SCENE_IMAGE_INFO(); //大图（全景图）的缩略图信息
         public NetSDKLibStructure.SCENE_IMAGE_INFO stuHumanImageInfo = new SCENE_IMAGE_INFO(); //人体图片信息
@@ -6353,7 +6353,7 @@ public class NetSDKLibStructure {
     }
 
     // 一位多车信息
-    public class DEV_OCCUPIED_WARNING_INFO extends SdkStructure
+    public static  class DEV_OCCUPIED_WARNING_INFO extends SdkStructure
     {
         public byte[]           szParkingNo = new byte[32];           // 车位号
         public DEV_OCCUPIED_WARNING_PLATE_NUMBER[] szPlateNumber = new DEV_OCCUPIED_WARNING_PLATE_NUMBER[5]; // 车牌号码
@@ -6367,7 +6367,7 @@ public class NetSDKLibStructure {
         }
     }
 
-    public class DEV_OCCUPIED_WARNING_PLATE_NUMBER extends SdkStructure
+    public static class DEV_OCCUPIED_WARNING_PLATE_NUMBER extends SdkStructure
     {
         public byte[]           plateNumber = new byte[64];
     }
@@ -6543,13 +6543,13 @@ public class NetSDKLibStructure {
         }
     }
 
-    public class ParkingNoWithSize32 extends SdkStructure
+    public static class ParkingNoWithSize32 extends SdkStructure
     {
         public byte[]           parkingNo = new byte[32];
     }
 
     // 匹配到的车辆驶入信息
-    public class DEV_MATCH_PARKING_INFO extends SdkStructure
+    public static class DEV_MATCH_PARKING_INFO extends SdkStructure
     {
         public byte[]           szParkingNo = new byte[32];           // 驶入的车位号
         public byte[]           szPlateNum = new byte[64];            // 驶入的车牌号信息
@@ -6803,7 +6803,7 @@ public class NetSDKLibStructure {
         public byte[]           szSerialNo = new byte[128];           // 和客户端请求的抓图序列号对应
         public int              nAlarmCompliance;                     // 报警合规, 0:未知, 1:不合规, 2:合规
         public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND(); // 事件公共扩展字段结构体
-        public NetSDKLibStructure.NET_MSG_OBJECT_SUPPLEMENT stObjectInfoEx;              // 视频分析物体信息补充字段，与 DH_MSG_OBJECT 的合集表示视频分析物体信息
+        public NET_MSG_OBJECT_SUPPLEMENT stObjectInfoEx;              // 视频分析物体信息补充字段，与 DH_MSG_OBJECT 的合集表示视频分析物体信息
         public Pointer          pstuObjectEx2;                        // 检测到的物体扩展,指针对应结构体NET_MSG_OBJECT_EX2
         public Pointer          pstuVehicleEx2;                       // 车身信息扩展，指针对应结构体NET_MSG_OBJECT_EX2
         public Pointer          pstuObjectsEx2;                       // 检测到的多个车牌信息扩展，数量为nObjectNum,指针对应结构体NET_MSG_OBJECT_EX2
@@ -8344,7 +8344,7 @@ public class NetSDKLibStructure {
         public int              nSourceIndex;                         // 事件源设备上的index,-1表示数据无效
         public byte[]           szSourceDevice = new byte[MAX_PATH];  // 事件源设备唯一标识,字段不存在或者为空表示本地设备
         public int              nOccurrenceCount;                     // 事件触发累计次数, unsigned int 类型
-        public NET_CUSTOM_INFO stuCustom;                            // 货物通道信息
+        public NetSDKLib.NET_CUSTOM_INFO stuCustom;                            // 货物通道信息
         public NET_EXTENSION_INFO stuExtensionInfo;                   // 扩展信息
         public int              nRuleID;                              // 智能事件规则编号，用于标示哪个规则触发的事件
         public  NET_PRESET_POSITION stPosition;                       // 预置点的坐标和放大倍数
@@ -9925,7 +9925,7 @@ public class NetSDKLibStructure {
         public byte[]           szInductiveVehicleType = new byte[32]; //在Category类型基础上对车辆类型归纳后的类型
         public byte[]           szTextDirection = new byte[32];       //移动方向(比如钢包运动检测方向)LeftToRight,从左到右,RightToLeft,从右到左,TopToBottom，从上到下,BottomToTop，从下到上
         public byte[]           szQRCode = new byte[64];              //车辆上的二维码识别结果
-        public NetSDKLibStructure.NET_MSG_OBJECT_OBJECTUUID_INFO stuObjectUUID = new NET_MSG_OBJECT_OBJECTUUID_INFO(); //智能物体全局唯一物体标识,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_MSG_OBJECT_OBJECTUUID_INFO}
+        public NET_MSG_OBJECT_OBJECTUUID_INFO stuObjectUUID = new NET_MSG_OBJECT_OBJECTUUID_INFO(); //智能物体全局唯一物体标识,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_MSG_OBJECT_OBJECTUUID_INFO}
         public int              nTextRegionID;                        //Text文本内容对应的区域编号
         public int              nCloseDistance;                       //和相邻检测目标的距离，目前指的是工程车，单位：cm
         public int              nSpeed;                               //物体速度,单位为km/h
@@ -16583,7 +16583,7 @@ public class NetSDKLibStructure {
         public int              nFileCountEx;                         // 投放的文件个数
         public NET_DELIVERY_FILE_INFOEX[] stuFileInfoEx = new NET_DELIVERY_FILE_INFOEX[MAX_DELIVERY_FILE_NUM]; // 投放的文件信息
         public int              nNumber;                              // 当前广告计划编号,调用者可以通过此编号来设置不同广告计划
-        public NET_CFG_TIME_SCHEDULE stuTimeSection;                  // 播放时间段
+        public NetSDKLib.NET_CFG_TIME_SCHEDULE stuTimeSection;                  // 播放时间段
         public int              bEnable;                              // 播放使能
         public byte[]           szName = new byte[128];               // 广告名称
         public int              bUnUseTimeSection;                    //屏蔽播放时间段字段
@@ -16607,7 +16607,7 @@ public class NetSDKLibStructure {
         public int              nImageSustain;                        // 每张图片停留多长时间，单位秒 (emFileType为 EM_DELIVERY_FILE_TYPE_IMAGE 时此字段有效)
         public int              emPlayWithMode;                       // 文件所属的模式, 参考 EM_PLAY_WITH_MODE
         public byte[]           szFileURLEx = new byte[512];          // NET_OUT_GET_ADVERTIMENT_CAPS中bSupport为true时填写此字段，并且szFileURL填空
-        public NET_CFG_TIME_SCHEDULE stuTimeSection = new NET_CFG_TIME_SCHEDULE(); //播放时间段
+        public NetSDKLib.NET_CFG_TIME_SCHEDULE stuTimeSection = new NetSDKLib.NET_CFG_TIME_SCHEDULE(); //播放时间段
         public int              nSize;                                // 文件大小
         public int              nID;                                  // 文件编号
         public byte[]           byReserved = new byte[1024];          // 保留字节
@@ -17127,7 +17127,7 @@ public class NetSDKLibStructure {
     public static class NET_IN_BUS_ATTACH extends SdkStructure
     {
         public int              dwSize;
-        public fBusStateCallBack cbBusState;                          // 状态回调函数
+        public NetSDKLib.fBusStateCallBack cbBusState;                          // 状态回调函数
         public Pointer          dwUser;                               // 用户数据
 
         public NET_IN_BUS_ATTACH() {
@@ -23758,9 +23758,9 @@ public class NetSDKLibStructure {
         public NET_TIME stStartTime;                          // 开始时间
         public NET_TIME stStopTime;                           // 结束时间
         public Pointer          hWnd;                                 // 播放窗格, 可为NULL
-        public fDownLoadPosCallBack cbDownLoadPos;                    // 进度回调
+        public NetSDKLib.fDownLoadPosCallBack cbDownLoadPos;                    // 进度回调
         public Pointer          dwPosUser;                            // 进度回调用户信息
-        public fDataCallBack fDownLoadDataCallBack;                // 数据回调
+        public NetSDKLib.fDataCallBack fDownLoadDataCallBack;                // 数据回调
         public Pointer          dwDataUser;                           // 数据回调用户信息
         public int              nPlayDirection;                       // 播放方向, 0:正放; 1:倒放;
         public int              nWaittime;                            // 接口超时时间, 目前倒放使用

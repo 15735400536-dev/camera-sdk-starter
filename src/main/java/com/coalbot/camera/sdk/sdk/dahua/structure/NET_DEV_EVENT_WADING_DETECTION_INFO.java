@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -81,7 +82,7 @@ public class NET_DEV_EVENT_WADING_DETECTION_INFO extends NetSDKLibStructure.SdkS
 	/**
 	 * 预留字节
 	 */
-    public byte[]           szReserved = new byte[1016-NetSDKLib.POINTERSIZE];
+    public byte[]           szReserved = new byte[1016-NetSDKLibStructure.POINTERSIZE];
 
 	public NET_DEV_EVENT_WADING_DETECTION_INFO() {
 		for (int i = 0; i < stuObjects.length; i++) {

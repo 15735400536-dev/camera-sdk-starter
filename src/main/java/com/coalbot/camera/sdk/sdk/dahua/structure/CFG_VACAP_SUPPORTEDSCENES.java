@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -15,7 +16,7 @@ public class CFG_VACAP_SUPPORTEDSCENES extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 支持的场景列表
 	 */
-    public CFG_CAP_SCENE[]  stScenes = (CFG_CAP_SCENE[])new CFG_CAP_SCENE().toArray(NetSDKLib.MAX_SCENE_LIST_SIZE);
+    public CFG_CAP_SCENE[]  stScenes = (CFG_CAP_SCENE[])new CFG_CAP_SCENE().toArray(NetSDKLibStructure.MAX_SCENE_LIST_SIZE);
 	/**
 	 * 人数统计大类场景
 	 */

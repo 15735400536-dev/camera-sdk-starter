@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * DH_FILE_QUERY_IVS_EVENT 查询出来的media文件信息
 */
@@ -58,7 +60,7 @@ public class MEDIAFILE_IVS_EVENT_INFO extends NetSDKLibStructure.SdkStructure
     */
     public int              nEventCount;
     /**
-     * 录像或抓图文件标志, 不设置标志表示查询所有文件,参见枚举定义 {@link NetSDKLib.EM_RECORD_SNAP_FLAG_TYPE}
+     * 录像或抓图文件标志, 不设置标志表示查询所有文件,参见枚举定义 {@link NetSDKLibStructure.EM_RECORD_SNAP_FLAG_TYPE}
     */
     public int[]            emFalgLists = new int[128];
     /**
@@ -86,9 +88,9 @@ public class MEDIAFILE_IVS_EVENT_INFO extends NetSDKLibStructure.SdkStructure
     */
     public NET_EVENT_IMAGE_INFO stuEventImageInfo = new NET_EVENT_IMAGE_INFO();
     /**
-     * 物体型心(不是包围盒中心), 0-8191相对坐标, 相对于小图,参见结构体定义 {@link NetSDKLib.NET_POINT}
+     * 物体型心(不是包围盒中心), 0-8191相对坐标, 相对于小图,参见结构体定义 {@link NetSDKLibStructure.NET_POINT}
     */
-    public NetSDKLib.NET_POINT stuObjCenter = new NetSDKLib.NET_POINT();
+    public NetSDKLibStructure.NET_POINT stuObjCenter = new NetSDKLibStructure.NET_POINT();
     /**
      * 为TRUE表示仅stuStartTimeRealUTC和stuEndTimeRealUTC有效(仅使用stuStartTimeRealUTC和stuEndTimeRealUTC), 为FALSE表示仅stuStartTime和stuEndTime有效(仅使用stuStartTime和stuEndTime)
     */

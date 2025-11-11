@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_COMMON_STRING_128;
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_MAX_WINDOWS_NUMBER;
 
 /**
  * 录播主机模式信息
@@ -15,7 +14,7 @@ public class NET_COMPOSITECHANNELMODE_INFO extends NetSDKLibStructure.SdkStructu
     /**
      * 模式名称
      */
-    public byte[]           szName = new byte[NET_COMMON_STRING_128];
+    public byte[]           szName = new byte[NetSDKLibStructure.NET_COMMON_STRING_128];
     /**
      * 实际窗口个数
      */
@@ -23,7 +22,7 @@ public class NET_COMPOSITECHANNELMODE_INFO extends NetSDKLibStructure.SdkStructu
     /**
      * 窗口信息
      */
-    public NET_COMPOSITECHANNELMODE_WINDOWS[] stWindows = new NET_COMPOSITECHANNELMODE_WINDOWS[NET_MAX_WINDOWS_NUMBER];
+    public NET_COMPOSITECHANNELMODE_WINDOWS[] stWindows = new NET_COMPOSITECHANNELMODE_WINDOWS[NetSDKLibStructure.NET_MAX_WINDOWS_NUMBER];
     /**
      * 保留字节
      */

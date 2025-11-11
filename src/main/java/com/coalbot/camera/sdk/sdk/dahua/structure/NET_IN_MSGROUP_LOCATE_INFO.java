@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -19,7 +19,7 @@ public class NET_IN_MSGROUP_LOCATE_INFO extends NetSDKLibStructure.SdkStructure 
 	/**
 	 * 主机坐标
 	 */
-    public NetSDKLib.DH_POINT stuPoint = new NetSDKLib.DH_POINT();
+    public NetSDKLibStructure.DH_POINT stuPoint = new NetSDKLibStructure.DH_POINT();
 	/**
 	 * 鱼眼圆心坐标与半径, 依次为[横坐标, 纵坐标, 半径]
 	 */

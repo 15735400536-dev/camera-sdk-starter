@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 云台水平旋转组扫描配置 NET_EM_CFG_PTZ_HORIZONTAL_ROTATION_SCAN
 */

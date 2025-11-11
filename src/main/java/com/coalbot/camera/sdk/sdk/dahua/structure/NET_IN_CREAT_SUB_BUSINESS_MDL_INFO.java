@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 CLIENT_CreateSubBusinessModule 接口输入参数
 */
 public class NET_IN_CREAT_SUB_BUSINESS_MDL_INFO extends NetSDKLibStructure.SdkStructure {

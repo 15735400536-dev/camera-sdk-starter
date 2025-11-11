@@ -1,6 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 import static com.coalbot.camera.sdk.sdk.dahua.constant.SDKStructureFieldLenth.DH_MAX_DETECT_REGION_NUM;
 import static com.coalbot.camera.sdk.sdk.dahua.constant.SDKStructureFieldLenth.HDBJ_MAX_OBJECTS_NUM;
@@ -49,7 +51,7 @@ public class DEV_EVENT_SHOP_SIGN_ABNORMAL_INFO extends NetSDKLibStructure.SdkStr
     /**
      * 事件对应文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo;
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;
     /**
      * 检测区域顶点数
      */
@@ -57,7 +59,7 @@ public class DEV_EVENT_SHOP_SIGN_ABNORMAL_INFO extends NetSDKLibStructure.SdkStr
     /**
      * 检测区域
      */
-    public NetSDKLib.DH_POINT[] stuDetectRegion = (NetSDKLib.DH_POINT[]) new NetSDKLib.DH_POINT().toArray(DH_MAX_DETECT_REGION_NUM);
+    public NetSDKLibStructure.DH_POINT[] stuDetectRegion = (NetSDKLibStructure.DH_POINT[]) new NetSDKLibStructure.DH_POINT().toArray(DH_MAX_DETECT_REGION_NUM);
     /**
      * 检测到的物体个数
      */

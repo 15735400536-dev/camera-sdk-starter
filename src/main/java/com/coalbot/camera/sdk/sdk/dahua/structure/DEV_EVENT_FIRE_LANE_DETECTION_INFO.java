@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -47,11 +48,11 @@ public class DEV_EVENT_FIRE_LANE_DETECTION_INFO extends NetSDKLibStructure.SdkSt
     /**
      *  检测到的物体
      */
-    public NetSDKLib.NET_MSG_OBJECT[] stuObjects = (NetSDKLib.NET_MSG_OBJECT[]) new NetSDKLib.NET_MSG_OBJECT().toArray(64);
+    public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = (NetSDKLibStructure.NET_MSG_OBJECT[]) new NetSDKLibStructure.NET_MSG_OBJECT().toArray(64);
     /**
      *  事件对应文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo;
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;
     /**
      *  stuSceneImage 是否有效
      */
@@ -59,7 +60,7 @@ public class DEV_EVENT_FIRE_LANE_DETECTION_INFO extends NetSDKLibStructure.SdkSt
     /**
      *  全景广角图
      */
-    public NetSDKLib.SCENE_IMAGE_INFO_EX stuSceneImage;
+    public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage;
     /**
      *  表示物体进入还是离开
      */
@@ -87,7 +88,7 @@ public class DEV_EVENT_FIRE_LANE_DETECTION_INFO extends NetSDKLibStructure.SdkSt
     /**
      *  非机动车信息
      */
-    public NetSDKLib.VA_OBJECT_NONMOTOR stuNonMotor = new NetSDKLib.VA_OBJECT_NONMOTOR();
+    public NetSDKLibStructure.VA_OBJECT_NONMOTOR stuNonMotor = new NetSDKLibStructure.VA_OBJECT_NONMOTOR();
     /**
      * 事件公共扩展字段结构体
      */

@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 public class NET_RUNMODE_PARAMS extends NetSDKLibStructure.SdkStructure {
     public int              dwSize;

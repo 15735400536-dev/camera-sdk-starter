@@ -1,7 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_HELMET_EVENT_TYPE;
 
 /**
@@ -50,7 +49,7 @@ public class DEV_EVENT_HELMET_DETECTION_INFO extends NetSDKLibStructure.SdkStruc
     /**
      * 事件对应文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLib.NET_EVENT_FILE_INFO();
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLibStructure.NET_EVENT_FILE_INFO();
     /**
      * 触发事件类型，{@link EM_HELMET_EVENT_TYPE}
      */
@@ -58,10 +57,10 @@ public class DEV_EVENT_HELMET_DETECTION_INFO extends NetSDKLibStructure.SdkStruc
     /**
      * 人体图片
      */
-    public NetSDKLib.HUMAN_IMAGE_INFO stuHumanImage = new NetSDKLib.HUMAN_IMAGE_INFO();
+    public NetSDKLibStructure.HUMAN_IMAGE_INFO stuHumanImage = new NetSDKLibStructure.HUMAN_IMAGE_INFO();
     /**
      * 全景广角图
      */
-    public NetSDKLib.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO();
 }
 

@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description  CLIENT_QueryNetStat接口,查询类型为NET_APP_LINK_STAT 时的输入参数(获取物理链路状态) 
 * @origin autoTool

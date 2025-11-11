@@ -1,7 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -45,7 +45,7 @@ public class DEV_EVENT_NUMBERSTAT_INFO extends NetSDKLibStructure.SdkStructure {
     /**
      * 事件对应文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLib.NET_EVENT_FILE_INFO();
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLibStructure.NET_EVENT_FILE_INFO();
     /**
      * 事件动作,0表示脉冲事件,1表示持续性事件开始,2表示持续性事件结束;
      */
@@ -77,7 +77,7 @@ public class DEV_EVENT_NUMBERSTAT_INFO extends NetSDKLibStructure.SdkStructure {
     /**
      * 智能事件公共信息
      */
-    public NetSDKLib.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo = new NetSDKLib.EVENT_INTELLI_COMM_INFO();
+    public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo = new NetSDKLibStructure.EVENT_INTELLI_COMM_INFO();
     /**
      * 区域ID，一个预置点可以有多个区域ID
      */

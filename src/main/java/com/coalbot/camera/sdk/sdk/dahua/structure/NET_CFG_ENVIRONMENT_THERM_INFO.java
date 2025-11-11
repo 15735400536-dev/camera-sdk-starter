@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description  环境温度信息配置(热成像内部配置,只可读,不可设),对应的枚举 NET_EM_CFG_ENVIRONMENT_THERM_INFO 
 * @date 2022/08/30 17:09:25

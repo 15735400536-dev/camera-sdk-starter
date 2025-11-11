@@ -1,10 +1,10 @@
 package com.coalbot.camera.sdk.sdk.dahua.demo.module;
 
-import java.text.SimpleDateFormat;
-
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.CtrlType;
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_TIME;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.CtrlType;
 import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
+import com.coalbot.camera.sdk.sdk.dahua.structure.NET_TIME;
+
+import java.text.SimpleDateFormat;
 
 
 /**
@@ -42,7 +42,7 @@ public class DeviceControlModule {
 	 * \endif
 	 */
     public static boolean setTime(String date) {
-    	NET_TIME deviceTime = new NET_TIME();
+		NET_TIME deviceTime = new NET_TIME();
     	if (date == null) {
     		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             date = dateFormat.format(new java.util.Date());
@@ -73,7 +73,7 @@ public class DeviceControlModule {
   	 * \endif
   	 */
     public static String getTime() {
-    	NET_TIME deviceTime = new NET_TIME();
+		NET_TIME deviceTime = new NET_TIME();
     	
     	if (!LoginModule.netsdk.CLIENT_QueryDeviceTime(LoginModule.m_hLoginHandle, deviceTime, 3000)) {
     		System.err.println("CLIENT_QueryDeviceTime Failed!" + ToolKits.getErrorCodePrint());

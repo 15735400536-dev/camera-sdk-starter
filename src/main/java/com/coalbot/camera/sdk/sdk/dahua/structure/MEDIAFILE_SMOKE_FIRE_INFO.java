@@ -16,7 +16,7 @@ public class MEDIAFILE_SMOKE_FIRE_INFO extends NetSDKLibStructure.SdkStructure
     /**
      * 开始时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuBeginTime = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuBeginTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 结束时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
@@ -52,11 +52,11 @@ public class MEDIAFILE_SMOKE_FIRE_INFO extends NetSDKLibStructure.SdkStructure
     /**
      * UTC开始时间(标准UTC时间), 与stuEndTimeRealUTC配对使用,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuStartTimeRealUTC = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuStartTimeRealUTC = new NetSDKLibStructure.NET_TIME();
     /**
      * UTC结束时间(标准UTC时间), 与stuStartTimeRealUTC配对使用,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuEndTimeRealUTC = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuEndTimeRealUTC = new NetSDKLibStructure.NET_TIME();
 
     public MEDIAFILE_SMOKE_FIRE_INFO() {
         this.dwSize = this.size();

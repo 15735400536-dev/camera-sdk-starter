@@ -1,7 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.DH_MSG_OBJECT;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -65,15 +65,15 @@ public class DEV_EVENT_TRAFFICTRUCKFORBID_INFO extends NetSDKLibStructure.SdkStr
     /**
      * 车辆信息
      */
-    public NetSDKLib.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar = new NetSDKLib.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO();
+    public NetSDKLibStructure.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar = new NetSDKLibStructure.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO();
     /**
      * 公共信息
      */
-    public NetSDKLib.EVENT_COMM_INFO stCommInfo = new NetSDKLib.EVENT_COMM_INFO();
+    public NetSDKLibStructure.EVENT_COMM_INFO stCommInfo = new NetSDKLibStructure.EVENT_COMM_INFO();
     /**
      * 事件对应文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLib.NET_EVENT_FILE_INFO();
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLibStructure.NET_EVENT_FILE_INFO();
     /**
      * 抓图标志(按位),具体见NET_RESERVED_COMMON
      */
@@ -81,15 +81,15 @@ public class DEV_EVENT_TRAFFICTRUCKFORBID_INFO extends NetSDKLibStructure.SdkStr
     /**
      * 对应图片的分辨率
      */
-    public NetSDKLib.NET_RESOLUTION_INFO stuResolution = new NetSDKLib.NET_RESOLUTION_INFO();
+    public NetSDKLibStructure.NET_RESOLUTION_INFO stuResolution = new NetSDKLibStructure.NET_RESOLUTION_INFO();
     /**
-     * 全景图,参见结构体定义 {@link NetSDKLib.SCENE_IMAGE_INFO_EX}
+     * 全景图,参见结构体定义 {@link NetSDKLibStructure.SCENE_IMAGE_INFO_EX}
     */
     public Pointer          pstuSceneImage;
     /**
      * 保留字节
      */
-    public byte[]           byReserved = new byte[1016-NetSDKLib.POINTERSIZE];
+    public byte[]           byReserved = new byte[1016-NetSDKLibStructure.POINTERSIZE];
     /**
      * 扩展协议字段,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_EVENT_INFO_EXTEND}
     */

@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description  事件类型 EVENT_IVS_POSITION_SNAP (按位置抓图事件)对应的数据块描述信息 
 * @date 2022/11/15 09:31:15
@@ -40,7 +39,7 @@ public class NET_DEV_EVENT_POSITION_SNAP_INFO extends NetSDKLibStructure.SdkStru
 /** 
 GPS信息
 */
-    public NetSDKLib.NET_GPS_INFO stuGPSInfo = new NetSDKLib.NET_GPS_INFO();
+    public NetSDKLibStructure.NET_GPS_INFO stuGPSInfo = new NetSDKLibStructure.NET_GPS_INFO();
 /** 
 云台方向与放大倍数，显示值，扩大100倍值, 该数组固定为3,第一个元素为水平角度，0-36000； 第二个元素为垂直角度，（-18000）-（18000）； 第三个元素为显示放大倍数，0-100。
 */

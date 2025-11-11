@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 检测到的物体信息
 */
@@ -18,9 +20,9 @@ public class NET_GENERAL_ATTITUDE_DETECTION_OBJECT extends NetSDKLibStructure.Sd
     */
     public byte[]           szAttitudeType = new byte[16];
     /**
-     * 包围盒,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_RECT}
+     * 包围盒,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_RECT}
     */
-    public NetSDKLib.NET_RECT BoundingBox = new NetSDKLib.NET_RECT();
+    public NetSDKLibStructure.NET_RECT BoundingBox = new NetSDKLibStructure.NET_RECT();
     /**
      * 智能物体全局唯一物体标识
     */

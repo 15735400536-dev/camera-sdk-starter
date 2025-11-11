@@ -1,9 +1,9 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-/** 
+/**
 * @author 291189
 * @description  仪表类缺陷检测事件 
 * @date 2022/06/28 19:44:57
@@ -112,7 +112,7 @@ public class DEV_EVENT_ELECTRICFAULTDETECT_INFO extends NetSDKLibStructure.SdkSt
 /** 
 大图
 */
-    public NetSDKLib.SCENE_IMAGE_INFO stuSceneImageInfo = new NetSDKLib.SCENE_IMAGE_INFO();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImageInfo = new NetSDKLibStructure.SCENE_IMAGE_INFO();
 /** 
 绝缘子检测结果
 */

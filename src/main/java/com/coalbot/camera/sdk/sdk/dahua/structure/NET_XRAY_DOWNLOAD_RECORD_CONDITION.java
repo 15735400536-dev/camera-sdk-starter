@@ -10,7 +10,7 @@ public class NET_XRAY_DOWNLOAD_RECORD_CONDITION extends NetSDKLibStructure.SdkSt
     /**
      * 开始时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuStartTime = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuStartTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 结束时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */

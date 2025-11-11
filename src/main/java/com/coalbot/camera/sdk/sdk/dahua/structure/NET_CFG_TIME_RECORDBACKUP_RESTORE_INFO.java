@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 public class NET_CFG_TIME_RECORDBACKUP_RESTORE_INFO extends NetSDKLibStructure.SdkStructure {
     public int              dwSize;                               // 结构体大小

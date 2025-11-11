@@ -1,9 +1,9 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-/** 
+/**
 获取角度
 */
 public class NET_CAMERA_PTZ_INFO extends NetSDKLibStructure.SdkStructure {

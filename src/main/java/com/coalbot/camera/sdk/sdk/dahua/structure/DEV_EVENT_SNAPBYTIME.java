@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -73,7 +73,7 @@ public class DEV_EVENT_SNAPBYTIME extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * null
 	 */
-    public byte[]           szReversed = new byte[744 - NetSDKLib.POINTERSIZE];
+    public byte[]           szReversed = new byte[744 - NetSDKLibStructure.POINTERSIZE];
 
 	public DEV_EVENT_SNAPBYTIME() {
 		for (int i = 0; i < stuDataList.length; i++) {

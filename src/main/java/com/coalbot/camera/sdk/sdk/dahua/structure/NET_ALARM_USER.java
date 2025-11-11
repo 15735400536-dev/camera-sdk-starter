@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -88,6 +88,6 @@ public class NET_ALARM_USER extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 保留字节
 	 */
-    public byte[]           byReserved = new byte[256 - NetSDKLib.POINTERSIZE];
+    public byte[]           byReserved = new byte[256 - NetSDKLibStructure.POINTERSIZE];
 }
 

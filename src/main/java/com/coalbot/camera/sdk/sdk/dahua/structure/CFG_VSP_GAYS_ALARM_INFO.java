@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SdkStructure;
 /**
  * @author 119178
@@ -8,7 +9,7 @@ import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SdkStructure;
  * @date 2021/4/21
  */
 public class CFG_VSP_GAYS_ALARM_INFO extends SdkStructure {
-    public byte[]           szId = new byte[NetSDKLib.CFG_COMMON_STRING_64]; // 通道编号	字符串（24位）
+    public byte[]           szId = new byte[NetSDKLibStructure.CFG_COMMON_STRING_64]; // 通道编号	字符串（24位）
     public int              nAlarmLevel;                          // 报警级别[1,6]	整型
 }
 

@@ -1,5 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -14,7 +15,7 @@ public class CFG_CAP_ANALYSE_INFO_OPT extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 支持的场景列表
 	 */
-    public MaxNameByteArrInfo[] szSceneName = (MaxNameByteArrInfo[])new MaxNameByteArrInfo().toArray(NetSDKLib.MAX_SCENE_LIST_SIZE);
+    public MaxNameByteArrInfo[] szSceneName = (MaxNameByteArrInfo[])new MaxNameByteArrInfo().toArray(NetSDKLibStructure.MAX_SCENE_LIST_SIZE);
 
 	public CFG_CAP_ANALYSE_INFO_OPT() {
 		for (int i = 0; i < szSceneName.length; i++) {

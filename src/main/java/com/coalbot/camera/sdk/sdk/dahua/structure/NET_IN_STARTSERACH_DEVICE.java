@@ -1,7 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.fSearchDevicesCBEx;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 public class NET_IN_STARTSERACH_DEVICE extends NetSDKLibStructure.SdkStructure {

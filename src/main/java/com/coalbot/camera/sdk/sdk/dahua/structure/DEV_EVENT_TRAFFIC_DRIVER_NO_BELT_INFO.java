@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 事件类型 EVENT_IVS_TRAFFIC_DRIVER_NO_BELT (未系安全带报警事件)对应的数据块描述信息
 */
@@ -22,17 +24,17 @@ public class DEV_EVENT_TRAFFIC_DRIVER_NO_BELT_INFO extends NetSDKLibStructure.Sd
     */
     public double           dbPTS;
     /**
-     * 事件发生的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX stuUTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX stuUTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 司机ID
     */
     public byte[]           szDriverID = new byte[32];
     /**
-     * GPS信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_GPS_STATUS_INFO}
+     * GPS信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_GPS_STATUS_INFO}
     */
-    public NetSDKLib.NET_GPS_STATUS_INFO stuGPSStatus = new NetSDKLib.NET_GPS_STATUS_INFO();
+    public NetSDKLibStructure.NET_GPS_STATUS_INFO stuGPSStatus = new NetSDKLibStructure.NET_GPS_STATUS_INFO();
     /**
      * 违章关联视频FTP上传路径
     */

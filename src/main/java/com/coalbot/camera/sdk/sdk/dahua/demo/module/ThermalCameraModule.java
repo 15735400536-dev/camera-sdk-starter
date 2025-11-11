@@ -1,14 +1,14 @@
 package com.coalbot.camera.sdk.sdk.dahua.demo.module;
 
-import java.io.IOException;
-
 import com.coalbot.camera.sdk.sdk.dahua.ImageAlgLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.LLong;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.fRadiometryAttachCB;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
 import com.coalbot.camera.sdk.sdk.dahua.structure.NET_IN_RADIOMETRY_RANDOM_REGION_TEMPER;
 import com.coalbot.camera.sdk.sdk.dahua.structure.NET_OUT_RADIOMETRY_RANDOM_REGION_TEMPER;
 
-
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.*;
+import java.io.IOException;
 
 public class ThermalCameraModule {
 	
@@ -30,14 +30,14 @@ public class ThermalCameraModule {
 		/*
 		 * 入参
 		 */
-		NET_IN_RADIOMETRY_ATTACH stIn = new NET_IN_RADIOMETRY_ATTACH();
+		NetSDKLibStructure.NET_IN_RADIOMETRY_ATTACH stIn = new NetSDKLibStructure.NET_IN_RADIOMETRY_ATTACH();
 		stIn.nChannel = nChannel;  // 通道号
 		stIn.cbNotify = cbNotify;  // 回调函数
 		
 		/*
 		 * 出参
 		 */
-		NET_OUT_RADIOMETRY_ATTACH stOut = new NET_OUT_RADIOMETRY_ATTACH();
+		NetSDKLibStructure.NET_OUT_RADIOMETRY_ATTACH stOut = new NetSDKLibStructure.NET_OUT_RADIOMETRY_ATTACH();
 		status.hRadiometryHandle = LoginModule.netsdk.CLIENT_RadiometryAttach(LoginModule.m_hLoginHandle, stIn, stOut, 3000);
 		
 		if(status.hRadiometryHandle.longValue() == 0) {
@@ -64,13 +64,13 @@ public class ThermalCameraModule {
 		/*
 		 * 入参
 		 */
-		NET_IN_RADIOMETRY_FETCH stIn = new NET_IN_RADIOMETRY_FETCH();
+		NetSDKLibStructure.NET_IN_RADIOMETRY_FETCH stIn = new NetSDKLibStructure.NET_IN_RADIOMETRY_FETCH();
 		stIn.nChannel = nChannel;  // 通道号
 		
 		/*
 		 * 出参
 		 */
-		NET_OUT_RADIOMETRY_FETCH stOut = new NET_OUT_RADIOMETRY_FETCH();
+		NetSDKLibStructure.NET_OUT_RADIOMETRY_FETCH stOut = new NetSDKLibStructure.NET_OUT_RADIOMETRY_FETCH();
 		
 		if(!LoginModule.netsdk.CLIENT_RadiometryFetch(LoginModule.m_hLoginHandle, stIn, stOut, 3000)) {
         	System.err.printf("RadiometryFetch Failed!" + ToolKits.getErrorCodePrint());
@@ -85,7 +85,7 @@ public class ThermalCameraModule {
 	 * 处理回调数据（热图）
 	 * @throws IOException 
 	 */
-	public static boolean saveData(NET_RADIOMETRY_DATA radiometryData) throws IOException {
+	public static boolean saveData(NetSDKLibStructure.NET_RADIOMETRY_DATA radiometryData) throws IOException {
 		
 		if (radiometryData == null) {
 			return false;
@@ -122,17 +122,17 @@ public class ThermalCameraModule {
 	/**
 	 * 查询测温点
 	 */
-	public static NET_RADIOMETRYINFO queryPointTemper(int nChannel, short x, short y) {
-		int nQueryType = NetSDKLib.NET_QUERY_DEV_RADIOMETRY_POINT_TEMPER;
+	public static NetSDKLibStructure.NET_RADIOMETRYINFO queryPointTemper(int nChannel, short x, short y) {
+		int nQueryType = NetSDKLibStructure.NET_QUERY_DEV_RADIOMETRY_POINT_TEMPER;
 
 		// 入参
-		NET_IN_RADIOMETRY_GETPOINTTEMPER stIn = new NET_IN_RADIOMETRY_GETPOINTTEMPER();
+		NetSDKLibStructure.NET_IN_RADIOMETRY_GETPOINTTEMPER stIn = new NetSDKLibStructure.NET_IN_RADIOMETRY_GETPOINTTEMPER();
 		stIn.nChannel = nChannel;
 		stIn.stCoordinate.nx = x;
 		stIn.stCoordinate.ny = y;
 		
 		// 出参
-		NET_OUT_RADIOMETRY_GETPOINTTEMPER stOut = new NET_OUT_RADIOMETRY_GETPOINTTEMPER();
+		NetSDKLibStructure.NET_OUT_RADIOMETRY_GETPOINTTEMPER stOut = new NetSDKLibStructure.NET_OUT_RADIOMETRY_GETPOINTTEMPER();
 	
 		stIn.write();
 		stOut.write();
@@ -180,18 +180,18 @@ public class ThermalCameraModule {
 	/**
 	 * 查询测温项
 	 */
-	public static NET_RADIOMETRYINFO queryItemTemper(int nChannel, int nPresetId, int nRuleId, int nMeterType) {
-		int nQueryType = NetSDKLib.NET_QUERY_DEV_RADIOMETRY_TEMPER;
+	public static NetSDKLibStructure.NET_RADIOMETRYINFO queryItemTemper(int nChannel, int nPresetId, int nRuleId, int nMeterType) {
+		int nQueryType = NetSDKLibStructure.NET_QUERY_DEV_RADIOMETRY_TEMPER;
 		
 		// 入参
-		NET_IN_RADIOMETRY_GETTEMPER stIn = new NET_IN_RADIOMETRY_GETTEMPER();
+		NetSDKLibStructure.NET_IN_RADIOMETRY_GETTEMPER stIn = new NetSDKLibStructure.NET_IN_RADIOMETRY_GETTEMPER();
 		stIn.stCondition.nPresetId = nPresetId;
 		stIn.stCondition.nRuleId = nRuleId;
 		stIn.stCondition.nMeterType = nMeterType; 	// eg: NET_RADIOMETRY_METERTYPE.NET_RADIOMETRY_METERTYPE_AREA;
 		stIn.stCondition.nChannel = nChannel;
 
 		// 出参
-		NET_OUT_RADIOMETRY_GETTEMPER stOut = new NET_OUT_RADIOMETRY_GETTEMPER();
+		NetSDKLibStructure.NET_OUT_RADIOMETRY_GETTEMPER stOut = new NetSDKLibStructure.NET_OUT_RADIOMETRY_GETTEMPER();
 	
 		stIn.write();
 		stOut.write();
@@ -208,7 +208,7 @@ public class ThermalCameraModule {
 	/**
 	 * 开始查询信息
 	 */
-	public static boolean startFind(NET_IN_RADIOMETRY_STARTFIND stuIn) {
+	public static boolean startFind(NetSDKLibStructure.NET_IN_RADIOMETRY_STARTFIND stuIn) {
 		if(status.bSearching) {
 			stopFind();
 		}
@@ -216,11 +216,11 @@ public class ThermalCameraModule {
 		/*
 		 * 出参
 		 */
-		NET_OUT_RADIOMETRY_STARTFIND stuOut = new NET_OUT_RADIOMETRY_STARTFIND();
+		NetSDKLibStructure.NET_OUT_RADIOMETRY_STARTFIND stuOut = new NetSDKLibStructure.NET_OUT_RADIOMETRY_STARTFIND();
 		stuIn.write();
 		stuOut.write();
-		status.bSearching = LoginModule.netsdk.CLIENT_StartFind(LoginModule.m_hLoginHandle, 
-				NET_FIND.NET_FIND_RADIOMETRY, stuIn.getPointer(), stuOut.getPointer(), 5000);
+		status.bSearching = LoginModule.netsdk.CLIENT_StartFind(LoginModule.m_hLoginHandle,
+				NetSDKLibStructure.NET_FIND.NET_FIND_RADIOMETRY, stuIn.getPointer(), stuOut.getPointer(), 5000);
 		if (status.bSearching) {
 			stuOut.read();
 			status.nFinderHanle = stuOut.nFinderHanle;
@@ -242,7 +242,7 @@ public class ThermalCameraModule {
 	/**
 	 * 查询信息
 	 */
-	public static NET_OUT_RADIOMETRY_DOFIND doFind(int nOffset, int nCount) {
+	public static NetSDKLibStructure.NET_OUT_RADIOMETRY_DOFIND doFind(int nOffset, int nCount) {
 		if(!status.bSearching) {
 			System.err.printf("DoFind Failed! [need startFind]");
 			return null;
@@ -251,7 +251,7 @@ public class ThermalCameraModule {
 		/*
 		 * 入参
 		 */
-		NET_IN_RADIOMETRY_DOFIND stuIn = new NET_IN_RADIOMETRY_DOFIND();
+		NetSDKLibStructure.NET_IN_RADIOMETRY_DOFIND stuIn = new NetSDKLibStructure.NET_IN_RADIOMETRY_DOFIND();
 		stuIn.nFinderHanle = status.nFinderHanle;
 		stuIn.nBeginNumber = nOffset;
 		stuIn.nCount = nCount;
@@ -259,12 +259,12 @@ public class ThermalCameraModule {
 		/*
 		 * 出参
 		 */
-		NET_OUT_RADIOMETRY_DOFIND stuOut = new NET_OUT_RADIOMETRY_DOFIND();
+		NetSDKLibStructure.NET_OUT_RADIOMETRY_DOFIND stuOut = new NetSDKLibStructure.NET_OUT_RADIOMETRY_DOFIND();
 		
 		stuIn.write();
 		stuOut.write();
 		if (!LoginModule.netsdk.CLIENT_DoFind(LoginModule.m_hLoginHandle,
-				NET_FIND.NET_FIND_RADIOMETRY, stuIn.getPointer(), stuOut.getPointer(), 5000)) {
+				NetSDKLibStructure.NET_FIND.NET_FIND_RADIOMETRY, stuIn.getPointer(), stuOut.getPointer(), 5000)) {
 			System.err.printf("DoFind Failed!" + ToolKits.getErrorCodePrint());
 			return null;
 		}
@@ -284,18 +284,18 @@ public class ThermalCameraModule {
 		/*
 		 * 入参
 		 */
-		NET_IN_RADIOMETRY_STOPFIND stuIn = new NET_IN_RADIOMETRY_STOPFIND();
+		NetSDKLibStructure.NET_IN_RADIOMETRY_STOPFIND stuIn = new NetSDKLibStructure.NET_IN_RADIOMETRY_STOPFIND();
 		stuIn.nFinderHanle = status.nFinderHanle;
 		
 		/*
 		 * 出参
 		 */
-		NET_OUT_RADIOMETRY_STOPFIND stuOut = new NET_OUT_RADIOMETRY_STOPFIND();
+		NetSDKLibStructure.NET_OUT_RADIOMETRY_STOPFIND stuOut = new NetSDKLibStructure.NET_OUT_RADIOMETRY_STOPFIND();
 		
 		stuIn.write();
 		stuOut.write();
-		LoginModule.netsdk.CLIENT_StopFind(LoginModule.m_hLoginHandle, 
-				NET_FIND.NET_FIND_RADIOMETRY, stuIn.getPointer(), stuOut.getPointer(), 5000);
+		LoginModule.netsdk.CLIENT_StopFind(LoginModule.m_hLoginHandle,
+				NetSDKLibStructure.NET_FIND.NET_FIND_RADIOMETRY, stuIn.getPointer(), stuOut.getPointer(), 5000);
 		
 		status.bSearching = false;
 		status.nFinderHanle = 0;

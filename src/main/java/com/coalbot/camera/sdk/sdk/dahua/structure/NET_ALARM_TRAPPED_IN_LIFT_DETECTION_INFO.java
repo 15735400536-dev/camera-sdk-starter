@@ -1,5 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 /**
  * 事件类型 DH_ALARM_TRAPPED_IN_LIFT_DETECTION (电梯困人检测)对应的数据块描述信息
@@ -19,9 +20,9 @@ public class NET_ALARM_TRAPPED_IN_LIFT_DETECTION_INFO extends NetSDKLibStructure
     */
     public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND();
     /**
-     * 事件发生时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_TIME_EX}
+     * 事件发生时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX stuUTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX stuUTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 智能事件规则编号
     */
@@ -87,13 +88,13 @@ public class NET_ALARM_TRAPPED_IN_LIFT_DETECTION_INFO extends NetSDKLibStructure
     */
     public int              nObjectsNum;
     /**
-     * 检测目标的物体信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_MSG_OBJECT}
+     * 检测目标的物体信息,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_MSG_OBJECT}
     */
     public Pointer          pstuObjects;
     /**
-     * 全景图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.SCENE_IMAGE_INFO}
+     * 全景图,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.SCENE_IMAGE_INFO}
     */
-    public NetSDKLib.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO();
     /**
      * 预留字节
     */

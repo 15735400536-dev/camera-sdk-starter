@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description  CLIENT_QueryNetStat接口,查询类型为NET_APP_DATA_STAT时的输出参数(获取协议栈统计数据) 
 * @origin autoTool

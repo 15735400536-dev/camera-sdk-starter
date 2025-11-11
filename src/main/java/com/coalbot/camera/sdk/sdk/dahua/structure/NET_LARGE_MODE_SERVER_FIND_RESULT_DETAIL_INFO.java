@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 细节信息
 */
@@ -16,7 +18,7 @@ public class NET_LARGE_MODE_SERVER_FIND_RESULT_DETAIL_INFO extends NetSDKLibStru
     /**
      * 抓图时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 抓图事件类型
     */

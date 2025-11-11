@@ -1,7 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -37,7 +36,7 @@ public class NET_DETECT_BIG_PIC_INFO_EX extends NetSDKLibStructure.SdkStructure 
     /**
      * 规则检测区域
      */
-    public NetSDKLib.NET_POINT[] stuDetectRegion = new NetSDKLib.NET_POINT[20];
+    public NetSDKLibStructure.NET_POINT[] stuDetectRegion = new NetSDKLibStructure.NET_POINT[20];
     /**
      * 请求图片ID
      */
@@ -81,7 +80,7 @@ public class NET_DETECT_BIG_PIC_INFO_EX extends NetSDKLibStructure.SdkStructure 
 
     public NET_DETECT_BIG_PIC_INFO_EX() {
         for (int i = 0; i < stuDetectRegion.length; i++) {
-            stuDetectRegion[i] = new NetSDKLib.NET_POINT();
+            stuDetectRegion[i] = new NetSDKLibStructure.NET_POINT();
         }
     }
 }

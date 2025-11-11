@@ -13,12 +13,12 @@ import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.*;
  * ERR210428143 水面预警事件 专用结构体
  * <p>
  * 注意: 其他项目不要使用, 通用的绊线入侵事件结构体见:
- * {@link NetSDKLib.DEV_EVENT_CROSSREGION_INFO}
+ * {@link NetSDKLibStructure.DEV_EVENT_CROSSREGION_INFO}
  *
  * @author 47040
  * @since Created in 2021/5/13 17:35
  */
-public class DEV_EVENT_CROSSREGION_INFO extends SdkStructure {
+public class DEV_EVENT_CROSSREGION_INFO extends NetSDKLibStructure.SdkStructure {
 
     /**
      * 通道号
@@ -39,7 +39,7 @@ public class DEV_EVENT_CROSSREGION_INFO extends SdkStructure {
     /**
      * 事件发生的时间
      */
-    public NET_TIME_EX UTC;
+    public NetSDKLibStructure.NET_TIME_EX UTC;
     /**
      * 事件ID
      */
@@ -55,7 +55,7 @@ public class DEV_EVENT_CROSSREGION_INFO extends SdkStructure {
     /**
      * 规则检测区域
      */
-    public NetSDKLibStructure.NET_POINT[] DetectRegion = (NetSDKLibStructure.NET_POINT[]) new NET_POINT().toArray(NET_MAX_DETECT_REGION_NUM);
+    public NetSDKLibStructure.NET_POINT[] DetectRegion = (NetSDKLibStructure.NET_POINT[]) new NetSDKLibStructure.NET_POINT().toArray(NetSDKLibStructure.NET_MAX_DETECT_REGION_NUM);
     /**
      * 规则检测区域顶点数
      */
@@ -63,7 +63,7 @@ public class DEV_EVENT_CROSSREGION_INFO extends SdkStructure {
     /**
      * 物体运动轨迹
      */
-    public NetSDKLibStructure.NET_POINT[] TrackLine = (NetSDKLibStructure.NET_POINT[]) new NET_POINT().toArray(NET_MAX_TRACK_LINE_NUM);
+    public NetSDKLibStructure.NET_POINT[] TrackLine = (NetSDKLibStructure.NET_POINT[]) new NetSDKLibStructure.NET_POINT().toArray(NetSDKLibStructure.NET_MAX_TRACK_LINE_NUM);
     /**
      * 物体运动轨迹顶点数
      */
@@ -109,7 +109,7 @@ public class DEV_EVENT_CROSSREGION_INFO extends SdkStructure {
     /**
      * 扩展信息
      */
-    public NET_EXTENSION_INFO stuExtensionInfo;
+    public NetSDKLibStructure.NET_EXTENSION_INFO stuExtensionInfo;
     /**
      * 智能事件规则编号，用于标示哪个规则触发的事件
      */
@@ -149,7 +149,7 @@ public class DEV_EVENT_CROSSREGION_INFO extends SdkStructure {
     /**
      * 检测到的物体
      */
-    public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjectIDs = (NET_MSG_OBJECT[]) new NET_MSG_OBJECT().toArray(NET_MAX_OBJECT_LIST);
+    public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjectIDs = (NetSDKLibStructure.NET_MSG_OBJECT[]) new NetSDKLibStructure.NET_MSG_OBJECT().toArray(NetSDKLibStructure.NET_MAX_OBJECT_LIST);
     /**
      * 轨迹数(与检测到的物体个数  nObjectNum 对应)
      */
@@ -157,7 +157,7 @@ public class DEV_EVENT_CROSSREGION_INFO extends SdkStructure {
     /**
      * 轨迹信息(与检测到的物体对应)
      */
-    public NET_POLY_POINTS[] stuTrackInfo = (NET_POLY_POINTS[]) new NET_POLY_POINTS().toArray(NET_MAX_OBJECT_LIST);
+    public NetSDKLibStructure.NET_POLY_POINTS[] stuTrackInfo = (NetSDKLibStructure.NET_POLY_POINTS[]) new NetSDKLibStructure.NET_POLY_POINTS().toArray(NetSDKLibStructure.NET_MAX_OBJECT_LIST);
     /**
      * 智能事件公共信息
      */
@@ -173,7 +173,7 @@ public class DEV_EVENT_CROSSREGION_INFO extends SdkStructure {
     /**
      * 检测的到人
      */
-    public NET_VAOBJECT_NUMMAN[] stuObjetcHumans = (NET_VAOBJECT_NUMMAN[]) new NET_VAOBJECT_NUMMAN().toArray(100);
+    public NetSDKLibStructure.NET_VAOBJECT_NUMMAN[] stuObjetcHumans = (NetSDKLibStructure.NET_VAOBJECT_NUMMAN[]) new NetSDKLibStructure.NET_VAOBJECT_NUMMAN().toArray(100);
     /**
      * 车身信息
      */
@@ -201,10 +201,10 @@ public class DEV_EVENT_CROSSREGION_INFO extends SdkStructure {
     /**
      * 交通车辆信息
      */
-    public DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
+    public NetSDKLibStructure.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
     /**
      * 公共信息
      */
-    public EVENT_COMM_INFO stuCommInfo;
+    public NetSDKLibStructure.EVENT_COMM_INFO stuCommInfo;
 
 }

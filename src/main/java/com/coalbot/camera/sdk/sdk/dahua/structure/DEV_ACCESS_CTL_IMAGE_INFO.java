@@ -1,16 +1,15 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description 图片信息
 * @date 2022/03/07 11:45:31
 */
 public class DEV_ACCESS_CTL_IMAGE_INFO extends NetSDKLibStructure.SdkStructure {
 /** 
-图片类型  {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.EM_ACCESS_CTL_IMAGE_TYPE}
+图片类型  {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.EM_ACCESS_CTL_IMAGE_TYPE}
 */
     public			int            emType;
 /** 

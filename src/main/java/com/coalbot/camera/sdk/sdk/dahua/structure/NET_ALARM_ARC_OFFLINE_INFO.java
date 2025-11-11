@@ -8,6 +8,9 @@ package com.coalbot.camera.sdk.sdk.dahua.structure;
  * @description 报警接收中心离线报警上报事件 (对应 NET_ALARM_ARC_OFFLINE)
  * @date 2022/7/19 11:31
  */
+
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * @author 291189
  * @description  报警接收中心离线上报事件 (对应 DH_ALARM_ARC_OFFLINE)

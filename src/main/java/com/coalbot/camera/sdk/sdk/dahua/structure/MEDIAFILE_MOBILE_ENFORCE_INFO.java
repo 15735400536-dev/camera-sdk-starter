@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_MOBILE_ENFORCE_FILE_TYPE;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_MOBILE_ENFORCE_FORMAT;
 
@@ -85,7 +85,7 @@ public class MEDIAFILE_MOBILE_ENFORCE_INFO extends NetSDKLibStructure.SdkStructu
 	 */
     public NET_TIME         stuCollectTimeRealUTC;
 	/**
-	 * 录像或抓图文件标志, 不设置标志表示查询所有文件,参考枚举{@link EM_RECORD_SNAP_FLAG_TYPE}
+	 * 录像或抓图文件标志, 不设置标志表示查询所有文件,参考枚举{@link NetSDKLibStructure.EM_RECORD_SNAP_FLAG_TYPE}
 	 */
     public int[]            emFlagList = new int[64];
 	/**

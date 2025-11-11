@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 
 
@@ -17,7 +17,7 @@ public class CFG_PTZ_PER_AUTOMOVE_INFO extends NetSDKLibStructure.SdkStructure {
     /**
      * 时间表类型
      */
-    public NetSDKLib.CFG_TIME_SCHEDULE stTimeSchedule = new NetSDKLib.CFG_TIME_SCHEDULE();
+    public NetSDKLibStructure.CFG_TIME_SCHEDULE stTimeSchedule = new NetSDKLibStructure.CFG_TIME_SCHEDULE();
     /**
      * 定时功能 (link CFG_PTZ_FUNC_TYPE)
      */

@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -39,11 +39,11 @@ public class DEV_EVENT_FIRE_EXTINGUISHER_DETECTION_INFO extends NetSDKLibStructu
     /**
      *  检测到的物体
      */
-    public NetSDKLib.NET_MSG_OBJECT stuObject;
+    public NetSDKLibStructure.NET_MSG_OBJECT stuObject;
     /**
      *  全景广角图
      */
-    public NetSDKLib.SCENE_IMAGE_INFO_EX stuSceneImage;
+    public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage;
     /**
      *  目标区域内物体计数信息
      */

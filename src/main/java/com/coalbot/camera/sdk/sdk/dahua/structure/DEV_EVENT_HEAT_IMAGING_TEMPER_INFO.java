@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -30,13 +30,13 @@ public class DEV_EVENT_HEAT_IMAGING_TEMPER_INFO extends NetSDKLibStructure.SdkSt
 	 */
     public float            fTemperatureValue;
 	/**
-	 * 温度单位(当前配置的温度单位) {@link NetSDKLib.NET_TEMPERATURE_UNIT }
+	 * 温度单位(当前配置的温度单位) {@link NetSDKLibStructure.NET_TEMPERATURE_UNIT }
 	 */
     public int              emTemperatureUnit;
 	/**
 	 * 报警点的坐标 相对坐标体系,取值均为0~8191
 	 */
-    public NetSDKLib.NET_POINT stCoordinate = new NetSDKLib.NET_POINT();
+    public NetSDKLibStructure.NET_POINT stCoordinate = new NetSDKLibStructure.NET_POINT();
 	/**
 	 * 预置点
 	 */
@@ -52,7 +52,7 @@ public class DEV_EVENT_HEAT_IMAGING_TEMPER_INFO extends NetSDKLibStructure.SdkSt
 	/**
 	 * 报警坐标, 其类型可以是点，线或多边形。替换stCoordinate字段
 	 */
-    public NetSDKLib.NET_POLY_POINTS stuAlarmCoordinates = new NetSDKLib.NET_POLY_POINTS();
+    public NetSDKLibStructure.NET_POLY_POINTS stuAlarmCoordinates = new NetSDKLibStructure.NET_POLY_POINTS();
 	/**
 	 * szNameEx 是否有效，为TRUE时，使用szNameEx字段
 	 */
@@ -116,7 +116,7 @@ public class DEV_EVENT_HEAT_IMAGING_TEMPER_INFO extends NetSDKLibStructure.SdkSt
     /**
      * 设备本地时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuLocaleTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuLocaleTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 规则ID
     */

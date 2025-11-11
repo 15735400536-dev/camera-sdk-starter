@@ -1,6 +1,9 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
+
 /**
  * CLIENT_PostLoginTask 输入参数
 */
@@ -35,7 +38,7 @@ public class NET_IN_POST_LOGIN_TASK extends NetSDKLibStructure.SdkStructure
     */
     public Pointer          szPwd;
     /**
-     * 登录方式，目前只支持 EM_LOGIN_SPEC_CAP_TCP、, EM_LOGIN_SPEC_CAP_MAIN_CONN_ONLY、EM_LOGIN_SPEC_CAP_P2P,参见枚举定义 {@link NetSDKLib.EM_LOGIN_SPAC_CAP_TYPE}
+     * 登录方式，目前只支持 EM_LOGIN_SPEC_CAP_TCP、, EM_LOGIN_SPEC_CAP_MAIN_CONN_ONLY、EM_LOGIN_SPEC_CAP_P2P,参见枚举定义 {@link NetSDKLibStructure.EM_LOGIN_SPAC_CAP_TYPE}
     */
     public int              emSpecCap;
     /**

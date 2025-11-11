@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 260611
@@ -54,11 +55,11 @@ public class CFG_VIDEOABNORMALDETECTION_INFO extends NetSDKLibStructure.SdkStruc
 	/**
 	 * 报警联动
 	 */
-    public NetSDKLib.CFG_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLib.CFG_ALARM_MSG_HANDLE();
+    public NetSDKLibStructure.CFG_ALARM_MSG_HANDLE stuEventHandler = new NetSDKLibStructure.CFG_ALARM_MSG_HANDLE();
 	/**
 	 * 事件响应时间段
 	 */
-    public NetSDKLib.CFG_TIME_SECTION[] stuTimeSection = new NetSDKLib.CFG_TIME_SECTION[7 * 10];
+    public NetSDKLibStructure.CFG_TIME_SECTION[] stuTimeSection = new NetSDKLibStructure.CFG_TIME_SECTION[7 * 10];
 	/**
 	 * 检测区顶点数
 	 */
@@ -66,7 +67,7 @@ public class CFG_VIDEOABNORMALDETECTION_INFO extends NetSDKLibStructure.SdkStruc
 	/**
 	 * 检测区
 	 */
-    public NetSDKLib.CFG_POLYGON[] stuDetectRegion = new NetSDKLib.CFG_POLYGON[20];
+    public NetSDKLibStructure.CFG_POLYGON[] stuDetectRegion = new NetSDKLibStructure.CFG_POLYGON[20];
 	/**
 	 * 异常检测阈值数量
 	 */
@@ -78,10 +79,10 @@ public class CFG_VIDEOABNORMALDETECTION_INFO extends NetSDKLibStructure.SdkStruc
 
 	public CFG_VIDEOABNORMALDETECTION_INFO() {
 		for (int i = 0; i < stuTimeSection.length; i++) {
-			stuTimeSection[i] = new NetSDKLib.CFG_TIME_SECTION();
+			stuTimeSection[i] = new NetSDKLibStructure.CFG_TIME_SECTION();
 		}
 		for (int i = 0; i < stuDetectRegion.length; i++) {
-			stuDetectRegion[i] = new NetSDKLib.CFG_POLYGON();
+			stuDetectRegion[i] = new NetSDKLibStructure.CFG_POLYGON();
 		}
 	}
 }

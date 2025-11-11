@@ -1,7 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.*;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
@@ -62,7 +61,7 @@ public class NET_DEV_EVENT_SAME_OBJECT_SEARCH_DETECT_INFO extends NetSDKLibStruc
     /**
      * / 物体信息列表
      */
-    public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NET_MSG_OBJECT[64];
+    public NetSDKLibStructure.NET_MSG_OBJECT[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT[64];
     /**
      * / 算法名称
      */
@@ -74,7 +73,7 @@ public class NET_DEV_EVENT_SAME_OBJECT_SEARCH_DETECT_INFO extends NetSDKLibStruc
     /**
      * / 全景图
      */
-    public NetSDKLibStructure.SCENE_IMAGE_INFO stuImageInfo = new SCENE_IMAGE_INFO();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO stuImageInfo = new NetSDKLibStructure.SCENE_IMAGE_INFO();
     /**
      * / 自定义报警ID
      */

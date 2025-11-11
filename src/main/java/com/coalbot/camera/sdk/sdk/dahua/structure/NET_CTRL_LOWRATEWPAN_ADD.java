@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -12,7 +12,7 @@ public class NET_CTRL_LOWRATEWPAN_ADD extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 对码数据
 	 */
-    public NetSDKLib.NET_CODEID_INFO stuCodeIDInfo = new NetSDKLib.NET_CODEID_INFO();
+    public NetSDKLibStructure.NET_CODEID_INFO stuCodeIDInfo = new NetSDKLibStructure.NET_CODEID_INFO();
 
 	public NET_CTRL_LOWRATEWPAN_ADD() {
 		this.dwSize = this.size();

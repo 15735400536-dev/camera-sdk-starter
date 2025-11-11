@@ -1,7 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 291189
@@ -32,12 +32,12 @@ public class DEV_EVENT_FACEBODY_ANALYSE_INFO extends NetSDKLibStructure.SdkStruc
     public NetSDKLib.NET_EVENT_IMAGE_OFFSET_INFO stuSceneImage = new NetSDKLib.NET_EVENT_IMAGE_OFFSET_INFO(); // 全景图片信息
     public OBJECT_RELATED_INFO stuFaceObject = new OBJECT_RELATED_INFO(); // 人脸关联信息
     public OBJECT_RELATED_INFO stuBodyObject = new OBJECT_RELATED_INFO(); // 人体关联信息
-    public NetSDKLib.CANDIDATE_INFOEX[] stuCandidate = new  NetSDKLib.CANDIDATE_INFOEX[NetSDKLib.NET_MAX_CANDIDATE_NUM]; // 候选人脸列表
+    public NetSDKLibStructure.CANDIDATE_INFOEX[] stuCandidate = new  NetSDKLibStructure.CANDIDATE_INFOEX[NetSDKLibStructure.NET_MAX_CANDIDATE_NUM]; // 候选人脸列表
     public int              nCandidateNum;                        // 返回的候选人脸个数
 
     public DEV_EVENT_FACEBODY_ANALYSE_INFO(){
         for(int i=0;i<stuCandidate.length;i++){
-            stuCandidate[i] = new NetSDKLib.CANDIDATE_INFOEX();
+            stuCandidate[i] = new NetSDKLibStructure.CANDIDATE_INFOEX();
         }
     }
 

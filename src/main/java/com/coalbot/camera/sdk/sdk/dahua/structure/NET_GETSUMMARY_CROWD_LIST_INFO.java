@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -11,7 +12,7 @@ public class NET_GETSUMMARY_CROWD_LIST_INFO extends NetSDKLibStructure.SdkStruct
     /**
      *  拥挤人群中心点坐标
      */
-    public NetSDKLib.NET_POINT stuCenter;
+    public NetSDKLibStructure.NET_POINT stuCenter;
     /**
      *  半径
      */

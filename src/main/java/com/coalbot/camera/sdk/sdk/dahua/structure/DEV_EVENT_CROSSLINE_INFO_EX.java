@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -38,15 +38,15 @@ public class DEV_EVENT_CROSSLINE_INFO_EX extends NetSDKLibStructure.SdkStructure
 	/**
 	 * 检测到的物体
 	 */
-    public NetSDKLib.NET_MSG_OBJECT_EX stuObject = new NetSDKLib.NET_MSG_OBJECT_EX();
+    public NetSDKLibStructure.NET_MSG_OBJECT_EX stuObject = new NetSDKLibStructure.NET_MSG_OBJECT_EX();
 	/**
 	 * 事件对应文件信息
 	 */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLib.NET_EVENT_FILE_INFO();
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo = new NetSDKLibStructure.NET_EVENT_FILE_INFO();
 	/**
 	 * 规则检测线
 	 */
-    public NetSDKLib.DH_POINT[] DetectLine = (NetSDKLib.DH_POINT[]) new NetSDKLib.DH_POINT().toArray(20);
+    public NetSDKLibStructure.DH_POINT[] DetectLine = (NetSDKLibStructure.DH_POINT[]) new NetSDKLibStructure.DH_POINT().toArray(20);
 	/**
 	 * 规则检测线顶点数
 	 */
@@ -54,7 +54,7 @@ public class DEV_EVENT_CROSSLINE_INFO_EX extends NetSDKLibStructure.SdkStructure
 	/**
 	 * 物体运动轨迹
 	 */
-    public NetSDKLib.DH_POINT[] TrackLine = (NetSDKLib.DH_POINT[]) new NetSDKLib.DH_POINT().toArray(20);
+    public NetSDKLibStructure.DH_POINT[] TrackLine = (NetSDKLibStructure.DH_POINT[]) new NetSDKLibStructure.DH_POINT().toArray(20);
 	/**
 	 * 物体运动轨迹顶点数
 	 */
@@ -102,11 +102,11 @@ public class DEV_EVENT_CROSSLINE_INFO_EX extends NetSDKLibStructure.SdkStructure
 	/**
 	 * 智能事件公共信息
 	 */
-    public NetSDKLib.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo = new NetSDKLib.EVENT_INTELLI_COMM_INFO();
+    public NetSDKLibStructure.EVENT_INTELLI_COMM_INFO stuIntelliCommInfo = new NetSDKLibStructure.EVENT_INTELLI_COMM_INFO();
 	/**
 	 * 全景广角图
 	 */
-    public NetSDKLib.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLib.SCENE_IMAGE_INFO_EX();
+    public NetSDKLibStructure.SCENE_IMAGE_INFO_EX stuSceneImage = new NetSDKLibStructure.SCENE_IMAGE_INFO_EX();
 	/**
 	 * 检测到人的数量
 	 */

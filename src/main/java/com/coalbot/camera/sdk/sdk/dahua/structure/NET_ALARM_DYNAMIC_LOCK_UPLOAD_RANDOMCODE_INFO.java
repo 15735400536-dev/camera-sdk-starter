@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description  密码锁上报随机码事件 (对应 DH_ALARM_DYNAMIC_PWDLOCK_UPLOAD_RANDOMCODE) 
 * @date 2022/06/23 09:56:06

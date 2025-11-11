@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-/** 
+/**
 * @author 291189
 * @description  事件类型 EVENT_IVS_ROAD_CONDITIONS_DETECTION (路面检测事件)对应的数据块描述信息 
 * @origin autoTool
@@ -45,7 +44,7 @@ public class DEV_EVENT_ROAD_CONDITIONS_DETECTION_INFO extends NetSDKLibStructure
 /** 
 GPS信息
 */
-    public NetSDKLib.NET_GPS_STATUS_INFO stuGPSStatus = new NetSDKLib.NET_GPS_STATUS_INFO();
+    public NetSDKLibStructure.NET_GPS_STATUS_INFO stuGPSStatus = new NetSDKLibStructure.NET_GPS_STATUS_INFO();
 /** 
 违章关联视频FTP上传路径
 */

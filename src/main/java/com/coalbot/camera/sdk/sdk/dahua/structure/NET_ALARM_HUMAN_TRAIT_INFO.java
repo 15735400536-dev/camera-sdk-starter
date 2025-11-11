@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 事件类型 DH_ALARM_HUMAN_TRAIT (人员信息事件)对应的数据块描述信息
 */
@@ -18,9 +20,9 @@ public class NET_ALARM_HUMAN_TRAIT_INFO extends NetSDKLibStructure.SdkStructure
     */
     public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND();
     /**
-     * 事件发生的时间,参见结构体定义 {@link NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX stuUTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX stuUTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 事件ID
     */
@@ -78,13 +80,13 @@ public class NET_ALARM_HUMAN_TRAIT_INFO extends NetSDKLibStructure.SdkStructure
     */
     public long             nUniqueID;
     /**
-     * 目标属性,参见结构体定义 {@link NetSDKLib.NET_FACE_ATTRIBUTE}
+     * 目标属性,参见结构体定义 {@link NetSDKLibStructure.NET_FACE_ATTRIBUTE}
     */
-    public NetSDKLib.NET_FACE_ATTRIBUTE stuFaceAttributes = new NetSDKLib.NET_FACE_ATTRIBUTE();
+    public NetSDKLibStructure.NET_FACE_ATTRIBUTE stuFaceAttributes = new NetSDKLibStructure.NET_FACE_ATTRIBUTE();
     /**
-     * 人体属性,参见结构体定义 {@link NetSDKLib.HUMAN_ATTRIBUTES_INFO}
+     * 人体属性,参见结构体定义 {@link NetSDKLibStructure.HUMAN_ATTRIBUTES_INFO}
     */
-    public NetSDKLib.HUMAN_ATTRIBUTES_INFO stuHumanAttributes = new NetSDKLib.HUMAN_ATTRIBUTES_INFO();
+    public NetSDKLibStructure.HUMAN_ATTRIBUTES_INFO stuHumanAttributes = new NetSDKLibStructure.HUMAN_ATTRIBUTES_INFO();
     /**
      * stuHumanAttributes 的扩展,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.HUMAN_ATTRIBUTES_INFO_EX}
     */

@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.NET_MONITORWALL_OPERATE_TYPE;
 
@@ -25,7 +26,7 @@ public class NET_IN_MONITORWALL_SET_ENABLE extends NetSDKLibStructure.SdkStructu
     /**
      * 电视墙使能
      */
-    public NET_MONITORWALL_ENABLE_INFO[] stuEnable = new NET_MONITORWALL_ENABLE_INFO[NET_MAX_MONITORWALL_NUM];
+    public NET_MONITORWALL_ENABLE_INFO[] stuEnable = new NET_MONITORWALL_ENABLE_INFO[NetSDKLibStructure.NET_MAX_MONITORWALL_NUM];
 
     public NET_IN_MONITORWALL_SET_ENABLE() {
         dwSize = this.size();

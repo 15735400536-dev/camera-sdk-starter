@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -16,7 +16,7 @@ public class DEV_EVENT_TRAFFIC_NONMOTORINMOTORROUTE_INFO extends NetSDKLibStruct
     /**
      *  事件名称
      */
-    public byte[]           szName = new byte[NetSDKLib.NET_EVENT_NAME_LEN];
+    public byte[]           szName = new byte[NetSDKLibStructure.NET_EVENT_NAME_LEN];
     /**
      *  事件动作,0表示脉冲事件,1表示持续性事件开始,2表示持续性事件结束;
      */
@@ -40,19 +40,19 @@ public class DEV_EVENT_TRAFFIC_NONMOTORINMOTORROUTE_INFO extends NetSDKLibStruct
     /**
      *  事件对应文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo;
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;
     /**
      *  交通车辆信息
      */
-    public NetSDKLib.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
+    public NetSDKLibStructure.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
     /**
      *  检测到的物体
      */
-    public NetSDKLib.NET_MSG_OBJECT stuObject;
+    public NetSDKLibStructure.NET_MSG_OBJECT stuObject;
     /**
      *  车身信息 
      */
-    public NetSDKLib.NET_MSG_OBJECT stuVehicle;
+    public NetSDKLibStructure.NET_MSG_OBJECT stuVehicle;
     /**
      *  抓图标志(按位),具体见NET_RESERVED_COMMON 
      */
@@ -60,11 +60,11 @@ public class DEV_EVENT_TRAFFIC_NONMOTORINMOTORROUTE_INFO extends NetSDKLibStruct
     /**
      *  对应图片的分辨率
      */
-    public NetSDKLib.NET_RESOLUTION_INFO stuResolution;
+    public NetSDKLibStructure.NET_RESOLUTION_INFO stuResolution;
     /**
      *  报警对应的原始录像文件信息
      */
-    public byte[]           szRecordFile = new byte[NetSDKLib.NET_COMMON_STRING_128];
+    public byte[]           szRecordFile = new byte[NetSDKLibStructure.NET_COMMON_STRING_128];
     /**
      *  对应车道号
      */
@@ -76,7 +76,7 @@ public class DEV_EVENT_TRAFFIC_NONMOTORINMOTORROUTE_INFO extends NetSDKLibStruct
     /**
      *  公共信息
      */
-    public NetSDKLib.EVENT_COMM_INFO stCommInfo;
+    public NetSDKLibStructure.EVENT_COMM_INFO stCommInfo;
     /**
      *  是否有非机动车对象
      */
@@ -84,7 +84,7 @@ public class DEV_EVENT_TRAFFIC_NONMOTORINMOTORROUTE_INFO extends NetSDKLibStruct
     /**
      *  非机动车对象
      */
-    public NetSDKLib.VA_OBJECT_NONMOTOR stuNonMotor;
+    public NetSDKLibStructure.VA_OBJECT_NONMOTOR stuNonMotor;
     /**
      * 图片信息数组,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_IMAGE_INFO_EX3}
     */
@@ -100,6 +100,6 @@ public class DEV_EVENT_TRAFFIC_NONMOTORINMOTORROUTE_INFO extends NetSDKLibStruct
     /**
      *  保留字节,留待扩展.
      */
-    public byte[]           bReserved = new byte[3028-NetSDKLib.POINTERSIZE];
+    public byte[]           bReserved = new byte[3028-NetSDKLibStructure.POINTERSIZE];
 }
 

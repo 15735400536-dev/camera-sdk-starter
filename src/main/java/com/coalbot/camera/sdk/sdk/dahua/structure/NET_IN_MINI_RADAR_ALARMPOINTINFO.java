@@ -1,7 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
-
 import com.sun.jna.Pointer;
 
 /**
@@ -17,7 +17,7 @@ public class NET_IN_MINI_RADAR_ALARMPOINTINFO extends NetSDKLibStructure.SdkStru
     /**
      * 雷达报警点信息回调
      */
-    public NetSDKLibStructure.fMiniRadarAlarmPointInfoCallBack cbAlarmPointInfo;
+    public NetSDKLib.fMiniRadarAlarmPointInfoCallBack cbAlarmPointInfo;
     /**
      * 用户数据
      */

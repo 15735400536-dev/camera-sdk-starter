@@ -1,9 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_GATEWAY_MAX_SIM_NUM;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /** 
 * @author 291189
@@ -54,7 +51,7 @@ SIM卡数量
 /** 
 SIM卡状态信息
 */
-    public			NET_DEVSTATUS_SIM_INFO[] stuSimInfo = new NET_DEVSTATUS_SIM_INFO[NET_GATEWAY_MAX_SIM_NUM];
+    public			NET_DEVSTATUS_SIM_INFO[] stuSimInfo = new NET_DEVSTATUS_SIM_INFO[NetSDKLibStructure.NET_GATEWAY_MAX_SIM_NUM];
 
 public			NET_DEVSTATUS_NET_INFO(){
 		for(int i=0;i<stuSimInfo.length;i++){

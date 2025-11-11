@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 设置景物点，原编号的景物点将会被覆盖 出参 入参 {@link NET_IN_SCENICSPOT_SETPOINTINFO_INFO} 接口

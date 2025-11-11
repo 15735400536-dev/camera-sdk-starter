@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -15,7 +15,7 @@ public class DEV_EVENT_QSYTRAFFICCARWEIGHT_INFO extends NetSDKLibStructure.SdkSt
 	/**
 	 * 交通卡口信息
 	 */
-    public NetSDKLib.DEV_EVENT_TRAFFICJUNCTION_INFO stJunctionInfo = new NetSDKLib.DEV_EVENT_TRAFFICJUNCTION_INFO();
+    public NetSDKLibStructure.DEV_EVENT_TRAFFICJUNCTION_INFO stJunctionInfo = new NetSDKLibStructure.DEV_EVENT_TRAFFICJUNCTION_INFO();
 
 	public DEV_EVENT_QSYTRAFFICCARWEIGHT_INFO() {
 	}

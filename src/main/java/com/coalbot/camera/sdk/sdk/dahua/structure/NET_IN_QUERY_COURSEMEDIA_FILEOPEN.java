@@ -1,10 +1,10 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_COURSE_LOCK_TYPE;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_COURSE_RECORD_TYPE;
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_COMMON_STRING_128;
 
 /**
  * 开始查询课程视频信息入参 {@link NetSDKLib#CLIENT_OpenQueryCourseMediaFile}
@@ -28,7 +28,7 @@ public class NET_IN_QUERY_COURSEMEDIA_FILEOPEN extends NetSDKLibStructure.SdkStr
     /**
      * 查询关键字
      */
-    public byte[]           szKeyWord = new byte[NET_COMMON_STRING_128];
+    public byte[]           szKeyWord = new byte[NetSDKLibStructure.NET_COMMON_STRING_128];
     /**
      * 查询课程锁定类型 {@link EM_COURSE_LOCK_TYPE}
      */

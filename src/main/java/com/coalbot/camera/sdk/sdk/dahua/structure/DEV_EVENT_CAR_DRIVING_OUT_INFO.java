@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_CAPTURE_PROCESS_END_TYPE;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.EM_TRIGGER_TYPE;
 
@@ -38,7 +39,7 @@ public class DEV_EVENT_CAR_DRIVING_OUT_INFO extends NetSDKLibStructure.SdkStruct
     /**
      * 事件对应文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo;
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;
     /**
      * 检测到的车牌信息
      */
@@ -74,11 +75,11 @@ public class DEV_EVENT_CAR_DRIVING_OUT_INFO extends NetSDKLibStructure.SdkStruct
     /**
      * 交通车辆的数据库记录
      */
-    public NetSDKLib.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stuTrafficCar;
+    public NetSDKLibStructure.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stuTrafficCar;
     /**
      * 公共信息
      */
-    public NetSDKLib.EVENT_COMM_INFO stuCommInfo;
+    public NetSDKLibStructure.EVENT_COMM_INFO stuCommInfo;
     /**
      * 抓拍过程 {@link EM_CAPTURE_PROCESS_END_TYPE}
      */

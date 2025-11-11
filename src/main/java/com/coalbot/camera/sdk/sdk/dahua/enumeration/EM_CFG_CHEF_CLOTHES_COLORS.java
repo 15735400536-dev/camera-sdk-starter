@@ -1,7 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.enumeration;
 
-
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 检测符合要求的厨师服颜色不报警

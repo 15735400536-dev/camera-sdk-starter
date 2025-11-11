@@ -1,18 +1,17 @@
 package com.coalbot.camera.sdk.sdk.dahua.demo.module;
 
+import com.coalbot.camera.sdk.sdk.dahua.NativeString;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.LLong;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.fAnalyzerDataCallBack;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
+import com.sun.jna.Memory;
+import com.sun.jna.Pointer;
+
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
-import com.coalbot.camera.sdk.sdk.dahua.NativeString;
-
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
-import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.*;
-
-import com.sun.jna.Memory;
-import com.sun.jna.Pointer;
 
 /**
  * IVSS 和 IPC-FR 人脸功能接口实现, IPC-FD只支持目标检测事件
@@ -351,7 +350,7 @@ public class TargetRecognitionModule {
 		/*
 		 * 出参
 		 */
-		NET_OUT_SET_GROUPINFO_FOR_CHANNEL stOut = new NET_OUT_SET_GROUPINFO_FOR_CHANNEL();
+		NetSDKLibStructure.NET_OUT_SET_GROUPINFO_FOR_CHANNEL stOut = new NetSDKLibStructure.NET_OUT_SET_GROUPINFO_FOR_CHANNEL();
 		
 		if(LoginModule.netsdk.CLIENT_SetGroupInfoForChannel(LoginModule.m_hLoginHandle, stIn, stOut, 4000)) {
 			
@@ -845,7 +844,7 @@ public class TargetRecognitionModule {
 	public static NetSDKLibStructure.MEDIAFILE_FACERECOGNITION_INFO[] findNextFile(int nFindCount) {
 		NetSDKLibStructure.MEDIAFILE_FACERECOGNITION_INFO[] msg = new NetSDKLibStructure.MEDIAFILE_FACERECOGNITION_INFO[nFindCount];
 		for (int i = 0; i < msg.length; ++i) {
-			msg[i] = new NetSDKLib.MEDIAFILE_FACERECOGNITION_INFO();
+			msg[i] = new NetSDKLibStructure.MEDIAFILE_FACERECOGNITION_INFO();
 			msg[i].bUseCandidatesEx = 1;
 		}
 		

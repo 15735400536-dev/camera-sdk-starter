@@ -1,5 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 /**
  * 设备组信息
@@ -19,9 +20,9 @@ public class NET_CAMERA_GROUP_INFO extends NetSDKLibStructure.SdkStructure
     */
     public Pointer          pCameras;
     /**
-     * 远程设备信息, szDeviceID 没有值时有效,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_REMOTE_DEVICE}
+     * 远程设备信息, szDeviceID 没有值时有效,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_REMOTE_DEVICE}
     */
-    public NetSDKLib.NET_REMOTE_DEVICE stuRemoteDevice = new NetSDKLib.NET_REMOTE_DEVICE();
+    public NetSDKLibStructure.NET_REMOTE_DEVICE stuRemoteDevice = new NetSDKLibStructure.NET_REMOTE_DEVICE();
     /**
      * 保留字节
     */

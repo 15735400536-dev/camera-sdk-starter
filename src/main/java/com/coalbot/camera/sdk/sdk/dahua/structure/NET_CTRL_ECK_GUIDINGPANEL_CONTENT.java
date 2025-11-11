@@ -1,9 +1,9 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-/** 
+/**
 * @author 291189
 * @description  设置诱导屏显示内容(DH_CTRL_ECK_GUIDINGPANEL_CONTENT) 
 * @origin autoTool

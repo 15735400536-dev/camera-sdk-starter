@@ -1,12 +1,12 @@
 package com.coalbot.camera.sdk.sdk.dahua.demo.module;
 
-import java.io.UnsupportedEncodingException;
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.LLong;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.fAnalyzerDataCallBack;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
 import com.sun.jna.Memory;
 
-
-import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
-import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.*;
+import java.io.UnsupportedEncodingException;
 
 /**
  * \if ENGLISH_LANG
@@ -32,7 +32,7 @@ public class AttendanceModule {
         int bNeedPicture = 0; // 不需要图片
 
         m_hAttachHandle =  LoginModule.netsdk.CLIENT_RealLoadPictureEx(LoginModule.m_hLoginHandle, -1,
-        		NetSDKLib.EVENT_IVS_ALL, bNeedPicture, callback, null, null);
+				NetSDKLibStructure.EVENT_IVS_ALL, bNeedPicture, callback, null, null);
 
         if(m_hAttachHandle.longValue() == 0) {
         	System.err.printf("CLIENT_RealLoadPictureEx Failed!" + ToolKits.getErrorCodePrint());
@@ -64,7 +64,7 @@ public class AttendanceModule {
 		/*
 		 * 入参
 		 */
-		NET_IN_ATTENDANCE_ADDUSER stuIn = new NET_IN_ATTENDANCE_ADDUSER();
+		NetSDKLibStructure.NET_IN_ATTENDANCE_ADDUSER stuIn = new NetSDKLibStructure.NET_IN_ATTENDANCE_ADDUSER();
 		stringToByteArray(userId, stuIn.stuUserInfo.szUserID);
 		stringToByteArray(userName, stuIn.stuUserInfo.szUserName);
 		stringToByteArray(cardNo, stuIn.stuUserInfo.szCardNo);
@@ -72,7 +72,7 @@ public class AttendanceModule {
 		/*
 		 * 出参
 		 */
-		NET_OUT_ATTENDANCE_ADDUSER stuOut = new NET_OUT_ATTENDANCE_ADDUSER();
+		NetSDKLibStructure.NET_OUT_ATTENDANCE_ADDUSER stuOut = new NetSDKLibStructure.NET_OUT_ATTENDANCE_ADDUSER();
 		
 		boolean bRet = LoginModule.netsdk.CLIENT_Attendance_AddUser(LoginModule.m_hLoginHandle, stuIn, stuOut, TIME_OUT);
 		if (!bRet) {
@@ -93,13 +93,13 @@ public class AttendanceModule {
 		/*
 		 * 入参
 		 */
-		NET_IN_ATTENDANCE_DELUSER stuIn = new NET_IN_ATTENDANCE_DELUSER();
+		NetSDKLibStructure.NET_IN_ATTENDANCE_DELUSER stuIn = new NetSDKLibStructure.NET_IN_ATTENDANCE_DELUSER();
 		stringToByteArray(userId, stuIn.szUserID);
 		
 		/*
 		 * 出参
 		 */
-		NET_OUT_ATTENDANCE_DELUSER stuOut = new NET_OUT_ATTENDANCE_DELUSER();
+		NetSDKLibStructure.NET_OUT_ATTENDANCE_DELUSER stuOut = new NetSDKLibStructure.NET_OUT_ATTENDANCE_DELUSER();
 		
 		boolean bRet = LoginModule.netsdk.CLIENT_Attendance_DelUser(LoginModule.m_hLoginHandle, stuIn, stuOut, TIME_OUT);
 		if (!bRet) {
@@ -120,7 +120,7 @@ public class AttendanceModule {
 		/*
 		 * 入参
 		 */
-		NET_IN_ATTENDANCE_ModifyUSER stuIn = new NET_IN_ATTENDANCE_ModifyUSER();
+		NetSDKLibStructure.NET_IN_ATTENDANCE_ModifyUSER stuIn = new NetSDKLibStructure.NET_IN_ATTENDANCE_ModifyUSER();
 		stringToByteArray(userId, stuIn.stuUserInfo.szUserID);
 		stringToByteArray(userName, stuIn.stuUserInfo.szUserName);
 		stringToByteArray(cardNo, stuIn.stuUserInfo.szCardNo);
@@ -128,7 +128,7 @@ public class AttendanceModule {
 		/*
 		 * 出参
 		 */
-		NET_OUT_ATTENDANCE_ModifyUSER stuOut = new NET_OUT_ATTENDANCE_ModifyUSER();
+		NetSDKLibStructure.NET_OUT_ATTENDANCE_ModifyUSER stuOut = new NetSDKLibStructure.NET_OUT_ATTENDANCE_ModifyUSER();
 		
 		boolean bRet = LoginModule.netsdk.CLIENT_Attendance_ModifyUser(LoginModule.m_hLoginHandle, stuIn, stuOut, TIME_OUT);
 		if (!bRet) {
@@ -149,17 +149,17 @@ public class AttendanceModule {
 		/*
 		 * 入参
 		 */
-		NET_IN_ATTENDANCE_FINDUSER stuIn = new NET_IN_ATTENDANCE_FINDUSER();
+		NetSDKLibStructure.NET_IN_ATTENDANCE_FINDUSER stuIn = new NetSDKLibStructure.NET_IN_ATTENDANCE_FINDUSER();
 		stuIn.nOffset = nOffset;
 		stuIn.nPagedQueryCount = nPagedQueryCount;
 		
 		/*
 		 * 出参
 		 */
-		NET_OUT_ATTENDANCE_FINDUSER stuOut = new NET_OUT_ATTENDANCE_FINDUSER();
-		NET_ATTENDANCE_USERINFO[]  userInfo = new NET_ATTENDANCE_USERINFO[nPagedQueryCount];
+		NetSDKLibStructure.NET_OUT_ATTENDANCE_FINDUSER stuOut = new NetSDKLibStructure.NET_OUT_ATTENDANCE_FINDUSER();
+		NetSDKLibStructure.NET_ATTENDANCE_USERINFO[]  userInfo = new NetSDKLibStructure.NET_ATTENDANCE_USERINFO[nPagedQueryCount];
 		for(int i = 0; i < nPagedQueryCount; i++) {
-			userInfo[i] = new NET_ATTENDANCE_USERINFO();
+			userInfo[i] = new NetSDKLibStructure.NET_ATTENDANCE_USERINFO();
 		}
 		stuOut.nMaxUserCount = nPagedQueryCount;
 		stuOut.stuUserInfo = new Memory(userInfo[0].size() * stuOut.nMaxUserCount);
@@ -207,13 +207,13 @@ public class AttendanceModule {
 		/*
 		 * 入参
 		 */
-		NET_IN_ATTENDANCE_GetUSER stuIn = new NET_IN_ATTENDANCE_GetUSER();
+		NetSDKLibStructure.NET_IN_ATTENDANCE_GetUSER stuIn = new NetSDKLibStructure.NET_IN_ATTENDANCE_GetUSER();
 		stringToByteArray(userId, stuIn.szUserID);
 		
 		/*
 		 * 出参
 		 */
-		NET_OUT_ATTENDANCE_GetUSER stuOut = new NET_OUT_ATTENDANCE_GetUSER();
+		NetSDKLibStructure.NET_OUT_ATTENDANCE_GetUSER stuOut = new NetSDKLibStructure.NET_OUT_ATTENDANCE_GetUSER();
 		stuOut.nMaxLength = 128;
 		stuOut.pbyPhotoData = new Memory(stuOut.nMaxLength);    // 申请内存
 		stuOut.pbyPhotoData.clear(stuOut.nMaxLength);
@@ -250,7 +250,7 @@ public class AttendanceModule {
 		/*
 		 * 入参
 		 */
-		NET_IN_FINGERPRINT_INSERT_BY_USERID stuIn = new NET_IN_FINGERPRINT_INSERT_BY_USERID();
+		NetSDKLibStructure.NET_IN_FINGERPRINT_INSERT_BY_USERID stuIn = new NetSDKLibStructure.NET_IN_FINGERPRINT_INSERT_BY_USERID();
 		stringToByteArray(userId, stuIn.szUserID);
 		stuIn.nPacketCount = 1;
 		stuIn.nSinglePacketLen = szFingerPrintInfo.length;
@@ -261,7 +261,7 @@ public class AttendanceModule {
 		/*
 		 * 出参
 		 */
-		NET_OUT_FINGERPRINT_INSERT_BY_USERID stuOut = new NET_OUT_FINGERPRINT_INSERT_BY_USERID();
+		NetSDKLibStructure.NET_OUT_FINGERPRINT_INSERT_BY_USERID stuOut = new NetSDKLibStructure.NET_OUT_FINGERPRINT_INSERT_BY_USERID();
 		
 		boolean bRet = LoginModule.netsdk.CLIENT_Attendance_InsertFingerByUserID(LoginModule.m_hLoginHandle, stuIn, stuOut, TIME_OUT);
 		if (!bRet) {
@@ -280,13 +280,13 @@ public class AttendanceModule {
 		/*
 		 * 入参
 		 */
-		NET_CTRL_IN_FINGERPRINT_REMOVE_BY_USERID stuIn = new NET_CTRL_IN_FINGERPRINT_REMOVE_BY_USERID();
+		NetSDKLibStructure.NET_CTRL_IN_FINGERPRINT_REMOVE_BY_USERID stuIn = new NetSDKLibStructure.NET_CTRL_IN_FINGERPRINT_REMOVE_BY_USERID();
 		stringToByteArray(userId, stuIn.szUserID);
 		
 		/*
 		 * 出参
 		 */
-		NET_CTRL_OUT_FINGERPRINT_REMOVE_BY_USERID stuOut = new NET_CTRL_OUT_FINGERPRINT_REMOVE_BY_USERID();
+		NetSDKLibStructure.NET_CTRL_OUT_FINGERPRINT_REMOVE_BY_USERID stuOut = new NetSDKLibStructure.NET_CTRL_OUT_FINGERPRINT_REMOVE_BY_USERID();
 		
 		boolean bRet = LoginModule.netsdk.CLIENT_Attendance_RemoveFingerByUserID(LoginModule.m_hLoginHandle, stuIn, stuOut, TIME_OUT);
 		if (!bRet) {
@@ -305,13 +305,13 @@ public class AttendanceModule {
 		/*
 		 * 入参
 		 */
-		NET_CTRL_IN_FINGERPRINT_REMOVE stuIn = new NET_CTRL_IN_FINGERPRINT_REMOVE();
+		NetSDKLibStructure.NET_CTRL_IN_FINGERPRINT_REMOVE stuIn = new NetSDKLibStructure.NET_CTRL_IN_FINGERPRINT_REMOVE();
 		stuIn.nFingerPrintID = nFingerPrintID;
 		
 		/*
 		 * 出参
 		 */
-		NET_CTRL_OUT_FINGERPRINT_REMOVE stuOut = new NET_CTRL_OUT_FINGERPRINT_REMOVE();
+		NetSDKLibStructure.NET_CTRL_OUT_FINGERPRINT_REMOVE stuOut = new NetSDKLibStructure.NET_CTRL_OUT_FINGERPRINT_REMOVE();
 		
 		boolean bRet = LoginModule.netsdk.CLIENT_Attendance_RemoveFingerRecord(LoginModule.m_hLoginHandle, stuIn, stuOut, TIME_OUT);
 		if (!bRet) {
@@ -331,13 +331,13 @@ public class AttendanceModule {
 		/*
 		 * 入参
 		 */
-		NET_CTRL_IN_FINGERPRINT_GET stuIn = new NET_CTRL_IN_FINGERPRINT_GET();
+		NetSDKLibStructure.NET_CTRL_IN_FINGERPRINT_GET stuIn = new NetSDKLibStructure.NET_CTRL_IN_FINGERPRINT_GET();
 		stuIn.nFingerPrintID = nFingerPrintID;
 		
 		/*
 		 * 出参
 		 */
-		NET_CTRL_OUT_FINGERPRINT_GET stuOut = new NET_CTRL_OUT_FINGERPRINT_GET();
+		NetSDKLibStructure.NET_CTRL_OUT_FINGERPRINT_GET stuOut = new NetSDKLibStructure.NET_CTRL_OUT_FINGERPRINT_GET();
 		stuOut.nMaxFingerDataLength = nMaxFingerPrintSize;
 		stuOut.szFingerPrintInfo = new Memory(stuOut.nMaxFingerDataLength);    // 申请内存
 		stuOut.szFingerPrintInfo.clear(stuOut.nMaxFingerDataLength);
@@ -372,14 +372,14 @@ public class AttendanceModule {
 		/*
 		 * 入参
 		 */
-		NET_IN_FINGERPRINT_GETBYUSER stuIn = new NET_IN_FINGERPRINT_GETBYUSER();
+		NetSDKLibStructure.NET_IN_FINGERPRINT_GETBYUSER stuIn = new NetSDKLibStructure.NET_IN_FINGERPRINT_GETBYUSER();
 		stringToByteArray(userId, stuIn.szUserID);
 		
 		/*
 		 * 出参
 		 */
-		NET_OUT_FINGERPRINT_GETBYUSER stuOut = new NET_OUT_FINGERPRINT_GETBYUSER();
-		stuOut.nMaxFingerDataLength = NetSDKLib.NET_MAX_FINGER_PRINT * nMaxFingerPrintSize;
+		NetSDKLibStructure.NET_OUT_FINGERPRINT_GETBYUSER stuOut = new NetSDKLibStructure.NET_OUT_FINGERPRINT_GETBYUSER();
+		stuOut.nMaxFingerDataLength = NetSDKLibStructure.NET_MAX_FINGER_PRINT * nMaxFingerPrintSize;
 		stuOut.pbyFingerData = new Memory(stuOut.nMaxFingerDataLength);    // 申请内存
 		stuOut.pbyFingerData.clear(stuOut.nMaxFingerDataLength);
 		
@@ -409,12 +409,12 @@ public class AttendanceModule {
 		/*
 		 * 入参
 		 */
-		NET_CTRL_CAPTURE_FINGER_PRINT stuCollection = new NET_CTRL_CAPTURE_FINGER_PRINT();
+		NetSDKLibStructure.NET_CTRL_CAPTURE_FINGER_PRINT stuCollection = new NetSDKLibStructure.NET_CTRL_CAPTURE_FINGER_PRINT();
 		stuCollection.nChannelID = nChannelID;
 		stringToByteArray(szReaderID, stuCollection.szReaderID);
 		
 		stuCollection.write();
-		boolean bRet = LoginModule.netsdk.CLIENT_ControlDeviceEx(LoginModule.m_hLoginHandle, NetSDKLib.CtrlType.CTRLTYPE_CTRL_CAPTURE_FINGER_PRINT, stuCollection.getPointer(), null, 5000);
+		boolean bRet = LoginModule.netsdk.CLIENT_ControlDeviceEx(LoginModule.m_hLoginHandle, NetSDKLibStructure.CtrlType.CTRLTYPE_CTRL_CAPTURE_FINGER_PRINT, stuCollection.getPointer(), null, 5000);
 		if (!bRet) {
 			System.err.printf("CLIENT_ControlDeviceEx CAPTURE_FINGER_PRINT Failed!" + ToolKits.getErrorCodePrint());
 		}

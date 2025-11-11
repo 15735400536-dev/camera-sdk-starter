@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 事件类型 EVENT_IVS_COLD_SPOT_WARNING (冷点报警)对应的数据块描述信息
 */
@@ -18,9 +20,9 @@ public class NET_DEV_EVENT_COLD_SPOT_WARNING_INFO extends NetSDKLibStructure.Sdk
     */
     public NET_EVENT_INFO_EXTEND stuEventInfoEx = new NET_EVENT_INFO_EXTEND();
     /**
-     * 事件发生的时间,参见结构体定义 {@link NetSDKLib.NET_TIME_EX}
+     * 事件发生的时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX stuUTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX stuUTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 冷点位置 归一化到[0,8191]上的坐标点,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_POINT_EX}
     */
@@ -30,7 +32,7 @@ public class NET_DEV_EVENT_COLD_SPOT_WARNING_INFO extends NetSDKLibStructure.Sdk
     */
     public float            fColdSpotValue;
     /**
-     * 当前配置的温度单位,参见枚举定义 {@link NetSDKLib.NET_TEMPERATURE_UNIT}
+     * 当前配置的温度单位,参见枚举定义 {@link NetSDKLibStructure.NET_TEMPERATURE_UNIT}
     */
     public int              emTemperatureUnit;
     /**

@@ -1,9 +1,11 @@
 package com.coalbot.camera.sdk.sdk.dahua.demo.module;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.LLong;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
-
+import com.coalbot.camera.sdk.sdk.dahua.structure.NET_TIME;
 import com.sun.jna.ptr.IntByReference;
 
 /**
@@ -16,9 +18,9 @@ public class DownLoadRecordModule {
 	
 	// 查找录像文件
 	public static boolean queryRecordFile(int nChannelId, 
-									   NetSDKLib.NET_TIME stTimeStart, 
-									   NetSDKLib.NET_TIME stTimeEnd, 
-									   NetSDKLib.NET_RECORDFILE_INFO[] stFileInfo,
+									   NET_TIME stTimeStart,
+										NET_TIME stTimeEnd,
+										NetSDKLibStructure.NET_RECORDFILE_INFO[] stFileInfo,
 									   IntByReference nFindCount) {
 		// RecordFileType 录像类型 0:所有录像  1:外部报警  2:动态监测报警  3:所有报警  4:卡号查询   5:组合条件查询   
 		// 6:录像位置与偏移量长度   8:按卡号查询图片(目前仅HB-U和NVS特殊型号的设备支持)  9:查询图片(目前仅HB-U和NVS特殊型号的设备支持)  
@@ -44,7 +46,7 @@ public class DownLoadRecordModule {
 	public static void setStreamType(int m_streamType) {
         
         IntByReference steamType = new IntByReference(m_streamType);// 0-主辅码流,1-主码流,2-辅码流
-        int emType = NetSDKLib.EM_USEDEV_MODE.NET_RECORD_STREAM_TYPE;       
+        int emType = NetSDKLibStructure.EM_USEDEV_MODE.NET_RECORD_STREAM_TYPE;
 
         boolean bret = LoginModule.netsdk.CLIENT_SetDeviceMode(LoginModule.m_hLoginHandle, emType, steamType.getPointer());
         if (!bret) {
@@ -56,8 +58,8 @@ public class DownLoadRecordModule {
 	
 	public static LLong downloadRecordFile(int nChannelId,    
 										     int nRecordFileType,
-										     NetSDKLib.NET_TIME stTimeStart, 
-										     NetSDKLib.NET_TIME stTimeEnd, 
+										     NET_TIME stTimeStart,
+										     NET_TIME stTimeEnd,
 										     String SavedFileName,
 										     NetSDKLib.fTimeDownLoadPosCallBack cbTimeDownLoadPos) {
 		
@@ -83,16 +85,16 @@ public class DownLoadRecordModule {
 
 	public static LLong  downloadByDataType(int nChannelId,
 											int dataType,
-											NetSDKLib.NET_TIME stTimeStart,
-											NetSDKLib.NET_TIME stTimeEnd,
+											NetSDKLibStructure.NET_TIME stTimeStart,
+											NetSDKLibStructure.NET_TIME stTimeEnd,
 											String SavedFileName,
 											NetSDKLib.fDataCallBack m_DownLoadDataCallBack,
 											NetSDKLib.fTimeDownLoadPosCallBack cbTimeDownLoadPos) {
 
-		NetSDKLib.NET_IN_DOWNLOAD_BY_DATA_TYPE stIn = new NetSDKLib.NET_IN_DOWNLOAD_BY_DATA_TYPE();
+		NetSDKLibStructure.NET_IN_DOWNLOAD_BY_DATA_TYPE stIn = new NetSDKLibStructure.NET_IN_DOWNLOAD_BY_DATA_TYPE();
 
 		stIn.emDataType = dataType;
-		stIn.emRecordType = NetSDKLib.EM_QUERY_RECORD_TYPE.EM_RECORD_TYPE_ALL; // 所有录像
+		stIn.emRecordType = NetSDKLibStructure.EM_QUERY_RECORD_TYPE.EM_RECORD_TYPE_ALL; // 所有录像
 		stIn.nChannelID = nChannelId;
 		stIn.stStartTime=stTimeStart; 	// 开始时间
 		stIn.stStopTime=stTimeEnd; 	// 结束时间
@@ -103,7 +105,7 @@ public class DownLoadRecordModule {
 		stIn.dwDataUser = null;
 		stIn.szSavedFileName = SavedFileName + extensions[dataType];
 
-		NetSDKLib.NET_OUT_DOWNLOAD_BY_DATA_TYPE stOut = new NetSDKLib.NET_OUT_DOWNLOAD_BY_DATA_TYPE();
+		NetSDKLibStructure.NET_OUT_DOWNLOAD_BY_DATA_TYPE stOut = new NetSDKLibStructure.NET_OUT_DOWNLOAD_BY_DATA_TYPE();
 		stIn.write();
 		stOut.write();
 		m_hDownLoadHandle = LoginModule.netsdk.CLIENT_DownloadByDataType(LoginModule.m_hLoginHandle, stIn.getPointer(), stOut.getPointer(), 5000);

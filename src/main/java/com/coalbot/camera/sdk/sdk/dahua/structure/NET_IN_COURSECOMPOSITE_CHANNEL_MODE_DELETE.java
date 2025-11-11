@@ -1,8 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
-
-import static com.coalbot.camera.sdk.sdk.dahua.NetSDKLib.NET_MAX_MODE_NUMBER;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 录播主机删除模式入参
@@ -22,7 +20,7 @@ public class NET_IN_COURSECOMPOSITE_CHANNEL_MODE_DELETE extends NetSDKLibStructu
     /**
      * 删除的模式编号
      */
-    public int[]            nMode = new int[NET_MAX_MODE_NUMBER];
+    public int[]            nMode = new int[NetSDKLibStructure.NET_MAX_MODE_NUMBER];
 
     public NET_IN_COURSECOMPOSITE_CHANNEL_MODE_DELETE() {
         dwSize = this.size();

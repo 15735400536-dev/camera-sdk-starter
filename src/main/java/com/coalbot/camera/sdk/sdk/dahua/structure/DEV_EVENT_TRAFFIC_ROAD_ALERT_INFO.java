@@ -1,10 +1,11 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 事件类型(道路安全预警)对应的数据块描述信息
- * {@link NetSDKLib#EVENT_IVS_TRAFFIC_ROAD_ALERT}
+ * {@link NetSDKLibStructure#EVENT_IVS_TRAFFIC_ROAD_ALERT}
  *
  * @author ： 47040
  * @since ： Created in 2020/12/12 15:03
@@ -45,7 +46,7 @@ public class DEV_EVENT_TRAFFIC_ROAD_ALERT_INFO extends NetSDKLibStructure.SdkStr
     /**
      * 交通车辆信息
      */
-    public NetSDKLib.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
+    public NetSDKLibStructure.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
     /**
      * 事件组ID，同一辆车抓拍过程内GroupID相同
      */
@@ -65,11 +66,11 @@ public class DEV_EVENT_TRAFFIC_ROAD_ALERT_INFO extends NetSDKLibStructure.SdkStr
     /**
      * 公共信息
      */
-    public NetSDKLib.EVENT_COMM_INFO stCommInfo;
+    public NetSDKLibStructure.EVENT_COMM_INFO stCommInfo;
     /**
      * 事件对应文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stFileInfo;
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stFileInfo;
     /**
      * 表示抓拍序号,如3,2,1. 1表示抓拍结束,0表示异常结束
      */

@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure.optimized;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.structure.BYTE_64;
 import com.sun.jna.Pointer;
 

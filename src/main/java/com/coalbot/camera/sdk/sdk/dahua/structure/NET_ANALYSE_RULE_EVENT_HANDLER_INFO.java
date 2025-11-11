@@ -1,12 +1,14 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 视频分析联动信息
 */
 public class NET_ANALYSE_RULE_EVENT_HANDLER_INFO extends NetSDKLibStructure.SdkStructure
 {
     /**
-     * 报警时间段,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_TSECT}
+     * 报警时间段,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TSECT}
     */
     public NET_TSECT_ARRAY_6[] stuTimeSection = new NET_TSECT_ARRAY_6[8];
     /**

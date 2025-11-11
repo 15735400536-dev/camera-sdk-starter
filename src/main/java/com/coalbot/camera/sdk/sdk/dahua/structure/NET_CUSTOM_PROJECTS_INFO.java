@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 47081
@@ -10,7 +11,7 @@ package com.coalbot.camera.sdk.sdk.dahua.structure;
  */
 public class NET_CUSTOM_PROJECTS_INFO extends NetSDKLibStructure.SdkStructure {
   /** GPS位置信息 */
-    public NetSDKLib.NET_GPS_INFO stuGPSInfo;
+    public NetSDKLibStructure.NET_GPS_INFO stuGPSInfo;
   /** 人脸比对事件触发对应球机信息 */
     public NET_FACECOMPARISON_PTZ_INFO stuFaceComparisonPTZInfo;
   /** 人脸比对时车牌信息 */

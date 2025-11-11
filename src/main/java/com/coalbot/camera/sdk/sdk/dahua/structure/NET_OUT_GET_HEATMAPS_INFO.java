@@ -1,6 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.sun.jna.Pointer;
 
 /**
@@ -14,7 +15,7 @@ public class NET_OUT_GET_HEATMAPS_INFO extends NetSDKLibStructure.SdkStructure {
     /**
      *  元数据
      */
-    public NetSDKLib.NET_RADIOMETRY_METADATA stMetaData;
+    public NetSDKLibStructure.NET_RADIOMETRY_METADATA stMetaData;
     /**
      *  热图数据缓存区 pbDataBuf 的大小, 由用户指定
      */

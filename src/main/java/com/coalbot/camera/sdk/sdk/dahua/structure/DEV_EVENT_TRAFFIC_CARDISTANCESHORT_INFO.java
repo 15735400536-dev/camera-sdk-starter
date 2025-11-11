@@ -1,12 +1,13 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 import static com.coalbot.camera.sdk.sdk.dahua.constant.SDKStructureFieldLenth.MAX_EVENT_NAME_LEN;
 
 /**
  * 事件类型 (车间距过小报警事件）对应的数据块描述信息
- * {@link NetSDKLib#EVENT_IVS_TRAFFIC_CARDISTANCESHORT}
+ * {@link NetSDKLibStructure#EVENT_IVS_TRAFFIC_CARDISTANCESHORT}
  *
  * @author ： 47040
  * @since ： Created in 2020/12/12 11:46
@@ -55,11 +56,11 @@ public class DEV_EVENT_TRAFFIC_CARDISTANCESHORT_INFO extends NetSDKLibStructure.
     /**
      * 车辆信息
      */
-    public NetSDKLib.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
+    public NetSDKLibStructure.DEV_EVENT_TRAFFIC_TRAFFICCAR_INFO stTrafficCar;
     /**
      * 事件对应文件信息
      */
-    public NetSDKLib.NET_EVENT_FILE_INFO stuFileInfo;
+    public NetSDKLibStructure.NET_EVENT_FILE_INFO stuFileInfo;
     /**
      * 保留字节
      */
@@ -67,6 +68,6 @@ public class DEV_EVENT_TRAFFIC_CARDISTANCESHORT_INFO extends NetSDKLibStructure.
     /**
      * 公共信息
      */
-    public NetSDKLib.EVENT_COMM_INFO stCommInfo;
+    public NetSDKLibStructure.EVENT_COMM_INFO stCommInfo;
 }
 

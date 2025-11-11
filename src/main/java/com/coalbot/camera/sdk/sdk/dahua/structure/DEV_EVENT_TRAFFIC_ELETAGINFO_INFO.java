@@ -1,9 +1,8 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-
-/** 
+/**
 * @author 291189
 * @description  事件类型 EVENT_IVS_TRAFFIC_ELETAGINFO(RFID电子车牌标签事件)对应数据块描述信息 
 * @date 2022/10/13 14:39:18

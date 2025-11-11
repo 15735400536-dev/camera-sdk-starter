@@ -1,9 +1,9 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
-
-/** 
+/**
 * @author 291189
 * @description  CLIENT_QueryDevInfo NET_QUERY_PTZBASE_GET_CENTER_GPS 类型接口输出参数 
 * @date 2022/05/18 10:44:49

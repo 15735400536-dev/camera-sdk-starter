@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 覆盖区域
@@ -45,7 +45,7 @@ public class NET_VEDIO_WIDGET_COVER extends NetSDKLibStructure.SdkStructure {
     /**
      * 区域, 坐标取值0~8191
      */
-    public NetSDKLib.NET_RECT stuRect;
+    public NetSDKLibStructure.NET_RECT stuRect;
     /**
      * 保留字节
      */

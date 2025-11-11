@@ -1,6 +1,6 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * @author 251823
@@ -12,7 +12,7 @@ public class DH_OUT_SPLIT_GET_RECT extends NetSDKLibStructure.SdkStructure {
 	/**
 	 * 窗口位置, 0~8191
 	 */
-    public NetSDKLib.DH_RECT stuRect = new NetSDKLib.DH_RECT();
+    public NetSDKLibStructure.DH_RECT stuRect = new NetSDKLibStructure.DH_RECT();
 
 	public DH_OUT_SPLIT_GET_RECT() {
 		this.dwSize = this.size();

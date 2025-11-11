@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 门禁的AB互锁功能, 多个门通道，只有其他B通道都关闭，唯一的A通道才打开
 */

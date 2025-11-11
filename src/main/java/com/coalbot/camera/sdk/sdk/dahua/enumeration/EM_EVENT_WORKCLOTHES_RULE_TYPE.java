@@ -1,7 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.enumeration;
 
 
-
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 
 /**
  * 工装检测报警规则类型

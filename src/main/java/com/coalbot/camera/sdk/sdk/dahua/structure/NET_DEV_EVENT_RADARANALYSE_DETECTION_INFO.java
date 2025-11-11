@@ -1,5 +1,7 @@
 package com.coalbot.camera.sdk.sdk.dahua.structure;
 
+import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
+
 /**
  * 事件类型 EVENT_IVS_RADARANALYSE_DETECTION (雷达联动事件)对应的数据块描述信息
 */
@@ -20,7 +22,7 @@ public class NET_DEV_EVENT_RADARANALYSE_DETECTION_INFO extends NetSDKLibStructur
     /**
      * 事件发生时间,参见结构体定义 {@link NetSDKLib.NET_TIME_EX}
     */
-    public NetSDKLib.NET_TIME_EX stuUTC = new NetSDKLib.NET_TIME_EX();
+    public NetSDKLibStructure.NET_TIME_EX stuUTC = new NetSDKLibStructure.NET_TIME_EX();
     /**
      * 事件编号，用来唯一标志一个事件
     */
@@ -28,19 +30,19 @@ public class NET_DEV_EVENT_RADARANALYSE_DETECTION_INFO extends NetSDKLibStructur
     /**
      * 事件发生的本地时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuLocaleTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuLocaleTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 雷达联动流程的开始时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLib.NET_TIME stuRadarStartTime = new NetSDKLib.NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuRadarStartTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 联动信息，保存其他设备传输的信息，比如雷达,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.structure.NET_LINK_INFO}
     */
     public NET_LINK_INFO    stuLinkInfo = new NET_LINK_INFO();
     /**
-     * Objects表示多个物体同时触发滞留事件列表，填写检测到的所有物体上限32个数组元素,参见结构体定义 {@link NetSDKLib.NET_MSG_OBJECT_EX2}
+     * Objects表示多个物体同时触发滞留事件列表，填写检测到的所有物体上限32个数组元素,参见结构体定义 {@link NetSDKLibStructure.NET_MSG_OBJECT_EX2}
     */
-    public NetSDKLib.NET_MSG_OBJECT_EX2[] stuObjects = new NetSDKLib.NET_MSG_OBJECT_EX2[32];
+    public NetSDKLibStructure.NET_MSG_OBJECT_EX2[] stuObjects = new NetSDKLibStructure.NET_MSG_OBJECT_EX2[32];
     /**
      * 上报对象数量
     */
@@ -52,7 +54,7 @@ public class NET_DEV_EVENT_RADARANALYSE_DETECTION_INFO extends NetSDKLibStructur
 
     public NET_DEV_EVENT_RADARANALYSE_DETECTION_INFO() {
         for(int i = 0; i < stuObjects.length; i++){
-            stuObjects[i] = new NetSDKLib.NET_MSG_OBJECT_EX2();
+            stuObjects[i] = new NetSDKLibStructure.NET_MSG_OBJECT_EX2();
         }
     }
 }

@@ -38,7 +38,7 @@ public class NET_IN_ADD_LOCAL_ANALYSE_TASK extends NetSDKLibStructure.SdkStructu
     /**
      * 录像开始时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuStartTime = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuStartTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 录像结束时间,参见结构体定义 {@link NetSDKLibStructure.NET_TIME}
     */

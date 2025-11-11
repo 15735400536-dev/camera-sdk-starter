@@ -16,7 +16,7 @@ public class NET_VIDEO_RECORD_INFO extends NetSDKLibStructure.SdkStructure
     /**
      * 文件开始时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
-    public NetSDKLibStructure.NET_TIME stuStartTime = new NET_TIME();
+    public NetSDKLibStructure.NET_TIME stuStartTime = new NetSDKLibStructure.NET_TIME();
     /**
      * 文件结束时间,参见结构体定义 {@link com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure.NET_TIME}
     */
