@@ -426,4 +426,19 @@ public class HikvisionHandlerImpl implements CameraSdkHandler {
     public void absolute(AbsoluteBO param) {
 
     }
+
+    @Override
+    public void getDeviceCapability() {
+
+    }
+
+    @Override
+    public void getChannelCapability() {
+
+    }
+
+    @Override
+    public void getPtzCapability() {
+
+    }
 }

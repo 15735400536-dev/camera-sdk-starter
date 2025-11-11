@@ -167,4 +167,19 @@ public interface CameraSdkHandler {
      */
     void absolute(AbsoluteBO param);
 
+    /**
+     * 获取设备能力
+     */
+    void getDeviceCapability();
+
+    /**
+     * 获取通道能力
+     */
+    void getChannelCapability();
+
+    /**
+     * 获取云台能力
+     */
+    void getPtzCapability();
+
 }

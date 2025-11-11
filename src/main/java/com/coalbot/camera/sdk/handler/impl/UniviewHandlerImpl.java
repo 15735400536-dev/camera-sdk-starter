@@ -426,6 +426,21 @@ public class UniviewHandlerImpl implements CameraSdkHandler {
         }
     }
 
+    @Override
+    public void getDeviceCapability() {
+
+    }
+
+    @Override
+    public void getChannelCapability() {
+
+    }
+
+    @Override
+    public void getPtzCapability() {
+
+    }
+
     /**
      * 通用PTZ指令转化为摄像头SDK PTZ指令
      *

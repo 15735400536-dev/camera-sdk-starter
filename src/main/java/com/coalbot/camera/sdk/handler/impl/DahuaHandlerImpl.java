@@ -13,15 +13,14 @@ import com.coalbot.camera.sdk.handler.CameraSdkHandler;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
-import com.coalbot.camera.sdk.sdk.dahua.Utils;
 import com.coalbot.camera.sdk.sdk.dahua.demo.module.LoginModule;
+import com.coalbot.camera.sdk.sdk.dahua.structure.NET_IN_GET_CAMERA_INFO;
+import com.coalbot.camera.sdk.sdk.dahua.structure.NET_OUT_GET_CAMERA_INFO;
 import com.coalbot.camera.sdk.util.CameraSdkUtils;
 import com.sun.jna.Memory;
-import com.sun.jna.Native;
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.IntByReference;
 
-import java.io.File;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
@@ -509,6 +508,46 @@ public class DahuaHandlerImpl implements CameraSdkHandler {
         if (!result) {
             System.out.println("Failed!" + ToolKits.getErrorCodePrint());
         }
-        //throw new SdkUnsupportedException(CameraBrand.Dahua, "功能【精准控制】暂不支持！");
+        throw new SdkUnsupportedException(CameraBrand.Dahua, "功能【精准控制】暂不支持！");
+    }
+
+    @Override
+    public void getDeviceCapability() {
+
+    }
+
+    @Override
+    public void getChannelCapability() {
+
+
+    }
+
+    @Override
+    public void getPtzCapability() {
+
+    }
+
+    public void getCameraInfo() {
+        NET_IN_GET_CAMERA_INFO netInGetCameraInfo = new NET_IN_GET_CAMERA_INFO();
+        NET_OUT_GET_CAMERA_INFO netOutGetCameraInfo = new NET_OUT_GET_CAMERA_INFO();
+        Pointer pInParam = new Memory(netInGetCameraInfo.size());
+        ToolKits.SetStructDataToPointer(netInGetCameraInfo, pInParam, 0);
+
+        Pointer pOutParam = new Memory(netOutGetCameraInfo.size());
+        ToolKits.SetStructDataToPointer(netOutGetCameraInfo, pOutParam, 0);
+
+        boolean result = netsdk.CLIENT_GetCameraInfo(loginHandle, pInParam, pOutParam, 0);
+        if (result) {
+            System.out.println(netOutGetCameraInfo);
+        }
+    }
+
+    public void getChannelInfo() {
+        NetSDKLibStructure.NET_IN_GET_CHANNEL_INFO pInParam = new NetSDKLibStructure.NET_IN_GET_CHANNEL_INFO();
+        NetSDKLibStructure.NET_OUT_GET_CHANNEL_INFO pOutParam = new NetSDKLibStructure.NET_OUT_GET_CHANNEL_INFO();
+        boolean result = netsdk.CLIENT_GetChannelInfo(loginHandle, pInParam, pOutParam, 0);
+        if (result) {
+            System.out.println(pOutParam);
+        }
     }
 }
