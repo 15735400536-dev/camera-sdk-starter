@@ -1,7 +1,9 @@
 package com.coalbot.camera.sdk.sdk.dahua;
 
+import com.coalbot.camera.sdk.enums.CameraBrand;
 import com.coalbot.camera.sdk.sdk.dahua.enumeration.*;
 import com.coalbot.camera.sdk.sdk.dahua.structure.*;
+import com.coalbot.camera.sdk.util.CameraSdkUtils;
 import com.sun.jna.*;
 import com.sun.jna.ptr.IntByReference;
 
@@ -14,9 +16,9 @@ import java.util.Arrays;
  */
 public interface NetSDKLib extends Library {
 
-    NetSDKLib NETSDK_INSTANCE = Native.load(LibraryLoad.getLoadLibrary("dhnetsdk"), NetSDKLib.class);
+    NetSDKLib NETSDK_INSTANCE = Native.load(CameraSdkUtils.getSdkPath(CameraBrand.Dahua, "dhnetsdk"), NetSDKLib.class);
 
-    NetSDKLib CONFIG_INSTANCE = Native.load(LibraryLoad.getLoadLibrary("dhconfigsdk"), NetSDKLib.class);
+    NetSDKLib CONFIG_INSTANCE = Native.load(CameraSdkUtils.getSdkPath(CameraBrand.Dahua, "dhconfigsdk"), NetSDKLib.class);
 
     //NetSDKLib CONFIG_JNI = (NetSDKLib)Native.loadLibrary(util.getLoadLibrary("JNI1.dll"), INetSDK.class);
     class LLong extends IntegerType {
