@@ -28,6 +28,7 @@ public class GewuxinAutoConfiguration {
     @Bean
     public CommandLineRunner gewuxinInitRunner() {
         return args -> {
+            GewuxinHandlerImpl.initSDK();
             System.out.println("格物优信SDK实例初始化");
         };
     }
@@ -36,7 +37,10 @@ public class GewuxinAutoConfiguration {
     @Bean
     public CommandLineRunner gewuxinDestroyRunner() {
         return args -> Runtime.getRuntime().addShutdownHook(new Thread(
-                () -> System.out.println("格物优信SDK实例销毁")
+                () -> {
+                    GewuxinHandlerImpl.releaseSDK();
+                    System.out.println("格物优信SDK实例销毁");
+                }
         ));
     }
 

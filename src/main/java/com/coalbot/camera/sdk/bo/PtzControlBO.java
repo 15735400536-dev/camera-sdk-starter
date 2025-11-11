@@ -21,7 +21,7 @@ public class PtzControlBO {
      */
     private PtzCommand command;
     /**
-     * 速度，海康威视范围[1,10]
+     * 速度，海康威视范围[1,10]，宇视范围[1,9]
      */
     private int speed = 0;
 

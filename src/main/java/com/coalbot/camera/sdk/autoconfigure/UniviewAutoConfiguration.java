@@ -16,7 +16,8 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @EnableConfigurationProperties(CameraSdkProperties.class)
-@ConditionalOnProperty(prefix = "camera.sdk", name = "uniview", havingValue = "true", matchIfMissing = true) // 存在宇视配置时生效
+@ConditionalOnProperty(prefix = "camera.sdk", name = "uniview", havingValue = "true", matchIfMissing = true)
+// 存在宇视配置时生效
 public class UniviewAutoConfiguration {
 
     @Bean
@@ -28,6 +29,7 @@ public class UniviewAutoConfiguration {
     @Bean
     public CommandLineRunner univiewInitRunner() {
         return args -> {
+            UniviewHandlerImpl.initSDK();
             System.out.println("宇视SDK实例初始化");
         };
     }
@@ -36,7 +38,10 @@ public class UniviewAutoConfiguration {
     @Bean
     public CommandLineRunner univiewDestroyRunner() {
         return args -> Runtime.getRuntime().addShutdownHook(new Thread(
-                () -> System.out.println("宇视SDK实例销毁")
+                () -> {
+                    UniviewHandlerImpl.releaseSDK();
+                    System.out.println("宇视SDK实例销毁");
+                }
         ));
     }
 
