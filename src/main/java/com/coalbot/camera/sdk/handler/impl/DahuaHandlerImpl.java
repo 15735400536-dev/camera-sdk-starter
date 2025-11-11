@@ -10,15 +10,17 @@ import com.coalbot.camera.sdk.enums.PtzCommand;
 import com.coalbot.camera.sdk.exception.CameraSdkException;
 import com.coalbot.camera.sdk.exception.SdkUnsupportedException;
 import com.coalbot.camera.sdk.handler.CameraSdkHandler;
-
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLib;
 import com.coalbot.camera.sdk.sdk.dahua.NetSDKLibStructure;
 import com.coalbot.camera.sdk.sdk.dahua.ToolKits;
 import com.coalbot.camera.sdk.sdk.dahua.demo.module.LoginModule;
 import com.sun.jna.Memory;
 import com.sun.jna.Pointer;
+import com.sun.jna.ptr.IntByReference;
 
 import java.io.File;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -350,7 +352,38 @@ public class DahuaHandlerImpl implements CameraSdkHandler {
 
     @Override
     public List<Map<String, Object>> queryPresets(QueryPresetBO param) {
-        throw new SdkUnsupportedException(CameraBrand.Dahua, "功能【查询预置点】暂不支持！");
+        List<Map<String, Object>> presetList = new ArrayList<>();
+        NetSDKLibStructure.NET_PTZ_PRESET_LIST ptzPresetList = new NetSDKLibStructure.NET_PTZ_PRESET_LIST();
+        ptzPresetList.dwSize = ptzPresetList.size();
+        ptzPresetList.dwMaxPresetNum = 255;
+        ptzPresetList.dwRetPresetNum = 10;
+        // 分配内存给预置点列表指针
+        Pointer presetMemory = new Memory(ptzPresetList.dwMaxPresetNum * new NetSDKLibStructure.NET_PTZ_PRESET().size());
+        ptzPresetList.pstuPtzPorsetList = presetMemory;
+        ptzPresetList.write();
+
+        //进行申请释放内存
+        IntByReference pRetLen = new IntByReference(0);
+        boolean result = netsdk.CLIENT_QueryRemotDevState(loginHandle, NetSDKLibStructure.NET_DEVSTATE_PTZ_PRESET_LIST, 1,
+                ptzPresetList.getPointer(), ptzPresetList.size(), pRetLen, 1000);
+        if (!result) {
+            System.out.println("Failed!" + ToolKits.getErrorCodePrint());
+            return presetList;
+        }
+        ptzPresetList.read();
+        int returnedPresetNum = ptzPresetList.dwRetPresetNum;
+        Pointer presetListPointer = ptzPresetList.pstuPtzPorsetList;
+        for (int i = 0; i < returnedPresetNum; i++) {
+            NetSDKLibStructure.NET_PTZ_PRESET preset = new NetSDKLibStructure.NET_PTZ_PRESET();
+            Pointer presetPointer = presetListPointer.share(i * preset.size());
+            // 使用 Pointer 读取数据并设置到结构体
+            preset.nIndex = presetPointer.getInt(0);
+            preset.szName = presetPointer.getByteArray(4, NetSDKLibStructure.PTZ_PRESET_NAME_LEN);//偏移量计算名称
+            preset.szReserve = presetPointer.getByteArray(4 + NetSDKLibStructure.PTZ_PRESET_NAME_LEN, 64);//偏移量算预留64位
+            System.out.println("预置点编号：" + preset.nIndex + "名称: " + new String(preset.szName, Charset.forName("GBK")).trim());
+            presetList.add(Map.of("presetId", preset.nIndex, "presetName", new String(preset.szName, Charset.forName("GBK")).trim()));
+        }
+        return presetList;
     }
 
     @Override

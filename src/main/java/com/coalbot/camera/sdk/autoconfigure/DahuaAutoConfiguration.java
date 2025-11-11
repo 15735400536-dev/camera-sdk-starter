@@ -28,6 +28,7 @@ public class DahuaAutoConfiguration {
     @Bean
     public CommandLineRunner dahuaInitRunner() {
         return args -> {
+            DahuaHandlerImpl.initSDK();
             System.out.println("大华SDK实例初始化");
         };
     }
@@ -36,7 +37,10 @@ public class DahuaAutoConfiguration {
     @Bean
     public CommandLineRunner dahuaDestroyRunner() {
         return args -> Runtime.getRuntime().addShutdownHook(new Thread(
-                () -> System.out.println("大华SDK实例销毁")
+                () -> {
+                    DahuaHandlerImpl.releaseSDK();
+                    System.out.println("大华SDK实例销毁");
+                }
         ));
     }
 
