@@ -28,6 +28,35 @@ public class CameraSdkUtils {
     private static final String MAC_CAMERA_SDK_FOLDER = "/Applications/Coalbot/CameraSdk";
 
     /**
+     * 根据摄像头品牌和文件名称获取摄像头SDK路径
+     * @param brand 摄像头品牌
+     * @param fileName 文件名称
+     * @return 摄像头SDK路径
+     */
+    public static String getSdkPath(CameraBrand brand, String fileName) {
+        String sdkPath = null;
+        OsType currentOs = OsType.getCurrentOs();
+        String cameraSdkFolder = getCameraSdkFolder();
+        switch (brand) {
+            case Hikvision:
+                sdkPath = cameraSdkFolder + File.separator + "Hikvision" + File.separator + fileName + currentOs.getLibSuffix();
+                break;
+            case Dahua:
+                sdkPath = cameraSdkFolder + File.separator + "DaHua" + File.separator + fileName + currentOs.getLibSuffix();
+                break;
+            case Uniview:
+                sdkPath = cameraSdkFolder + File.separator + "Uniview" + File.separator + fileName + currentOs.getLibSuffix();
+                break;
+            case Gewuxin:
+                sdkPath = cameraSdkFolder + File.separator + "Yoseenir" + File.separator + fileName + currentOs.getLibSuffix();
+                break;
+            default:
+                throw new CameraSdkException("不支持的摄像头SDK！");
+        }
+        return sdkPath;
+    }
+
+    /**
      * 根据摄像头品牌获取摄像头SDK路径
      *
      * @param brand 摄像头品牌
@@ -42,7 +71,7 @@ public class CameraSdkUtils {
                 sdkPath = cameraSdkFolder + File.separator + "Hikvision" + File.separator + "HCNetSDK" + currentOs.getLibSuffix();
                 break;
             case Dahua:
-                sdkPath = cameraSdkFolder + File.separator + "DaHua" + File.separator + "Dahua" + currentOs.getLibSuffix();
+                sdkPath = cameraSdkFolder + File.separator + "DaHua" + File.separator + "dhnetsdk" + currentOs.getLibSuffix();
                 break;
             case Uniview:
                 sdkPath = cameraSdkFolder + File.separator + "Uniview" + File.separator + "Uniview" + currentOs.getLibSuffix();
